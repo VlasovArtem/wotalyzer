@@ -4,7 +4,6 @@ import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.vlasovartem.wotalyzer.entity.wot.api.APIResponse;
-import com.vlasovartem.wotalyzer.utils.api.contstans.BasicAPIConstants;
 import com.vlasovartem.wotalyzer.utils.exception.WotAPIException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -19,6 +18,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.stream.Collectors;
+
+import static com.vlasovartem.wotalyzer.utils.api.contstans.WOTAPIConstants.APPLICATION_ID_PARAM;
+import static com.vlasovartem.wotalyzer.utils.api.contstans.WOTAPIConstants.FIELDS_PARAM;
 
 /**
  * Created by artemvlasov on 28/09/16.
@@ -101,10 +103,10 @@ public abstract class MainUtils<T> {
      */
     protected String convertURL(Map<String, Object> queryParams, String basicUrl) {
         UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(basicUrl);
-        builder.queryParam(BasicAPIConstants.APPLICATION_ID_PARAM, applicationId);
+        builder.queryParam(APPLICATION_ID_PARAM, applicationId);
         if (Objects.nonNull(queryParams)) {
             for (Map.Entry<String, Object> entry : queryParams.entrySet()) {
-                if (BasicAPIConstants.FIELDS_PARAM.equals(entry.getKey())) {
+                if (FIELDS_PARAM.equals(entry.getKey())) {
                     if (entry.getValue() instanceof List) {
                         builder.queryParam(entry.getKey(), ((List) entry.getValue()).stream().collect(Collectors.joining(",")).toString());
                     } else {

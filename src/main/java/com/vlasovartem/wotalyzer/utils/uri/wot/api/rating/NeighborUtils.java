@@ -8,7 +8,9 @@ import org.apache.logging.log4j.Logger;
 import java.util.List;
 import java.util.Map;
 
-import static com.vlasovartem.wotalyzer.utils.api.contstans.rating.NeighborConstants.*;
+import static com.vlasovartem.wotalyzer.utils.api.contstans.WOTAPIConstants.*;
+import static com.vlasovartem.wotalyzer.utils.validators.rating.RatingValidator.validateBattleType;
+import static com.vlasovartem.wotalyzer.utils.validators.rating.RatingValidator.validateDate;
 
 /**
  * Created by artemvlasov on 11/10/2016.
@@ -42,7 +44,7 @@ public class NeighborUtils extends RatingUtils<Neighbor> {
             for (Map.Entry<String, Object> entrySet : queryParams.entrySet()) {
                 switch (entrySet.getKey()) {
                     case BATTLE_TYPE_PARAM:
-                        queryParams.replace(BATTLE_TYPE_PARAM, validateBattleType(entrySet));
+                        queryParams.replace(BATTLE_TYPE_PARAM, validateBattleType(entrySet, getBattleTypes()));
                         break;
                     case DATE_PARAM:
                         queryParams.replace(DATE_PARAM, validateDate(entrySet));
@@ -58,7 +60,7 @@ public class NeighborUtils extends RatingUtils<Neighbor> {
                 }
             }
         }
-        return false;
+        return true;
     }
 
 }

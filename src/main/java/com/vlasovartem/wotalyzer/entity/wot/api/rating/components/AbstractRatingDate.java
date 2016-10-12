@@ -7,7 +7,7 @@ import java.util.List;
  * Created by artemvlasov on 11/10/16.
  * Dates with available ratings
  */
-public abstract class RatingDate {
+public abstract class AbstractRatingDate {
 
     private List<LocalDateTime> dates;
 

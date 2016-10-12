@@ -3,9 +3,6 @@ package com.vlasovartem.wotalyzer.service.wot.tankopedia.impl;
 import com.vlasovartem.wotalyzer.entity.wot.api.tankopedia.Vehicles;
 import com.vlasovartem.wotalyzer.service.wot.tankopedia.VehiclesService;
 import com.vlasovartem.wotalyzer.utils.TankUtils;
-import com.vlasovartem.wotalyzer.utils.api.contstans.BasicAPIConstants;
-import com.vlasovartem.wotalyzer.utils.api.contstans.tankopedia.VehicleBasicConstants;
-import com.vlasovartem.wotalyzer.utils.api.contstans.tankopedia.VehiclesConstants;
 import com.vlasovartem.wotalyzer.utils.enums.VehicleType;
 import com.vlasovartem.wotalyzer.utils.uri.wot.api.tankopedia.VehiclesUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +10,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.*;
 import java.util.stream.Collectors;
+
+import static com.vlasovartem.wotalyzer.utils.api.contstans.WOTAPIConstants.*;
 
 /**
  * Created by artemvlasov on 14/01/16.
@@ -53,7 +52,7 @@ public class VehiclesServiceImpl implements VehiclesService {
     public List<Vehicles> findByTierAndType(Integer tier, VehicleType type, List<String> requiredFields) {
         Map<String, Object> param = new HashMap<>();
         if(Objects.nonNull(tier)) {
-            param.put(VehiclesConstants.TIER_PARAM, tier);
+            param.put(TIER_PARAM, tier);
         }
         if(Objects.nonNull(type)) {
             if (Objects.nonNull(requiredFields) && !requiredFields.isEmpty()) {
@@ -61,7 +60,7 @@ public class VehiclesServiceImpl implements VehiclesService {
                 if (!fields.contains("type")) {
                     fields.add("type");
                 }
-                param.put(BasicAPIConstants.FIELDS_PARAM, fields);
+                param.put(FIELDS_PARAM, fields);
             }
         }
         Map<String, Vehicles> tierVehicles = vehiclesUtils.getApiResponse(param).getData();
@@ -89,7 +88,7 @@ public class VehiclesServiceImpl implements VehiclesService {
     @Override
     public List<Vehicles> findAll(List<String> fields) {
         Map<String, Object> params = new HashMap<>();
-        params.put(BasicAPIConstants.FIELDS_PARAM, fields);
+        params.put(FIELDS_PARAM, fields);
         return vehiclesUtils.getApiResponse(params)
                 .getData().entrySet().stream()
                 .map(Map.Entry::getValue).collect(Collectors.toList());
@@ -100,8 +99,8 @@ public class VehiclesServiceImpl implements VehiclesService {
     }
     private Vehicles getVehicleBaseInfoObject(long tankId, List<String> fields) {
         Map<String, Object> params = new HashMap<>();
-        params.put(VehicleBasicConstants.TANK_ID_PARAM, tankId);
-        params.put(BasicAPIConstants.FIELDS_PARAM, fields);
+        params.put(TANK_ID_PARAM, tankId);
+        params.put(FIELDS_PARAM, fields);
         return vehiclesUtils.getApiResponse(params).getData().get(String.valueOf(tankId));
     }
 }

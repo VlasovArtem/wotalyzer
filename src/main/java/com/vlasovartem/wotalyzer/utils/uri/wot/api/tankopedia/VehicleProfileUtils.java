@@ -2,8 +2,8 @@ package com.vlasovartem.wotalyzer.utils.uri.wot.api.tankopedia;
 
 import com.fasterxml.jackson.databind.JavaType;
 import com.vlasovartem.wotalyzer.entity.wot.api.APIResponse;
-import com.vlasovartem.wotalyzer.entity.wot.api.tankopedia.info.TankopediaInfo;
 import com.vlasovartem.wotalyzer.entity.wot.api.tankopedia.VehicleProfile;
+import com.vlasovartem.wotalyzer.entity.wot.api.tankopedia.info.TankopediaInfo;
 import com.vlasovartem.wotalyzer.utils.api.contstans.tankopedia.VehicleProfileConstants;
 import com.vlasovartem.wotalyzer.utils.uri.wot.api.MainUtils;
 import org.apache.logging.log4j.LogManager;
@@ -17,8 +17,8 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
-import static com.vlasovartem.wotalyzer.utils.api.contstans.BasicAPIConstants.FIELDS_PARAM;
-import static com.vlasovartem.wotalyzer.utils.api.contstans.tankopedia.VehicleBasicConstants.TANK_ID_PARAM;
+import static com.vlasovartem.wotalyzer.utils.api.contstans.WOTAPIConstants.FIELDS_PARAM;
+import static com.vlasovartem.wotalyzer.utils.api.contstans.WOTAPIConstants.TANK_ID_PARAM;
 
 /**
  * Util that help create API URL
@@ -51,7 +51,6 @@ public class VehicleProfileUtils extends MainUtils<VehicleProfile> {
     /**
      * Find VehicleUtils with single parameter tank id
      * @param tankId tank id
-     * @param <U> type of the object
      * @return APIResponse with associated array.
      */
     public APIResponse<Map<String, VehicleProfile>> getVehicleApiResponse(long tankId) {

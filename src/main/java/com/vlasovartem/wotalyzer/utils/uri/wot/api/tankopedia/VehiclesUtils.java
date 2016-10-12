@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static com.vlasovartem.wotalyzer.utils.api.contstans.tankopedia.VehicleBasicConstants.TANK_ID_PARAM;
+import static com.vlasovartem.wotalyzer.utils.api.contstans.WOTAPIConstants.TANK_ID_PARAM;
 
 /**
  * Created by artemvlasov on 07/10/16.
@@ -25,7 +25,6 @@ public class VehiclesUtils extends MainUtils<Vehicles> {
     /**
      * Find VehicleUtils with single parameter tank id
      * @param tankId tank id
-     * @param <U> type of the object
      * @return APIResponse with associated array.
      */
     public APIResponse<Map<String, Vehicles>> getVehiclesApiResponse(long tankId) {

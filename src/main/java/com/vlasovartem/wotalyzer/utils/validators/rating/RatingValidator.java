@@ -10,9 +10,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-import static com.vlasovartem.wotalyzer.utils.api.contstans.rating.AccountRatingConstants.BATTLE_TYPE_PARAM;
-import static com.vlasovartem.wotalyzer.utils.api.contstans.rating.AccountRatingConstants.DATE_PARAM;
-import static com.vlasovartem.wotalyzer.utils.api.contstans.rating.NeighborConstants.LIMIT_PARAM;
+import static com.vlasovartem.wotalyzer.utils.api.contstans.WOTAPIConstants.*;
 
 /**
  * Created by artemvlasov on 12/10/2016.

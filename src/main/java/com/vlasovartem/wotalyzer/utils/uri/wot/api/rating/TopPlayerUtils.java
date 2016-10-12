@@ -8,10 +8,8 @@ import org.apache.logging.log4j.Logger;
 import java.util.List;
 import java.util.Map;
 
-import static com.vlasovartem.wotalyzer.utils.api.contstans.rating.NeighborConstants.*;
-import static com.vlasovartem.wotalyzer.utils.validators.rating.RatingValidator.validateBattleType;
-import static com.vlasovartem.wotalyzer.utils.validators.rating.RatingValidator.validateDate;
-import static com.vlasovartem.wotalyzer.utils.validators.rating.RatingValidator.validateLimit;
+import static com.vlasovartem.wotalyzer.utils.api.contstans.WOTAPIConstants.*;
+import static com.vlasovartem.wotalyzer.utils.validators.rating.RatingValidator.*;
 
 /**
  * Created by artemvlasov on 11/10/2016.
@@ -52,7 +50,7 @@ public class TopPlayerUtils extends RatingUtils<TopPlayer> {
                         break;
                     case LIMIT_PARAM:
                         int limit = (int) entrySet.getValue();
-                        queryParams.replace(LIMIT_PARAM, validateLimit(limit, 1000, 10));
+                        queryParams.replace(LIMIT_PARAM, validateLimitWithMax(limit, 1000, 10));
                         break;
                 }
             }

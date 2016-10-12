@@ -7,7 +7,11 @@ import org.apache.logging.log4j.Logger;
 import java.util.List;
 import java.util.Map;
 
+import static com.vlasovartem.wotalyzer.utils.api.contstans.WOTAPIConstants.BATTLE_TYPE_PARAM;
+import static com.vlasovartem.wotalyzer.utils.api.contstans.WOTAPIConstants.DATE_PARAM;
 import static com.vlasovartem.wotalyzer.utils.api.contstans.rating.AccountRatingConstants.*;
+import static com.vlasovartem.wotalyzer.utils.validators.rating.RatingValidator.validateBattleType;
+import static com.vlasovartem.wotalyzer.utils.validators.rating.RatingValidator.validateDate;
 
 /**
  * Created by artemvlasov on 11/10/2016.
@@ -41,7 +45,7 @@ public class AccountRatingUtils extends RatingUtils<AccountRating> {
             for (Map.Entry<String, Object> entrySet : queryParams.entrySet()) {
                 switch (entrySet.getKey()) {
                     case BATTLE_TYPE_PARAM:
-                        queryParams.replace(BATTLE_TYPE_PARAM, validateBattleType(entrySet));
+                        queryParams.replace(BATTLE_TYPE_PARAM, validateBattleType(entrySet, getBattleTypes()));
                         break;
                     case DATE_PARAM:
                         queryParams.replace(DATE_PARAM, validateDate(entrySet));
@@ -49,7 +53,7 @@ public class AccountRatingUtils extends RatingUtils<AccountRating> {
                 }
             }
         }
-        return false;
+        return true;
     }
 
 }

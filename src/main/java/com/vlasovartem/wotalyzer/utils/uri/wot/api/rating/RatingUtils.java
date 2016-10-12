@@ -9,7 +9,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
-import static com.vlasovartem.wotalyzer.utils.api.contstans.rating.AccountRatingConstants.BATTLE_TYPE_PARAM;
+import static com.vlasovartem.wotalyzer.utils.api.contstans.WOTAPIConstants.BATTLE_TYPE_PARAM;
 
 /**
  * Created by artemvlasov on 11/10/2016.

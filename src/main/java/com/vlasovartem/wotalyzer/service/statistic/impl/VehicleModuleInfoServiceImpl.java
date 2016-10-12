@@ -7,8 +7,6 @@ import com.vlasovartem.wotalyzer.entity.wot.api.tankopedia.components.Modules;
 import com.vlasovartem.wotalyzer.service.statistic.VehicleModuleInfoService;
 import com.vlasovartem.wotalyzer.service.wot.tankopedia.VehiclesService;
 import com.vlasovartem.wotalyzer.utils.TankUtils;
-import com.vlasovartem.wotalyzer.utils.api.contstans.tankopedia.VehicleBasicConstants;
-import com.vlasovartem.wotalyzer.utils.api.contstans.tankopedia.VehicleProfileConstants;
 import com.vlasovartem.wotalyzer.utils.uri.wot.api.tankopedia.VehicleProfileUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -18,6 +16,8 @@ import org.springframework.stereotype.Service;
 import java.util.Arrays;
 import java.util.Map;
 import java.util.Objects;
+
+import static com.vlasovartem.wotalyzer.utils.api.contstans.WOTAPIConstants.*;
 
 /**
  * Created by artemvlasov on 14/01/16.
@@ -41,7 +41,7 @@ public class VehicleModuleInfoServiceImpl implements VehicleModuleInfoService {
     public VehicleModuleInfo findVehicleComponentInfoData(long tankId) {
         VehicleModuleInfo info = new VehicleModuleInfo();
         info.setTankId(tankId);
-        Vehicles tankBaseInfo = vehiclesService.findById(tankId, Arrays.asList("modules_tree", VehicleBasicConstants.TANK_ID_PARAM, "default_profile"));
+        Vehicles tankBaseInfo = vehiclesService.findById(tankId, Arrays.asList("modules_tree", TANK_ID_PARAM, "default_profile"));
         if(Objects.nonNull(tankBaseInfo)) {
             VehicleModuleComponent defaultComponents = new VehicleModuleComponent();
             if(Objects.nonNull(tankBaseInfo.getDefaultProfile().getModules())) {
@@ -58,23 +58,23 @@ public class VehicleModuleInfoServiceImpl implements VehicleModuleInfoService {
             info.setTopModuleUrl(url);
             if(Objects.nonNull(moduleMap)) {
                 VehicleModuleComponent topComponents = new VehicleModuleComponent();
-                Object engineId = moduleMap.get(VehicleProfileConstants.ENGINE_ID_PARAM);
+                Object engineId = moduleMap.get(ENGINE_ID_PARAM);
                 if(Objects.nonNull(engineId)) {
                     topComponents.setEngineId((Long) engineId);
                 }
-                Object gunId = moduleMap.get(VehicleProfileConstants.GUN_ID_PARAM);
+                Object gunId = moduleMap.get(GUN_ID_PARAM);
                 if(Objects.nonNull(gunId)) {
                     topComponents.setGunId((Long) gunId);
                 }
-                Object turretId = moduleMap.get(VehicleProfileConstants.TURRET_ID_PARAM);
+                Object turretId = moduleMap.get(TURRET_ID_PARAM);
                 if(Objects.nonNull(turretId)) {
                     topComponents.setTurretId((Long) turretId);
                 }
-                Object suspensionID = moduleMap.get(VehicleProfileConstants.SUSPENSION_ID_PARAM);
+                Object suspensionID = moduleMap.get(SUSPENSION_ID_PARAM);
                 if(Objects.nonNull(suspensionID)) {
                     topComponents.setSuspensionId((Long) suspensionID);
                 }
-                Object radioId = moduleMap.get(VehicleProfileConstants.RADIO_ID_PARAM);
+                Object radioId = moduleMap.get(RADIO_ID_PARAM);
                 if(Objects.nonNull(radioId)) {
                     topComponents.setRadioId((Long) radioId);
                 }

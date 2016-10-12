@@ -5,9 +5,6 @@ import com.vlasovartem.wotalyzer.entity.statistic.VehicleModuleInfo;
 import com.vlasovartem.wotalyzer.entity.wot.api.tankopedia.VehicleProfile;
 import com.vlasovartem.wotalyzer.service.wot.tankopedia.VehicleService;
 import com.vlasovartem.wotalyzer.utils.TankUtils;
-import com.vlasovartem.wotalyzer.utils.api.contstans.BasicAPIConstants;
-import com.vlasovartem.wotalyzer.utils.api.contstans.tankopedia.VehicleBasicConstants;
-import com.vlasovartem.wotalyzer.utils.api.contstans.tankopedia.VehicleProfileConstants;
 import com.vlasovartem.wotalyzer.utils.uri.wot.api.tankopedia.VehicleProfileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,6 +14,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.stream.Collectors;
+
+import static com.vlasovartem.wotalyzer.utils.api.contstans.WOTAPIConstants.*;
 
 /**
  * Created by artemvlasov on 14/01/16.
@@ -47,7 +46,7 @@ public class VehicleServiceImpl implements VehicleService {
     public List<VehicleProfile> getVehicles(List<Long> tankIds, Map<String, Object> params) {
         return tankIds.stream()
                 .map(id -> {
-                    params.put(VehicleBasicConstants.TANK_ID_PARAM, id);
+                    params.put(TANK_ID_PARAM, id);
                     return params;
                 })
                 .map(this::getVehicle)
@@ -66,7 +65,7 @@ public class VehicleServiceImpl implements VehicleService {
 
     @Override
     public VehicleProfile getVehicle(Map<String, Object> params) {
-        return wotApiURIUtils.getApiResponse(params).getData().get(String.valueOf(params.get(VehicleBasicConstants.TANK_ID_PARAM)));
+        return wotApiURIUtils.getApiResponse(params).getData().get(String.valueOf(params.get(TANK_ID_PARAM)));
     }
 
     @Override
@@ -79,23 +78,23 @@ public class VehicleServiceImpl implements VehicleService {
                 return wotApiURIUtils.getApiResponse(urlWithFields).getData().get(String.valueOf(moduleInfo.getTankId()));
             } else {
                 Map<String, Object> params = new HashMap<>();
-                params.put(BasicAPIConstants.FIELDS_PARAM, fields);
-                params.put(VehicleBasicConstants.TANK_ID_PARAM, moduleInfo.getTankId());
+                params.put(FIELDS_PARAM, fields);
+                params.put(TANK_ID_PARAM, moduleInfo.getTankId());
                 VehicleModuleComponent topModuleComponent = moduleInfo.getTopModules();
                 if(Objects.nonNull(topModuleComponent.getEngineId())) {
-                    params.put(VehicleProfileConstants.ENGINE_ID_PARAM, topModuleComponent.getEngineId());
+                    params.put(ENGINE_ID_PARAM, topModuleComponent.getEngineId());
                 }
                 if(Objects.nonNull(topModuleComponent.getGunId())) {
-                    params.put(VehicleProfileConstants.GUN_ID_PARAM, topModuleComponent.getGunId());
+                    params.put(GUN_ID_PARAM, topModuleComponent.getGunId());
                 }
                 if(Objects.nonNull(topModuleComponent.getSuspensionId())) {
-                    params.put(VehicleProfileConstants.SUSPENSION_ID_PARAM, topModuleComponent.getSuspensionId());
+                    params.put(SUSPENSION_ID_PARAM, topModuleComponent.getSuspensionId());
                 }
                 if(Objects.nonNull(topModuleComponent.getRadioId())) {
-                    params.put(VehicleProfileConstants.RADIO_ID_PARAM, topModuleComponent.getRadioId());
+                    params.put(RADIO_ID_PARAM, topModuleComponent.getRadioId());
                 }
                 if(Objects.nonNull(topModuleComponent.getTurretId())) {
-                    params.put(VehicleProfileConstants.TURRET_ID_PARAM, topModuleComponent.getTurretId());
+                    params.put(TURRET_ID_PARAM, topModuleComponent.getTurretId());
                 }
                 return wotApiURIUtils.getApiResponse(params).getData().get(String.valueOf(moduleInfo.getTankId()));
             }
@@ -109,8 +108,8 @@ public class VehicleServiceImpl implements VehicleService {
 
     private VehicleProfile getVehicleObject(long tankId, List<String> fields) {
         Map<String, Object> params = new HashMap<>();
-        params.put(VehicleBasicConstants.TANK_ID_PARAM, tankId);
-        params.put(BasicAPIConstants.FIELDS_PARAM, fields);
+        params.put(TANK_ID_PARAM, tankId);
+        params.put(FIELDS_PARAM, fields);
         return wotApiURIUtils.getApiResponse(params).getData().get(String.valueOf(tankId));
     }
 }

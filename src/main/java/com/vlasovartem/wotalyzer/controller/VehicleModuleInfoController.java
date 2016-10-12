@@ -3,7 +3,6 @@ package com.vlasovartem.wotalyzer.controller;
 import com.vlasovartem.wotalyzer.repository.statistic.VehicleModuleInfoRepository;
 import com.vlasovartem.wotalyzer.service.statistic.VehicleModuleInfoService;
 import com.vlasovartem.wotalyzer.service.wot.tankopedia.VehiclesService;
-import com.vlasovartem.wotalyzer.utils.api.contstans.tankopedia.VehicleProfileConstants;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,6 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Collections;
 import java.util.concurrent.atomic.AtomicInteger;
+
+import static com.vlasovartem.wotalyzer.utils.api.contstans.WOTAPIConstants.TANK_ID_PARAM;
 
 /**
  * Created by artemvlasov on 09/08/16.
@@ -48,7 +49,7 @@ public class VehicleModuleInfoController {
     public ResponseEntity<String> update() {
         AtomicInteger updatedVehicles = new AtomicInteger();
         AtomicInteger newVehicles = new AtomicInteger();
-        vehiclesService.findAll(Collections.singletonList(VehicleProfileConstants.TANK_ID_PARAM)).forEach(vehicleBaseInfo -> {
+        vehiclesService.findAll(Collections.singletonList(TANK_ID_PARAM)).forEach(vehicleBaseInfo -> {
             if (vehicleModuleInfoRepository.exists(vehicleBaseInfo.getTankId())) {
                 updatedVehicles.incrementAndGet();
             } else {

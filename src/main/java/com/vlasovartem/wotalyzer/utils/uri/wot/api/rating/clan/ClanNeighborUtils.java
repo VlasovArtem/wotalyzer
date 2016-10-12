@@ -1,7 +1,7 @@
 package com.vlasovartem.wotalyzer.utils.uri.wot.api.rating.clan;
 
-import com.vlasovartem.wotalyzer.entity.wot.api.rating.clan.TopClan;
-import com.vlasovartem.wotalyzer.utils.api.contstans.rating.clan.TopClanConstants;
+import com.vlasovartem.wotalyzer.entity.wot.api.rating.clan.ClanNeighbor;
+import com.vlasovartem.wotalyzer.utils.api.contstans.rating.clan.ClanNeighborConstants;
 import com.vlasovartem.wotalyzer.utils.uri.wot.api.MainUtils;
 import com.vlasovartem.wotalyzer.utils.validators.rating.RatingValidator;
 
@@ -13,25 +13,25 @@ import static com.vlasovartem.wotalyzer.utils.api.contstans.WOTAPIConstants.LIMI
 /**
  * Created by artemvlasov on 12/10/2016.
  */
-public class TopClanUtils extends MainUtils<TopClan> {
+public class ClanNeighborUtils extends MainUtils<ClanNeighbor> {
 
-    public TopClanUtils() {
-        super(TopClan.class);
+    public ClanNeighborUtils() {
+        super(ClanNeighbor.class);
     }
 
     @Override
     public String getAPIBaseUrl() {
-        return TopClanConstants.BASIC_URL;
-}
+        return ClanNeighborConstants.BASIC_URL;
+    }
 
     @Override
     public List<String> getAPIConstants() {
-        return TopClanConstants.BASIC_API_CONSTANTS;
+        return ClanNeighborConstants.BASIC_API_CONSTANTS;
     }
 
     @Override
     public List<String> getRequiredAPIParams() {
-        return TopClanConstants.REQUIRED_PARAMS;
+        return ClanNeighborConstants.REQUIRED_PARAMS;
     }
 
     @Override
@@ -41,7 +41,7 @@ public class TopClanUtils extends MainUtils<TopClan> {
                 switch (entrySet.getKey()) {
                     case LIMIT_PARAM:
                         int limit = (int) entrySet.getValue();
-                        queryParams.replace(LIMIT_PARAM, RatingValidator.validateLimitWithMax(limit, 1000, 10));
+                        queryParams.replace(LIMIT_PARAM, RatingValidator.validateLimitWithMax(limit, 50, 5));
                         break;
                 }
             }
