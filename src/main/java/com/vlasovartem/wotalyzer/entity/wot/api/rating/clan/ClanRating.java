@@ -5,6 +5,5 @@ import com.vlasovartem.wotalyzer.entity.wot.api.rating.clan.components.BasicClan
 /**
  * Created by artemvlasov on 12/10/2016.
  */
-public class TopClan extends BasicClanRating {
-
+public class ClanRating extends BasicClanRating {
 }
