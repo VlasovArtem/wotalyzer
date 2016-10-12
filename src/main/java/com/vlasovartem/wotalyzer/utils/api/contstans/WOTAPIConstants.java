@@ -16,6 +16,7 @@ public interface WOTAPIConstants {
     String EXTRA_PARAM = "extra";
     String FIELDS_PARAM = "fields";
     String GUN_ID_PARAM = "gun_id";
+    String IN_GARAGE_PARAM = "in_garage";
     String LANGUAGE_PARAM = "language";
     String LIMIT_PARAM = "limit";
     String MODULE_ID_PARAM = "module_id";
