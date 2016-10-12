@@ -12,6 +12,6 @@ import static com.vlasovartem.wotalyzer.utils.api.contstans.WOTAPIConstants.*;
  */
 public interface PersonalMissionConstants extends BasicAPIConstants {
 
-    List<String> BASIC_API_CONSTANTS = ConstantUtils.generate(BasicAPIConstants.BASIC_API_CONSTANTS, CAMPAIGN_ID, OPERATION_ID, SET_ID, TAG);
+    List<String> BASIC_API_CONSTANTS = ConstantUtils.generate(BasicAPIConstants.BASIC_API_CONSTANTS, CAMPAIGN_ID_PARAM, OPERATION_ID_PARAM, SET_ID_PARAM, TAG_PARAM);
 
 }
