@@ -1,25 +1,23 @@
-package com.vlasovartem.wotalyzer.entity.wot.api.account.player.statistics;
-
-import com.vlasovartem.wotalyzer.entity.wot.api.tanks.components.MainStatistic;
+package com.vlasovartem.wotalyzer.entity.wot.api.tanks.components;
 
 /**
- * Created by artemvlasov on 10/09/16.
+ * Created by artemvlasov on 14/10/2016.
  */
-public class BasicStatistics extends MainStatistic {
-
-    /* Количество полученных прямых попаданий */
+public class StrongholdStatistic extends ClanStatistic {
+    
+    /* Direct hits received */
     private int directHitsReceived;
-    /* Количество нанесённых осколочно-фугасных попаданий */
+    /* Hits on enemy as a result of splash damage */
     private int explosionHits;
-    /* Количество полученных осколочно-фугасных попаданий */
+    /* Hits received as a result of splash damage */
     private int explosionHitsReceived;
-    /* Количество полученных прямых попаданий, не нанёсших урон */
+    /* Direct hits received that caused no damage */
     private int noDamageDirectHitsReceived;
-    /* Количество пробитий */
+    /* Penetrations */
     private int piercings;
-    /* Количество полученных пробитий */
+    /* Penetrations received */
     private int piercingsReceived;
-    /* Отношение заблокированного бронёй урона к полученному игроком урону от бронебойных, кумулятивных, подкалиберных снарядов. Значение считается с версии игры 9.0. */
+    /* Ratio of damage blocked by armor from AP, HEAT, and APCR shells to damage received from these types of shells. Value is calculated starting from version 9.0. */
     private float tankingFactor;
 
     public int getDirectHitsReceived() {

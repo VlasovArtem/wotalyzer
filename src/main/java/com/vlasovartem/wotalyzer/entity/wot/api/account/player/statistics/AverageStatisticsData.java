@@ -3,7 +3,7 @@ package com.vlasovartem.wotalyzer.entity.wot.api.account.player.statistics;
 /**
  * Created by artemvlasov on 10/09/16.
  */
-class AverageStatisticsData extends BasicStatistics {
+public class AverageStatisticsData extends BasicStatistics {
 
     /* Средний урон, нанесённый с вашей помощью. Значение считается с версии игры 8.9. */
     private float avgDamageAssisted;
