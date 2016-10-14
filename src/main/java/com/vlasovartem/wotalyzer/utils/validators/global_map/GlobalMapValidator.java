@@ -1,5 +1,8 @@
 package com.vlasovartem.wotalyzer.utils.validators.global_map;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -7,6 +10,8 @@ import java.util.List;
  * Created by artemvlasov on 15/10/2016.
  */
 public class GlobalMapValidator {
+
+    private static final Logger LOGGER = LogManager.getLogger(GlobalMapValidator.class);
 
     public static boolean validateFrontIdParameter (Object value) {
         return !(value instanceof List) || ((List) value).size() >= 10;
