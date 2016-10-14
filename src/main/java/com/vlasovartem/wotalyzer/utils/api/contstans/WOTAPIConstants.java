@@ -23,6 +23,7 @@ public interface WOTAPIConstants {
     String LIMIT_PARAM = "limit";
     String MODULE_ID_PARAM = "module_id";
     String NATION_PARAM = "nation";
+    String NEIGHBOURS_COUNT_PARAM = "neighbours_count";
     String OPERATION_ID_PARAM = "operation_id";
     String ORDER_BY_PARAM = "order_by";
     String PAGE_NO_PARAM = "page_no";
