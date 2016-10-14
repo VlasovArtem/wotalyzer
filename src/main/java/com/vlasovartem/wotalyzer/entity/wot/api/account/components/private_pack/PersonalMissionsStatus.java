@@ -1,4 +1,4 @@
-package com.vlasovartem.wotalyzer.entity.wot.api.account.player.private_pack;
+package com.vlasovartem.wotalyzer.entity.wot.api.account.components.private_pack;
 
 /**
  * Created by artemvlasov on 10/09/16.

@@ -3,7 +3,7 @@ package com.vlasovartem.wotalyzer.utils.uri.wot.api.rating.clan;
 import com.vlasovartem.wotalyzer.entity.wot.api.rating.clan.ClanRatingDate;
 import com.vlasovartem.wotalyzer.utils.api.contstans.rating.clan.ClanRatingDateConstants;
 import com.vlasovartem.wotalyzer.utils.uri.wot.api.MainUtils;
-import com.vlasovartem.wotalyzer.utils.validators.rating.RatingValidator;
+import com.vlasovartem.wotalyzer.utils.validators.MainValidator;
 
 import java.util.List;
 import java.util.Map;
@@ -41,7 +41,7 @@ public class ClanRatingDateUtils extends MainUtils<ClanRatingDate> {
                 switch (entrySet.getKey()) {
                     case LIMIT_PARAM:
                         int limit = (int) entrySet.getValue();
-                        queryParams.replace(LIMIT_PARAM, RatingValidator.validateLimitWithMax(limit, 365, 7));
+                        queryParams.replace(LIMIT_PARAM, MainValidator.validateLimitWithMax(limit, 365, 7));
                         break;
                 }
             }

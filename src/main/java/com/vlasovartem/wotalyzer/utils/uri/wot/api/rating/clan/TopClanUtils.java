@@ -3,7 +3,7 @@ package com.vlasovartem.wotalyzer.utils.uri.wot.api.rating.clan;
 import com.vlasovartem.wotalyzer.entity.wot.api.rating.clan.TopClan;
 import com.vlasovartem.wotalyzer.utils.api.contstans.rating.clan.TopClanConstants;
 import com.vlasovartem.wotalyzer.utils.uri.wot.api.MainUtils;
-import com.vlasovartem.wotalyzer.utils.validators.rating.RatingValidator;
+import com.vlasovartem.wotalyzer.utils.validators.MainValidator;
 
 import java.util.List;
 import java.util.Map;
@@ -41,7 +41,7 @@ public class TopClanUtils extends MainUtils<TopClan> {
                 switch (entrySet.getKey()) {
                     case LIMIT_PARAM:
                         int limit = (int) entrySet.getValue();
-                        queryParams.replace(LIMIT_PARAM, RatingValidator.validateLimitWithMax(limit, 1000, 10));
+                        queryParams.replace(LIMIT_PARAM, MainValidator.validateLimitWithMax(limit, 1000, 10));
                         break;
                 }
             }

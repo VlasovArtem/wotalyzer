@@ -2,21 +2,19 @@ package com.vlasovartem.wotalyzer.utils.uri.wot.api.rating;
 
 import com.vlasovartem.wotalyzer.entity.wot.api.rating.TopPlayer;
 import com.vlasovartem.wotalyzer.utils.api.contstans.rating.TopPlayerConstants;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import com.vlasovartem.wotalyzer.utils.validators.MainValidator;
 
 import java.util.List;
 import java.util.Map;
 
 import static com.vlasovartem.wotalyzer.utils.api.contstans.WOTAPIConstants.*;
-import static com.vlasovartem.wotalyzer.utils.validators.rating.RatingValidator.*;
+import static com.vlasovartem.wotalyzer.utils.validators.rating.RatingValidator.validateBattleType;
+import static com.vlasovartem.wotalyzer.utils.validators.rating.RatingValidator.validateDate;
 
 /**
  * Created by artemvlasov on 11/10/2016.
  */
 public class TopPlayerUtils extends RatingUtils<TopPlayer> {
-
-    private static final Logger LOGGER = LogManager.getLogger(TopPlayerUtils.class);
 
     public TopPlayerUtils() {
         super(TopPlayer.class);
@@ -50,7 +48,7 @@ public class TopPlayerUtils extends RatingUtils<TopPlayer> {
                         break;
                     case LIMIT_PARAM:
                         int limit = (int) entrySet.getValue();
-                        queryParams.replace(LIMIT_PARAM, validateLimitWithMax(limit, 1000, 10));
+                        queryParams.replace(LIMIT_PARAM, MainValidator.validateLimitWithMax(limit, 1000, 10));
                         break;
                 }
             }

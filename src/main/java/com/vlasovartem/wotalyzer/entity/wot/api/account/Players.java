@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * Created by artemvlasov on 07/09/16.
  */
 @JsonAutoDetect
-public class PlayersSearch {
+public class Players {
 
     @JsonProperty("account_id")
     private long id;

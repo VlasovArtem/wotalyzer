@@ -1,4 +1,4 @@
-package com.vlasovartem.wotalyzer.entity.wot.api.account.player.statistics;
+package com.vlasovartem.wotalyzer.entity.wot.api.account.components.statistics;
 
 /**
  * Created by artemvlasov on 10/09/16.

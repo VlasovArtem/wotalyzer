@@ -2,8 +2,8 @@ package com.vlasovartem.wotalyzer.entity.wot.api.account;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.vlasovartem.wotalyzer.entity.wot.api.account.player.private_pack.Private;
-import com.vlasovartem.wotalyzer.entity.wot.api.account.player.statistics.Statistics;
+import com.vlasovartem.wotalyzer.entity.wot.api.account.components.private_pack.Private;
+import com.vlasovartem.wotalyzer.entity.wot.api.account.components.statistics.Statistics;
 
 import java.time.LocalDateTime;
 

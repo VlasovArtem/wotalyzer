@@ -3,7 +3,7 @@ package com.vlasovartem.wotalyzer.utils.uri.wot.api.teams;
 import com.vlasovartem.wotalyzer.entity.wot.api.teams.RegularTeamsList;
 import com.vlasovartem.wotalyzer.utils.api.contstans.teams.RegularTeamsListConstants;
 import com.vlasovartem.wotalyzer.utils.uri.wot.api.MainUtils;
-import com.vlasovartem.wotalyzer.utils.validators.rating.RatingValidator;
+import com.vlasovartem.wotalyzer.utils.validators.MainValidator;
 import com.vlasovartem.wotalyzer.utils.validators.teams.TeamsParametersValidator;
 
 import java.util.List;
@@ -43,7 +43,7 @@ public class RegularTeamsListUtils extends MainUtils<RegularTeamsList> {
                 switch (entrySet.getKey()) {
                     case LIMIT_PARAM:
                         int value = (int) entrySet.getValue();
-                        queryParams.replace(LIMIT_PARAM, RatingValidator.validateLimit(value, 0, 100, 100));
+                        queryParams.replace(LIMIT_PARAM, MainValidator.validateLimit(value, 0, 100, 100));
                         break;
                     case ORDER_BY_PARAM:
                         return TeamsParametersValidator.validateOrderParameter((String) entrySet.getValue());
