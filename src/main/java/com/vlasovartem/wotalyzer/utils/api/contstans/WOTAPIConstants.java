@@ -13,8 +13,10 @@ public interface WOTAPIConstants {
     String CLAN_ID_PARAM = "clan_id";
     String DATE_PARAM = "date";
     String ENGINE_ID_PARAM = "engine_id";
+    String EVENT_ID_PARAM = "event_id";
     String EXTRA_PARAM = "extra";
     String FIELDS_PARAM = "fields";
+    String FRONT_ID_PARAM = "front_id";
     String GUN_ID_PARAM = "gun_id";
     String IN_GARAGE_PARAM = "in_garage";
     String LANGUAGE_PARAM = "language";
