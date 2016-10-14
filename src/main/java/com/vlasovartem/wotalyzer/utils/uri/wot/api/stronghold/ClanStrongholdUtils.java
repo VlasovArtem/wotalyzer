@@ -1,0 +1,32 @@
+package com.vlasovartem.wotalyzer.utils.uri.wot.api.stronghold;
+
+import com.vlasovartem.wotalyzer.entity.wot.api.stronghold.ClanStronghold;
+import com.vlasovartem.wotalyzer.utils.api.contstans.stronghold.ClanStrongholdConstants;
+import com.vlasovartem.wotalyzer.utils.uri.wot.api.MainUtils;
+
+import java.util.List;
+
+/**
+ * Created by artemvlasov on 14/10/2016.
+ */
+public class ClanStrongholdUtils extends MainUtils<ClanStronghold> {
+
+    public ClanStrongholdUtils() {
+        super(ClanStronghold.class);
+    }
+
+    @Override
+    public String getAPIBaseUrl() {
+        return ClanStrongholdConstants.BASIC_URL;
+    }
+
+    @Override
+    public List<String> getAPIConstants() {
+        return ClanStrongholdConstants.BASIC_API_CONSTANTS;
+    }
+
+    @Override
+    public List<String> getRequiredAPIParams() {
+        return ClanStrongholdConstants.REQUIRED_PARAMS;
+    }
+}
