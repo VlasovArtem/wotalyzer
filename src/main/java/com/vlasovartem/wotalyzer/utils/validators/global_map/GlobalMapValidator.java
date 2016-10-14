@@ -1,5 +1,6 @@
 package com.vlasovartem.wotalyzer.utils.validators.global_map;
 
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -9,6 +10,17 @@ public class GlobalMapValidator {
 
     public static boolean validateFrontIdParameter (Object value) {
         return !(value instanceof List) || ((List) value).size() >= 10;
+    }
+
+    public static boolean validateVehicleLevelParameter (Object value) {
+        List<String> validVehicleLevels = Arrays.asList("6", "8", "10");
+        if (value instanceof String) {
+            return validVehicleLevels.contains(value);
+        } else if (value instanceof List) {
+            List value1 = (List) value;
+            return value1.stream().allMatch(validVehicleLevels::contains);
+        }
+        return false;
     }
 
 }

@@ -30,6 +30,7 @@ public interface WOTAPIConstants {
     String PROVISION_ID_PARAM = "provision_id";
     String RADIO_ID_PARAM = "radio_id";
     String RANK_FIELD_PARAM = "rank_field";
+    String SEASON_ID_PARAM = "season_id";
     String SEARCH_PARAM = "search";
     String SET_ID_PARAM = "set_id";
     String SUSPENSION_ID_PARAM = "suspension_id";
@@ -38,5 +39,6 @@ public interface WOTAPIConstants {
     String TIER_PARAM = "tier";
     String TURRET_ID_PARAM = "turret_id";
     String TYPE_PARAM = "type";
+    String VEHICLE_LEVEL_PARAM = "vehicle_level";
 
 }
