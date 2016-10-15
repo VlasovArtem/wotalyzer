@@ -6,11 +6,10 @@ import com.vlasovartem.wotalyzer.utils.uri.wot.api.MainUtils;
 import com.vlasovartem.wotalyzer.utils.validators.MainValidator;
 import com.vlasovartem.wotalyzer.utils.validators.teams.TeamsParametersValidator;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
-
-import static com.vlasovartem.wotalyzer.utils.api.contstans.WOTAPIConstants.LIMIT_PARAM;
-import static com.vlasovartem.wotalyzer.utils.api.contstans.WOTAPIConstants.ORDER_BY_PARAM;
+import java.util.function.Function;
 
 /**
  * Created by artemvlasov on 14/10/2016.
@@ -37,19 +36,8 @@ public class RegularTeamsListUtils extends MainUtils<RegularTeamsList> {
     }
 
     @Override
-    protected boolean validateQueryParamsValue(Map<String, Object> queryParams) {
-        if (checkRequiredFields(queryParams)) {
-            for (Map.Entry<String, Object> entrySet : queryParams.entrySet()) {
-                switch (entrySet.getKey()) {
-                    case LIMIT_PARAM:
-                        int value = (int) entrySet.getValue();
-                        queryParams.replace(LIMIT_PARAM, MainValidator.validateLimit(value, 0, 100, 100));
-                        break;
-                    case ORDER_BY_PARAM:
-                        return TeamsParametersValidator.validateOrderParameter((String) entrySet.getValue());
-                }
-            }
-        }
-        return true;
+    public List<Function<Map<String, Object>, Boolean>> getValidationFunctions() {
+        return Arrays.asList(TeamsParametersValidator.validateOrderParameter(), MainValidator.validateLimit(0, 100, 100));
     }
+
 }

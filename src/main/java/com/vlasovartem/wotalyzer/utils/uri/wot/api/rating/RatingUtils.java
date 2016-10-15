@@ -5,11 +5,10 @@ import com.vlasovartem.wotalyzer.utils.validators.rating.RatingValidator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
-
-import static com.vlasovartem.wotalyzer.utils.api.contstans.WOTAPIConstants.BATTLE_TYPE_PARAM;
+import java.util.function.Function;
 
 /**
  * Created by artemvlasov on 11/10/2016.
@@ -17,30 +16,14 @@ import static com.vlasovartem.wotalyzer.utils.api.contstans.WOTAPIConstants.BATT
 public abstract class RatingUtils<T> extends MainUtils<T> {
 
     private static final Logger LOGGER = LogManager.getLogger(RatingUtils.class);
-    private List<String> battleTypes;
 
-    RatingUtils(Class<T> type) {
+    public RatingUtils(Class<T> type) {
         super(type);
-        battleTypes = Arrays.asList("company", "random", "team", "default");
-    }
-
-    public List<String> getBattleTypes() {
-        return battleTypes;
     }
 
     @Override
-    protected boolean validateQueryParamsValue(Map<String, Object> queryParams) {
-        if(checkRequiredFields(queryParams)) {
-            for (Map.Entry<String, Object> entrySet : queryParams.entrySet()) {
-                switch (entrySet.getKey()) {
-                    case BATTLE_TYPE_PARAM:
-                        queryParams.replace(BATTLE_TYPE_PARAM, RatingValidator.validateBattleType(entrySet, getBattleTypes()));
-                        break;
-                }
-            }
-        }
-        return true;
+    public List<Function<Map<String, Object>, Boolean>> getValidationFunctions() {
+        return Collections.singletonList(RatingValidator.validateBattleType());
     }
-
 
 }

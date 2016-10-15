@@ -2,13 +2,15 @@ package com.vlasovartem.wotalyzer.utils.uri.wot.api.rating;
 
 import com.vlasovartem.wotalyzer.entity.wot.api.rating.Neighbor;
 import com.vlasovartem.wotalyzer.utils.api.contstans.rating.NeighborConstants;
+import com.vlasovartem.wotalyzer.utils.validators.MainValidator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Function;
 
-import static com.vlasovartem.wotalyzer.utils.api.contstans.WOTAPIConstants.*;
 import static com.vlasovartem.wotalyzer.utils.validators.rating.RatingValidator.validateBattleType;
 import static com.vlasovartem.wotalyzer.utils.validators.rating.RatingValidator.validateDate;
 
@@ -39,28 +41,8 @@ public class NeighborUtils extends RatingUtils<Neighbor> {
     }
 
     @Override
-    protected boolean validateQueryParamsValue(Map<String, Object> queryParams) {
-        if(checkRequiredFields(queryParams)) {
-            for (Map.Entry<String, Object> entrySet : queryParams.entrySet()) {
-                switch (entrySet.getKey()) {
-                    case BATTLE_TYPE_PARAM:
-                        queryParams.replace(BATTLE_TYPE_PARAM, validateBattleType(entrySet, getBattleTypes()));
-                        break;
-                    case DATE_PARAM:
-                        queryParams.replace(DATE_PARAM, validateDate(entrySet));
-                        break;
-                    case LIMIT_PARAM:
-                        int limit = (int) entrySet.getValue();
-                        if(limit < 0 || limit > 50) {
-                            LOGGER.warn("Parameter {} has incorrect value {}, possible value should be from 0 to 50. Default value will be set: 5", LIMIT_PARAM, limit);
-                            limit = 5;
-                        }
-                        queryParams.replace(LIMIT_PARAM, limit);
-                        break;
-                }
-            }
-        }
-        return true;
+    public List<Function<Map<String, Object>, Boolean>> getValidationFunctions() {
+        return Arrays.asList(validateBattleType(), validateDate(), MainValidator.validateLimit(0, 50, 5));
     }
 
 }

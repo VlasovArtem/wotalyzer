@@ -4,13 +4,13 @@ import com.vlasovartem.wotalyzer.entity.wot.api.global_map.SeasonRatingNeighbor;
 import com.vlasovartem.wotalyzer.utils.api.contstans.global_map.SeasonRatingNeighborConstants;
 import com.vlasovartem.wotalyzer.utils.uri.wot.api.MainUtils;
 import com.vlasovartem.wotalyzer.utils.validators.MainValidator;
-import com.vlasovartem.wotalyzer.utils.validators.global_map.GlobalMapValidator;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Function;
 
-import static com.vlasovartem.wotalyzer.utils.api.contstans.WOTAPIConstants.LIMIT_PARAM;
-import static com.vlasovartem.wotalyzer.utils.api.contstans.WOTAPIConstants.VEHICLE_LEVEL_PARAM;
+import static com.vlasovartem.wotalyzer.utils.validators.global_map.GlobalMapValidator.validateVehicleLevelParameter;
 
 /**
  * Created by artemvlasov on 15/10/2016.
@@ -36,22 +36,10 @@ public class SeasonRatingNeighborUtils extends MainUtils<SeasonRatingNeighbor> {
         return SeasonRatingNeighborConstants.REQUIRED_PARAMS;
     }
 
+
+
     @Override
-    protected boolean validateQueryParamsValue(Map<String, Object> queryParams) {
-        if(checkRequiredFields(queryParams)) {
-            for (Map.Entry<String, Object> entrySet : queryParams.entrySet()) {
-                switch (entrySet.getKey()) {
-                    case VEHICLE_LEVEL_PARAM:
-                        boolean b = GlobalMapValidator.validateVehicleLevelParameter(entrySet.getValue());
-                        if (!b)
-                            return false;
-                        break;
-                    case LIMIT_PARAM:
-                        queryParams.replace(LIMIT_PARAM, MainValidator.validateLimit((Integer) entrySet.getValue(), 1, 99, 10));
-                        break;
-                }
-            }
-        }
-        return true;
+    public List<Function<Map<String, Object>, Boolean>> getValidationFunctions() {
+        return Arrays.asList(validateVehicleLevelParameter(), MainValidator.validateLimit(1, 99, 10));
     }
 }

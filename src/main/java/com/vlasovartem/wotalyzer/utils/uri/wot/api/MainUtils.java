@@ -14,9 +14,11 @@ import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import java.io.IOException;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 import static com.vlasovartem.wotalyzer.utils.api.contstans.WOTAPIConstants.APPLICATION_ID_PARAM;
@@ -90,8 +92,16 @@ public abstract class MainUtils<T> {
 
     public abstract List<String> getRequiredAPIParams();
 
+    public List<Function<Map<String, Object>, Boolean>> getValidationFunctions() {
+        return Collections.emptyList();
+    }
+
     protected boolean validateQueryParamsValue(Map<String, Object> queryParams) {
-        return checkRequiredFields(queryParams);
+        if (checkRequiredFields(queryParams)) {
+            List<Function<Map<String, Object>, Boolean>> validationFunctions = getValidationFunctions();
+            return !validationFunctions.isEmpty() || validationFunctions.stream().allMatch(mapBooleanFunction -> mapBooleanFunction.apply(queryParams));
+        }
+        return false;
     }
 
     /**

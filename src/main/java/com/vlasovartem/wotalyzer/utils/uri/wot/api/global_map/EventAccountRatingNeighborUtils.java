@@ -1,16 +1,17 @@
 package com.vlasovartem.wotalyzer.utils.uri.wot.api.global_map;
 
 import com.vlasovartem.wotalyzer.entity.wot.api.global_map.EventAccountRatingNeighbor;
+import com.vlasovartem.wotalyzer.utils.api.contstans.WOTAPIConstants;
 import com.vlasovartem.wotalyzer.utils.api.contstans.global_map.EventAccountRatingNeighborConstants;
 import com.vlasovartem.wotalyzer.utils.uri.wot.api.MainUtils;
-import com.vlasovartem.wotalyzer.utils.validators.MainValidator;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Function;
 
-import static com.vlasovartem.wotalyzer.utils.api.contstans.WOTAPIConstants.LIMIT_PARAM;
-import static com.vlasovartem.wotalyzer.utils.api.contstans.WOTAPIConstants.NEIGHBOURS_COUNT_PARAM;
-import static com.vlasovartem.wotalyzer.utils.api.contstans.WOTAPIConstants.PAGE_NO_PARAM;
+import static com.vlasovartem.wotalyzer.utils.validators.MainValidator.validateIntParameter;
+import static com.vlasovartem.wotalyzer.utils.validators.MainValidator.validateLimit;
 
 /**
  * Created by artemvlasov on 15/10/2016.
@@ -37,21 +38,10 @@ public class EventAccountRatingNeighborUtils extends MainUtils<EventAccountRatin
     }
 
     @Override
-    protected boolean validateQueryParamsValue(Map<String, Object> queryParams) {
-        if(checkRequiredFields(queryParams)) {
-            for (Map.Entry<String, Object> entrySet : queryParams.entrySet()) {
-                switch (entrySet.getKey()) {
-                    case LIMIT_PARAM:
-                        queryParams.replace(LIMIT_PARAM, MainValidator.validateLimit((Integer) entrySet.getValue(), 10, 100, 10));
-                        break;
-                    case NEIGHBOURS_COUNT_PARAM:
-                        queryParams.replace(NEIGHBOURS_COUNT_PARAM, MainValidator.validateLimit((Integer) entrySet.getValue(), 1, 99, 3));
-                        break;
-                    case PAGE_NO_PARAM:
-                        queryParams.replace(PAGE_NO_PARAM, MainValidator.validateLimitWithMin((Integer) entrySet.getValue(), 1, 1));
-                }
-            }
-        }
-        return true;
+    public List<Function<Map<String, Object>, Boolean>> getValidationFunctions() {
+        return Arrays.asList(validateLimit(10, 100, 10),
+                validateIntParameter(1, 99, 3, WOTAPIConstants.NEIGHBOURS_COUNT_PARAM),
+                validateIntParameter(1, Integer.MAX_VALUE, 1, WOTAPIConstants.PAGE_NO_PARAM));
     }
+
 }

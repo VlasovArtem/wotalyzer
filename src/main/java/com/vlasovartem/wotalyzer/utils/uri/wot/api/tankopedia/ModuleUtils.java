@@ -5,11 +5,10 @@ import com.vlasovartem.wotalyzer.utils.api.contstans.tankopedia.ModuleConstants;
 import com.vlasovartem.wotalyzer.utils.uri.wot.api.MainUtils;
 import com.vlasovartem.wotalyzer.utils.validators.tankopedia.DataValidator;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
-
-import static com.vlasovartem.wotalyzer.utils.api.contstans.WOTAPIConstants.MODULE_ID_PARAM;
-import static com.vlasovartem.wotalyzer.utils.api.contstans.WOTAPIConstants.TYPE_PARAM;
+import java.util.function.Function;
 
 /**
  * Created by artemvlasov on 11/10/16.
@@ -36,23 +35,8 @@ public class ModuleUtils extends MainUtils<Module> {
     }
 
     @Override
-    protected boolean validateQueryParamsValue(Map<String, Object> queryParams) {
-        if(checkRequiredFields(queryParams)) {
-            for (Map.Entry<String, Object> entrySet : queryParams.entrySet()) {
-                switch (entrySet.getKey()) {
-                    case MODULE_ID_PARAM:
-                        if (!DataValidator.validateModuleId((Integer) entrySet.getValue())) {
-                            return false;
-                        }
-                        break;
-                    case TYPE_PARAM:
-                        if (!DataValidator.validateType((String) entrySet.getValue())) {
-                            return false;
-                        }
-                        break;
-                }
-            }
-        }
-        return true;
+    public List<Function<Map<String, Object>, Boolean>> getValidationFunctions() {
+        return Arrays.asList(DataValidator.validateType(), DataValidator.validateModuleId());
     }
+
 }

@@ -1,17 +1,16 @@
 package com.vlasovartem.wotalyzer.utils.uri.wot.api.rating;
 
 import com.vlasovartem.wotalyzer.entity.wot.api.rating.AccountRating;
+import com.vlasovartem.wotalyzer.utils.validators.rating.RatingValidator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Function;
 
-import static com.vlasovartem.wotalyzer.utils.api.contstans.WOTAPIConstants.BATTLE_TYPE_PARAM;
-import static com.vlasovartem.wotalyzer.utils.api.contstans.WOTAPIConstants.DATE_PARAM;
 import static com.vlasovartem.wotalyzer.utils.api.contstans.rating.AccountRatingConstants.*;
-import static com.vlasovartem.wotalyzer.utils.validators.rating.RatingValidator.validateBattleType;
-import static com.vlasovartem.wotalyzer.utils.validators.rating.RatingValidator.validateDate;
 
 /**
  * Created by artemvlasov on 11/10/2016.
@@ -40,20 +39,9 @@ public class AccountRatingUtils extends RatingUtils<AccountRating> {
     }
 
     @Override
-    protected boolean validateQueryParamsValue(Map<String, Object> queryParams) {
-        if(checkRequiredFields(queryParams)) {
-            for (Map.Entry<String, Object> entrySet : queryParams.entrySet()) {
-                switch (entrySet.getKey()) {
-                    case BATTLE_TYPE_PARAM:
-                        queryParams.replace(BATTLE_TYPE_PARAM, validateBattleType(entrySet, getBattleTypes()));
-                        break;
-                    case DATE_PARAM:
-                        queryParams.replace(DATE_PARAM, validateDate(entrySet));
-                        break;
-                }
-            }
-        }
-        return true;
+    public List<Function<Map<String, Object>, Boolean>> getValidationFunctions() {
+        return Arrays.asList(RatingValidator.validateBattleType(), RatingValidator.validateDate());
     }
+
 
 }
