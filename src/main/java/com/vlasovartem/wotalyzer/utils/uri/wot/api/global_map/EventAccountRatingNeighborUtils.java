@@ -12,6 +12,7 @@ import java.util.function.Function;
 
 import static com.vlasovartem.wotalyzer.utils.validators.MainValidator.validateIntParameter;
 import static com.vlasovartem.wotalyzer.utils.validators.MainValidator.validateLimit;
+import static com.vlasovartem.wotalyzer.utils.validators.MainValidator.validatePageNoParameter;
 
 /**
  * Created by artemvlasov on 15/10/2016.
@@ -41,7 +42,7 @@ public class EventAccountRatingNeighborUtils extends MainUtils<EventAccountRatin
     public List<Function<Map<String, Object>, Boolean>> getValidationFunctions() {
         return Arrays.asList(validateLimit(10, 100, 10),
                 validateIntParameter(1, 99, 3, WOTAPIConstants.NEIGHBOURS_COUNT_PARAM),
-                validateIntParameter(1, Integer.MAX_VALUE, 1, WOTAPIConstants.PAGE_NO_PARAM));
+                validatePageNoParameter());
     }
 
 }

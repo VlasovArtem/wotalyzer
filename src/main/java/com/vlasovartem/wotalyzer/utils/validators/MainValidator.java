@@ -1,5 +1,6 @@
 package com.vlasovartem.wotalyzer.utils.validators;
 
+import com.vlasovartem.wotalyzer.utils.api.contstans.WOTAPIConstants;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -54,6 +55,16 @@ public class MainValidator {
                     limitValue = defaultValue;
                 }
                 t.replace(paramName, limitValue);
+            }
+            return true;
+        };
+    }
+
+    public static Function<Map<String, Object>, Boolean> validatePageNoParameter () {
+        return t -> {
+            Object value = t.get(WOTAPIConstants.PAGE_NO_PARAM);
+            if (Objects.nonNull(value)) {
+                validateLimitWithMin( 1, 1);
             }
             return true;
         };

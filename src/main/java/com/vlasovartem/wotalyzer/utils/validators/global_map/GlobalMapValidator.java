@@ -1,6 +1,7 @@
 package com.vlasovartem.wotalyzer.utils.validators.global_map;
 
 import com.vlasovartem.wotalyzer.utils.api.contstans.WOTAPIConstants;
+import com.vlasovartem.wotalyzer.utils.validators.MainValidator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -17,7 +18,7 @@ public class GlobalMapValidator {
 
     private static final Logger LOGGER = LogManager.getLogger(GlobalMapValidator.class);
 
-    public static Function<Map<String, Object>, Boolean> validateFrontIdParameter () {
+    public static Function<Map<String, Object>, Boolean> validateFrontIdParameter() {
         return t -> {
             Object o = t.get(WOTAPIConstants.FRONT_ID_PARAM);
             if (Objects.nonNull(o)) {
@@ -30,7 +31,7 @@ public class GlobalMapValidator {
         };
     }
 
-    public static Function<Map<String, Object>, Boolean> validateVehicleLevelParameter () {
+    public static Function<Map<String, Object>, Boolean> validateVehicleLevelParameter() {
         return t -> {
             Object value = t.get(WOTAPIConstants.VEHICLE_LEVEL_PARAM);
             if (Objects.nonNull(value)) {
@@ -47,13 +48,18 @@ public class GlobalMapValidator {
         };
     }
 
-    public static Function<Map<String, Object>, Boolean> validateClanIDParameter () {
+    public static Function<Map<String, Object>, Boolean> validateClanIDParameter() {
         return t -> {
             Object value = t.get(WOTAPIConstants.CLAN_ID_PARAM);
             return !(Objects.nonNull(value) && value instanceof List) || ((List) value).size() <= 10;
         };
     }
 
-
+    public static Function<Map<String, Object>, Boolean> validateInRatingParameter() {
+        return t -> {
+            MainValidator.validateIntParameter(0, 1, 0, WOTAPIConstants.IN_RATING_PARAM);
+            return true;
+        };
+    }
 
 }
