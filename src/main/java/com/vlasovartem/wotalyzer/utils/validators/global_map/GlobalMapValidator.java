@@ -47,6 +47,13 @@ public class GlobalMapValidator {
         };
     }
 
+    public static Function<Map<String, Object>, Boolean> validateClanIDParameter () {
+        return t -> {
+            Object value = t.get(WOTAPIConstants.CLAN_ID_PARAM);
+            return !(Objects.nonNull(value) && value instanceof List) || ((List) value).size() <= 10;
+        };
+    }
+
 
 
 }
