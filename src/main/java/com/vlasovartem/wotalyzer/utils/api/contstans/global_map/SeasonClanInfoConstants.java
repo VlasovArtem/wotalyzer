@@ -12,7 +12,7 @@ import static com.vlasovartem.wotalyzer.utils.api.contstans.WOTAPIConstants.*;
  */
 public interface SeasonClanInfoConstants extends BasicAPIConstants {
 
-    String BASIC_URL = "https://developers.wargaming.net/reference/all/wot/globalmap/seasonclaninfo";
+    String BASIC_URL = "https://api.worldoftanks.ru/wot/globalmap/seasonclaninfo";
     List<String> BASIC_API_CONSTANTS = ConstantUtils.generate(BasicAPIConstants.BASIC_API_CONSTANTS, CLAN_ID_PARAM, SEASON_ID_PARAM, VEHICLE_LEVEL_PARAM);
     List<String> REQUIRED_PARAMS = ConstantUtils.generate(BasicAPIConstants.REQUIRED_PARAMS, CLAN_ID_PARAM, SEASON_ID_PARAM, VEHICLE_LEVEL_PARAM);
 

@@ -7,6 +7,6 @@ import com.vlasovartem.wotalyzer.utils.api.contstans.BasicAPIConstants;
  */
 public interface ClanTypeConstants extends BasicAPIConstants {
 
-    String BASIC_URL = "https://developers.wargaming.net/reference/all/wot/clanratings/types";
+    String BASIC_URL = "https://api.worldoftanks.ru/wot/clanratings/types";
 
 }

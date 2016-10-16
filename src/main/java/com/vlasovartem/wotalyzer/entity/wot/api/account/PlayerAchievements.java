@@ -1,11 +1,17 @@
 package com.vlasovartem.wotalyzer.entity.wot.api.account;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.vlasovartem.wotalyzer.entity.wot.api.Entity;
+
 import java.util.Map;
 
 /**
  * Created by artemvlasov on 14/10/2016.
  */
-public class PlayerAchievements {
+@JsonAutoDetect
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class PlayerAchievements extends Entity {
 
     /* Achievement earned */
     private Map<String, Integer> achievements;

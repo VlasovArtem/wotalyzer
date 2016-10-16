@@ -7,6 +7,6 @@ import com.vlasovartem.wotalyzer.utils.api.contstans.BasicAPIConstants;
  */
 public interface BoosterConstants extends BasicAPIConstants {
 
-    String BASIC_URL = "https://developers.wargaming.net/reference/all/wot/encyclopedia/boosters";
+    String BASIC_URL = "https://api.worldoftanks.ru/wot/encyclopedia/boosters";
 
 }

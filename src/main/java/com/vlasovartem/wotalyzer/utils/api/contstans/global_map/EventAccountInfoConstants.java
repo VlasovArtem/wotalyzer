@@ -12,13 +12,7 @@ import static com.vlasovartem.wotalyzer.utils.api.contstans.WOTAPIConstants.*;
  */
 public interface EventAccountInfoConstants extends BasicAPIConstants {
 
-    String BASIC_URL = "https://developers.wargaming.net/reference/all/wot/globalmap/eventaccountinfo";
-//    /* numeric Account ID */
-//    String ACCOUNT_ID_PARAM = "account_id";
-//    /* string Event ID */
-//    String EVENT_ID_PARAM = "event_id";
-//    /* string, list Front ID. Max limit is 10. */
-//    String FRONT_ID_PARAM = "front_id";
+    String BASIC_URL = "https://api.worldoftanks.ru/wot/globalmap/eventaccountinfo";
     List<String> BASIC_API_CONSTANTS = ConstantUtils.generate(BasicAPIConstants.BASIC_API_CONSTANTS, ACCOUNT_ID_PARAM, EVENT_ID_PARAM, FRONT_ID_PARAM);
     List<String> REQUIRED_PARAMS = ConstantUtils.generate(BasicAPIConstants.REQUIRED_PARAMS, ACCOUNT_ID_PARAM, EVENT_ID_PARAM, FRONT_ID_PARAM);
 

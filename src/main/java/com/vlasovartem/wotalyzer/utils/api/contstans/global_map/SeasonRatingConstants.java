@@ -12,7 +12,7 @@ import static com.vlasovartem.wotalyzer.utils.api.contstans.WOTAPIConstants.*;
  */
 public interface SeasonRatingConstants extends BasicAPIConstants {
 
-    String BASIC_URL = "https://developers.wargaming.net/reference/all/wot/globalmap/seasonrating";
+    String BASIC_URL = "https://api.worldoftanks.ru/wot/globalmap/seasonrating";
     List<String> BASIC_API_CONSTANTS = ConstantUtils.generate(BasicAPIConstants.BASIC_API_CONSTANTS, SEASON_ID_PARAM, VEHICLE_LEVEL_PARAM, LIMIT_PARAM, PAGE_NO_PARAM);
     List<String> REQUIRED_PARAMS = ConstantUtils.generate(BasicAPIConstants.REQUIRED_PARAMS, SEASON_ID_PARAM, VEHICLE_LEVEL_PARAM);
 

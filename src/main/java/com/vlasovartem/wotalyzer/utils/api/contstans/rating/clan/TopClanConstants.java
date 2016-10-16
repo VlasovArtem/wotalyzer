@@ -12,7 +12,7 @@ import static com.vlasovartem.wotalyzer.utils.api.contstans.WOTAPIConstants.*;
  */
 public interface TopClanConstants extends BasicAPIConstants {
 
-    String BASIC_URL = "https://developers.wargaming.net/reference/all/wot/clanratings/top";
+    String BASIC_URL = "https://api.worldoftanks.ru/wot/clanratings/top";
     List<String> BASIC_API_CONSTANTS = ConstantUtils.generate(BasicAPIConstants.BASIC_API_CONSTANTS, RANK_FIELD_PARAM, DATE_PARAM, LIMIT_PARAM, PAGE_NO_PARAM);
     List<String> REQUIRED_PARAMS = ConstantUtils.generate(BasicAPIConstants.REQUIRED_PARAMS, RANK_FIELD_PARAM);
 

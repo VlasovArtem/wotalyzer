@@ -12,7 +12,7 @@ import static com.vlasovartem.wotalyzer.utils.api.contstans.WOTAPIConstants.*;
  */
 public interface EventAccountRatingNeighborConstants extends BasicAPIConstants {
 
-    String BASIC_URL = "https://developers.wargaming.net/reference/all/wot/globalmap/eventaccountratingneighbors";
+    String BASIC_URL = "https://api.worldoftanks.ru/wot/globalmap/eventaccountratingneighbors";
     List<String> BASIC_API_CONSTANTS = ConstantUtils.generate(BasicAPIConstants.BASIC_API_CONSTANTS, ACCOUNT_ID_PARAM, EVENT_ID_PARAM, FRONT_ID_PARAM, LIMIT_PARAM, NEIGHBOURS_COUNT_PARAM, PAGE_NO_PARAM);
     List<String> REQUIRED_PARAMS = ConstantUtils.generate(BasicAPIConstants.REQUIRED_PARAMS, ACCOUNT_ID_PARAM, EVENT_ID_PARAM, FRONT_ID_PARAM);
 

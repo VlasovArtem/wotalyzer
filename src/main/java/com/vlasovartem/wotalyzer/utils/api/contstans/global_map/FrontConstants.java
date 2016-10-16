@@ -12,7 +12,7 @@ import static com.vlasovartem.wotalyzer.utils.api.contstans.WOTAPIConstants.*;
  */
 public interface FrontConstants extends BasicAPIConstants {
 
-    String BASIC_URL = "https://developers.wargaming.net/reference/all/wot/globalmap/fronts";
+    String BASIC_URL = "https://api.worldoftanks.ru/wot/globalmap/fronts";
     List<String> BASIC_API_CONSTANTS = ConstantUtils.generate(BasicAPIConstants.BASIC_API_CONSTANTS, FRONT_ID_PARAM, LIMIT_PARAM, PAGE_NO_PARAM);
 
 }

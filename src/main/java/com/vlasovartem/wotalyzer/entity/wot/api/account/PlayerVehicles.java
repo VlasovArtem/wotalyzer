@@ -1,15 +1,20 @@
 package com.vlasovartem.wotalyzer.entity.wot.api.account;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.vlasovartem.wotalyzer.entity.wot.api.MainEntity;
 
 /**
  * Created by artemvlasov on 10/09/16.
  */
 @JsonAutoDetect
-public class PlayerVehicles {
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class PlayerVehicles extends MainEntity{
 
+    @JsonProperty("tank_id")
+    private int id;
     private int markOfMastery;
-    private int tankId;
     private Statistics statistics;
 
     private class Statistics {

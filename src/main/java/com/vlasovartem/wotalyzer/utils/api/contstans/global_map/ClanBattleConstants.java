@@ -12,7 +12,7 @@ import static com.vlasovartem.wotalyzer.utils.api.contstans.WOTAPIConstants.*;
  */
 public interface ClanBattleConstants extends BasicAPIConstants {
 
-    String BASIC_URL = "https://developers.wargaming.net/reference/all/wot/globalmap/clanbattles";
+    String BASIC_URL = "https://api.worldoftanks.ru/wot/globalmap/clanbattles";
     //    /* numeric Clan ID */
 //    String CLAN_ID_PARAM = "clan_id";
 //    /* numeric Number of returned entries (fewer can be returned, but not more than 100). If the limit sent exceeds 100, an limit of 100 is applied (by default). */

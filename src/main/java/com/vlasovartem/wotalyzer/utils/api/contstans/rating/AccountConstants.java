@@ -12,7 +12,7 @@ import static com.vlasovartem.wotalyzer.utils.api.contstans.WOTAPIConstants.*;
  */
 public interface AccountConstants extends BasicAPIConstants {
 
-    String BASIC_URL = "https://developers.wargaming.net/reference/all/wot/ratings/accounts";
+    String BASIC_URL = "https://api.worldoftanks.ru/wot/ratings/accounts";
     List<String> BASIC_API_CONSTANTS = ConstantUtils.generate(BasicAPIConstants.BASIC_API_CONSTANTS, TYPE_PARAM, ACCOUNT_ID_PARAM, BATTLE_TYPE_PARAM, DATE_PARAM);
     List<String> REQUIRED_PARAMS = ConstantUtils.generate(BasicAPIConstants.REQUIRED_PARAMS, TYPE_PARAM, ACCOUNT_ID_PARAM);
 

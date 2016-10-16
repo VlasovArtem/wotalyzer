@@ -3,21 +3,12 @@ package com.vlasovartem.wotalyzer.entity.wot.api;
 /**
  * Created by artemvlasov on 10/10/16.
  */
-public abstract class BasicApi {
+public abstract class MainEntityExt extends MainEntity {
 
-    private long id;
     private String tag;
     private int tier;
     private int weight;
     private String name;
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
 
     public String getTag() {
         return tag;

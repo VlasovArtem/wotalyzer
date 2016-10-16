@@ -1,11 +1,11 @@
 package com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia.components.provision.equipment;
 
-import com.vlasovartem.wotalyzer.entity.wot.api.BasicApi;
+import com.vlasovartem.wotalyzer.entity.wot.api.MainEntityExt;
 
 /**
  * Created by artemvlasov on 13/01/16.
  */
-public class Suspension extends BasicApi {
+public class Suspension extends MainEntityExt {
 
     private int loadLimit;
     private int traverseSpeed;

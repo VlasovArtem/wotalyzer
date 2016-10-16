@@ -12,7 +12,7 @@ import static com.vlasovartem.wotalyzer.utils.api.contstans.WOTAPIConstants.*;
  */
 public interface EventClanInfoConstants extends BasicAPIConstants {
 
-    String BASIC_URL = "https://developers.wargaming.net/reference/all/wot/globalmap/eventclaninfo";
+    String BASIC_URL = "https://api.worldoftanks.ru/wot/globalmap/eventclaninfo";
 //    /* numeric Clan ID */
 //    String CLAN_ID_PARAM = "clan_id";
 //    /* string Event ID */

@@ -1,14 +1,14 @@
 package com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia.components.provision.equipment;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.vlasovartem.wotalyzer.entity.wot.api.BasicApi;
+import com.vlasovartem.wotalyzer.entity.wot.api.MainEntityExt;
 
 import java.util.List;
 
 /**
  * Created by artemvlasov on 13/01/16.
  */
-public class Gun extends BasicApi {
+public class Gun extends MainEntityExt {
     @JsonProperty("module_id")
     private long id;
     private List<Integer> damage;

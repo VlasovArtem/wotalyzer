@@ -12,7 +12,7 @@ import static com.vlasovartem.wotalyzer.utils.api.contstans.WOTAPIConstants.*;
  */
 public interface SeasonConstants extends BasicAPIConstants {
 
-    String BASIC_URL = "https://developers.wargaming.net/reference/all/wot/globalmap/seasons";
+    String BASIC_URL = "https://api.worldoftanks.ru/wot/globalmap/seasons";
 //    /* numeric Page limit. Default is 5. Max value is 20. Min value is 1. */
 //    String LIMIT_PARAM = "limit";
 //    /* numeric Page number. Default is 1. Min value is 1. */

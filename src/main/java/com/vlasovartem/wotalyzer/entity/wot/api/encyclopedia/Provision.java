@@ -1,12 +1,12 @@
 package com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.vlasovartem.wotalyzer.entity.wot.api.BasicApi;
+import com.vlasovartem.wotalyzer.entity.wot.api.MainEntityExt;
 
 /**
  * Created by artemvlasov on 10/10/16.
  */
-public class Provision extends BasicApi {
+public class Provision extends MainEntityExt {
 
     /* Идентификатор оборудования или снаряжения */
     @JsonProperty("provision_id")
