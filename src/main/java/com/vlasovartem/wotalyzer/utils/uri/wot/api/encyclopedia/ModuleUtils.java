@@ -36,7 +36,7 @@ public class ModuleUtils extends MainUtils<Module> {
 
     @Override
     public List<Function<Map<String, Object>, Boolean>> getValidationFunctions() {
-        return Arrays.asList(EncyclopediaValidator.validateTypeParameter(), EncyclopediaValidator.validateModuleIdParameter(), EncyclopediaValidator.validateExtraParameter());
+        return Arrays.asList(EncyclopediaValidator.validateModulesTypeParameter(), EncyclopediaValidator.validateModuleIdParameter(), EncyclopediaValidator.validateExtraParameter());
     }
 
 }

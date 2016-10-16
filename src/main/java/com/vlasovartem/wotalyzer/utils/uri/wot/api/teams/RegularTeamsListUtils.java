@@ -37,7 +37,7 @@ public class RegularTeamsListUtils extends MainUtils<RegularTeamsList> {
 
     @Override
     public List<Function<Map<String, Object>, Boolean>> getValidationFunctions() {
-        return Arrays.asList(TeamsParametersValidator.validateOrderParameter(), MainValidator.validateLimit(0, 100, 100));
+        return Arrays.asList(TeamsParametersValidator.validateOrderByParameter(), MainValidator.validateLimit(0, 100, 100));
     }
 
 }
