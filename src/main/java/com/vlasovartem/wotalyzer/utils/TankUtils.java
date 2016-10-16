@@ -1,9 +1,9 @@
 package com.vlasovartem.wotalyzer.utils;
 
-import com.vlasovartem.wotalyzer.entity.wot.api.tankopedia.Vehicles;
-import com.vlasovartem.wotalyzer.entity.wot.api.tankopedia.components.ModulesTree;
+import com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia.Vehicles;
+import com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia.components.ModulesTree;
 import com.vlasovartem.wotalyzer.utils.exception.TankJsonConverterException;
-import com.vlasovartem.wotalyzer.utils.uri.wot.api.tankopedia.VehicleProfileUtils;
+import com.vlasovartem.wotalyzer.utils.uri.wot.api.encyclopedia.VehicleProfileUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;

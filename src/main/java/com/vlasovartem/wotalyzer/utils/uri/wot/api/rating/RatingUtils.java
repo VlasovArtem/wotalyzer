@@ -17,7 +17,7 @@ public abstract class RatingUtils<T> extends MainUtils<T> {
 
     private static final Logger LOGGER = LogManager.getLogger(RatingUtils.class);
 
-    public RatingUtils(Class<T> type) {
+    RatingUtils(Class<T> type) {
         super(type);
     }
 

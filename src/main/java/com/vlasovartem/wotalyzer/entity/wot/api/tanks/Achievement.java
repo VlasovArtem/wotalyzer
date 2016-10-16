@@ -9,7 +9,7 @@ public class Achievement {
 
     /* Player account ID */
     private int accountId;
-    /* Achievements earned */
+    /* Achievement earned */
     private Map<String, String> achievements;
     /* Maximum values of achievement series */
     private Map<String, String> maxSeries;

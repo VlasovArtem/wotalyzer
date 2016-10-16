@@ -1,6 +1,6 @@
 package com.vlasovartem.wotalyzer.service.wot.tankopedia;
 
-import com.vlasovartem.wotalyzer.entity.wot.api.tankopedia.Vehicles;
+import com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia.Vehicles;
 import com.vlasovartem.wotalyzer.utils.enums.VehicleType;
 
 import java.util.List;

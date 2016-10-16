@@ -7,7 +7,7 @@ import java.util.Map;
  */
 public class PlayerAchievements {
 
-    /* Achievements earned */
+    /* Achievement earned */
     private Map<String, Integer> achievements;
     /* Achievement progress */
     private Map<String, Integer> frags;

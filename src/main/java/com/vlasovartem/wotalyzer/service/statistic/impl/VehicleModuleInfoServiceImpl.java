@@ -2,12 +2,12 @@ package com.vlasovartem.wotalyzer.service.statistic.impl;
 
 import com.vlasovartem.wotalyzer.entity.statistic.VehicleModuleComponent;
 import com.vlasovartem.wotalyzer.entity.statistic.VehicleModuleInfo;
-import com.vlasovartem.wotalyzer.entity.wot.api.tankopedia.Vehicles;
-import com.vlasovartem.wotalyzer.entity.wot.api.tankopedia.components.Modules;
+import com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia.Vehicles;
+import com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia.components.Modules;
 import com.vlasovartem.wotalyzer.service.statistic.VehicleModuleInfoService;
 import com.vlasovartem.wotalyzer.service.wot.tankopedia.VehiclesService;
 import com.vlasovartem.wotalyzer.utils.TankUtils;
-import com.vlasovartem.wotalyzer.utils.uri.wot.api.tankopedia.VehicleProfileUtils;
+import com.vlasovartem.wotalyzer.utils.uri.wot.api.encyclopedia.VehicleProfileUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;

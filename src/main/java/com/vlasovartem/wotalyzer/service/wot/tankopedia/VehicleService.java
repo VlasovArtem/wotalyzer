@@ -1,7 +1,7 @@
 package com.vlasovartem.wotalyzer.service.wot.tankopedia;
 
 import com.vlasovartem.wotalyzer.entity.statistic.VehicleModuleInfo;
-import com.vlasovartem.wotalyzer.entity.wot.api.tankopedia.VehicleProfile;
+import com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia.VehicleProfile;
 
 import java.util.List;
 import java.util.Map;

@@ -1,10 +1,10 @@
 package com.vlasovartem.wotalyzer.service.wot.tankopedia.impl;
 
-import com.vlasovartem.wotalyzer.entity.wot.api.tankopedia.Vehicles;
+import com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia.Vehicles;
 import com.vlasovartem.wotalyzer.service.wot.tankopedia.VehiclesService;
 import com.vlasovartem.wotalyzer.utils.TankUtils;
 import com.vlasovartem.wotalyzer.utils.enums.VehicleType;
-import com.vlasovartem.wotalyzer.utils.uri.wot.api.tankopedia.VehiclesUtils;
+import com.vlasovartem.wotalyzer.utils.uri.wot.api.encyclopedia.VehiclesUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -28,4 +28,6 @@ public class TypeUtils extends RatingUtils<Type> {
     public List<String> getRequiredAPIParams() {
         return TypeConstants.REQUIRED_PARAMS;
     }
+
+
 }

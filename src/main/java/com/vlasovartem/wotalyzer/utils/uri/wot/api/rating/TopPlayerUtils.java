@@ -2,13 +2,15 @@ package com.vlasovartem.wotalyzer.utils.uri.wot.api.rating;
 
 import com.vlasovartem.wotalyzer.entity.wot.api.rating.TopPlayer;
 import com.vlasovartem.wotalyzer.utils.api.contstans.rating.TopPlayerConstants;
-import com.vlasovartem.wotalyzer.utils.validators.MainValidator;
-import com.vlasovartem.wotalyzer.utils.validators.rating.RatingValidator;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
+
+import static com.vlasovartem.wotalyzer.utils.validators.MainValidator.validateLimitWithMax;
+import static com.vlasovartem.wotalyzer.utils.validators.rating.RatingValidator.validateBattleType;
+import static com.vlasovartem.wotalyzer.utils.validators.rating.RatingValidator.validateDate;
 
 /**
  * Created by artemvlasov on 11/10/2016.
@@ -36,7 +38,7 @@ public class TopPlayerUtils extends RatingUtils<TopPlayer> {
 
     @Override
     public List<Function<Map<String, Object>, Boolean>> getValidationFunctions() {
-        return Arrays.asList(RatingValidator.validateBattleType(), RatingValidator.validateDate(), MainValidator.validateLimitWithMax(1000, 10));
+        return Arrays.asList(validateBattleType(), validateDate(), validateLimitWithMax(1000, 10));
     }
 
 }
