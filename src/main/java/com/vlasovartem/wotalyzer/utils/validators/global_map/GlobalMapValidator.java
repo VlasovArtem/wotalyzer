@@ -2,13 +2,11 @@ package com.vlasovartem.wotalyzer.utils.validators.global_map;
 
 import com.vlasovartem.wotalyzer.utils.api.contstans.WOTAPIConstants;
 import com.vlasovartem.wotalyzer.utils.validators.MainValidator;
+import com.vlasovartem.wotalyzer.utils.validators.ValidatorUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
 import java.util.function.Function;
 
 /**
@@ -18,6 +16,8 @@ public class GlobalMapValidator {
 
     private static final Logger LOGGER = LogManager.getLogger(GlobalMapValidator.class);
     private static List<String> statuses = Arrays.asList("PLANNED", "ACTIVE", "FINISHED");
+    private static List<String> orders = Arrays.asList("daily_revenue", "-daily_revenue", "province_id", "-province_id", "prime_hour", "-prime_hour");
+    private static List<String> landingTypes = Arrays.asList("null", "auction", "tournament");
 
     public static Function<Map<String, Object>, Boolean> validateFrontIdParameter() {
         return t -> {
@@ -65,8 +65,29 @@ public class GlobalMapValidator {
 
     public static Function<Map<String, Object>, Boolean> validateStatusParameter() {
         return t -> {
-            Object value = t.get(WOTAPIConstants.STATUS_PARAM);
-            return !Objects.nonNull(value) || statuses.contains(value);
+            Optional<String> parameter = ValidatorUtils.getParameter(t, WOTAPIConstants.STATUS_PARAM);
+            return !parameter.isPresent() || statuses.contains(parameter.get());
+        };
+    }
+
+    public static Function<Map<String, Object>, Boolean> validatePrimeHourParameter() {
+        return t -> {
+            Optional<Integer> parameter = ValidatorUtils.getParameter(t, WOTAPIConstants.PRIME_HOUR_PARAM);
+            return !parameter.isPresent() || (parameter.get() >= 0 && parameter.get() <= 23);
+        };
+    }
+
+    public static Function<Map<String, Object>, Boolean> validateOrderByParameter() {
+        return t -> {
+            Optional<String> parameter = ValidatorUtils.getParameter(t, WOTAPIConstants.ORDER_BY_PARAM);
+            return !parameter.isPresent() || orders.contains(parameter.get().toLowerCase());
+        };
+    }
+
+    public static Function<Map<String, Object>, Boolean> validateLandingTypeParameter() {
+        return t -> {
+            Optional<String> parameter = ValidatorUtils.getParameter(t, WOTAPIConstants.LANDING_TYPE_PARAM);
+            return !parameter.isPresent() || landingTypes.contains(parameter.get().toLowerCase());
         };
     }
 
