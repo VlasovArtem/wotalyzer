@@ -19,6 +19,10 @@ public class AccountValidator {
 
     private static final Logger LOGGER = LogManager.getLogger(AccountValidator.class);
 
+    /**
+     * Validate value of the search parameter.
+     * @return return true if value less than 24 symbols, otherwise false
+     */
     public static Function<Map<String, Object>, Boolean> validateSearchParameter() {
         return t -> {
             Object value = t.get(SEARCH_PARAM);
@@ -38,21 +42,22 @@ public class AccountValidator {
             boolean isValid = false;
             List<String> possibleTypeValues = Arrays.asList("exact", "startswith");
             String typeValue = (String) t.get(TYPE_PARAM);
-            if (Objects.nonNull(typeValue) && possibleTypeValues.contains(typeValue)) {
+            String searchValue = (String) t.get(SEARCH_PARAM);
+            if (Objects.nonNull(typeValue) && possibleTypeValues.contains(typeValue) && Objects.nonNull(searchValue)) {
                 switch (typeValue) {
                     case "exact":
-                        isValid = ((String) t.get(SEARCH_PARAM)).length() > 0;
+                        isValid = searchValue.length() > 0;
+                        break;
                     case "startwith":
-                        isValid = ((String) t.get(SEARCH_PARAM)).length() > 2;
+                        isValid = searchValue.length() > 2;
+                        break;
                 }
             }
-            String searchValue = (String) t.get(SEARCH_PARAM);
-            if (!isValid && searchValue.length() > 2) {
+            if (!isValid && Objects.nonNull(searchValue) && searchValue.length() > 2) {
                 t.replace(TYPE_PARAM, "startwith");
-            } else {
-                return false;
+                return true;
             }
-            return false;
+            return isValid;
         };
     }
 
@@ -62,7 +67,7 @@ public class AccountValidator {
             if (Objects.nonNull(value)) {
                 List<String> possibleExtraValues = Arrays.asList("private.boosters", "private.garage", "private.grouped_contacts", "private.personal_missions", "private.rented", "statistics.fallout", "statistics.globalmap_absolute", "statistics.globalmap_champion", "statistics.globalmap_middle", "statistics.random");
                 if (!possibleExtraValues.contains(value)) {
-                    LOGGER.warn("Parameter '{}' have invalid value {}. Possible value is: {}", EXTRA_PARAM, value, possibleExtraValues.stream().collect(Collectors.joining(", ")));
+                    LOGGER.warn("Parameter '{}' have invalid value '{}'. Possible values: {}", EXTRA_PARAM, value, possibleExtraValues.stream().collect(Collectors.joining(", ")));
                     return false;
                 }
             }
