@@ -17,6 +17,7 @@ import java.util.function.Function;
 public class GlobalMapValidator {
 
     private static final Logger LOGGER = LogManager.getLogger(GlobalMapValidator.class);
+    private static List<String> statuses = Arrays.asList("PLANNED", "ACTIVE", "FINISHED");
 
     public static Function<Map<String, Object>, Boolean> validateFrontIdParameter() {
         return t -> {
@@ -59,6 +60,13 @@ public class GlobalMapValidator {
         return t -> {
             MainValidator.validateIntParameter(0, 1, 0, WOTAPIConstants.IN_RATING_PARAM);
             return true;
+        };
+    }
+
+    public static Function<Map<String, Object>, Boolean> validateStatusParameter() {
+        return t -> {
+            Object value = t.get(WOTAPIConstants.STATUS_PARAM);
+            return !Objects.nonNull(value) || statuses.contains(value);
         };
     }
 

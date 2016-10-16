@@ -35,6 +35,7 @@ public interface WOTAPIConstants {
     String SEASON_ID_PARAM = "season_id";
     String SEARCH_PARAM = "search";
     String SET_ID_PARAM = "set_id";
+    String STATUS_PARAM = "status";
     String SUSPENSION_ID_PARAM = "suspension_id";
     String TAG_PARAM = "tag";
     String TANK_ID_PARAM = "tank_id";
