@@ -150,7 +150,7 @@ public class VehicleStatisticServiceImpl implements VehicleStatisticsService {
                 ignorePremium,
                 Arrays.asList("engine", "weight", "tank_id"), this::vehicleDynamicComparator);
         Statistic<Double> statistic = new Statistic<>(WT_RATIO, TIER, vehicles.size());
-        statistic.setBestIndicator(new TankStatistic<>(vehicles.get(0).getTankId(), countEngineWTRation(vehicles.get(0))));
+        statistic.setBestIndicator(new TankStatistic<>(vehicles.get(0).getId(), countEngineWTRation(vehicles.get(0))));
         return null;
     }
 
@@ -227,7 +227,7 @@ public class VehicleStatisticServiceImpl implements VehicleStatisticsService {
                     this::vehicleDynamicComparator).stream().findFirst().orElse(null);
             if (Objects.nonNull(bestDynamicVehicle) && Objects.nonNull(bestDynamicVehicle.getEngine()) && bestDynamicVehicle.getWeight() > 0) {
                 double wtRatio = bestDynamicVehicle.getEngine().getPower() / (bestDynamicVehicle.getWeight() / 1000);
-                statistic.setBestIndicator(new TankStatistic<>(bestDynamicVehicle.getTankId(), wtRatio));
+                statistic.setBestIndicator(new TankStatistic<>(bestDynamicVehicle.getId(), wtRatio));
                 return statistic;
             }
             LOGGER.warn("VehicleUtils with best dynamic is not found. Method search inside {} vehicles", searchedVehicles.size());
@@ -253,7 +253,7 @@ public class VehicleStatisticServiceImpl implements VehicleStatisticsService {
                     Arrays.asList("ammo", "tank_id"),
                     this::vehicleAmmoComparator).stream().findFirst().orElse(null);
             if (Objects.nonNull(bestPenetrationVehicle)) {
-                statistic.setBestIndicator(new TankStatistic<>(bestPenetrationVehicle.getTankId(), findVehicleOriginalAmmo(bestPenetrationVehicle)));
+                statistic.setBestIndicator(new TankStatistic<>(bestPenetrationVehicle.getId(), findVehicleOriginalAmmo(bestPenetrationVehicle)));
                 return statistic;
             }
             LOGGER.warn("VehicleUtils with best penetration is not found. Method search inside {} vehicles", searchedVehicles.size());
@@ -279,7 +279,7 @@ public class VehicleStatisticServiceImpl implements VehicleStatisticsService {
                     Arrays.asList("tank_id", "turret"),
                     this::vehicleViewRangeComparator).stream().findFirst().orElse(null);
             if (Objects.nonNull(bestViewRangeVehicle)) {
-                statistic.setBestIndicator(new TankStatistic<>(bestViewRangeVehicle.getTankId(), bestViewRangeVehicle.getTurret().getViewRange()));
+                statistic.setBestIndicator(new TankStatistic<>(bestViewRangeVehicle.getId(), bestViewRangeVehicle.getTurret().getViewRange()));
                 return statistic;
             }
             LOGGER.warn("VehicleUtils with best view rang is not found. Method search inside {} vehicles", searchedVehicles.size());
@@ -292,7 +292,7 @@ public class VehicleStatisticServiceImpl implements VehicleStatisticsService {
         return vehicleModuleInfoRepository
                 .findByTankIdIn(searchedVehicles.parallelStream()
                         .filter(vbi -> !ignorePremium || !vbi.isPremium())
-                        .map(Vehicles::getTankId)
+                        .map(Vehicles::getId)
                         .collect(Collectors.toList()))
                 .parallelStream()
                 .map(moduleInfo -> Objects.isNull(moduleInfo) ? null : vehicleService.getVehicle(moduleInfo, vehicleAPIFields))

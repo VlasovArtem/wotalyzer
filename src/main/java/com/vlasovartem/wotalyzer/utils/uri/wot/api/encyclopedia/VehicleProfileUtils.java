@@ -56,7 +56,7 @@ public class VehicleProfileUtils extends MainUtils<VehicleProfile> {
     public APIResponse<Map<String, VehicleProfile>> getVehicleApiResponse(long tankId) {
         Map<String, Object> params = new HashMap<>();
         params.put(TANK_ID_PARAM, tankId);
-        return getApiResponse(params);
+        return getApiResponseMap(params);
     }
 
     /**
@@ -70,7 +70,7 @@ public class VehicleProfileUtils extends MainUtils<VehicleProfile> {
         Map<String, Object> params = new HashMap<>();
         params.put(TANK_ID_PARAM, tankId);
         params.put(FIELDS_PARAM, fields);
-        return getApiResponse(params);
+        return getApiResponseMap(params);
     }
 
 

@@ -1,20 +1,16 @@
 package com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia;
 
-import com.fasterxml.jackson.annotation.JsonAutoDetect;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.vlasovartem.wotalyzer.entity.wot.api.MainEntity;
 import com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia.components.Profile;
 
 /**
  * Created by artemvlasov on 11/10/16.
  */
-@JsonAutoDetect
-@JsonIgnoreProperties(ignoreUnknown = true)
-public class Module {
+public class Module extends MainEntity {
 
     /* Ссылка на изображение */
     private String image;
-    /* Идентификатор модуля */
-    private int moduleId;
     /* Название модуля */
     private String name;
     /* Нация */
@@ -27,8 +23,19 @@ public class Module {
     private String type;
     /* Масса (кг) */
     private int weight;
-    /* default_profile - Базовые технические характеристики модуля. Дополнительное поле. */
+    /* Базовые технические характеристики модуля. Дополнительное поле. */
     private Profile defaultProfile;
+
+    @Override
+    @JsonProperty("module_id")
+    public long getId() {
+        return super.getId();
+    }
+
+    @Override
+    public void setId(long id) {
+        super.setId(id);
+    }
 
     public String getImage() {
         return image;
@@ -36,14 +43,6 @@ public class Module {
 
     public void setImage(String image) {
         this.image = image;
-    }
-
-    public int getModuleId() {
-        return moduleId;
-    }
-
-    public void setModuleId(int moduleId) {
-        this.moduleId = moduleId;
     }
 
     public String getName() {

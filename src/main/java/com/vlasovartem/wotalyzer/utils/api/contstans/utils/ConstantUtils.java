@@ -3,6 +3,7 @@ package com.vlasovartem.wotalyzer.utils.api.contstans.utils;
 import com.vlasovartem.wotalyzer.utils.api.contstans.BasicAPIConstants;
 
 import java.lang.reflect.Field;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -12,6 +13,9 @@ import java.util.List;
 public class ConstantUtils {
 
     public static List<String> generate(List<String> params, String... newParams) {
+        if (params.isEmpty()) {
+            params = new ArrayList<>();
+        }
         Collections.addAll(params, newParams);
         return params;
     }

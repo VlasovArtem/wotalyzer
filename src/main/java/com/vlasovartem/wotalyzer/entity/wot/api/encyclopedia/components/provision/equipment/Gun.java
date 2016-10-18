@@ -9,8 +9,6 @@ import java.util.List;
  * Created by artemvlasov on 13/01/16.
  */
 public class Gun extends MainEntityExt {
-    @JsonProperty("module_id")
-    private long id;
     private List<Integer> damage;
     private int level;
     private String nation;
@@ -26,12 +24,15 @@ public class Gun extends MainEntityExt {
     private float reloadTime;
     private String type;
 
+    @Override
+    @JsonProperty("module_id")
     public long getId() {
-        return id;
+        return super.getId();
     }
 
+    @Override
     public void setId(long id) {
-        this.id = id;
+        super.setId(id);
     }
 
     public List<Integer> getDamage() {

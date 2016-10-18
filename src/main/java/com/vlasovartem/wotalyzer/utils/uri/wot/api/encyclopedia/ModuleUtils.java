@@ -4,6 +4,7 @@ import com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia.Module;
 import com.vlasovartem.wotalyzer.utils.api.contstans.encyclopedia.ModuleConstants;
 import com.vlasovartem.wotalyzer.utils.uri.wot.api.MainUtils;
 import com.vlasovartem.wotalyzer.utils.validators.encyclopedia.EncyclopediaValidator;
+import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
 import java.util.List;
@@ -13,6 +14,7 @@ import java.util.function.Function;
 /**
  * Created by artemvlasov on 11/10/16.
  */
+@Component
 public class ModuleUtils extends MainUtils<Module> {
 
     public ModuleUtils() {

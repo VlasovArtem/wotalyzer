@@ -4,6 +4,7 @@ import com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia.Provision;
 import com.vlasovartem.wotalyzer.utils.api.contstans.encyclopedia.ProvisionConstants;
 import com.vlasovartem.wotalyzer.utils.uri.wot.api.MainUtils;
 import com.vlasovartem.wotalyzer.utils.validators.encyclopedia.EncyclopediaValidator;
+import org.springframework.stereotype.Component;
 
 import java.util.Collections;
 import java.util.List;
@@ -13,6 +14,7 @@ import java.util.function.Function;
 /**
  * Created by artemvlasov on 10/10/16.
  */
+@Component
 public class ProvisionUtils extends MainUtils<Provision> {
 
     public ProvisionUtils() {

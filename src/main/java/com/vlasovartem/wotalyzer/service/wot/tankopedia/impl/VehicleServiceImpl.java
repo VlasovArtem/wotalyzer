@@ -65,17 +65,17 @@ public class VehicleServiceImpl implements VehicleService {
 
     @Override
     public VehicleProfile getVehicle(Map<String, Object> params) {
-        return wotApiURIUtils.getApiResponse(params).getData().get(String.valueOf(params.get(TANK_ID_PARAM)));
+        return wotApiURIUtils.getApiResponseMap(params).getData().get(String.valueOf(params.get(TANK_ID_PARAM)));
     }
 
     @Override
     public VehicleProfile getVehicle(VehicleModuleInfo moduleInfo, List<String> fields) {
         if(Objects.nonNull(moduleInfo)) {
             if (Objects.isNull(fields) || fields.isEmpty()) {
-                return wotApiURIUtils.getApiResponse(moduleInfo.getTopModuleUrl()).getData().get(String.valueOf(moduleInfo.getTankId()));
+                return wotApiURIUtils.getApiResponseMap(moduleInfo.getTopModuleUrl()).getData().get(String.valueOf(moduleInfo.getTankId()));
             } else if (Objects.nonNull(moduleInfo.getTopModuleUrl())) {
                 String urlWithFields = moduleInfo.getTopModuleUrl() + "&fields=" + fields.stream().collect(Collectors.joining(","));
-                return wotApiURIUtils.getApiResponse(urlWithFields).getData().get(String.valueOf(moduleInfo.getTankId()));
+                return wotApiURIUtils.getApiResponseMap(urlWithFields).getData().get(String.valueOf(moduleInfo.getTankId()));
             } else {
                 Map<String, Object> params = new HashMap<>();
                 params.put(FIELDS_PARAM, fields);
@@ -96,7 +96,7 @@ public class VehicleServiceImpl implements VehicleService {
                 if(Objects.nonNull(topModuleComponent.getTurretId())) {
                     params.put(TURRET_ID_PARAM, topModuleComponent.getTurretId());
                 }
-                return wotApiURIUtils.getApiResponse(params).getData().get(String.valueOf(moduleInfo.getTankId()));
+                return wotApiURIUtils.getApiResponseMap(params).getData().get(String.valueOf(moduleInfo.getTankId()));
             }
         }
         return null;
@@ -110,6 +110,6 @@ public class VehicleServiceImpl implements VehicleService {
         Map<String, Object> params = new HashMap<>();
         params.put(TANK_ID_PARAM, tankId);
         params.put(FIELDS_PARAM, fields);
-        return wotApiURIUtils.getApiResponse(params).getData().get(String.valueOf(tankId));
+        return wotApiURIUtils.getApiResponseMap(params).getData().get(String.valueOf(tankId));
     }
 }

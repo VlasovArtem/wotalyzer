@@ -1,17 +1,13 @@
 package com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia;
 
-import com.fasterxml.jackson.annotation.JsonAutoDetect;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.vlasovartem.wotalyzer.entity.wot.api.MainEntity;
 
 /**
  * Created by artemvlasov on 09/10/16.
  */
-@JsonAutoDetect
-@JsonIgnoreProperties(ignoreUnknown = true)
-public class Arena {
+public class Arena extends MainEntity {
 
-    /* Map ID */
-    private String arenaId;
     /* Map type */
     private String camouflageType;
     /* Short map description */
@@ -19,12 +15,16 @@ public class Arena {
     /* Localized map name */
     private String nameI18n;
 
-    public String getArenaId() {
-        return arenaId;
+
+    @Override
+    @JsonProperty("arena_id")
+    public long getId() {
+        return super.getId();
     }
 
-    public void setArenaId(String arenaId) {
-        this.arenaId = arenaId;
+    @Override
+    public void setId(long id) {
+        super.setId(id);
     }
 
     public String getCamouflageType() {

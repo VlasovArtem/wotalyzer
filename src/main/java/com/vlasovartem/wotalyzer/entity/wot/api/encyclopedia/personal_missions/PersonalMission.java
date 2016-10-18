@@ -1,5 +1,7 @@
 package com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia.personal_missions;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.vlasovartem.wotalyzer.entity.wot.api.MainEntity;
 import com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia.personal_missions.components.Operation;
 
 import java.util.List;
@@ -7,10 +9,8 @@ import java.util.List;
 /**
  * Created by artemvlasov on 10/10/16.
  */
-public class PersonalMission {
+public class PersonalMission extends MainEntity {
 
-    /* Идентификатор кампании */
-    private int campaignId;
     /* Описание кампании */
     private String description;
     /* Название кампании */
@@ -18,12 +18,15 @@ public class PersonalMission {
     /* Операции кампании */
     private List<Operation> operations;
 
-    public int getCampaignId() {
-        return campaignId;
+    @Override
+    @JsonProperty("campaign_id")
+    public long getId() {
+        return super.getId();
     }
 
-    public void setCampaignId(int campaignId) {
-        this.campaignId = campaignId;
+    @Override
+    public void setId(long id) {
+        super.setId(id);
     }
 
     public String getDescription() {

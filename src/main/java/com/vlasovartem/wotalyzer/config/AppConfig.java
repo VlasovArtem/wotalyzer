@@ -32,6 +32,7 @@ public class AppConfig extends AbstractMongoConfiguration {
         return Jackson2ObjectMapperBuilder
                 .json()
                 .autoDetectFields(true)
+                .failOnUnknownProperties(false)
                 .propertyNamingStrategy(PropertyNamingStrategy.CAMEL_CASE_TO_LOWER_CASE_WITH_UNDERSCORES)
                 .build();
     }

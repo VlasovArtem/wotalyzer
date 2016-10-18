@@ -1,6 +1,5 @@
 package com.vlasovartem.wotalyzer.entity.wot.api;
 
-import java.util.List;
 import java.util.Map;
 
 /**

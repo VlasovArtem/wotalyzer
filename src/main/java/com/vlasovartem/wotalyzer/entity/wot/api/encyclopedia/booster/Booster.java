@@ -1,5 +1,7 @@
 package com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia.booster;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.vlasovartem.wotalyzer.entity.wot.api.MainEntity;
 import com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia.booster.components.Image;
 import com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia.booster.emuns.Resource;
 import org.springframework.stereotype.Component;
@@ -11,10 +13,8 @@ import java.util.List;
  * Created by artemvlasov on 10/10/16.
  */
 @Component
-public class Booster {
+public class Booster extends MainEntity {
 
-    /* Идентификатор личного резерва */
-    private int boosterId;
     /* Описание личного резерва */
     private String description;
     /* Время окончания действия личного резерва в формате UTC */
@@ -30,12 +30,15 @@ public class Booster {
     /* Изображения личного резерва */
     private List<Image> images;
 
-    public int getBoosterId() {
-        return boosterId;
+    @Override
+    @JsonProperty("booster_id")
+    public long getId() {
+        return super.getId();
     }
 
-    public void setBoosterId(int boosterId) {
-        this.boosterId = boosterId;
+    @Override
+    public void setId(long id) {
+        super.setId(id);
     }
 
     public String getDescription() {

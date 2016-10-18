@@ -33,7 +33,7 @@ public class VehiclesUtils extends MainUtils<Vehicles> {
     public APIResponse<Map<String, Vehicles>> getVehiclesApiResponse(long tankId) {
         Map<String, Object> params = new HashMap<>();
         params.put(TANK_ID_PARAM, tankId);
-        return getApiResponse(params);
+        return getApiResponseMap(params);
     }
 
     @Override

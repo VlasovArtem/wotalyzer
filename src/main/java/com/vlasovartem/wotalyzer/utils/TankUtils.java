@@ -78,8 +78,8 @@ public class TankUtils {
                     .entrySet().stream()
                     .collect(Collectors.toMap(Map.Entry::getKey, mt -> mt.getValue().getModuleId()));
         } else
-            LOGGER.warn("Module tree map for tank with id {} is not found", info.getTankId());
-        topModuleTankMap.put("tank_id", info.getTankId());
+            LOGGER.warn("Module tree map for tank with id {} is not found", info.getId());
+        topModuleTankMap.put("tank_id", info.getId());
         return topModuleTankMap;
     }
 }

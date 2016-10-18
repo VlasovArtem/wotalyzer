@@ -8,9 +8,6 @@ import com.vlasovartem.wotalyzer.entity.wot.api.MainEntityExt;
  */
 public class Provision extends MainEntityExt {
 
-    /* Идентификатор оборудования или снаряжения */
-    @JsonProperty("provision_id")
-    private long id;
     /* Описание достижения */
     private String description;
     /* Ссылка на изображение */
@@ -21,6 +18,17 @@ public class Provision extends MainEntityExt {
     private int priceGold;
     /* Тип: снаряжение или оборудование */
     private String type;
+
+    @Override
+    @JsonProperty("provision_id")
+    public long getId() {
+        return super.getId();
+    }
+
+    @Override
+    public void setId(long id) {
+        super.setId(id);
+    }
 
     public String getDescription() {
         return description;

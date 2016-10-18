@@ -2,6 +2,7 @@ package com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.vlasovartem.wotalyzer.entity.wot.api.MainEntity;
 import com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia.components.*;
 import com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia.components.provision.ammo.Ammo;
 import com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia.components.provision.equipment.*;
@@ -12,8 +13,8 @@ import java.util.List;
  * Created by artemvlasov on 13/01/16.
  */
 @JsonAutoDetect
-public class VehicleProfile {
-    private long tankId;
+public class VehicleProfile extends MainEntity {
+
     private int hp;
     private int hullHp;
     private int hullWeight;
@@ -33,12 +34,15 @@ public class VehicleProfile {
     private Suspension suspension;
     private Turret turret;
 
-    public long getTankId() {
-        return tankId;
+    @Override
+    @JsonProperty("tank_id")
+    public long getId() {
+        return super.getId();
     }
 
-    public void setTankId(long tankId) {
-        this.tankId = tankId;
+    @Override
+    public void setId(long id) {
+        super.setId(id);
     }
 
     public int getHp() {

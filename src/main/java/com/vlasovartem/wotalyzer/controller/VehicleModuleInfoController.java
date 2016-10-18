@@ -50,12 +50,12 @@ public class VehicleModuleInfoController {
         AtomicInteger updatedVehicles = new AtomicInteger();
         AtomicInteger newVehicles = new AtomicInteger();
         vehiclesService.findAll(Collections.singletonList(TANK_ID_PARAM)).forEach(vehicleBaseInfo -> {
-            if (vehicleModuleInfoRepository.exists(vehicleBaseInfo.getTankId())) {
+            if (vehicleModuleInfoRepository.exists(vehicleBaseInfo.getId())) {
                 updatedVehicles.incrementAndGet();
             } else {
                 newVehicles.incrementAndGet();
             }
-            updateModulesInfo(vehicleBaseInfo.getTankId());
+            updateModulesInfo(vehicleBaseInfo.getId());
         });
         return ResponseEntity.ok(String.format("%d vehicles was successfully updated and %d was newly added", updatedVehicles.get(), newVehicles.get()));
     }
