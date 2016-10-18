@@ -1,7 +1,5 @@
 package com.vlasovartem.wotalyzer.entity.wot.api.account;
 
-import com.fasterxml.jackson.annotation.JsonAutoDetect;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.vlasovartem.wotalyzer.entity.wot.api.MainEntity;
 import com.vlasovartem.wotalyzer.entity.wot.api.account.components.private_pack.Private;
@@ -12,8 +10,6 @@ import java.time.LocalDateTime;
 /**
  * Created by artemvlasov on 07/09/16.
  */
-@JsonAutoDetect
-@JsonIgnoreProperties(ignoreUnknown = true)
 public class Player extends MainEntity {
 
     /* Идентификатор аккаунта игрока */

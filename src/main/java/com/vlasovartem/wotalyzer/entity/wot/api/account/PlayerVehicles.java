@@ -1,19 +1,13 @@
 package com.vlasovartem.wotalyzer.entity.wot.api.account;
 
-import com.fasterxml.jackson.annotation.JsonAutoDetect;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.vlasovartem.wotalyzer.entity.wot.api.MainEntity;
 
 /**
  * Created by artemvlasov on 10/09/16.
  */
-@JsonAutoDetect
-@JsonIgnoreProperties(ignoreUnknown = true)
-public class PlayerVehicles extends MainEntity{
+public class PlayerVehicles extends MainEntity {
 
-    @JsonProperty("tank_id")
-    private int id;
     private int markOfMastery;
     private Statistics statistics;
 
@@ -36,6 +30,33 @@ public class PlayerVehicles extends MainEntity{
         public void setWins(int wins) {
             this.wins = wins;
         }
+    }
+
+    @Override
+    @JsonProperty("tank_id")
+    public long getId() {
+        return super.getId();
+    }
+
+    @Override
+    public void setId(long id) {
+        super.setId(id);
+    }
+
+    public int getMarkOfMastery() {
+        return markOfMastery;
+    }
+
+    public void setMarkOfMastery(int markOfMastery) {
+        this.markOfMastery = markOfMastery;
+    }
+
+    public Statistics getStatistics() {
+        return statistics;
+    }
+
+    public void setStatistics(Statistics statistics) {
+        this.statistics = statistics;
     }
 
 }

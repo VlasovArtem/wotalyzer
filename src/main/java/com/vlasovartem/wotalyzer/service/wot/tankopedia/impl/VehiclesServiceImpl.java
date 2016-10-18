@@ -63,7 +63,7 @@ public class VehiclesServiceImpl implements VehiclesService {
                 param.put(FIELDS_PARAM, fields);
             }
         }
-        Map<String, Vehicles> tierVehicles = vehiclesUtils.getApiResponse(param).getData();
+        Map<String, Vehicles> tierVehicles = vehiclesUtils.getApiResponseMap(param).getData();
         return tierVehicles.entrySet().stream()
                 .map(Map.Entry::getValue)
                 .filter(vbi -> type.getName().equals(vbi.getType()))
@@ -89,7 +89,7 @@ public class VehiclesServiceImpl implements VehiclesService {
     public List<Vehicles> findAll(List<String> fields) {
         Map<String, Object> params = new HashMap<>();
         params.put(FIELDS_PARAM, fields);
-        return vehiclesUtils.getApiResponse(params)
+        return vehiclesUtils.getApiResponseMap(params)
                 .getData().entrySet().stream()
                 .map(Map.Entry::getValue).collect(Collectors.toList());
     }
@@ -101,6 +101,6 @@ public class VehiclesServiceImpl implements VehiclesService {
         Map<String, Object> params = new HashMap<>();
         params.put(TANK_ID_PARAM, tankId);
         params.put(FIELDS_PARAM, fields);
-        return vehiclesUtils.getApiResponse(params).getData().get(String.valueOf(tankId));
+        return vehiclesUtils.getApiResponseMap(params).getData().get(String.valueOf(tankId));
     }
 }

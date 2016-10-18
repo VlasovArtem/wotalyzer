@@ -35,25 +35,12 @@ public abstract class MainUtils<T> {
     protected RestTemplate restTemplate;
     @Autowired
     protected ObjectMapper objectMapper;
-    private final Class<T> type;
+    private final Class type;
 
-    public MainUtils(Class<T> type) {
+    public MainUtils(Class type) {
         this.type = type;
         restTemplate = new RestTemplate();
 
-    }
-
-    /**
-     * Build API URI with provided query params.
-     *
-     * @param queryParams map of query params, that matches with List of possible url parameters
-     * @return Build url with provided parameters and application id.
-     */
-    public String buildUri(Map<String, Object> queryParams, List<String> constants, String basicUrl) {
-        if (validateQueryParamsValue(queryParams) && Objects.nonNull(constants)) {
-            return convertURL(convertParams(queryParams, constants), basicUrl);
-        }
-        return null;
     }
 
     /**
@@ -62,9 +49,19 @@ public abstract class MainUtils<T> {
      * @param queryParams params that should be add to basic api url
      * @return APIResponse return that contains data that is represent as map with key tank id and value requested object.
      */
-    public APIResponse<Map<String, T>> getApiResponse(Map<String, Object> queryParams) {
+    public APIResponse<T> getApiResponse(Map<String, Object> queryParams) {
         String url = buildUri(queryParams, getAPIConstants(), getAPIBaseUrl());
         return getApiResponse(url);
+    }
+
+    public APIResponse<List<T>> getApiResponseList(Map<String, Object> queryParams) {
+        String url = buildUri(queryParams, getAPIConstants(), getAPIBaseUrl());
+        return getApiResponseList(url);
+    }
+
+    public APIResponse<Map<String, T>> getApiResponseMap(Map<String, Object> queryParams) {
+        String url = buildUri(queryParams, getAPIConstants(), getAPIBaseUrl());
+        return getApiResponseMap(url);
     }
 
     /**
@@ -73,17 +70,28 @@ public abstract class MainUtils<T> {
      * @param url full url
      * @return APIResponse
      */
-    public APIResponse<Map<String, T>> getApiResponse(String url) {
-        if (Objects.nonNull(url)) {
-            JavaType type = objectMapper.getTypeFactory().constructParametrizedType(APIResponse.class, APIResponse.class,
-                    objectMapper.getTypeFactory().constructMapType(Map.class, String.class, this.type));
-            try {
-                return objectMapper.readValue(getUrlResponse(url), type);
-            } catch (IOException e) {
-                throw new RuntimeException(e.getMessage());
-            }
-        }
-        return null;
+    public APIResponse<List<T>> getApiResponseList(String url) {
+        return getApiResponse(url, createJavaType(List.class));
+    }
+
+    /**
+     * Map provide String url response to APIRepsonse object
+     *
+     * @param url full url
+     * @return APIResponse
+     */
+    public APIResponse<Map<String, T>> getApiResponseMap(String url) {
+        return getApiResponse(url, createJavaType(Map.class));
+    }
+
+    /**
+     * Map provide String url response to APIRepsonse object
+     *
+     * @param url full url
+     * @return APIResponse
+     */
+    public APIResponse<T> getApiResponse(String url) {
+        return getApiResponse(url, createJavaType(Object.class));
     }
 
     public abstract String getAPIBaseUrl();
@@ -130,23 +138,6 @@ public abstract class MainUtils<T> {
         return builder.build().encode().toString();
     }
 
-    /**
-     * Collect data string from api url response
-     *
-     * @param url API full url
-     * @return String that contains response data
-     * @throws IOException
-     */
-    private String getUrlResponse(String url) throws IOException {
-        ResponseEntity responseEntity = restTemplate.getForEntity(url, String.class);
-        JsonNode status = objectMapper.readTree(responseEntity.getBody().toString());
-        if (responseEntity.getStatusCode().is4xxClientError() || responseEntity.getStatusCode().is5xxServerError() || "error".equals(status.findValue("status").toString().replace("\"", ""))) {
-            LOGGER.warn(responseEntity.getBody());
-            throw new WotAPIException(responseEntity.getBody().toString());
-        }
-        return responseEntity.getBody().toString();
-    }
-
     protected boolean checkRequiredFields(Map<String, Object> queryMap) {
         boolean hasNoError = true;
         if ((Objects.isNull(queryMap) || queryMap.isEmpty()) && getRequiredAPIParams().size() > 0) {
@@ -165,10 +156,69 @@ public abstract class MainUtils<T> {
         return hasNoError;
     }
 
+    /**
+     * Map provide String url response to APIRepsonse object
+     *
+     * @param url full url
+     * @return APIResponse
+     */
+    private <F> APIResponse<F> getApiResponse(String url, JavaType javaType) {
+        if (Objects.nonNull(url)) {
+            JavaType type = objectMapper.getTypeFactory().constructParametrizedType(APIResponse.class, APIResponse.class,
+                    javaType);
+            try {
+                return objectMapper.readValue(getUrlResponse(url), type);
+            } catch (IOException e) {
+                throw new RuntimeException(e.getMessage());
+            }
+        }
+        return null;
+    }
+
+    /**
+     * Build API URI with provided query params.
+     *
+     * @param queryParams map of query params, that matches with List of possible url parameters
+     * @return Build url with provided parameters and application id.
+     */
+    private String buildUri(Map<String, Object> queryParams, List<String> constants, String basicUrl) {
+        if (validateQueryParamsValue(queryParams) && Objects.nonNull(constants)) {
+            return convertURL(convertParams(queryParams, constants), basicUrl);
+        }
+        return null;
+    }
+
+    /**
+     * Collect data string from api url response
+     *
+     * @param url API full url
+     * @return String that contains response data
+     * @throws IOException
+     */
+    private String getUrlResponse(String url) throws IOException {
+        ResponseEntity responseEntity = restTemplate.getForEntity(url, String.class);
+        JsonNode status = objectMapper.readTree(responseEntity.getBody().toString());
+        if (responseEntity.getStatusCode().is4xxClientError() || responseEntity.getStatusCode().is5xxServerError() || "error".equals(status.findValue("status").toString().replace("\"", ""))) {
+            LOGGER.warn(responseEntity.getBody());
+            throw new WotAPIException(responseEntity.getBody().toString());
+        }
+        return responseEntity.getBody().toString();
+    }
+
     private Map<String, Object> convertParams(Map<String, Object> queryParams, List<String> constants) {
         return queryParams.entrySet().stream()
                 .filter(params ->
                         constants.contains(params.getKey()))
                 .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
+    }
+
+    private <F> JavaType createJavaType(Class<F> returnedType)  {
+        if (returnedType.isAssignableFrom(List.class)) {
+            return objectMapper.getTypeFactory().constructArrayType(type);
+        } else if (returnedType.isAssignableFrom(Map.class)) {
+            return objectMapper.getTypeFactory().constructMapType(Map.class, String.class, type);
+        } else {
+            return objectMapper.getTypeFactory().uncheckedSimpleType(type);
+        }
     }
 }

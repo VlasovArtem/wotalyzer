@@ -1,9 +1,12 @@
 package com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.vlasovartem.wotalyzer.entity.wot.api.MainEntity;
+
 /**
  * Created by artemvlasov on 10/10/16.
  */
-public class VehicleProfiles {
+public class VehicleProfiles extends MainEntity {
 
     /* Базовая комплектация */
     private boolean isDefault;
@@ -11,8 +14,17 @@ public class VehicleProfiles {
     private int priceCredit;
     /* Идентификатор комплектации техники */
     private String profileId;
-    /* Идентификатор техники */
-    private int tankId;
+
+    @Override
+    @JsonProperty("tan_id")
+    public long getId() {
+        return super.getId();
+    }
+
+    @Override
+    public void setId(long id) {
+        super.setId(id);
+    }
 
     public boolean isDefault() {
         return isDefault;
@@ -38,11 +50,4 @@ public class VehicleProfiles {
         this.profileId = profileId;
     }
 
-    public int getTankId() {
-        return tankId;
-    }
-
-    public void setTankId(int tankId) {
-        this.tankId = tankId;
-    }
 }

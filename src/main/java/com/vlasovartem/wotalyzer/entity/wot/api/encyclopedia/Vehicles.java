@@ -1,6 +1,8 @@
 package com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.vlasovartem.wotalyzer.entity.wot.api.MainEntity;
 import com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia.components.crew.Crew;
 import com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia.components.Images;
 import com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia.components.ModulesTree;
@@ -13,8 +15,8 @@ import java.util.Map;
  * Created by artemvlasov on 13/01/16.
  */
 @JsonAutoDetect
-public class Vehicles {
-    private long tankId;
+public class Vehicles extends MainEntity {
+
     private String description;
     private List<Integer> engines;
     private List<Integer> guns;
@@ -40,12 +42,15 @@ public class Vehicles {
     private Images images;
     private Map<String, ModulesTree> modulesTree;
 
-    public long getTankId() {
-        return tankId;
+    @Override
+    @JsonProperty("tank_id")
+    public long getId() {
+        return super.getId();
     }
 
-    public void setTankId(long tankId) {
-        this.tankId = tankId;
+    @Override
+    public void setId(long id) {
+        super.setId(id);
     }
 
     public String getDescription() {

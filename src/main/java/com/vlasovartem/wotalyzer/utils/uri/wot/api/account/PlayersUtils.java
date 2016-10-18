@@ -5,6 +5,7 @@ import com.vlasovartem.wotalyzer.utils.api.contstans.account.PlayersConstants;
 import com.vlasovartem.wotalyzer.utils.uri.wot.api.MainUtils;
 import com.vlasovartem.wotalyzer.utils.validators.MainValidator;
 import com.vlasovartem.wotalyzer.utils.validators.account.AccountValidator;
+import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
 import java.util.List;
@@ -14,6 +15,7 @@ import java.util.function.Function;
 /**
  * Created by artemvlasov on 14/10/2016.
  */
+@Component
 public class PlayersUtils extends MainUtils<Players> {
 
     public PlayersUtils() {

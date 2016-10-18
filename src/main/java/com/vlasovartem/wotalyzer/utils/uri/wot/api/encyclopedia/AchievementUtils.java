@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * Created by artemvlasov on 09/10/16.
  */
-@Component
+@Component("EncyclopediaAchievementUtils")
 public class AchievementUtils extends MainUtils<Achievement> {
 
     AchievementUtils() {
