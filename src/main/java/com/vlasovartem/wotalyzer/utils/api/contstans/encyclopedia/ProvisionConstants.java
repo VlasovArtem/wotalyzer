@@ -12,7 +12,7 @@ import static com.vlasovartem.wotalyzer.utils.api.contstans.WOTAPIConstants.*;
  */
 public interface ProvisionConstants extends BasicAPIConstants {
 
-    String BASIC_URL = "https://api.worldoftanks.ru/wot/encyclopedia/provisions";
+    String BASIC_URL = "https://api.worldoftanks.ru/wot/encyclopedia/provisions/";
     List<String> BASIC_API_CONSTANTS = ConstantUtils.generate(BasicAPIConstants.BASIC_API_CONSTANTS, PROVISION_ID_PARAM, TYPE_PARAM);
 
 }

@@ -13,7 +13,7 @@ public class Statistics {
     /* Количество поваленных деревьев */
     private long treesCut;
     /* Суммарная статистика по Случайным, Ротным и клановым боям без учёта статистики боёв на Глобальной Карте 2.0 */
-    private MaxStatisticsData all;
+    private AllStatisticsData all;
     /* Статистика боёв в составе клана */
     private AverageStatisticsData clan;
     /* Статистика боёв в составе роты */
@@ -55,11 +55,11 @@ public class Statistics {
         this.treesCut = treesCut;
     }
 
-    public MaxStatisticsData getAll() {
+    public AllStatisticsData getAll() {
         return all;
     }
 
-    public void setAll(MaxStatisticsData all) {
+    public void setAll(AllStatisticsData all) {
         this.all = all;
     }
 

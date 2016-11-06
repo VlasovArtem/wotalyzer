@@ -5,7 +5,7 @@ import com.vlasovartem.wotalyzer.entity.statistic.VehicleModuleInfo;
 import com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia.Vehicles;
 import com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia.components.Modules;
 import com.vlasovartem.wotalyzer.service.statistic.VehicleModuleInfoService;
-import com.vlasovartem.wotalyzer.service.wot.tankopedia.VehiclesService;
+import com.vlasovartem.wotalyzer.service.wot.api.tankopedia.VehiclesService;
 import com.vlasovartem.wotalyzer.utils.TankUtils;
 import com.vlasovartem.wotalyzer.utils.uri.wot.api.encyclopedia.VehicleProfileUtils;
 import org.apache.logging.log4j.LogManager;

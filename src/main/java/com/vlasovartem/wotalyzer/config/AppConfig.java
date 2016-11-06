@@ -15,6 +15,8 @@ import org.springframework.data.mongodb.config.AbstractMongoConfiguration;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 
+import java.text.SimpleDateFormat;
+
 /**
  * Created by artemvlasov on 13/01/16.
  */
@@ -34,6 +36,7 @@ public class AppConfig extends AbstractMongoConfiguration {
                 .autoDetectFields(true)
                 .failOnUnknownProperties(false)
                 .propertyNamingStrategy(PropertyNamingStrategy.CAMEL_CASE_TO_LOWER_CASE_WITH_UNDERSCORES)
+                .dateFormat(new SimpleDateFormat("yyyy-MM-dd"))
                 .build();
     }
 

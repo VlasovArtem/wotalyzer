@@ -3,7 +3,7 @@ package com.vlasovartem.wotalyzer.utils.uri.wot.api;
 import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.vlasovartem.wotalyzer.entity.wot.api.APIResponse;
+import com.vlasovartem.wotalyzer.entity.wot.api.response.*;
 import com.vlasovartem.wotalyzer.utils.exception.WotAPIException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -14,10 +14,7 @@ import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import java.io.IOException;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -44,54 +41,63 @@ public abstract class MainUtils<T> {
     }
 
     /**
-     * Create APIResponse from response from API
+     * Create AbstractAPIResponse from response from API
      *
      * @param queryParams params that should be add to basic api url
-     * @return APIResponse return that contains data that is represent as map with key tank id and value requested object.
+     * @return AbstractAPIResponse return that contains data that is represent as map with key tank id and value requested object.
      */
     public APIResponse<T> getApiResponse(Map<String, Object> queryParams) {
-        String url = buildUri(queryParams, getAPIConstants(), getAPIBaseUrl());
+        String url = buildUri(queryParams);
         return getApiResponse(url);
     }
 
-    public APIResponse<List<T>> getApiResponseList(Map<String, Object> queryParams) {
-        String url = buildUri(queryParams, getAPIConstants(), getAPIBaseUrl());
+    public APIResponseList<T> getApiResponseList(Map<String, Object> queryParams) {
+        String url = buildUri(queryParams);
         return getApiResponseList(url);
     }
 
-    public APIResponse<Map<String, T>> getApiResponseMap(Map<String, Object> queryParams) {
-        String url = buildUri(queryParams, getAPIConstants(), getAPIBaseUrl());
+    public APIResponseMap<T> getApiResponseMap(Map<String, Object> queryParams) {
+        String url = buildUri(queryParams);
         return getApiResponseMap(url);
     }
 
-    /**
-     * Map provide String url response to APIRepsonse object
-     *
-     * @param url full url
-     * @return APIResponse
-     */
-    public APIResponse<List<T>> getApiResponseList(String url) {
-        return getApiResponse(url, createJavaType(List.class));
+    public APIResponseMapList<T> getApiResponseMapList(Map<String, Object> queryParams) {
+        String url = buildUri(queryParams);
+        return getApiResponseMapList(url);
     }
 
     /**
      * Map provide String url response to APIRepsonse object
      *
      * @param url full url
-     * @return APIResponse
+     * @return AbstractAPIResponse
      */
-    public APIResponse<Map<String, T>> getApiResponseMap(String url) {
-        return getApiResponse(url, createJavaType(Map.class));
+    public APIResponseList<T> getApiResponseList(String url) {
+        return getApiResponse(url, getParametrizedType(APIResponseList.class, createJavaType(List.class)));
     }
 
     /**
      * Map provide String url response to APIRepsonse object
      *
      * @param url full url
-     * @return APIResponse
+     * @return AbstractAPIResponse
+     */
+    public APIResponseMap<T> getApiResponseMap(String url) {
+        return getApiResponse(url, getParametrizedType(APIResponseMap.class, createJavaType(Map.class)));
+    }
+
+    public APIResponseMapList<T> getApiResponseMapList(String url) {
+        return getApiResponse(url, getParametrizedType(APIResponseMapList.class, createExtendedMapJavaType(List.class)));
+    }
+
+    /**
+     * Map provide String url response to APIRepsonse object
+     *
+     * @param url full url
+     * @return AbstractAPIResponse
      */
     public APIResponse<T> getApiResponse(String url) {
-        return getApiResponse(url, createJavaType(Object.class));
+        return getApiResponse(url, getParametrizedType(APIResponse.class, createJavaType(Object.class)));
     }
 
     public abstract String getAPIBaseUrl();
@@ -100,16 +106,31 @@ public abstract class MainUtils<T> {
 
     public abstract List<String> getRequiredAPIParams();
 
+    public Map<String, String> getDefaultValueMap() {
+        return Collections.emptyMap();
+    }
+
     public List<Function<Map<String, Object>, Boolean>> getValidationFunctions() {
         return Collections.emptyList();
     }
 
     protected boolean validateQueryParamsValue(Map<String, Object> queryParams) {
+        prepareQueryParams(queryParams);
         if (checkRequiredFields(queryParams)) {
             List<Function<Map<String, Object>, Boolean>> validationFunctions = getValidationFunctions();
-            return !validationFunctions.isEmpty() || validationFunctions.stream().allMatch(mapBooleanFunction -> mapBooleanFunction.apply(queryParams));
+            return validationFunctions.isEmpty() || validationFunctions.stream().allMatch(mapBooleanFunction -> mapBooleanFunction.apply(queryParams));
         }
         return false;
+    }
+
+    private void prepareQueryParams(Map<String, Object> queryParams) {
+        if (!getDefaultValueMap().isEmpty()) {
+            getDefaultValueMap().entrySet().forEach(defaultValueSet -> {
+                if (Objects.isNull(queryParams.get(defaultValueSet.getKey())) && getRequiredAPIParams().contains(defaultValueSet.getKey())) {
+                    queryParams.put(defaultValueSet.getKey(), defaultValueSet.getValue());
+                }
+            });
+        }
     }
 
     /**
@@ -120,7 +141,8 @@ public abstract class MainUtils<T> {
      * @return Prepared API URL
      */
     protected String convertURL(Map<String, Object> queryParams, String basicUrl) {
-        UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(basicUrl);
+        String convertedBasicUrl = basicUrl.endsWith("/") ? basicUrl : basicUrl + "/";
+        UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(convertedBasicUrl);
         builder.queryParam(APPLICATION_ID_PARAM, applicationId);
         if (Objects.nonNull(queryParams)) {
             for (Map.Entry<String, Object> entry : queryParams.entrySet()) {
@@ -139,35 +161,29 @@ public abstract class MainUtils<T> {
     }
 
     protected boolean checkRequiredFields(Map<String, Object> queryMap) {
-        boolean hasNoError = true;
-        if ((Objects.isNull(queryMap) || queryMap.isEmpty()) && getRequiredAPIParams().size() > 0) {
-            hasNoError = false;
+        Set<String> paramKeys = Optional.ofNullable(queryMap).orElse(Collections.emptyMap()).keySet();
+        List<String> missingRequiredParams = getRequiredAPIParams()
+                .stream()
+                .filter(param -> !paramKeys.contains(param))
+                .collect(Collectors.toList());
+        if (!missingRequiredParams.isEmpty()) {
+            String message = String.format("Api %s required next fields: %s (one of a fields is missing)", getAPIBaseUrl(), missingRequiredParams.stream().collect(Collectors.joining(", ")));
+            LOGGER.error(message);
+            throw new WotAPIException(message);
         }
-        if (!hasNoError) {
-            hasNoError = !queryMap.keySet()
-                    .stream()
-                    .allMatch(s -> getRequiredAPIParams()
-                            .stream()
-                            .anyMatch(s1 -> s1.equals(s)));
-        }
-        if (!hasNoError) {
-            LOGGER.error("Api {} required next fields: {} (one of a fields is missing)", getAPIBaseUrl(), getRequiredAPIParams().stream().collect(Collectors.joining(", ")));
-        }
-        return hasNoError;
+        return true;
     }
 
     /**
      * Map provide String url response to APIRepsonse object
      *
      * @param url full url
-     * @return APIResponse
+     * @return AbstractAPIResponse
      */
-    private <F> APIResponse<F> getApiResponse(String url, JavaType javaType) {
-        if (Objects.nonNull(url)) {
-            JavaType type = objectMapper.getTypeFactory().constructParametrizedType(APIResponse.class, APIResponse.class,
-                    javaType);
+    private <F> F getApiResponse(String url, JavaType paremetrizedType) {
+        if (Objects.nonNull(url) && Objects.nonNull(paremetrizedType)) {
             try {
-                return objectMapper.readValue(getUrlResponse(url), type);
+                return objectMapper.readValue(getUrlResponse(url), paremetrizedType);
             } catch (IOException e) {
                 throw new RuntimeException(e.getMessage());
             }
@@ -181,9 +197,9 @@ public abstract class MainUtils<T> {
      * @param queryParams map of query params, that matches with List of possible url parameters
      * @return Build url with provided parameters and application id.
      */
-    private String buildUri(Map<String, Object> queryParams, List<String> constants, String basicUrl) {
-        if (validateQueryParamsValue(queryParams) && Objects.nonNull(constants)) {
-            return convertURL(convertParams(queryParams, constants), basicUrl);
+    private String buildUri(Map<String, Object> queryParams) {
+        if (validateQueryParamsValue(queryParams) && Objects.nonNull(getAPIConstants())) {
+            return convertURL(convertParams(queryParams, getAPIConstants()), getAPIBaseUrl());
         }
         return null;
     }
@@ -213,12 +229,26 @@ public abstract class MainUtils<T> {
     }
 
     private <F> JavaType createJavaType(Class<F> returnedType)  {
-        if (returnedType.isAssignableFrom(List.class)) {
-            return objectMapper.getTypeFactory().constructArrayType(type);
-        } else if (returnedType.isAssignableFrom(Map.class)) {
+        if (Collection.class.isAssignableFrom(returnedType)) {
+            return objectMapper.getTypeFactory().constructCollectionType((Class<? extends Collection>) returnedType, type);
+        } else if (Map.class.isAssignableFrom(returnedType)) {
             return objectMapper.getTypeFactory().constructMapType(Map.class, String.class, type);
         } else {
             return objectMapper.getTypeFactory().uncheckedSimpleType(type);
         }
+    }
+
+    private <F> JavaType createExtendedMapJavaType(Class<F> valueTypeClass) {
+        JavaType keyType = objectMapper.getTypeFactory().uncheckedSimpleType(String.class);
+        if (valueTypeClass.isAssignableFrom(List.class)) {
+            JavaType valueType = createJavaType(List.class);
+            return objectMapper.getTypeFactory().constructMapType(Map.class, keyType, valueType);
+        } else {
+            return objectMapper.getTypeFactory().constructMapType(Map.class, String.class, type);
+        }
+    }
+
+    private <F extends AbstractAPIResponse> JavaType getParametrizedType(Class<F> responseType, JavaType contentType) {
+        return objectMapper.getTypeFactory().constructParametrizedType(responseType, responseType, contentType);
     }
 }

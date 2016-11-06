@@ -1,7 +1,7 @@
 package com.vlasovartem.wotalyzer.utils.uri.wot.api.encyclopedia;
 
 import com.fasterxml.jackson.databind.JavaType;
-import com.vlasovartem.wotalyzer.entity.wot.api.APIResponse;
+import com.vlasovartem.wotalyzer.entity.wot.api.response.AbstractAPIResponse;
 import com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia.VehicleProfile;
 import com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia.info.Info;
 import com.vlasovartem.wotalyzer.utils.api.contstans.encyclopedia.VehicleProfileConstants;
@@ -51,9 +51,9 @@ public class VehicleProfileUtils extends MainUtils<VehicleProfile> {
     /**
      * Find VehicleUtils with single parameter tank id
      * @param tankId tank id
-     * @return APIResponse with associated array.
+     * @return AbstractAPIResponse with associated array.
      */
-    public APIResponse<Map<String, VehicleProfile>> getVehicleApiResponse(long tankId) {
+    public AbstractAPIResponse<Map<String, VehicleProfile>> getVehicleApiResponse(long tankId) {
         Map<String, Object> params = new HashMap<>();
         params.put(TANK_ID_PARAM, tankId);
         return getApiResponseMap(params);
@@ -63,10 +63,10 @@ public class VehicleProfileUtils extends MainUtils<VehicleProfile> {
      * Find VehicleUtils with single parameter tank id, that will contains or not contains particular fields
      * @param tankId tank id
      * @param fields list of fields that should include or exclude from response
-     * @return APIResponse with associated array.
+     * @return AbstractAPIResponse with associated array.
      *
      */
-    public APIResponse<Map<String, VehicleProfile>> getVehicleApiResponse(long tankId, List<String> fields) {
+    public AbstractAPIResponse<Map<String, VehicleProfile>> getVehicleApiResponse(long tankId, List<String> fields) {
         Map<String, Object> params = new HashMap<>();
         params.put(TANK_ID_PARAM, tankId);
         params.put(FIELDS_PARAM, fields);
@@ -79,10 +79,10 @@ public class VehicleProfileUtils extends MainUtils<VehicleProfile> {
      * @param queryParams params for request
      * @return APIReponse with data that contains object Info
      */
-    public APIResponse<Info> getTankopediaAPIResponse(Map<String, Object> queryParams) {
+    public AbstractAPIResponse<Info> getTankopediaAPIResponse(Map<String, Object> queryParams) {
         String tankopediaAPIUrl = "https://api.worldoftanks.ru/wot/encyclopedia/info/";
         String url = convertURL(queryParams, tankopediaAPIUrl);
-        JavaType type = objectMapper.getTypeFactory().constructParametrizedType(APIResponse.class, APIResponse.class, Info.class);
+        JavaType type = objectMapper.getTypeFactory().constructParametrizedType(AbstractAPIResponse.class, AbstractAPIResponse.class, Info.class);
         try {
             return objectMapper.readValue(restTemplate.getForObject(convertURL(null, url), String.class), type);
         } catch (IOException e) {

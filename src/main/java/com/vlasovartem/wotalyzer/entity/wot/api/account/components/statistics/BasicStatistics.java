@@ -1,6 +1,6 @@
 package com.vlasovartem.wotalyzer.entity.wot.api.account.components.statistics;
 
-import com.vlasovartem.wotalyzer.entity.wot.api.tanks.components.MainStatistic;
+import com.vlasovartem.wotalyzer.entity.wot.api.player_vehicles.components.MainStatistic;
 
 /**
  * Created by artemvlasov on 10/09/16.

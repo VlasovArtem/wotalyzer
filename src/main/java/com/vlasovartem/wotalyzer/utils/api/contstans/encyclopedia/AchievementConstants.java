@@ -7,6 +7,6 @@ import com.vlasovartem.wotalyzer.utils.api.contstans.BasicAPIConstants;
  */
 public interface AchievementConstants extends BasicAPIConstants {
 
-    String BASIC_URL = "https://api.worldoftanks.ru/wot/encyclopedia/achievements";
+    String BASIC_URL = "https://api.worldoftanks.ru/wot/encyclopedia/achievements/";
 
 }

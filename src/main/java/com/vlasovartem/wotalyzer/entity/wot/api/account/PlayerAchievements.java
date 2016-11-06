@@ -9,9 +9,9 @@ import java.util.Map;
  */
 public class PlayerAchievements extends Entity {
 
-    /* Achievement earned */
+    /* VehicleAchievement earned */
     private Map<String, Integer> achievements;
-    /* Achievement progress */
+    /* VehicleAchievement progress */
     private Map<String, Integer> frags;
     /* Maximum values of achievement series */
     private Map<String, Integer> maxSeries;

@@ -1,7 +1,7 @@
 package com.vlasovartem.wotalyzer.controller;
 
 import com.vlasovartem.wotalyzer.entity.statistic.Statistic;
-import com.vlasovartem.wotalyzer.service.statistic.VehicleStatisticsService;
+import com.vlasovartem.wotalyzer.service.statistic.StatisticService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,10 +12,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/vehicle/statistic")
 public class VehicleStatisticController {
-    private final VehicleStatisticsService service;
+    private final StatisticService service;
 
     @Autowired
-    public VehicleStatisticController(VehicleStatisticsService service) {
+    public VehicleStatisticController(StatisticService service) {
         this.service = service;
     }
 

@@ -12,7 +12,7 @@ import static com.vlasovartem.wotalyzer.utils.api.contstans.WOTAPIConstants.ACCO
  */
 public interface PlayerAchievementsConstants extends BasicAPIConstants {
 
-    String BASIC_URL = "https://api.worldoftanks.ru/wot/account/achievements";
+    String BASIC_URL = "https://api.worldoftanks.ru/wot/account/achievements/";
     List<String> BASIC_API_CONSTANTS = ConstantUtils.generate(BasicAPIConstants.BASIC_API_CONSTANTS, ACCOUNT_ID_PARAM);
     List<String> REQUIRED_PARAMS = ConstantUtils.generate(BasicAPIConstants.REQUIRED_PARAMS, ACCOUNT_ID_PARAM);
 

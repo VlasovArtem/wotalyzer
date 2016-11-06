@@ -1,6 +1,6 @@
 package com.vlasovartem.wotalyzer.utils.uri.wot.api.encyclopedia;
 
-import com.vlasovartem.wotalyzer.entity.wot.api.APIResponse;
+import com.vlasovartem.wotalyzer.entity.wot.api.response.AbstractAPIResponse;
 import com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia.Vehicles;
 import com.vlasovartem.wotalyzer.utils.api.contstans.encyclopedia.VehiclesConstants;
 import com.vlasovartem.wotalyzer.utils.uri.wot.api.MainUtils;
@@ -28,9 +28,9 @@ public class VehiclesUtils extends MainUtils<Vehicles> {
     /**
      * Find VehicleUtils with single parameter tank id
      * @param tankId tank id
-     * @return APIResponse with associated array.
+     * @return AbstractAPIResponse with associated array.
      */
-    public APIResponse<Map<String, Vehicles>> getVehiclesApiResponse(long tankId) {
+    public AbstractAPIResponse<Map<String, Vehicles>> getVehiclesApiResponse(long tankId) {
         Map<String, Object> params = new HashMap<>();
         params.put(TANK_ID_PARAM, tankId);
         return getApiResponseMap(params);

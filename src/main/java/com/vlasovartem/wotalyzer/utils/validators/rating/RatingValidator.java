@@ -1,6 +1,5 @@
 package com.vlasovartem.wotalyzer.utils.validators.rating;
 
-import com.vlasovartem.wotalyzer.utils.api.contstans.WOTAPIConstants;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -12,9 +11,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.function.Function;
+import java.util.stream.Collectors;
 
-import static com.vlasovartem.wotalyzer.utils.api.contstans.WOTAPIConstants.BATTLE_TYPE_PARAM;
-import static com.vlasovartem.wotalyzer.utils.api.contstans.WOTAPIConstants.DATE_PARAM;
+import static com.vlasovartem.wotalyzer.utils.api.contstans.WOTAPIConstants.*;
 import static com.vlasovartem.wotalyzer.utils.validators.ValidatorUtils.prepareDate;
 
 /**
@@ -24,6 +23,7 @@ public class RatingValidator {
 
     private static final Logger LOGGER = LogManager.getLogger(RatingValidator.class);
     private static List<String> battleTypes = Arrays.asList("company", "random", "team", "default");
+    private static List<String> types = Arrays.asList("1", "7", "28", "all");
 
     /**
      * Validate Battle Type parameter.
@@ -31,13 +31,22 @@ public class RatingValidator {
      */
     public static Function<Map<String, Object>, Boolean> validateBattleType() {
         return t -> {
-            Object value = t.get(WOTAPIConstants.BATTLE_TYPE_PARAM);
-            boolean isValid = Objects.isNull(value) || battleTypes.contains(value);
+            boolean isValid = isParameterValid(t, BATTLE_TYPE_PARAM, battleTypes);
             if(!isValid) {
                 LOGGER.warn("Parameter {} has incorrect battle type. Default value will be set to 'default'", BATTLE_TYPE_PARAM);
-                t.replace(WOTAPIConstants.BATTLE_TYPE_PARAM, "default");
+                t.replace(BATTLE_TYPE_PARAM, "default");
             }
             return true;
+        };
+    }
+
+
+    public static Function<Map<String, Object>, Boolean> validateType() {
+        return t -> {
+            boolean isValid = isParameterValid(t, TYPE_PARAM, types);
+            if (!isValid)
+                LOGGER.warn("Parameter {} has incorrect type. Possible values are {}", TYPE_PARAM, types.stream().collect(Collectors.joining(", ")));
+            return isValid;
         };
     }
 
@@ -47,7 +56,7 @@ public class RatingValidator {
      */
     public static Function<Map<String, Object>, Boolean> validateDate() {
         return t -> {
-            Object value = t.get(WOTAPIConstants.DATE_PARAM);
+            Object value = t.get(DATE_PARAM);
             if (Objects.nonNull(value)) {
                 String preparedDate = prepareDate(LocalDateTime.now().minusDays(1));
                 LocalDateTime now = LocalDateTime.now();
@@ -67,10 +76,14 @@ public class RatingValidator {
                         preparedDate = prepareDate(date);
                     }
                 }
-                t.replace(WOTAPIConstants.DATE_PARAM, preparedDate);
+                t.replace(DATE_PARAM, preparedDate);
             }
             return true;
         };
+    }
+
+    private static boolean isParameterValid(Map<String, Object> queryParams, String paramName, List<String> possibleValueList) {
+        return possibleValueList.contains(queryParams.get(paramName));
     }
 
 }

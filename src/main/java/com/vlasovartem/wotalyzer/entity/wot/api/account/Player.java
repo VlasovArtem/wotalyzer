@@ -1,9 +1,11 @@
 package com.vlasovartem.wotalyzer.entity.wot.api.account;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.vlasovartem.wotalyzer.entity.wot.api.MainEntity;
 import com.vlasovartem.wotalyzer.entity.wot.api.account.components.private_pack.Private;
 import com.vlasovartem.wotalyzer.entity.wot.api.account.components.statistics.Statistics;
+import com.vlasovartem.wotalyzer.utils.converter.TimestampToLocalDateTimeConverter;
 
 import java.time.LocalDateTime;
 
@@ -18,22 +20,27 @@ public class Player extends MainEntity {
     /* Информация о блокировке аккаунта */
     private String banInfo;
     /* Время окончания блокировки аккаунта */
+    @JsonDeserialize(converter = TimestampToLocalDateTimeConverter.class)
     private LocalDateTime banTime;
     /* Идентификатор клана */
     private long clanId;
     /* Язык, выбранный в клиенте игры */
     private String clientLanguage;
     /* Дата создания аккаунта игрока */
+    @JsonDeserialize(converter = TimestampToLocalDateTimeConverter.class)
     private LocalDateTime createdAt;
     /* Личный рейтинг */
     private long globalRating;
     /* Время последнего боя */
+    @JsonDeserialize(converter = TimestampToLocalDateTimeConverter.class)
     private LocalDateTime lastBattleTime;
     /* Время окончания последней игровой сессии */
+    @JsonDeserialize(converter = TimestampToLocalDateTimeConverter.class)
     private LocalDateTime logoutAt;
     /* Имя игрока */
     private String nickname;
     /* Дата обновления информации об игроке */
+    @JsonDeserialize(converter = TimestampToLocalDateTimeConverter.class)
     private LocalDateTime updatedAt;
     /* Приватные данные игрока */
     @JsonProperty("private")
