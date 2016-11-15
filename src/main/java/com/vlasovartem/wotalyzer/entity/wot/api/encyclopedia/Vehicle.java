@@ -15,7 +15,7 @@ import java.util.Map;
  * Created by artemvlasov on 13/01/16.
  */
 @JsonAutoDetect
-public class Vehicles extends MainEntity {
+public class Vehicle extends MainEntity {
 
     private String description;
     private List<Integer> engines;

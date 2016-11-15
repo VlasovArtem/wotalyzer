@@ -6,6 +6,7 @@ import com.vlasovartem.wotalyzer.entity.wot.api.player_vehicles.VehicleStatistic
 import com.vlasovartem.wotalyzer.service.wn8.ExpectedDataService;
 import com.vlasovartem.wotalyzer.service.wn8.TankExpectedDataService;
 import com.vlasovartem.wotalyzer.service.wot.api.player_vehicles.impl.VehicleStatisticServiceImpl;
+import com.vlasovartem.wotalyzer.utils.wn8.RatioDataUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -30,20 +31,36 @@ public class ExpectedDataServiceImpl implements ExpectedDataService {
 
     @Override
     public ExpectedData getAccountExpectedData(long accountId) {
-        List<VehicleStatistic> accountVehicles = vehicleStatisticService.getAccountVehicles(accountId);
-        List<TankExpectedData> vehiclesExpectedData = tankExpectedDataService.findVehiclesExpectedData(vehicleStatisticService.getAccountTankIds(accountVehicles));
-        ExpectedData expectedData = new ExpectedData();
-        vehiclesExpectedData.forEach(tankExpectedData -> {
-            Optional<Integer> battles = accountVehicles.stream()
-                    .filter(vehicleStatistic -> vehicleStatistic.getTankId() == tankExpectedData.getTankId())
-                    .map(vehicleStatistic -> vehicleStatistic.getAll().getBattles())
-                    .findFirst();
-            expectedData.setExpDamage(expectedData.getExpDamage() + battles.get() * tankExpectedData.getExpDamage());
-            expectedData.setExpDef(expectedData.getExpDef() + battles.get() * tankExpectedData.getExpDef());
-            expectedData.setExpFrag(expectedData.getExpFrag() + battles.get() * tankExpectedData.getExpFrag());
-            expectedData.setExpSpot(expectedData.getExpSpot() + battles.get() * tankExpectedData.getExpSpot());
-            expectedData.setExpWin(expectedData.getExpWin() + 0.01f * battles.get() * tankExpectedData.getExpWin());
-        });
-        return expectedData;
+        return collectExpectedData(vehicleStatisticService.getAccountVehicles(accountId));
+    }
+
+    @Override
+    public Optional<ExpectedData> getAccountExpectedDataByTankId(int accountId, int tankId) {
+        Optional<VehicleStatistic> accountVehicles = vehicleStatisticService.getAccountVehiclesByTankId(accountId, tankId);
+        if (accountVehicles.isPresent()) {
+            TankExpectedData tankExpectedData = tankExpectedDataService.findById(accountVehicles.get().getTankId());
+            return Optional.ofNullable(RatioDataUtils.calculateAccountExpectedData(accountVehicles.get(), tankExpectedData));
+        }
+        return Optional.empty();
+    }
+
+    @Override
+    public ExpectedData getAccountExpectedDataByTankIds(int accountId, List<Integer> tankIds) {
+        return collectExpectedData(vehicleStatisticService.getAccountVehiclesByTankIds(accountId, tankIds));
+    }
+
+    @Override
+    public ExpectedData getAccountExpectedDataByTier(int accountId, int tier) {
+        return collectExpectedData(vehicleStatisticService.getAccountVehiclesByTier(accountId, tier));
+    }
+
+    @Override
+    public ExpectedData getAccountExpectedDataByTierBetween(int account, int minTier, int maxTier) {
+        return collectExpectedData(vehicleStatisticService.getAccountVehiclesByTierBetween(account, minTier, maxTier));
+    }
+
+    private ExpectedData collectExpectedData(List<VehicleStatistic> accountVehicles) {
+        List<TankExpectedData> vehiclesExpectedData = tankExpectedDataService.findByIds(vehicleStatisticService.getAccountTankIds(accountVehicles));
+        return RatioDataUtils.calculateAccountExpectedData(accountVehicles, vehiclesExpectedData);
     }
 }

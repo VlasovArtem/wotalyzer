@@ -1,6 +1,6 @@
 package com.vlasovartem.wotalyzer.utils;
 
-import com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia.Vehicles;
+import com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia.Vehicle;
 import com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia.components.ModulesTree;
 import com.vlasovartem.wotalyzer.utils.exception.TankJsonConverterException;
 import com.vlasovartem.wotalyzer.utils.uri.wot.api.encyclopedia.VehicleProfileUtils;
@@ -45,7 +45,7 @@ public class TankUtils {
 //    public com.vlasovartem.wotalyzer.entity.wot.api.tankopedia.VehicleProfile topModuleVehicle(long tankId) {
 //        return vehicleUtils
 //                .getApiResponse(com.vlasovartem.wotalyzer.entity.wot.api.tankopedia.VehicleProfile.class, generateVehicleTopModuleMap(vehicleUtils
-//                        .getVehicleApiResponse(Vehicles.class, tankId, Arrays.asList("modules_tree", VehicleBasicConstants.TANK_ID_PARAM))
+//                        .getVehicleApiResponse(Vehicle.class, tankId, Arrays.asList("modules_tree", VehicleBasicConstants.TANK_ID_PARAM))
 //                        .getData().get(String.valueOf(tankId))))
 //                .getData().get(String.valueOf(tankId));
 //    }
@@ -53,10 +53,10 @@ public class TankUtils {
     /**
      * Generate VehicleUtils top module map, that contains param from API and numeric value of the module id
      *
-     * @param info   Basic info about VehicleUtils from the Vehicles API
+     * @param info   Basic info about VehicleUtils from the Vehicle API
      * @return return man with query param and id
      */
-    public Map<String, Object> generateVehicleTopModuleMap(Vehicles info) {
+    public Map<String, Object> generateVehicleTopModuleMap(Vehicle info) {
         info = Optional.ofNullable(info).orElseThrow(TankJsonConverterException::new);
         Map<String, ModulesTree> treeMap = info.getModulesTree();
         Map<String, Object> topModuleTankMap = new HashMap<>();

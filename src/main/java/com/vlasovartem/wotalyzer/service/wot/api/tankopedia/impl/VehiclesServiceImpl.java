@@ -1,10 +1,10 @@
 package com.vlasovartem.wotalyzer.service.wot.api.tankopedia.impl;
 
-import com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia.Vehicles;
+import com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia.Vehicle;
 import com.vlasovartem.wotalyzer.service.wot.api.tankopedia.VehiclesService;
 import com.vlasovartem.wotalyzer.utils.TankUtils;
 import com.vlasovartem.wotalyzer.utils.enums.VehicleType;
-import com.vlasovartem.wotalyzer.utils.uri.wot.api.encyclopedia.VehiclesUtils;
+import com.vlasovartem.wotalyzer.utils.uri.wot.api.encyclopedia.VehicleUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,10 +20,10 @@ import static com.vlasovartem.wotalyzer.utils.api.contstans.WOTAPIConstants.*;
 public class VehiclesServiceImpl implements VehiclesService {
 
     private TankUtils tankUtils;
-    private VehiclesUtils vehiclesUtils;
+    private VehicleUtils vehiclesUtils;
 
     @Autowired
-    public VehiclesServiceImpl(TankUtils tankUtils, VehiclesUtils vehiclesUtils) {
+    public VehiclesServiceImpl(TankUtils tankUtils, VehicleUtils vehiclesUtils) {
         this.tankUtils = tankUtils;
         this.vehiclesUtils = vehiclesUtils;
     }
@@ -44,12 +44,12 @@ public class VehiclesServiceImpl implements VehiclesService {
     }
 
     @Override
-    public Vehicles findById(long id, List<String> fields) {
+    public Vehicle findById(long id, List<String> fields) {
         return getVehicleBaseInfoObject(id, fields);
     }
 
     @Override
-    public List<Vehicles> findByTierAndType(Integer tier, VehicleType type, List<String> requiredFields) {
+    public List<Vehicle> findByTierAndType(Integer tier, VehicleType type, List<String> requiredFields) {
         Map<String, Object> param = new HashMap<>();
         if(Objects.nonNull(tier)) {
             param.put(TIER_PARAM, tier);
@@ -63,7 +63,7 @@ public class VehiclesServiceImpl implements VehiclesService {
                 param.put(FIELDS_PARAM, fields);
             }
         }
-        Map<String, Vehicles> tierVehicles = vehiclesUtils.getApiResponseMap(param).getData();
+        Map<String, Vehicle> tierVehicles = vehiclesUtils.getApiResponseMap(param).getData();
         return tierVehicles.entrySet().stream()
                 .map(Map.Entry::getValue)
                 .filter(vbi -> type.getName().equals(vbi.getType()))
@@ -71,22 +71,22 @@ public class VehiclesServiceImpl implements VehiclesService {
     }
 
     @Override
-    public List<Vehicles> findByTierAndType(Integer tier, List<String> requiredFields) {
+    public List<Vehicle> findByTierAndType(Integer tier, List<String> requiredFields) {
         return findByTierAndType(tier, null, requiredFields);
     }
 
     @Override
-    public List<Vehicles> findByTierAndType(VehicleType type, List<String> requiredFields) {
+    public List<Vehicle> findByTierAndType(VehicleType type, List<String> requiredFields) {
         return findByTierAndType(null, type, requiredFields);
     }
 
     @Override
-    public List<Vehicles> findByTierAndType(List<String> requiredFields) {
+    public List<Vehicle> findByTierAndType(List<String> requiredFields) {
         return findByTierAndType(null, null, requiredFields);
     }
 
     @Override
-    public List<Vehicles> findAll(List<String> fields) {
+    public List<Vehicle> findAll(List<String> fields) {
         Map<String, Object> params = new HashMap<>();
         params.put(FIELDS_PARAM, fields);
         return vehiclesUtils.getApiResponseMap(params)
@@ -94,10 +94,10 @@ public class VehiclesServiceImpl implements VehiclesService {
                 .map(Map.Entry::getValue).collect(Collectors.toList());
     }
 
-    private Vehicles getVehicleBaseInfoObject(long tankId) {
+    private Vehicle getVehicleBaseInfoObject(long tankId) {
         return vehiclesUtils.getVehiclesApiResponse(tankId).getData().get(String.valueOf(tankId));
     }
-    private Vehicles getVehicleBaseInfoObject(long tankId, List<String> fields) {
+    private Vehicle getVehicleBaseInfoObject(long tankId, List<String> fields) {
         Map<String, Object> params = new HashMap<>();
         params.put(TANK_ID_PARAM, tankId);
         params.put(FIELDS_PARAM, fields);

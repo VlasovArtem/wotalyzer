@@ -2,8 +2,8 @@ package com.vlasovartem.wotalyzer.service.statistic.impl;
 
 import com.vlasovartem.wotalyzer.entity.statistic.Statistic;
 import com.vlasovartem.wotalyzer.entity.statistic.TankStatistic;
+import com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia.Vehicle;
 import com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia.VehicleProfile;
-import com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia.Vehicles;
 import com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia.components.provision.ammo.Ammo;
 import com.vlasovartem.wotalyzer.repository.statistic.VehicleModuleInfoRepository;
 import com.vlasovartem.wotalyzer.service.statistic.StatisticService;
@@ -217,7 +217,7 @@ public class StatisticServiceImpl implements StatisticService {
      * @param ignorePremium    should be premium tanks ignore during collecting.
      * @return return VehicleStatistic object with update content.
      */
-    private Statistic<Double> collectBestVehicleDynamic(Statistic<Double> statistic, List<Vehicles> searchedVehicles, boolean ignorePremium) {
+    private Statistic<Double> collectBestVehicleDynamic(Statistic<Double> statistic, List<Vehicle> searchedVehicles, boolean ignorePremium) {
         if (Objects.nonNull(statistic) && Objects.nonNull(searchedVehicles)) {
             statistic.setTotalCollectedTanks(searchedVehicles.size());
             VehicleProfile bestDynamicVehicle = findSortedVehicles(
@@ -244,7 +244,7 @@ public class StatisticServiceImpl implements StatisticService {
      * @param ignorePremium    ignore premium vehicles
      * @return Converted statistics
      */
-    private Statistic<Ammo> collectBestVehiclePenetration(Statistic<Ammo> statistic, List<Vehicles> searchedVehicles, boolean ignorePremium) {
+    private Statistic<Ammo> collectBestVehiclePenetration(Statistic<Ammo> statistic, List<Vehicle> searchedVehicles, boolean ignorePremium) {
         if (Objects.nonNull(statistic) && Objects.nonNull(searchedVehicles)) {
             statistic.setTotalCollectedTanks(searchedVehicles.size());
             VehicleProfile bestPenetrationVehicle = findSortedVehicles(
@@ -270,7 +270,7 @@ public class StatisticServiceImpl implements StatisticService {
      * @param ignorePremium
      * @return
      */
-    private Statistic<Integer> collectBestVehicleViewRange(Statistic<Integer> statistic, List<Vehicles> searchedVehicles, boolean ignorePremium) {
+    private Statistic<Integer> collectBestVehicleViewRange(Statistic<Integer> statistic, List<Vehicle> searchedVehicles, boolean ignorePremium) {
         if (Objects.nonNull(statistic) && Objects.nonNull(searchedVehicles)) {
             statistic.setTotalCollectedTanks(searchedVehicles.size());
             VehicleProfile bestViewRangeVehicle = findSortedVehicles(
@@ -288,11 +288,11 @@ public class StatisticServiceImpl implements StatisticService {
         throw new RuntimeException("VehicleStatistic and searchable vehicles cannot be null");
     }
 
-    private List<VehicleProfile> findSortedVehicles(List<Vehicles> searchedVehicles, boolean ignorePremium, List<String> vehicleAPIFields, Comparator<VehicleProfile> comparator) {
+    private List<VehicleProfile> findSortedVehicles(List<Vehicle> searchedVehicles, boolean ignorePremium, List<String> vehicleAPIFields, Comparator<VehicleProfile> comparator) {
         return vehicleModuleInfoRepository
                 .findByTankIdIn(searchedVehicles.parallelStream()
                         .filter(vbi -> !ignorePremium || !vbi.isPremium())
-                        .map(Vehicles::getId)
+                        .map(Vehicle::getId)
                         .collect(Collectors.toList()))
                 .parallelStream()
                 .map(moduleInfo -> Objects.isNull(moduleInfo) ? null : vehicleService.getVehicle(moduleInfo, vehicleAPIFields))

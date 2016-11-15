@@ -3,7 +3,7 @@ package com.vlasovartem.wotalyzer.entity.wn8;
 /**
  * Created by artemvlasov on 03/11/2016.
  */
-public class RationData {
+public class RatioData {
 
     private double frag;
     private double damage;

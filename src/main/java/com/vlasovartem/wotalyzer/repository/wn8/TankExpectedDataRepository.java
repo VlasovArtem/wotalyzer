@@ -12,6 +12,6 @@ import java.util.List;
 @Repository
 public interface TankExpectedDataRepository extends MongoRepository<TankExpectedData, Long> {
 
-    List<TankExpectedData> findByTankIdIn(List<Long> tankIds);
+    List<TankExpectedData> findByTankIdIn(List<Integer> tankIds);
 
 }

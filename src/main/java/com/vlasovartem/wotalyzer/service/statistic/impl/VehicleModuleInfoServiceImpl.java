@@ -2,7 +2,7 @@ package com.vlasovartem.wotalyzer.service.statistic.impl;
 
 import com.vlasovartem.wotalyzer.entity.statistic.VehicleModuleComponent;
 import com.vlasovartem.wotalyzer.entity.statistic.VehicleModuleInfo;
-import com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia.Vehicles;
+import com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia.Vehicle;
 import com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia.components.Modules;
 import com.vlasovartem.wotalyzer.service.statistic.VehicleModuleInfoService;
 import com.vlasovartem.wotalyzer.service.wot.api.tankopedia.VehiclesService;
@@ -41,7 +41,7 @@ public class VehicleModuleInfoServiceImpl implements VehicleModuleInfoService {
     public VehicleModuleInfo findVehicleComponentInfoData(long tankId) {
         VehicleModuleInfo info = new VehicleModuleInfo();
         info.setTankId(tankId);
-        Vehicles tankBaseInfo = vehiclesService.findById(tankId, Arrays.asList("modules_tree", TANK_ID_PARAM, "default_profile"));
+        Vehicle tankBaseInfo = vehiclesService.findById(tankId, Arrays.asList("modules_tree", TANK_ID_PARAM, "default_profile"));
         if(Objects.nonNull(tankBaseInfo)) {
             VehicleModuleComponent defaultComponents = new VehicleModuleComponent();
             if(Objects.nonNull(tankBaseInfo.getDefaultProfile().getModules())) {

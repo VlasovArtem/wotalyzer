@@ -8,13 +8,13 @@ public class MainStatistic {
     /* Average experience per battle */
     private int battleAvgXp;
     /* Battles fought */
-    private int battles;
+    private long battles;
     /* Base capture points */
-    private int capturePoints;
+    private long capturePoints;
     /* Damage caused */
-    private int damageDealt;
+    private long damageDealt;
     /* Damage received */
-    private int damageReceived;
+    private long damageReceived;
     /* Draws */
     private int draws;
     /* Base defense points */
@@ -46,35 +46,35 @@ public class MainStatistic {
         this.battleAvgXp = battleAvgXp;
     }
 
-    public int getBattles() {
+    public long getBattles() {
         return battles;
     }
 
-    public void setBattles(int battles) {
+    public void setBattles(long battles) {
         this.battles = battles;
     }
 
-    public int getCapturePoints() {
+    public long getCapturePoints() {
         return capturePoints;
     }
 
-    public void setCapturePoints(int capturePoints) {
+    public void setCapturePoints(long capturePoints) {
         this.capturePoints = capturePoints;
     }
 
-    public int getDamageDealt() {
+    public long getDamageDealt() {
         return damageDealt;
     }
 
-    public void setDamageDealt(int damageDealt) {
+    public void setDamageDealt(long damageDealt) {
         this.damageDealt = damageDealt;
     }
 
-    public int getDamageReceived() {
+    public long getDamageReceived() {
         return damageReceived;
     }
 
-    public void setDamageReceived(int damageReceived) {
+    public void setDamageReceived(long damageReceived) {
         this.damageReceived = damageReceived;
     }
 

@@ -37,24 +37,19 @@ public class TankExpectedDataServiceImpl implements TankExpectedDataService {
     }
 
     @Override
-    public List<TankExpectedData> findByIds(List<Long> tankIds) {
+    public List<TankExpectedData> findByIds(List<Integer> tankIds) {
         return repository.findByTankIdIn(tankIds);
     }
 
     @Override
-    public List<TankExpectedData> findUserVehicleExpectedData(long accountId) {
+    public List<TankExpectedData> findUserVehicleExpectedData(int accountId) {
         APIResponseMapList<VehicleStatistic> apiResponse = vehicleStatisticUtils.getApiResponseMapList(newBuilder().withAccountId(accountId).build());
         Optional<List<VehicleStatistic>> responseContent = apiResponse.getContent().stream().findFirst();
         if (responseContent.isPresent()) {
             List<VehicleStatistic> vehicleStatistics = responseContent.get();
-            List<Long> accountTankIds = vehicleStatistics.stream().map(VehicleStatistic::getTankId).collect(Collectors.toList());
-            return findVehiclesExpectedData(accountTankIds);
+            List<Integer> accountTankIds = vehicleStatistics.stream().map(VehicleStatistic::getTankId).collect(Collectors.toList());
+            return findByIds(accountTankIds);
         }
         return Collections.emptyList();
-    }
-
-    @Override
-    public List<TankExpectedData> findVehiclesExpectedData(List<Long> tankIds) {
-        return repository.findByTankIdIn(tankIds);
     }
 }

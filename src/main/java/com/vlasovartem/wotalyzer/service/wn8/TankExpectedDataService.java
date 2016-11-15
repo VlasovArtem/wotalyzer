@@ -10,7 +10,6 @@ import java.util.List;
 public interface TankExpectedDataService {
 
     TankExpectedData findById(long tankId);
-    List<TankExpectedData> findByIds(List<Long> tankIds);
-    List<TankExpectedData> findUserVehicleExpectedData(long accountId);
-    List<TankExpectedData> findVehiclesExpectedData(List<Long> tankIds);
+    List<TankExpectedData> findByIds(List<Integer> tankIds);
+    List<TankExpectedData> findUserVehicleExpectedData(int accountId);
 }

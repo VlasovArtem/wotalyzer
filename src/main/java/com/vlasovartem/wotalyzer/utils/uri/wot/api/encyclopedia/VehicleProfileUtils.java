@@ -1,6 +1,7 @@
 package com.vlasovartem.wotalyzer.utils.uri.wot.api.encyclopedia;
 
 import com.fasterxml.jackson.databind.JavaType;
+import com.vlasovartem.wotalyzer.entity.wot.api.response.APIResponseMapList;
 import com.vlasovartem.wotalyzer.entity.wot.api.response.AbstractAPIResponse;
 import com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia.VehicleProfile;
 import com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia.info.Info;
@@ -66,13 +67,14 @@ public class VehicleProfileUtils extends MainUtils<VehicleProfile> {
      * @return AbstractAPIResponse with associated array.
      *
      */
-    public AbstractAPIResponse<Map<String, VehicleProfile>> getVehicleApiResponse(long tankId, List<String> fields) {
+    public APIResponseMapList<VehicleProfile> getVehicleApiResponse(List<Integer> tankIds, List<String> fields) {
         Map<String, Object> params = new HashMap<>();
-        params.put(TANK_ID_PARAM, tankId);
+        params.put(TANK_ID_PARAM, tankIds.stream()
+                .map(Object::toString)
+                .collect(Collectors.joining(",")));
         params.put(FIELDS_PARAM, fields);
-        return getApiResponseMap(params);
+        return getApiResponseMapList(params);
     }
-
 
     /**
      * Convert Tankopedia object from API Response

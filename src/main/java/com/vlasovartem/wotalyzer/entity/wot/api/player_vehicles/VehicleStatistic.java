@@ -18,7 +18,7 @@ public class VehicleStatistic {
     /* Maximum experience per battle */
     private int maxXp;
     /* Vehicle ID */
-    private long tankId;
+    private int tankId;
     /* Details on vehicles destroyed. This data requires a valid access_token for the specified account. */
     private Map<String, String> frags;
     /* Availability of vehicle in the Garage. This data requires a valid access_token for the specified account. */
@@ -76,11 +76,11 @@ public class VehicleStatistic {
         this.maxXp = maxXp;
     }
 
-    public long getTankId() {
+    public int getTankId() {
         return tankId;
     }
 
-    public void setTankId(long tankId) {
+    public void setTankId(int tankId) {
         this.tankId = tankId;
     }
 

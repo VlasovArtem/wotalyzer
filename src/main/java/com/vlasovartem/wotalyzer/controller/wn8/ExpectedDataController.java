@@ -30,7 +30,7 @@ public class ExpectedDataController {
     }
 
     @RequestMapping("/get/filtered")
-    public List<TankExpectedData> findByIds(@RequestParam List<Long> tankIds) {
+    public List<TankExpectedData> findByIds(@RequestParam List<Integer> tankIds) {
         return dataService.findByIds(tankIds);
     }
 }
