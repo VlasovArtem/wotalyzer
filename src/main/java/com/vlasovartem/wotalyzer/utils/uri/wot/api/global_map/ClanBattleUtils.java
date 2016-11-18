@@ -17,8 +17,9 @@ import static com.vlasovartem.wotalyzer.utils.validators.MainValidator.validateP
  */
 public class ClanBattleUtils extends MainUtils<ClanBattle> {
 
-    public ClanBattleUtils() {
-        super(ClanBattle.class);
+    @Override
+    protected Class getType() {
+        return ClanBattle.class;
     }
 
     @Override

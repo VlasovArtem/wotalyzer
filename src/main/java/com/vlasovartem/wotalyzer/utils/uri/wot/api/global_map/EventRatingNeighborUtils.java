@@ -15,8 +15,9 @@ import java.util.function.Function;
  */
 public class EventRatingNeighborUtils extends MainUtils<EventRatingNeighbor> {
 
-    public EventRatingNeighborUtils() {
-        super(EventRatingNeighbor.class);
+    @Override
+    protected Class getType() {
+        return EventRatingNeighbor.class;
     }
 
     @Override

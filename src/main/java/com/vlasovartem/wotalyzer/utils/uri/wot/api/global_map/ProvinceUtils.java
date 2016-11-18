@@ -18,8 +18,9 @@ import static com.vlasovartem.wotalyzer.utils.validators.global_map.GlobalMapVal
  */
 public class ProvinceUtils extends MainUtils<Province> {
 
-    public ProvinceUtils() {
-        super(Province.class);
+    @Override
+    protected Class getType() {
+        return Province.class;
     }
 
     @Override

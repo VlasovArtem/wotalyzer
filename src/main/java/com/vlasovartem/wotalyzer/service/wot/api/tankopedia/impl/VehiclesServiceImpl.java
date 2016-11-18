@@ -9,9 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
-import static com.vlasovartem.wotalyzer.utils.api.contstans.WOTAPIConstants.*;
+import static com.vlasovartem.wotalyzer.utils.api.contstans.WOTAPIConstants.FIELDS_PARAM;
+import static com.vlasovartem.wotalyzer.utils.api.contstans.WOTAPIConstants.TIER_PARAM;
 
 /**
  * Created by artemvlasov on 14/01/16.
@@ -63,11 +63,13 @@ public class VehiclesServiceImpl implements VehiclesService {
                 param.put(FIELDS_PARAM, fields);
             }
         }
-        Map<String, Vehicle> tierVehicles = vehiclesUtils.getApiResponseMap(param).getData();
-        return tierVehicles.entrySet().stream()
-                .map(Map.Entry::getValue)
-                .filter(vbi -> type.getName().equals(vbi.getType()))
-                .collect(Collectors.toList());
+        //TODO
+//        Map<String, Vehicle> tierVehicles = vehiclesUtils.getApiResponseMap(param).getData();
+//        return tierVehicles.entrySet().stream()
+//                .map(Map.Entry::getValue)
+//                .filter(vbi -> type.getName().equals(vbi.getType()))
+//                .collect(Collectors.toList());
+        return null;
     }
 
     @Override
@@ -87,20 +89,30 @@ public class VehiclesServiceImpl implements VehiclesService {
 
     @Override
     public List<Vehicle> findAll(List<String> fields) {
-        Map<String, Object> params = new HashMap<>();
+        //TODO
+        /*Map<String, Object> params = new HashMap<>();
         params.put(FIELDS_PARAM, fields);
         return vehiclesUtils.getApiResponseMap(params)
                 .getData().entrySet().stream()
-                .map(Map.Entry::getValue).collect(Collectors.toList());
+                .map(Map.Entry::getValue).collect(Collectors.toList());*/
+        return null;
     }
 
     private Vehicle getVehicleBaseInfoObject(long tankId) {
-        return vehiclesUtils.getVehiclesApiResponse(tankId).getData().get(String.valueOf(tankId));
+        List<Vehicle> vehicles = vehiclesUtils.getVehiclesApiResponse(tankId)
+                .getData()
+                .get(String.valueOf(tankId));
+        if (!vehicles.isEmpty()) {
+            return vehicles.get(0);
+        }
+        return null;
     }
     private Vehicle getVehicleBaseInfoObject(long tankId, List<String> fields) {
-        Map<String, Object> params = new HashMap<>();
-        params.put(TANK_ID_PARAM, tankId);
-        params.put(FIELDS_PARAM, fields);
-        return vehiclesUtils.getApiResponseMap(params).getData().get(String.valueOf(tankId));
+        //TODO
+//        Map<String, Object> params = new HashMap<>();
+//        params.put(TANK_ID_PARAM, tankId);
+//        params.put(FIELDS_PARAM, fields);
+//        return vehiclesUtils.getApiResponseMap(params).getData().get(String.valueOf(tankId));
+        return null;
     }
 }

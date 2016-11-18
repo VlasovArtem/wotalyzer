@@ -15,8 +15,9 @@ import java.util.function.Function;
  */
 public class EventAccountInfoUtils extends MainUtils<EventAccountInfo> {
 
-    public EventAccountInfoUtils() {
-        super(EventAccountInfo.class);
+    @Override
+    protected Class getType() {
+        return EventAccountInfo.class;
     }
 
     @Override

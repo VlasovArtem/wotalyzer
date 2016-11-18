@@ -13,8 +13,9 @@ import java.util.List;
 @Component
 public class PersonalMissionUtils extends MainUtils<PersonalMission> {
 
-    public PersonalMissionUtils() {
-        super(PersonalMission.class);
+    @Override
+    protected Class getType() {
+        return PersonalMission.class;
     }
 
     @Override

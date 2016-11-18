@@ -14,8 +14,9 @@ import static com.vlasovartem.wotalyzer.utils.api.contstans.WOTAPIConstants.IN_G
  */
 public class VehicleAchievementUtils extends MainUtils<VehicleAchievement> {
 
-    public VehicleAchievementUtils() {
-        super(VehicleAchievement.class);
+    @Override
+    protected Class getType() {
+        return VehicleAchievement.class;
     }
 
     @Override

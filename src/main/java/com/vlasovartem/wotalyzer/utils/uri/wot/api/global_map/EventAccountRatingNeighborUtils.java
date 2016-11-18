@@ -19,8 +19,9 @@ import static com.vlasovartem.wotalyzer.utils.validators.MainValidator.validateP
  */
 public class EventAccountRatingNeighborUtils extends MainUtils<EventAccountRatingNeighbor> {
 
-    public EventAccountRatingNeighborUtils() {
-        super(EventAccountRatingNeighbor.class);
+    @Override
+    protected Class getType() {
+        return EventAccountRatingNeighbor.class;
     }
 
     @Override

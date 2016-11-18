@@ -18,8 +18,9 @@ import static com.vlasovartem.wotalyzer.utils.validators.global_map.GlobalMapVal
  */
 public class SeasonUtils extends MainUtils<Season> {
 
-    public SeasonUtils() {
-        super(Season.class);
+    @Override
+    protected Class getType() {
+        return Season.class;
     }
 
     @Override

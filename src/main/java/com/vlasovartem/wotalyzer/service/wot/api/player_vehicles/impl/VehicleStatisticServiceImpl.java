@@ -2,7 +2,6 @@ package com.vlasovartem.wotalyzer.service.wot.api.player_vehicles.impl;
 
 import com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia.Vehicle;
 import com.vlasovartem.wotalyzer.entity.wot.api.player_vehicles.VehicleStatistic;
-import com.vlasovartem.wotalyzer.entity.wot.api.response.APIResponseMapList;
 import com.vlasovartem.wotalyzer.service.wot.api.player_vehicles.VehicleStatisticService;
 import com.vlasovartem.wotalyzer.utils.uri.wot.api.encyclopedia.VehicleUtils;
 import com.vlasovartem.wotalyzer.utils.uri.wot.api.player_vehicles.VehicleStatisticUtils;
@@ -14,8 +13,6 @@ import java.util.List;
 import java.util.Optional;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
-
-import static com.vlasovartem.wotalyzer.utils.QueryParamBuilder.newBuilder;
 
 /**
  * Created by artemvlasov on 03/11/2016.
@@ -37,12 +34,7 @@ public class VehicleStatisticServiceImpl implements VehicleStatisticService {
     }
 
     public List<VehicleStatistic> getAccountVehicles(long accountId) {
-        APIResponseMapList<VehicleStatistic> apiResponse = vehicleStatisticUtils.getApiResponseMapList(newBuilder().withAccountId(accountId).build());
-        Optional<List<VehicleStatistic>> responseContent = apiResponse.getContent().stream().findFirst();
-        if (responseContent.isPresent()) {
-            return responseContent.get();
-        }
-        return Collections.emptyList();
+        return vehicleStatisticUtils.getVehicleStatistics(accountId);
     }
 
     @Override
@@ -79,15 +71,18 @@ public class VehicleStatisticServiceImpl implements VehicleStatisticService {
     private List<VehicleStatistic> getVehicleStatisticByTierFunction(int accountId, Predicate<Vehicle> filterFunction) {
         List<VehicleStatistic> accountVehicles = getAccountVehicles(accountId);
         List<Integer> accountTankIds = getAccountTankIds(accountVehicles);
-        List<Vehicle> tierVehicles = vehicleUtils.getVehiclesApiResponse(accountTankIds)
-                .getContent()
-                .parallelStream()
-                .filter(filterFunction)
-                .collect(Collectors.toList());
-        return accountVehicles
-                .parallelStream()
-                .filter(vehicleStatistic -> tierVehicles.stream().anyMatch(tierVehicle -> tierVehicle.getId() == vehicleStatistic.getTankId()))
-                .collect(Collectors.toList());
+        Optional<List<Vehicle>> vehicles = vehicleUtils.getVehiclesApiResponse(accountTankIds).getContent();
+        if (vehicles.isPresent()) {
+            List<Vehicle> tierVehicles = vehicles.get()
+                    .parallelStream()
+                    .filter(filterFunction)
+                    .collect(Collectors.toList());
+            return accountVehicles
+                    .parallelStream()
+                    .filter(vehicleStatistic -> tierVehicles.stream().anyMatch(tierVehicle -> tierVehicle.getId() == vehicleStatistic.getTankId()))
+                    .collect(Collectors.toList());
+        }
+        return Collections.emptyList();
     }
 
 }

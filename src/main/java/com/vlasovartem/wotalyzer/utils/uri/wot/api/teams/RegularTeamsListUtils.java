@@ -16,8 +16,9 @@ import java.util.function.Function;
  */
 public class RegularTeamsListUtils extends MainUtils<RegularTeamsList> {
 
-    public RegularTeamsListUtils() {
-        super(RegularTeamsList.class);
+    @Override
+    protected Class getType() {
+        return RegularTeamsList.class;
     }
 
     @Override

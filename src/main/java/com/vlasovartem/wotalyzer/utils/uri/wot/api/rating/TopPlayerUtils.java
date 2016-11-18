@@ -17,8 +17,9 @@ import static com.vlasovartem.wotalyzer.utils.validators.rating.RatingValidator.
  */
 public class TopPlayerUtils extends RatingUtils<TopPlayer> {
 
-    public TopPlayerUtils() {
-        super(TopPlayer.class);
+    @Override
+    protected Class getType() {
+        return TopPlayer.class;
     }
 
     @Override

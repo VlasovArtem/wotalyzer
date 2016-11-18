@@ -11,8 +11,9 @@ import java.util.List;
  */
 public class AccountStatsUtils extends MainUtils<AccountStats> {
 
-    public AccountStatsUtils() {
-        super(AccountStats.class);
+    @Override
+    protected Class getType() {
+        return AccountStats.class;
     }
 
     @Override

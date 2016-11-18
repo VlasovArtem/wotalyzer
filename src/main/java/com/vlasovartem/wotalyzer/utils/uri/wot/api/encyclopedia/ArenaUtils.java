@@ -13,8 +13,9 @@ import java.util.List;
 @Component
 public class ArenaUtils extends MainUtils<Arena> {
 
-    ArenaUtils() {
-        super(Arena.class);
+    @Override
+    protected Class getType() {
+        return Arena.class;
     }
 
     @Override

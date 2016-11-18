@@ -13,8 +13,9 @@ import java.util.List;
 @Component
 public class BoosterUtils extends MainUtils<Booster> {
 
-    public BoosterUtils() {
-        super(Booster.class);
+    @Override
+    protected Class getType() {
+        return Booster.class;
     }
 
     @Override

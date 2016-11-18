@@ -4,10 +4,8 @@ import com.vlasovartem.wotalyzer.entity.wn8.ExpectedData;
 import com.vlasovartem.wotalyzer.entity.wn8.RatioData;
 import com.vlasovartem.wotalyzer.entity.wot.api.account.Player;
 import com.vlasovartem.wotalyzer.entity.wot.api.account.components.statistics.AllStatisticsData;
-import com.vlasovartem.wotalyzer.entity.wot.api.response.APIResponseMap;
 import com.vlasovartem.wotalyzer.service.wn8.ExpectedDataService;
 import com.vlasovartem.wotalyzer.service.wn8.RatioDataService;
-import com.vlasovartem.wotalyzer.utils.QueryParamBuilder;
 import com.vlasovartem.wotalyzer.utils.uri.wot.api.account.PlayerUtils;
 import com.vlasovartem.wotalyzer.utils.wn8.RatioDataUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,11 +32,9 @@ public class RatioDataServiceImpl implements RatioDataService {
     @Override
     public RatioData getAccountRatioData(int accountId) {
         ExpectedData accountExpectedData = expectedDataService.getAccountExpectedData(accountId);
-        APIResponseMap<Player> apiResponseMap = utils.getApiResponseMap(QueryParamBuilder.newBuilder().withAccountId(accountId).build());
-        List<Player> content = apiResponseMap.getContent();
-        if(!content.isEmpty()) {
-            Player player = content.get(0);
-            AllStatisticsData allStatisticsData = player.getStatistics().getAll();
+        Optional<Player> playerData = utils.getPlayer(accountId);
+        if (playerData.isPresent()) {
+            AllStatisticsData allStatisticsData = playerData.get().getStatistics().getAll();
             return RatioDataUtils.calculateAccountRationData(allStatisticsData, accountExpectedData);
         }
         return null;

@@ -14,7 +14,12 @@ import java.util.List;
 public class PlayerAchievementsUtils extends MainUtils<PlayerAchievements> {
 
     public PlayerAchievementsUtils() {
-        super(PlayerAchievements.class);
+        super();
+    }
+
+    @Override
+    protected Class getType() {
+        return PlayerAchievements.class;
     }
 
     @Override

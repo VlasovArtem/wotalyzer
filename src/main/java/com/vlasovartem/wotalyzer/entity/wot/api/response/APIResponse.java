@@ -5,8 +5,4 @@ package com.vlasovartem.wotalyzer.entity.wot.api.response;
  */
 public class APIResponse<T> extends AbstractAPIResponse<T> {
 
-    @Override
-    public T getContent() {
-        return getData();
-    }
 }

@@ -15,8 +15,9 @@ import java.util.function.Function;
  */
 public class EventRatingUtils extends MainUtils<EventRating> {
 
-    public EventRatingUtils() {
-        super(EventRating.class);
+    @Override
+    protected Class getType() {
+        return EventRating.class;
     }
 
     @Override

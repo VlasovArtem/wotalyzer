@@ -36,11 +36,11 @@ public class RatioDataUtils {
 
     public static RatioData calculateAccountRationData(AllStatisticsData allStatisticsData, ExpectedData accountExpectedData) {
         RatioData ratioData = new RatioData();
-        ratioData.setDamage(allStatisticsData.getDamageDealt() / accountExpectedData.getExpDamage());
-        ratioData.setFrag(allStatisticsData.getFrags() / accountExpectedData.getExpFrag());
-        ratioData.setSpot(allStatisticsData.getSpotted() / accountExpectedData.getExpSpot());
-        ratioData.setWinRate(allStatisticsData.getWins() / accountExpectedData.getExpWin());
-        ratioData.setDef(allStatisticsData.getDroppedCapturePoints() / accountExpectedData.getExpDef());
+        ratioData.setDamage((double) allStatisticsData.getDamageDealt() / accountExpectedData.getExpDamage());
+        ratioData.setFrag((double) allStatisticsData.getFrags() / accountExpectedData.getExpFrag());
+        ratioData.setSpot((double) allStatisticsData.getSpotted() / accountExpectedData.getExpSpot());
+        ratioData.setWinRate((double) allStatisticsData.getWins() / accountExpectedData.getExpWin());
+        ratioData.setDef((double) allStatisticsData.getDroppedCapturePoints() / accountExpectedData.getExpDef());
         return ratioData;
     }
 
@@ -58,12 +58,11 @@ public class RatioDataUtils {
     }
 
     public static int calculateWN8(RatioData zeroRatioData) {
-        return (int)
-                (980 * zeroRatioData.getDamage() +
-                        210 * zeroRatioData.getDamage() * zeroRatioData.getFrag() +
-                        155 * zeroRatioData.getFrag() * zeroRatioData.getSpot() +
-                        75 * zeroRatioData.getDef() * zeroRatioData.getFrag() +
-                        145 * Double.min(1.8, zeroRatioData.getWinRate()));
+        return Math.round((float) (980 * zeroRatioData.getDamage() +
+                210 * zeroRatioData.getDamage() * zeroRatioData.getFrag() +
+                155 * zeroRatioData.getFrag() * zeroRatioData.getSpot() +
+                75 * zeroRatioData.getDef() * zeroRatioData.getFrag() +
+                145 * Double.min(1.8, zeroRatioData.getWinRate())));
     }
     
     private static Consumer<TankExpectedData> collectExpectedData(long battles, ExpectedData expectedData) {

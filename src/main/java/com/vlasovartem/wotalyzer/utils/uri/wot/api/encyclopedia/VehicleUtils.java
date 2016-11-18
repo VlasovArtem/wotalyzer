@@ -3,7 +3,7 @@ package com.vlasovartem.wotalyzer.utils.uri.wot.api.encyclopedia;
 import com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia.Vehicle;
 import com.vlasovartem.wotalyzer.entity.wot.api.response.APIResponseList;
 import com.vlasovartem.wotalyzer.entity.wot.api.response.APIResponseMapList;
-import com.vlasovartem.wotalyzer.utils.QueryParamBuilder;
+import com.vlasovartem.wotalyzer.utils.query.builder.QueryParamBuilder;
 import com.vlasovartem.wotalyzer.utils.api.contstans.WOTAPIConstants;
 import com.vlasovartem.wotalyzer.utils.api.contstans.encyclopedia.VehicleConstants;
 import com.vlasovartem.wotalyzer.utils.uri.wot.api.MainUtils;
@@ -22,8 +22,9 @@ import static com.vlasovartem.wotalyzer.utils.api.contstans.WOTAPIConstants.TANK
 @Component
 public class VehicleUtils extends MainUtils<Vehicle> {
 
-    public VehicleUtils() {
-        super(Vehicle.class);
+    @Override
+    protected Class getType() {
+        return Vehicle.class;
     }
 
     /**

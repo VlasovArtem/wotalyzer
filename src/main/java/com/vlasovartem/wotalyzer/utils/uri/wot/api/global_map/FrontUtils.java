@@ -15,8 +15,9 @@ import java.util.function.Function;
  */
 public class FrontUtils extends MainUtils<Front> {
 
-    public FrontUtils() {
-        super(Front.class);
+    @Override
+    protected Class getType() {
+        return Front.class;
     }
 
     @Override

@@ -15,8 +15,9 @@ import java.util.function.Function;
  */
 public class ClanRatingDateUtils extends MainUtils<ClanRatingDate> {
 
-    public ClanRatingDateUtils() {
-        super(ClanRatingDate.class);
+    @Override
+    protected Class getType() {
+        return ClanRatingDate.class;
     }
 
     @Override

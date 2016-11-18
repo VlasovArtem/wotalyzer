@@ -11,8 +11,9 @@ import java.util.List;
  */
 public class PlannedBattleUtils extends MainUtils<PlannedBattle> {
 
-    public PlannedBattleUtils() {
-        super(PlannedBattle.class);
+    @Override
+    protected Class getType() {
+        return PlannedBattle.class;
     }
 
     @Override

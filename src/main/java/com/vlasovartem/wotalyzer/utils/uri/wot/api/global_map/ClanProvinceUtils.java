@@ -15,8 +15,9 @@ import java.util.function.Function;
  */
 public class ClanProvinceUtils extends MainUtils<ClanProvince> {
 
-    public ClanProvinceUtils() {
-        super(ClanProvince.class);
+    @Override
+    protected Class getType() {
+        return ClanProvince.class;
     }
 
     @Override

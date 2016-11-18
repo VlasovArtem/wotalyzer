@@ -1,7 +1,10 @@
 package com.vlasovartem.wotalyzer.utils.uri.wot.api.rating;
 
 import com.vlasovartem.wotalyzer.entity.wot.api.rating.Account;
+import com.vlasovartem.wotalyzer.entity.wot.api.response.APIResponseMap;
 import com.vlasovartem.wotalyzer.utils.api.contstans.WOTAPIConstants;
+import com.vlasovartem.wotalyzer.utils.api.contstans.enums.RatingTypeParameter;
+import com.vlasovartem.wotalyzer.utils.query.builder.QueryParamBuilder;
 import com.vlasovartem.wotalyzer.utils.validators.rating.RatingValidator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -21,8 +24,23 @@ public class AccountUtils extends RatingUtils<Account> {
     private static final Logger LOGGER = LogManager.getLogger(AccountUtils.class);
     private static Map<String, String> defaultValueMap;
 
-    public AccountUtils() {
-        super(Account.class);
+    public Optional<Account> getAccount(long accountId, RatingTypeParameter parameter) {
+        if (Objects.isNull(parameter)) {
+            parameter = RatingTypeParameter.TYPE_ALL;
+        }
+        APIResponseMap<Account> apiResponse = getApiResponseMap(QueryParamBuilder.newBuilder()
+                .withAccountId(accountId)
+                .customParam(WOTAPIConstants.TYPE_PARAM, parameter.getValue()).build());
+        Optional<Map<String, Account>> content = apiResponse.getContent();
+        if (content.isPresent()) {
+            return Optional.of(content.get().get(String.valueOf(accountId)));
+        }
+        return Optional.empty();
+    }
+
+    @Override
+    protected Class getType() {
+        return Account.class;
     }
 
     @Override

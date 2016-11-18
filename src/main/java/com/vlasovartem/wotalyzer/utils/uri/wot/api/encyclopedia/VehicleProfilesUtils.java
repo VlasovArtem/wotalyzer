@@ -17,8 +17,9 @@ import java.util.function.Function;
 @Component
 public class VehicleProfilesUtils extends MainUtils<VehicleProfiles> {
 
-    public VehicleProfilesUtils() {
-        super(VehicleProfiles.class);
+    @Override
+    protected Class getType() {
+        return VehicleProfiles.class;
     }
 
     @Override

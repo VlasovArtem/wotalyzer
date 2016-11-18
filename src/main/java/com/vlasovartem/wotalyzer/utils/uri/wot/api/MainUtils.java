@@ -32,10 +32,8 @@ public abstract class MainUtils<T> {
     protected RestTemplate restTemplate;
     @Autowired
     protected ObjectMapper objectMapper;
-    private final Class type;
 
-    public MainUtils(Class type) {
-        this.type = type;
+    public MainUtils() {
         restTemplate = new RestTemplate();
 
     }
@@ -46,22 +44,22 @@ public abstract class MainUtils<T> {
      * @param queryParams params that should be add to basic api url
      * @return AbstractAPIResponse return that contains data that is represent as map with key tank id and value requested object.
      */
-    public APIResponse<T> getApiResponse(Map<String, Object> queryParams) {
+    protected APIResponse<T> getApiResponse(Map<String, Object> queryParams) {
         String url = buildUri(queryParams);
         return getApiResponse(url);
     }
 
-    public APIResponseList<T> getApiResponseList(Map<String, Object> queryParams) {
+    protected APIResponseList<T> getApiResponseList(Map<String, Object> queryParams) {
         String url = buildUri(queryParams);
         return getApiResponseList(url);
     }
 
-    public APIResponseMap<T> getApiResponseMap(Map<String, Object> queryParams) {
+    protected APIResponseMap<T> getApiResponseMap(Map<String, Object> queryParams) {
         String url = buildUri(queryParams);
         return getApiResponseMap(url);
     }
 
-    public APIResponseMapList<T> getApiResponseMapList(Map<String, Object> queryParams) {
+    protected APIResponseMapList<T> getApiResponseMapList(Map<String, Object> queryParams) {
         String url = buildUri(queryParams);
         return getApiResponseMapList(url);
     }
@@ -72,7 +70,7 @@ public abstract class MainUtils<T> {
      * @param url full url
      * @return AbstractAPIResponse
      */
-    public APIResponseList<T> getApiResponseList(String url) {
+    protected APIResponseList<T> getApiResponseList(String url) {
         return getApiResponse(url, getParametrizedType(APIResponseList.class, createJavaType(List.class)));
     }
 
@@ -82,11 +80,11 @@ public abstract class MainUtils<T> {
      * @param url full url
      * @return AbstractAPIResponse
      */
-    public APIResponseMap<T> getApiResponseMap(String url) {
+    protected APIResponseMap<T> getApiResponseMap(String url) {
         return getApiResponse(url, getParametrizedType(APIResponseMap.class, createJavaType(Map.class)));
     }
 
-    public APIResponseMapList<T> getApiResponseMapList(String url) {
+    private APIResponseMapList<T> getApiResponseMapList(String url) {
         return getApiResponse(url, getParametrizedType(APIResponseMapList.class, createExtendedMapJavaType(List.class)));
     }
 
@@ -96,7 +94,7 @@ public abstract class MainUtils<T> {
      * @param url full url
      * @return AbstractAPIResponse
      */
-    public APIResponse<T> getApiResponse(String url) {
+    private APIResponse<T> getApiResponse(String url) {
         return getApiResponse(url, getParametrizedType(APIResponse.class, createJavaType(Object.class)));
     }
 
@@ -180,7 +178,7 @@ public abstract class MainUtils<T> {
      * @param url full url
      * @return AbstractAPIResponse
      */
-    private <F> F getApiResponse(String url, JavaType paremetrizedType) {
+    private <F extends AbstractAPIResponse> F getApiResponse(String url, JavaType paremetrizedType) {
         if (Objects.nonNull(url) && Objects.nonNull(paremetrizedType)) {
             try {
                 return objectMapper.readValue(getUrlResponse(url), paremetrizedType);
@@ -188,7 +186,7 @@ public abstract class MainUtils<T> {
                 throw new RuntimeException(e.getMessage());
             }
         }
-        return null;
+        return (F) NullAPIResponse.getNullResponse();
     }
 
     /**
@@ -230,11 +228,11 @@ public abstract class MainUtils<T> {
 
     private <F> JavaType createJavaType(Class<F> returnedType)  {
         if (Collection.class.isAssignableFrom(returnedType)) {
-            return objectMapper.getTypeFactory().constructCollectionType((Class<? extends Collection>) returnedType, type);
+            return objectMapper.getTypeFactory().constructCollectionType((Class<? extends Collection>) returnedType, getType());
         } else if (Map.class.isAssignableFrom(returnedType)) {
-            return objectMapper.getTypeFactory().constructMapType(Map.class, String.class, type);
+            return objectMapper.getTypeFactory().constructMapType(Map.class, String.class, getType());
         } else {
-            return objectMapper.getTypeFactory().uncheckedSimpleType(type);
+            return objectMapper.getTypeFactory().uncheckedSimpleType(getType());
         }
     }
 
@@ -244,11 +242,13 @@ public abstract class MainUtils<T> {
             JavaType valueType = createJavaType(List.class);
             return objectMapper.getTypeFactory().constructMapType(Map.class, keyType, valueType);
         } else {
-            return objectMapper.getTypeFactory().constructMapType(Map.class, String.class, type);
+            return objectMapper.getTypeFactory().constructMapType(Map.class, String.class, getType());
         }
     }
 
     private <F extends AbstractAPIResponse> JavaType getParametrizedType(Class<F> responseType, JavaType contentType) {
         return objectMapper.getTypeFactory().constructParametrizedType(responseType, responseType, contentType);
     }
+
+    protected abstract Class getType();
 }

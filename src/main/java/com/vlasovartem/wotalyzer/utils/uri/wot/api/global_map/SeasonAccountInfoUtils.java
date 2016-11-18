@@ -15,8 +15,9 @@ import java.util.function.Function;
  */
 public class SeasonAccountInfoUtils extends MainUtils<SeasonAccountInfo> {
 
-    public SeasonAccountInfoUtils() {
-        super(SeasonAccountInfo.class);
+    @Override
+    protected Class getType() {
+        return SeasonAccountInfo.class;
     }
 
     @Override

@@ -13,8 +13,9 @@ import java.util.List;
 @Component
 public class PlayerVehiclesUtils extends MainUtils<PlayerVehicles> {
 
-    public PlayerVehiclesUtils() {
-        super(PlayerVehicles.class);
+    @Override
+    protected Class getType() {
+        return PlayerVehicles.class;
     }
 
     @Override

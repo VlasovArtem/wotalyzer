@@ -15,8 +15,9 @@ import java.util.function.Function;
  */
 public class RatingDateUtils extends MainUtils<RatingDate> {
 
-    public RatingDateUtils() {
-        super(RatingDate.class);
+    @Override
+    protected Class getType() {
+        return RatingDate.class;
     }
 
     @Override

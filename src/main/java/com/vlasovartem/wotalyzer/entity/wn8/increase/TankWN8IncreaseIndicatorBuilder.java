@@ -51,7 +51,7 @@ public class TankWN8IncreaseIndicatorBuilder {
      * @return builder
      */
     public TankWN8IncreaseIndicatorBuilder checkFrags(long frags, float expectedFrags) {
-        if (Float.compare(frags / battles, expectedFrags * 2) == 1) {
+        if (Float.compare((float) frags / battles, expectedFrags * 2) == 1) {
             indicator.addWn8IncreaseIndicator(new WN8IncreaseIndicator(FRAGS, NONE));
         } else {
             indicator.addWn8IncreaseIndicator(new WN8IncreaseIndicator(FRAGS, LOW));
@@ -68,7 +68,7 @@ public class TankWN8IncreaseIndicatorBuilder {
      * @return builder
      */
     public TankWN8IncreaseIndicatorBuilder checkSpotted(long spotted, float expectedSpotted) {
-        if (Float.compare(spotted / battles, (float) (expectedSpotted + (expectedSpotted * 0.1))) == 1) {
+        if (Float.compare((float) spotted / battles, (float) (expectedSpotted + (expectedSpotted * 0.1))) == 1) {
             indicator.addWn8IncreaseIndicator(new WN8IncreaseIndicator(SPOTTED, NONE));
         } else {
             indicator.addWn8IncreaseIndicator(new WN8IncreaseIndicator(SPOTTED, LOW));
@@ -85,7 +85,7 @@ public class TankWN8IncreaseIndicatorBuilder {
      * @return builder
      */
     public TankWN8IncreaseIndicatorBuilder checkDefence(long defence, float expectedDefence) {
-        if (Float.compare(defence / battles, (float) (expectedDefence + (expectedDefence * 0.1))) == 1) {
+        if (Float.compare((float) defence / battles, (float) (expectedDefence + (expectedDefence * 0.1))) == 1) {
             indicator.addWn8IncreaseIndicator(new WN8IncreaseIndicator(DEFENCE, NONE));
         } else {
             indicator.addWn8IncreaseIndicator(new WN8IncreaseIndicator(DEFENCE, LOW));

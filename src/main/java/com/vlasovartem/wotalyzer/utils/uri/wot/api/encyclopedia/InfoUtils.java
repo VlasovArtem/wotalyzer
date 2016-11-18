@@ -13,8 +13,9 @@ import java.util.List;
 @Component
 public class InfoUtils extends MainUtils<Info> {
 
-    InfoUtils() {
-        super(Info.class);
+    @Override
+    protected Class getType() {
+        return Info.class;
     }
 
     @Override

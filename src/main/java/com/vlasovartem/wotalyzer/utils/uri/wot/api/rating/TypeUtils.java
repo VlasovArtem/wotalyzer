@@ -10,8 +10,9 @@ import java.util.List;
  */
 public class TypeUtils extends RatingUtils<Type> {
 
-    public TypeUtils() {
-        super(Type.class);
+    @Override
+    protected Class getType() {
+        return Type.class;
     }
 
     @Override

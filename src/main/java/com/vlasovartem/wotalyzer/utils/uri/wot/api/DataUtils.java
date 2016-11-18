@@ -11,10 +11,16 @@ import java.util.List;
 public class DataUtils <T, U extends BasicAPIConstants> extends MainUtils<T> {
 
     private final Class<U> constants;
+    private final Class<T> type;
 
     public DataUtils(Class<T> type, Class<U> constants) {
-        super(type);
         this.constants = constants;
+        this.type = type;
+    }
+
+    @Override
+    protected Class getType() {
+        return type;
     }
 
     @Override

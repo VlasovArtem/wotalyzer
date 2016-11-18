@@ -11,8 +11,9 @@ import java.util.List;
  */
 public class ClanInfoUtils extends MainUtils<ClanInfo> {
 
-    public ClanInfoUtils() {
-        super(ClanInfo.class);
+    @Override
+    protected Class getType() {
+        return ClanInfo.class;
     }
 
     @Override

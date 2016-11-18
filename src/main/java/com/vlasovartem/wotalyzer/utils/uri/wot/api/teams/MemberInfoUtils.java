@@ -11,8 +11,9 @@ import java.util.List;
  */
 public class MemberInfoUtils extends MainUtils<MemberInfo> {
 
-    public MemberInfoUtils() {
-        super(MemberInfo.class);
+    @Override
+    protected Class getType() {
+        return MemberInfo.class;
     }
 
     @Override

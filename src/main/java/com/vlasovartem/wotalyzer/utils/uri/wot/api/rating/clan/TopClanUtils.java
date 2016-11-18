@@ -15,8 +15,9 @@ import java.util.function.Function;
  */
 public class TopClanUtils extends MainUtils<TopClan> {
 
-    public TopClanUtils() {
-        super(TopClan.class);
+    @Override
+    protected Class getType() {
+        return TopClan.class;
     }
 
     @Override

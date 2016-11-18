@@ -13,8 +13,9 @@ import java.util.List;
 @Component("EncyclopediaAchievementUtils")
 public class AchievementUtils extends MainUtils<Achievement> {
 
-    AchievementUtils() {
-        super(Achievement.class);
+    @Override
+    protected Class getType() {
+        return Achievement.class;
     }
 
     @Override

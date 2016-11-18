@@ -15,8 +15,9 @@ import java.util.function.Function;
  */
 public class ClanNeighborUtils extends MainUtils<ClanNeighbor> {
 
-    public ClanNeighborUtils() {
-        super(ClanNeighbor.class);
+    @Override
+    protected Class getType() {
+        return ClanNeighbor.class;
     }
 
     @Override

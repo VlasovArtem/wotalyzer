@@ -15,8 +15,9 @@ import java.util.function.Function;
  */
 public class SeasonClanInfoUtils extends MainUtils<SeasonClanInfo> {
 
-    public SeasonClanInfoUtils() {
-        super(SeasonClanInfo.class);
+    @Override
+    protected Class getType() {
+        return SeasonClanInfo.class;
     }
 
     @Override

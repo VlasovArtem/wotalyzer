@@ -15,8 +15,9 @@ import java.util.function.Function;
  */
 public class EventClanInfoUtils extends MainUtils<EventClanInfo> {
 
-    public EventClanInfoUtils() {
-        super(EventClanInfo.class);
+    @Override
+    protected Class getType() {
+        return EventClanInfo.class;
     }
 
     @Override

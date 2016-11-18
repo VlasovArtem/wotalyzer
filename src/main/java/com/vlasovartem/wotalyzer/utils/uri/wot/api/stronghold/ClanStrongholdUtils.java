@@ -11,8 +11,9 @@ import java.util.List;
  */
 public class ClanStrongholdUtils extends MainUtils<ClanStronghold> {
 
-    public ClanStrongholdUtils() {
-        super(ClanStronghold.class);
+    @Override
+    protected Class getType() {
+        return ClanStronghold.class;
     }
 
     @Override

@@ -21,8 +21,9 @@ public class NeighborUtils extends RatingUtils<Neighbor> {
 
     private static final Logger LOGGER = LogManager.getLogger(NeighborUtils.class);
 
-    public NeighborUtils() {
-        super(Neighbor.class);
+    @Override
+    protected Class getType() {
+        return Neighbor.class;
     }
 
     @Override

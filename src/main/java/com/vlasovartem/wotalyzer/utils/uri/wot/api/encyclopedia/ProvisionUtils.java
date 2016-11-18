@@ -17,8 +17,9 @@ import java.util.function.Function;
 @Component
 public class ProvisionUtils extends MainUtils<Provision> {
 
-    public ProvisionUtils() {
-        super(Provision.class);
+    @Override
+    protected Class getType() {
+        return Provision.class;
     }
 
     @Override

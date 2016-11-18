@@ -1,4 +1,4 @@
-package com.vlasovartem.wotalyzer.utils;
+package com.vlasovartem.wotalyzer.utils.query.builder;
 
 import com.vlasovartem.wotalyzer.utils.api.contstans.WOTAPIConstants;
 
@@ -9,6 +9,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 /**
  * Created by artemvlasov on 02/11/2016.
@@ -21,7 +22,7 @@ public class QueryParamBuilder {
         return new QueryParamBuilder();
     }
 
-    private QueryParamBuilder() {
+    QueryParamBuilder() {
         params = new HashMap<>();
     }
 
@@ -43,8 +44,10 @@ public class QueryParamBuilder {
         return customParam(WOTAPIConstants.DATE_PARAM, Objects.nonNull(date) ? date.truncatedTo(ChronoUnit.SECONDS).format(DateTimeFormatter.ISO_LOCAL_DATE_TIME) : null);
     }
 
-    public QueryParamBuilder withFields(List<String> value) {
-        return customParam(WOTAPIConstants.FIELDS_PARAM, value);
+    public QueryParamBuilder withFields(List<String> values) {
+        if (Objects.nonNull(values) && !values.isEmpty())
+            return customParam(WOTAPIConstants.FIELDS_PARAM, values.stream().collect(Collectors.joining(",")));
+        return this;
     }
 
     public Map<String, Object> build() {

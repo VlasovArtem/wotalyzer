@@ -11,8 +11,9 @@ import java.util.List;
  */
 public class StructureUtils extends MainUtils<Structure> {
 
-    public StructureUtils() {
-        super(Structure.class);
+    @Override
+    protected Class getType() {
+        return Structure.class;
     }
 
     @Override
