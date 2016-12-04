@@ -6,6 +6,7 @@ import java.util.Map;
 
 /**
  * Created by artemvlasov on 13/10/2016.
+ * https://developers.wargaming.net/reference/all/wot/tanks/stats/
  */
 public class VehicleStatistic {
 
@@ -31,7 +32,7 @@ public class VehicleStatistic {
     private MainStatistic company;
     /* Fallout statistics. An extra field. */
     private FalloutStatistic fallout;
-    /* All battle statistics on the Global Map */
+    /* All battle statistics on the Global WOTMap */
     private GlobalmapStatistic globalmap;
     /* Random battles statistics. An extra field. */
     private ClanStatistic random;

@@ -1,27 +1,22 @@
 package com.vlasovartem.wotalyzer.entity.wot.api.global_map;
 
-import com.fasterxml.jackson.annotation.JsonAutoDetect;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.vlasovartem.wotalyzer.entity.wot.api.global_map.components.Season;
-
-import java.util.List;
+import java.util.Map;
 
 /**
  * Created by artemvlasov on 15/10/2016.
  * Method returns clan's statistics for a specific season.
+ * https://developers.wargaming.net/reference/all/wot/globalmap/seasonclaninfo/
  */
-@JsonAutoDetect
-@JsonIgnoreProperties(ignoreUnknown = true)
 public class SeasonClanInfo {
 
     /* Clan info by seasons and vehicle Tiers */
-    private List<Season> seasons;
+    private Map<String, Season> seasons;
 
-    public List<Season> getSeasons() {
+    public Map<String, Season> getSeasons() {
         return seasons;
     }
 
-    public void setSeasons(List<Season> seasons) {
+    public void setSeasons(Map<String, Season> seasons) {
         this.seasons = seasons;
     }
 }

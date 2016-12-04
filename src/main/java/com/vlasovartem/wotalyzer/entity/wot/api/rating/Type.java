@@ -5,6 +5,7 @@ import java.util.List;
 /**
  * Created by artemvlasov on 11/10/16.
  * Rating type
+ * https://developers.wargaming.net/reference/all/wot/ratings/types/
  */
 public class Type {
 

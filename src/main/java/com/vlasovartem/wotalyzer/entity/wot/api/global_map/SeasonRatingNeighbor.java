@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 
 /**
  * Created by artemvlasov on 15/10/2016.
+ * https://developers.wargaming.net/reference/all/wot/globalmap/seasonratingneighbors/
  */
 public class SeasonRatingNeighbor {
 

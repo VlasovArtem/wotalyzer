@@ -1,15 +1,11 @@
 package com.vlasovartem.wotalyzer.entity.wot.api.global_map;
 
-import com.fasterxml.jackson.annotation.JsonAutoDetect;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 import java.time.LocalDateTime;
 
 /**
  * Created by artemvlasov on 16/10/2016.
+ * https://developers.wargaming.net/reference/all/wot/globalmap/eventrating/
  */
-@JsonAutoDetect
-@JsonIgnoreProperties(ignoreUnknown = true)
 public class EventRating {
 
     /* Award level */

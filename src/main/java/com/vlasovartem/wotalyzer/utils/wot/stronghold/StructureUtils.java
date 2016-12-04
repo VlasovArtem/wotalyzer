@@ -1,0 +1,33 @@
+package com.vlasovartem.wotalyzer.utils.wot.stronghold;
+
+import com.vlasovartem.wotalyzer.entity.wot.api.stronghold.Structure;
+import com.vlasovartem.wotalyzer.utils.wot.MainUtils;
+import com.vlasovartem.wotalyzer.utils.api.contstans.stronghold.StructureConstants;
+
+import java.util.List;
+
+/**
+ * Created by artemvlasov on 15/10/2016.
+ */
+public class StructureUtils extends MainUtils<Structure> {
+
+    @Override
+    protected Class getType() {
+        return Structure.class;
+    }
+
+    @Override
+    public String getAPIBaseUrl() {
+        return StructureConstants.BASIC_URL;
+    }
+
+    @Override
+    public List<String> getAPIConstants() {
+        return StructureConstants.BASIC_API_CONSTANTS;
+    }
+
+    @Override
+    public List<String> getRequiredAPIParams() {
+        return StructureConstants.REQUIRED_PARAMS;
+    }
+}

@@ -21,7 +21,7 @@ public class Structure {
     private class Reserve {
         /* Localized description */
         private String description;
-        /* Image link */
+        /* Images link */
         private String imageUrl;
         /* Localized name */
         private String title;

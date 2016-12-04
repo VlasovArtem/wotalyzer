@@ -19,7 +19,7 @@ public class MainStatistic {
     private int draws;
     /* Base defense points */
     private int droppedCapturePoints;
-    /* Vehicles destroyed */
+    /* VehicleConfiguration destroyed */
     private int frags;
     /* Hits */
     private int hits;

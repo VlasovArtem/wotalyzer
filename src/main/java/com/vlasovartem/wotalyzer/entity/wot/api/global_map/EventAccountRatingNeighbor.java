@@ -4,6 +4,7 @@ import com.vlasovartem.wotalyzer.entity.wot.api.global_map.components.EventRatin
 
 /**
  * Created by artemvlasov on 15/10/2016.
+ * https://developers.wargaming.net/reference/all/wot/globalmap/eventaccountratingneighbors/
  */
 public class EventAccountRatingNeighbor extends EventRatingAbstract {
 

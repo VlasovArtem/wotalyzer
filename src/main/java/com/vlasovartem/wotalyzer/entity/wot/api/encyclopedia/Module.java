@@ -6,6 +6,7 @@ import com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia.components.Profile;
 
 /**
  * Created by artemvlasov on 11/10/16.
+ * https://developers.wargaming.net/reference/all/wot/encyclopedia/modules/
  */
 public class Module extends MainEntity {
 

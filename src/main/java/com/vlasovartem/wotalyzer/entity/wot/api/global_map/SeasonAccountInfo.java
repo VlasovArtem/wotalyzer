@@ -5,6 +5,7 @@ import java.util.List;
 
 /**
  * Created by artemvlasov on 15/10/2016.
+ * https://developers.wargaming.net/reference/all/wot/globalmap/info/
  */
 public class SeasonAccountInfo {
     

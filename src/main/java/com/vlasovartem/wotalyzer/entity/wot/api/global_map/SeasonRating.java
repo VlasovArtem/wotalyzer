@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 
 /**
  * Created by artemvlasov on 16/10/2016.
+ * https://developers.wargaming.net/reference/all/wot/globalmap/seasonrating/
  */
 public class SeasonRating {
 

@@ -6,7 +6,7 @@ import com.vlasovartem.wotalyzer.entity.wot.api.account.Player;
 import com.vlasovartem.wotalyzer.entity.wot.api.account.components.statistics.AllStatisticsData;
 import com.vlasovartem.wotalyzer.service.wn8.ExpectedDataService;
 import com.vlasovartem.wotalyzer.service.wn8.RatioDataService;
-import com.vlasovartem.wotalyzer.utils.uri.wot.api.account.PlayerUtils;
+import com.vlasovartem.wotalyzer.utils.wot.account.PlayerUtils;
 import com.vlasovartem.wotalyzer.utils.wn8.RatioDataUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

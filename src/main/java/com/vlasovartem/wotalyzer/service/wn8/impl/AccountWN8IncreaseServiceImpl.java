@@ -7,7 +7,7 @@ import com.vlasovartem.wotalyzer.entity.wn8.increase.TankWN8IncreaseIndicatorBui
 import com.vlasovartem.wotalyzer.entity.wot.api.player_vehicles.VehicleStatistic;
 import com.vlasovartem.wotalyzer.service.wn8.AccountWN8IncreaseService;
 import com.vlasovartem.wotalyzer.service.wn8.TankExpectedDataService;
-import com.vlasovartem.wotalyzer.service.wot.api.player_vehicles.impl.VehicleStatisticServiceImpl;
+import com.vlasovartem.wotalyzer.service.wot.player_vehicles.impl.VehicleStatisticServiceImpl;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;

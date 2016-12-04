@@ -5,7 +5,7 @@ import com.vlasovartem.wotalyzer.entity.wn8.TankExpectedData;
 import com.vlasovartem.wotalyzer.entity.wot.api.player_vehicles.VehicleStatistic;
 import com.vlasovartem.wotalyzer.service.wn8.ExpectedDataService;
 import com.vlasovartem.wotalyzer.service.wn8.TankExpectedDataService;
-import com.vlasovartem.wotalyzer.service.wot.api.player_vehicles.impl.VehicleStatisticServiceImpl;
+import com.vlasovartem.wotalyzer.service.wot.player_vehicles.impl.VehicleStatisticServiceImpl;
 import com.vlasovartem.wotalyzer.utils.wn8.RatioDataUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

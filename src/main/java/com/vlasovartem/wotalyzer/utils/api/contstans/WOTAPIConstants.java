@@ -49,5 +49,6 @@ public interface WOTAPIConstants {
     String TURRET_ID_PARAM = "turret_id";
     String TYPE_PARAM = "type";
     String VEHICLE_LEVEL_PARAM = "vehicle_level";
+    String TEAM_ID = "team_id";
 
 }

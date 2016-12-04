@@ -1,15 +1,11 @@
 package com.vlasovartem.wotalyzer.entity.wot.api.global_map;
 
-import com.fasterxml.jackson.annotation.JsonAutoDetect;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 import java.util.List;
 
 /**
  * Created by artemvlasov on 16/10/2016.
+ * https://developers.wargaming.net/reference/all/wot/globalmap/fronts/
  */
-@JsonAutoDetect
-@JsonIgnoreProperties(ignoreUnknown = true)
 public class Front {
 
     /* Average clans rating */

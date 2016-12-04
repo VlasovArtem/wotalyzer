@@ -1,17 +1,14 @@
 package com.vlasovartem.wotalyzer.entity.wot.api.global_map;
 
-import com.fasterxml.jackson.annotation.JsonAutoDetect;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
  * Created by artemvlasov on 15/10/2016.
+ * https://developers.wargaming.net/reference/all/wot/globalmap/clanprovinces/
  */
-@JsonAutoDetect
-@JsonIgnoreProperties(ignoreUnknown = true)
 public class ClanProvince {
 
-    /* Map ID */
+    /* WOTMap ID */
     private String arenaId;
     /* Localized map name */
     private String arenaName;

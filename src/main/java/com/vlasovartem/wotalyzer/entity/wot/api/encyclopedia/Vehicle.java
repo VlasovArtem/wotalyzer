@@ -1,20 +1,19 @@
 package com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia;
 
-import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.vlasovartem.wotalyzer.entity.wot.api.MainEntity;
-import com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia.components.crew.Crew;
-import com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia.components.Images;
+import com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia.components.vehicle.Images;
 import com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia.components.ModulesTree;
 import com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia.components.Profile;
+import com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia.components.crew.Crew;
 
 import java.util.List;
 import java.util.Map;
 
 /**
  * Created by artemvlasov on 13/01/16.
+ * https://developers.wargaming.net/reference/all/wot/encyclopedia/vehicles
  */
-@JsonAutoDetect
 public class Vehicle extends MainEntity {
 
     private String description;

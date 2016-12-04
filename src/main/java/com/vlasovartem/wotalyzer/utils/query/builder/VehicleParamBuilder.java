@@ -12,7 +12,14 @@ import java.util.stream.Collectors;
 public class VehicleParamBuilder extends QueryParamBuilder {
 
     public static VehicleParamBuilder newBuilder() {
-        return new VehicleParamBuilder();
+        if (Objects.isNull(builder)) {
+            builder = new VehicleParamBuilder();
+        }
+        return (VehicleParamBuilder) builder;
+    }
+
+    private VehicleParamBuilder() {
+        super();
     }
 
     public VehicleParamBuilder withTankId(long tankId) {

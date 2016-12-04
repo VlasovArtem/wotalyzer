@@ -1,19 +1,19 @@
 package com.vlasovartem.wotalyzer.entity.wot.api.global_map;
 
-import com.fasterxml.jackson.annotation.JsonAutoDetect;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.vlasovartem.wotalyzer.deserializers.EventClanInfoDeserializer;
 
 import java.util.List;
 
 /**
  * Created by artemvlasov on 15/10/2016.
+ * https://developers.wargaming.net/reference/all/wot/globalmap/eventclaninfo/
  */
-@JsonAutoDetect
-@JsonIgnoreProperties(ignoreUnknown = true)
 public class EventClanInfo {
     
     /* events - Clan info by events and Fronts */
-    private List<Event> events; 
+    @JsonDeserialize(using = EventClanInfoDeserializer.class)
+    private List<Event> events;
     
     private class Event {
         /* Battles fought */
@@ -107,5 +107,12 @@ public class EventClanInfo {
             this.wins = wins;
         }
     }
-    
+
+    public List<Event> getEvents() {
+        return events;
+    }
+
+    public void setEvents(List<Event> events) {
+        this.events = events;
+    }
 }

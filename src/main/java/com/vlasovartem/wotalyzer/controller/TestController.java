@@ -2,14 +2,16 @@ package com.vlasovartem.wotalyzer.controller;
 
 import com.vlasovartem.wotalyzer.entity.wn8.AccountWN8;
 import com.vlasovartem.wotalyzer.entity.wot.api.account.Players;
+import com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia.PersonalMission;
 import com.vlasovartem.wotalyzer.entity.wot.api.rating.Account;
 import com.vlasovartem.wotalyzer.service.wn8.AccountWN8Service;
 import com.vlasovartem.wotalyzer.utils.api.contstans.enums.NameTypeParameter;
-import com.vlasovartem.wotalyzer.utils.api.contstans.enums.RatingTypeParameter;
+import com.vlasovartem.wotalyzer.entity.wot.api.enums.RatingType;
 import com.vlasovartem.wotalyzer.utils.exception.WotAPIException;
-import com.vlasovartem.wotalyzer.utils.uri.wot.api.account.PlayerUtils;
-import com.vlasovartem.wotalyzer.utils.uri.wot.api.account.PlayersUtils;
-import com.vlasovartem.wotalyzer.utils.uri.wot.api.rating.AccountUtils;
+import com.vlasovartem.wotalyzer.utils.wot.account.PlayerUtils;
+import com.vlasovartem.wotalyzer.utils.wot.account.PlayersUtils;
+import com.vlasovartem.wotalyzer.utils.wot.encyclopedia.PersonalMissionUtils;
+import com.vlasovartem.wotalyzer.utils.wot.rating.player.AccountUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -30,13 +32,15 @@ public class TestController {
     private final PlayersUtils playersUtils;
     private final PlayerUtils playerUtils;
     private final AccountUtils accountUtils;
+    private final PersonalMissionUtils personalMissionUtils;
     private final AccountWN8Service accountWN8Service;
 
     @Autowired
-    public TestController(PlayersUtils playersUtils, PlayerUtils playerUtils, AccountUtils accountUtils, AccountWN8Service accountWN8Service) {
+    public TestController(PlayersUtils playersUtils, PlayerUtils playerUtils, AccountUtils accountUtils, PersonalMissionUtils personalMissionUtils, AccountWN8Service accountWN8Service) {
         this.playersUtils = playersUtils;
         this.playerUtils = playerUtils;
         this.accountUtils = accountUtils;
+        this.personalMissionUtils = personalMissionUtils;
         this.accountWN8Service = accountWN8Service;
     }
 
@@ -57,7 +61,7 @@ public class TestController {
 
     @RequestMapping("/rating")
     public ResponseEntity rating(@RequestParam int id) {
-        Optional<Account> account = accountUtils.getAccount(id, RatingTypeParameter.TYPE_ALL);
+        Optional<Account> account = accountUtils.getAccount(id, RatingType.TYPE_ALL);
         return ResponseEntity.ok(account);
     }
 
@@ -65,6 +69,12 @@ public class TestController {
     public ResponseEntity wn8(@RequestParam int id) {
         AccountWN8 accountWN8 = accountWN8Service.getAccountWN8(id);
         return ResponseEntity.ok(accountWN8);
+    }
+
+    @RequestMapping("/missions")
+    public ResponseEntity<List<PersonalMission>> missions() {
+        List<PersonalMission> personalMissions = personalMissionUtils.getPersonalMissions();
+        return ResponseEntity.ok(personalMissions);
     }
 
 }

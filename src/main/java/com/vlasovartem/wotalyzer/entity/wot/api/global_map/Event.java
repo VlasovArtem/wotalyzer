@@ -1,16 +1,14 @@
 package com.vlasovartem.wotalyzer.entity.wot.api.global_map;
 
-import com.fasterxml.jackson.annotation.JsonAutoDetect;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.vlasovartem.wotalyzer.entity.wot.api.enums.EventStatus;
 
 import java.util.List;
 
 /**
  * Created by artemvlasov on 16/10/2016.
  * Events information
+ * https://developers.wargaming.net/reference/all/wot/globalmap/events/
  */
-@JsonAutoDetect
-@JsonIgnoreProperties(ignoreUnknown = true)
 public class Event {
 
     /* Finishing time */
@@ -22,7 +20,7 @@ public class Event {
     /* Start time */
     private String start;
     /* Status */
-    private String status;
+    private EventStatus status;
     /* Fronts. Only event fronts are presented in response. */
     private List<Front> fronts;
     
@@ -91,11 +89,11 @@ public class Event {
         this.start = start;
     }
 
-    public String getStatus() {
+    public EventStatus getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(EventStatus status) {
         this.status = status;
     }
 

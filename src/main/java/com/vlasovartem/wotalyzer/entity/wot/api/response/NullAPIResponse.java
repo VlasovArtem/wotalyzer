@@ -6,7 +6,7 @@ import java.util.Optional;
 /**
  * Created by artemvlasov on 16/11/2016.
  */
-public class NullAPIResponse extends AbstractAPIResponse {
+public class NullAPIResponse extends APIResponse {
 
     private static NullAPIResponse nullAPIResponse;
 

@@ -1,6 +1,8 @@
 package com.vlasovartem.wotalyzer.entity.wot.api.account;
 
 import com.vlasovartem.wotalyzer.entity.wot.api.Entity;
+import com.vlasovartem.wotalyzer.entity.wot.api.account.components.achievements.Frags;
+import com.vlasovartem.wotalyzer.entity.wot.api.account.components.achievements.MaxSeries;
 
 import java.util.Map;
 
@@ -12,9 +14,9 @@ public class PlayerAchievements extends Entity {
     /* VehicleAchievement earned */
     private Map<String, Integer> achievements;
     /* VehicleAchievement progress */
-    private Map<String, Integer> frags;
+    private Frags frags;
     /* Maximum values of achievement series */
-    private Map<String, Integer> maxSeries;
+    private MaxSeries maxSeries;
 
     public Map<String, Integer> getAchievements() {
         return achievements;
@@ -24,19 +26,19 @@ public class PlayerAchievements extends Entity {
         this.achievements = achievements;
     }
 
-    public Map<String, Integer> getFrags() {
+    public Frags getFrags() {
         return frags;
     }
 
-    public void setFrags(Map<String, Integer> frags) {
+    public void setFrags(Frags frags) {
         this.frags = frags;
     }
 
-    public Map<String, Integer> getMaxSeries() {
+    public MaxSeries getMaxSeries() {
         return maxSeries;
     }
 
-    public void setMaxSeries(Map<String, Integer> maxSeries) {
+    public void setMaxSeries(MaxSeries maxSeries) {
         this.maxSeries = maxSeries;
     }
 }

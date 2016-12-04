@@ -1,5 +1,6 @@
 package com.vlasovartem.wotalyzer.utils.query.builder;
 
+import com.vlasovartem.wotalyzer.entity.wot.api.enums.BattleType;
 import com.vlasovartem.wotalyzer.utils.api.contstans.WOTAPIConstants;
 
 import java.time.LocalDateTime;
@@ -17,9 +18,13 @@ import java.util.stream.Collectors;
 public class QueryParamBuilder {
 
     private Map<String, Object> params;
+    protected static QueryParamBuilder builder;
 
     public static QueryParamBuilder newBuilder() {
-        return new QueryParamBuilder();
+        if (Objects.isNull(builder)) {
+            builder = new QueryParamBuilder();
+        }
+        return builder;
     }
 
     QueryParamBuilder() {
@@ -32,14 +37,6 @@ public class QueryParamBuilder {
         return this;
     }
 
-    public QueryParamBuilder withAccountId(long accountId) {
-        return customParam(WOTAPIConstants.ACCOUNT_ID_PARAM, accountId);
-    }
-
-    public QueryParamBuilder withBattleType(String value) {
-        return customParam(WOTAPIConstants.BATTLE_TYPE_PARAM, value);
-    }
-
     public QueryParamBuilder withDate(LocalDateTime date) {
         return customParam(WOTAPIConstants.DATE_PARAM, Objects.nonNull(date) ? date.truncatedTo(ChronoUnit.SECONDS).format(DateTimeFormatter.ISO_LOCAL_DATE_TIME) : null);
     }
@@ -50,7 +47,21 @@ public class QueryParamBuilder {
         return this;
     }
 
+    public QueryParamBuilder withAccountId(Long accountId) {
+        return customParam(WOTAPIConstants.ACCOUNT_ID_PARAM, accountId);
+    }
+
+    public QueryParamBuilder withBattleType(BattleType battleType) {
+        return customParam(WOTAPIConstants.BATTLE_TYPE_PARAM, battleType.getValue());
+    }
+
     public Map<String, Object> build() {
-        return params;
+        Map<String, Object> paramsClone = new HashMap<>(params);
+        params.clear();
+        return paramsClone
+                .entrySet()
+                .stream()
+                .filter(data -> Objects.nonNull(data.getValue()) && (data.getValue() instanceof String && data.getValue().toString().isEmpty()))
+                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
     }
 }

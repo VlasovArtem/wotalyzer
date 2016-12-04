@@ -25,7 +25,7 @@ public class StrongholdData {
     private int explosionHits;
     /* Hits received as a result of splash damage */
     private int explosionHitsReceived;
-    /* Vehicles destroyed */
+    /* VehicleConfiguration destroyed */
     private int frags;
     /* Hits */
     private int hits;

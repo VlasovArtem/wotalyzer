@@ -1,0 +1,101 @@
+{
+  "status": "ok",
+  "meta": {
+    "count": 1
+  },
+  "data": {
+    "231588": [
+      {
+        "achievements": {},
+        "series": {
+          "armorPiercer": 0,
+          "aimer": 0,
+          "titleSniper": 0,
+          "tacticalBreakthrough": 0,
+          "invincible": 0,
+          "victoryMarch": 0,
+          "deathTrack": 0,
+          "EFC2016": 0,
+          "diehard": 0,
+          "WFC2014": 0,
+          "handOfDeath": 0
+        },
+        "max_series": {
+          "armorPiercer": 0,
+          "aimer": 0,
+          "titleSniper": 0,
+          "tacticalBreakthrough": 0,
+          "invincible": 0,
+          "victoryMarch": 0,
+          "deathTrack": 0,
+          "EFC2016": 0,
+          "diehard": 0,
+          "WFC2014": 0,
+          "handOfDeath": 0
+        },
+        "account_id": 231588,
+        "tank_id": 769
+      },
+      {
+        "achievements": {
+          "medalCarius": 3,
+          "invader": 4,
+          "armorPiercer": 17,
+          "medalEkins": 2,
+          "medalKay": 3,
+          "duelist": 1,
+          "medalLeClerc": 3,
+          "supporter": 6,
+          "steelwall": 6,
+          "medalAbrams": 3,
+          "medalPoppel": 3,
+          "medalPascucci": 1,
+          "kamikaze": 2,
+          "sinai": 1,
+          "sniper": 16,
+          "warrior": 3,
+          "titleSniper": 25,
+          "medalWittmann": 1,
+          "scout": 1,
+          "beasthunter": 1,
+          "markOfMastery": 4,
+          "ironMan": 1,
+          "medalLavrinenko": 3,
+          "sturdy": 1,
+          "handOfDeath": 4,
+          "bonecrusher": 1,
+          "shootToKill": 7,
+          "medalKnispel": 2
+        },
+        "series": {
+          "armorPiercer": 2,
+          "aimer": 0,
+          "titleSniper": 9,
+          "tacticalBreakthrough": 0,
+          "invincible": 1,
+          "victoryMarch": 0,
+          "deathTrack": 0,
+          "EFC2016": 0,
+          "diehard": 1,
+          "WFC2014": 0,
+          "handOfDeath": 1
+        },
+        "max_series": {
+          "armorPiercer": 17,
+          "aimer": 0,
+          "titleSniper": 25,
+          "tacticalBreakthrough": 0,
+          "invincible": 2,
+          "victoryMarch": 0,
+          "deathTrack": 0,
+          "EFC2016": 0,
+          "diehard": 4,
+          "WFC2014": 0,
+          "handOfDeath": 4
+        },
+        "account_id": 231588,
+        "tank_id": 2849
+      }
+    ]
+  }
+}

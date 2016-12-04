@@ -2,7 +2,7 @@ package com.vlasovartem.wotalyzer.controller;
 
 import com.vlasovartem.wotalyzer.repository.statistic.VehicleModuleInfoRepository;
 import com.vlasovartem.wotalyzer.service.statistic.VehicleModuleInfoService;
-import com.vlasovartem.wotalyzer.service.wot.api.tankopedia.VehiclesService;
+import com.vlasovartem.wotalyzer.service.wot.encyclopedia.VehiclesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;

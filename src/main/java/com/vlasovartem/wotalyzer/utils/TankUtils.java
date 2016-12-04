@@ -3,7 +3,7 @@ package com.vlasovartem.wotalyzer.utils;
 import com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia.Vehicle;
 import com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia.components.ModulesTree;
 import com.vlasovartem.wotalyzer.utils.exception.TankJsonConverterException;
-import com.vlasovartem.wotalyzer.utils.uri.wot.api.encyclopedia.VehicleProfileUtils;
+import com.vlasovartem.wotalyzer.utils.wot.encyclopedia.VehicleCharacteristicUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +24,7 @@ public class TankUtils {
     private static final Logger LOGGER = LogManager.getLogger(TankUtils.class);
 
     @Autowired
-    private VehicleProfileUtils vehicleProfileUtils;
+    private VehicleCharacteristicUtils vehicleCharacteristicUtils;
     private Map<String, String> tankModuleMap;
 
     public TankUtils() {
@@ -44,9 +44,9 @@ public class TankUtils {
 //     * @param tankId id of the tank
 //     * @return VehicleUtils object that created form json response
 //     */
-//    public com.vlasovartem.wotalyzer.entity.wot.api.tankopedia.VehicleProfile topModuleVehicle(long tankId) {
+//    public com.vlasovartem.wotalyzer.entity.wot.api.tankopedia.VehicleCharacteristic topModuleVehicle(long tankId) {
 //        return vehicleUtils
-//                .getApiResponse(com.vlasovartem.wotalyzer.entity.wot.api.tankopedia.VehicleProfile.class, generateVehicleTopModuleMap(vehicleUtils
+//                .getApiResponse(com.vlasovartem.wotalyzer.entity.wot.api.tankopedia.VehicleCharacteristic.class, generateVehicleTopModuleMap(vehicleUtils
 //                        .getVehicleApiResponse(Vehicle.class, tankId, Arrays.asList("modules_tree", VehicleBasicConstants.TANK_ID_PARAM))
 //                        .getData().get(String.valueOf(tankId))))
 //                .getData().get(String.valueOf(tankId));

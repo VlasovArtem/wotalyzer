@@ -1,62 +1,22 @@
 package com.vlasovartem.wotalyzer.entity.wot.api.account;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.vlasovartem.wotalyzer.entity.wot.api.MainEntity;
+import com.vlasovartem.wotalyzer.entity.wot.api.account.components.PlayerVehicleData;
+
+import java.util.List;
 
 /**
  * Created by artemvlasov on 10/09/16.
  */
 public class PlayerVehicles extends MainEntity {
 
-    private int markOfMastery;
-    private Statistics statistics;
+    private List<PlayerVehicleData> playerVehicleData;
 
-    private class Statistics {
-        private int battles;
-        private int wins;
-
-        public int getBattles() {
-            return battles;
-        }
-
-        public void setBattles(int battles) {
-            this.battles = battles;
-        }
-
-        public int getWins() {
-            return wins;
-        }
-
-        public void setWins(int wins) {
-            this.wins = wins;
-        }
+    public List<PlayerVehicleData> getPlayerVehicleData() {
+        return playerVehicleData;
     }
 
-    @Override
-    @JsonProperty("tank_id")
-    public long getId() {
-        return super.getId();
+    public void setPlayerVehicleData(List<PlayerVehicleData> playerVehicleData) {
+        this.playerVehicleData = playerVehicleData;
     }
-
-    @Override
-    public void setId(long id) {
-        super.setId(id);
-    }
-
-    public int getMarkOfMastery() {
-        return markOfMastery;
-    }
-
-    public void setMarkOfMastery(int markOfMastery) {
-        this.markOfMastery = markOfMastery;
-    }
-
-    public Statistics getStatistics() {
-        return statistics;
-    }
-
-    public void setStatistics(Statistics statistics) {
-        this.statistics = statistics;
-    }
-
 }

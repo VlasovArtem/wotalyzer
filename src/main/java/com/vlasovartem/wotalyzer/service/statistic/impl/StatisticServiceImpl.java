@@ -3,15 +3,15 @@ package com.vlasovartem.wotalyzer.service.statistic.impl;
 import com.vlasovartem.wotalyzer.entity.statistic.Statistic;
 import com.vlasovartem.wotalyzer.entity.statistic.TankStatistic;
 import com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia.Vehicle;
-import com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia.VehicleProfile;
+import com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia.VehicleCharacteristic;
 import com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia.components.provision.ammo.Ammo;
 import com.vlasovartem.wotalyzer.repository.statistic.VehicleModuleInfoRepository;
 import com.vlasovartem.wotalyzer.service.statistic.StatisticService;
-import com.vlasovartem.wotalyzer.service.wot.api.tankopedia.VehicleService;
-import com.vlasovartem.wotalyzer.service.wot.api.tankopedia.VehiclesService;
+import com.vlasovartem.wotalyzer.service.wot.encyclopedia.VehicleService;
+import com.vlasovartem.wotalyzer.service.wot.encyclopedia.VehiclesService;
 import com.vlasovartem.wotalyzer.utils.TankUtils;
 import com.vlasovartem.wotalyzer.utils.enums.VehicleType;
-import com.vlasovartem.wotalyzer.utils.uri.wot.api.encyclopedia.VehicleProfileUtils;
+import com.vlasovartem.wotalyzer.utils.wot.encyclopedia.VehicleCharacteristicUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +29,7 @@ public class StatisticServiceImpl implements StatisticService {
 
     private final static Logger LOGGER = LogManager.getLogger(StatisticServiceImpl.class);
     private TankUtils tankUtils;
-    private VehicleProfileUtils vehicleProfileUtils;
+    private VehicleCharacteristicUtils vehicleCharacteristicUtils;
     private VehiclesService vehiclesService;
     private VehicleService vehicleService;
     private List<String> bestVehicleDynamicStatisticFields;
@@ -37,9 +37,9 @@ public class StatisticServiceImpl implements StatisticService {
     private VehicleModuleInfoRepository vehicleModuleInfoRepository;
 
     @Autowired
-    public StatisticServiceImpl(TankUtils tankUtils, VehicleProfileUtils vehicleProfileUtils, VehiclesService vehiclesService, VehicleService vehicleService, VehicleModuleInfoRepository vehicleModuleInfoRepository) {
+    public StatisticServiceImpl(TankUtils tankUtils, VehicleCharacteristicUtils vehicleCharacteristicUtils, VehiclesService vehiclesService, VehicleService vehicleService, VehicleModuleInfoRepository vehicleModuleInfoRepository) {
         this.tankUtils = tankUtils;
-        this.vehicleProfileUtils = vehicleProfileUtils;
+        this.vehicleCharacteristicUtils = vehicleCharacteristicUtils;
         this.vehiclesService = vehiclesService;
         this.vehicleService = vehicleService;
         this.vehicleModuleInfoRepository = vehicleModuleInfoRepository;
@@ -145,7 +145,7 @@ public class StatisticServiceImpl implements StatisticService {
 
     @Override
     public Statistic<Double> compareVehicleDynamic(int tier, long tankId, boolean ignorePremium) {
-        List<VehicleProfile> vehicles = findSortedVehicles(
+        List<VehicleCharacteristic> vehicles = findSortedVehicles(
                 vehiclesService.findByTierAndType(tier, bestVehicleDynamicStatisticFields),
                 ignorePremium,
                 Arrays.asList("engine", "weight", "tank_id"), this::vehicleDynamicComparator);
@@ -220,7 +220,7 @@ public class StatisticServiceImpl implements StatisticService {
     private Statistic<Double> collectBestVehicleDynamic(Statistic<Double> statistic, List<Vehicle> searchedVehicles, boolean ignorePremium) {
         if (Objects.nonNull(statistic) && Objects.nonNull(searchedVehicles)) {
             statistic.setTotalCollectedTanks(searchedVehicles.size());
-            VehicleProfile bestDynamicVehicle = findSortedVehicles(
+            VehicleCharacteristic bestDynamicVehicle = findSortedVehicles(
                     searchedVehicles,
                     ignorePremium,
                     Arrays.asList("engine", "weight", "tank_id"),
@@ -247,7 +247,7 @@ public class StatisticServiceImpl implements StatisticService {
     private Statistic<Ammo> collectBestVehiclePenetration(Statistic<Ammo> statistic, List<Vehicle> searchedVehicles, boolean ignorePremium) {
         if (Objects.nonNull(statistic) && Objects.nonNull(searchedVehicles)) {
             statistic.setTotalCollectedTanks(searchedVehicles.size());
-            VehicleProfile bestPenetrationVehicle = findSortedVehicles(
+            VehicleCharacteristic bestPenetrationVehicle = findSortedVehicles(
                     searchedVehicles,
                     ignorePremium,
                     Arrays.asList("ammo", "tank_id"),
@@ -273,7 +273,7 @@ public class StatisticServiceImpl implements StatisticService {
     private Statistic<Integer> collectBestVehicleViewRange(Statistic<Integer> statistic, List<Vehicle> searchedVehicles, boolean ignorePremium) {
         if (Objects.nonNull(statistic) && Objects.nonNull(searchedVehicles)) {
             statistic.setTotalCollectedTanks(searchedVehicles.size());
-            VehicleProfile bestViewRangeVehicle = findSortedVehicles(
+            VehicleCharacteristic bestViewRangeVehicle = findSortedVehicles(
                     searchedVehicles,
                     ignorePremium,
                     Arrays.asList("tank_id", "turret"),
@@ -288,7 +288,7 @@ public class StatisticServiceImpl implements StatisticService {
         throw new RuntimeException("VehicleStatistic and searchable vehicles cannot be null");
     }
 
-    private List<VehicleProfile> findSortedVehicles(List<Vehicle> searchedVehicles, boolean ignorePremium, List<String> vehicleAPIFields, Comparator<VehicleProfile> comparator) {
+    private List<VehicleCharacteristic> findSortedVehicles(List<Vehicle> searchedVehicles, boolean ignorePremium, List<String> vehicleAPIFields, Comparator<VehicleCharacteristic> comparator) {
         return vehicleModuleInfoRepository
                 .findByTankIdIn(searchedVehicles.parallelStream()
                         .filter(vbi -> !ignorePremium || !vbi.isPremium())
@@ -307,7 +307,7 @@ public class StatisticServiceImpl implements StatisticService {
      * @param vehicle vehicle
      * @return original ammo, excluding high explosive ammo and gold ammo.
      */
-    private Ammo findVehicleOriginalAmmo(VehicleProfile vehicle) {
+    private Ammo findVehicleOriginalAmmo(VehicleCharacteristic vehicle) {
         if (Objects.nonNull(vehicle)) {
             String explosiveAmmoTypeName = "HIGH_EXPLOSIVE";
             return Optional.ofNullable(vehicle.getAmmo())
@@ -332,19 +332,19 @@ public class StatisticServiceImpl implements StatisticService {
         return (ammo1MaxPenetration < ammo2MaxPenetration) ? -1 : ((ammo1MaxPenetration == ammo2MaxPenetration) ? 0 : 1);
     }
 
-    private int vehicleDynamicComparator(VehicleProfile vehicle1, VehicleProfile vehicle2) {
+    private int vehicleDynamicComparator(VehicleCharacteristic vehicle1, VehicleCharacteristic vehicle2) {
         return Double.compare(countEngineWTRation(vehicle2), countEngineWTRation(vehicle1));
     }
 
-    private int vehicleAmmoComparator(VehicleProfile vehicle1, VehicleProfile vehicle2) {
+    private int vehicleAmmoComparator(VehicleCharacteristic vehicle1, VehicleCharacteristic vehicle2) {
         return ammoComparator(findVehicleOriginalAmmo(vehicle2), findVehicleOriginalAmmo(vehicle1));
     }
 
-    private int vehicleViewRangeComparator(VehicleProfile vehicle1, VehicleProfile vehicle2) {
+    private int vehicleViewRangeComparator(VehicleCharacteristic vehicle1, VehicleCharacteristic vehicle2) {
         return Integer.compare(vehicle2.getTurret().getViewRange(), vehicle1.getTurret().getViewRange());
     }
 
-    private double countEngineWTRation(VehicleProfile vehicle) {
+    private double countEngineWTRation(VehicleCharacteristic vehicle) {
         if(Objects.nonNull(vehicle) && Objects.nonNull(vehicle.getEngine()) && vehicle.getWeight() != 0) {
             return Double.longBitsToDouble(vehicle.getEngine().getPower() / (vehicle.getWeight() / 1000));
         }

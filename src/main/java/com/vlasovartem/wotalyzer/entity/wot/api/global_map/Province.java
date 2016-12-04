@@ -6,10 +6,11 @@ import java.util.List;
 
 /**
  * Created by artemvlasov on 16/10/2016.
+ * https://developers.wargaming.net/reference/all/wot/globalmap/provinces/
  */
 public class Province {
 
-    /* Map ID */
+    /* WOTMap ID */
     private String arenaId;
     /* Localized map name */
     private String arenaName;
