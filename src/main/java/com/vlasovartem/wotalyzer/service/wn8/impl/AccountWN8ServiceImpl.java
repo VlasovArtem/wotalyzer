@@ -31,8 +31,8 @@ public class AccountWN8ServiceImpl implements AccountWN8Service {
     }
 
     @Override
-    public AccountWN8 getAccountWN8(int accountId) {
-        AccountWN8 accountWN8 = wn8Repository.findOne((long) accountId);
+    public AccountWN8 getAccountWN8(long accountId) {
+        AccountWN8 accountWN8 = wn8Repository.findOne(accountId);
         if (Objects.nonNull(accountWN8)) {
             LocalDateTime modifiedDate = accountWN8.getModifiedDate();
             if (modifiedDate.toLocalDate().isEqual(LocalDate.now())) {

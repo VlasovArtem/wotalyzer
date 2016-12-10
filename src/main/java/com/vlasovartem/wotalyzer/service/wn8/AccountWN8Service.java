@@ -7,6 +7,6 @@ import com.vlasovartem.wotalyzer.entity.wn8.AccountWN8;
  */
 public interface AccountWN8Service {
 
-    AccountWN8 getAccountWN8(int accountId);
+    AccountWN8 getAccountWN8(long accountId);
 
 }

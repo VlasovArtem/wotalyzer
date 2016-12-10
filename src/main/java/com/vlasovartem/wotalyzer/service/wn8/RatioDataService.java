@@ -10,8 +10,8 @@ import java.util.Optional;
  */
 public interface RatioDataService {
 
-    RatioData getAccountRatioData(int accountId);
-    RatioData getAccountRatioDataZeroPoint(int accountId);
+    RatioData getAccountRatioData(long accountId);
+    RatioData getAccountRatioDataZeroPoint(long accountId);
     Optional<RatioData> getAccountRatioDataByTankId(int accountId, int tankId);
     RatioData getAccountRatioDataByTankIds(int accountId, List<Integer> tankIds);
     RatioData getAccountRatioDataByTier(int account, int tier);

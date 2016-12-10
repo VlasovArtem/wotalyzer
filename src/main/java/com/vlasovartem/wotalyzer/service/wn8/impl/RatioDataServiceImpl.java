@@ -30,7 +30,7 @@ public class RatioDataServiceImpl implements RatioDataService {
     }
 
     @Override
-    public RatioData getAccountRatioData(int accountId) {
+    public RatioData getAccountRatioData(long accountId) {
         ExpectedData accountExpectedData = expectedDataService.getAccountExpectedData(accountId);
         Optional<Player> playerData = utils.getPlayer(accountId);
         if (playerData.isPresent()) {
@@ -41,7 +41,7 @@ public class RatioDataServiceImpl implements RatioDataService {
     }
 
     @Override
-    public RatioData getAccountRatioDataZeroPoint(int accountId) {
+    public RatioData getAccountRatioDataZeroPoint(long accountId) {
         RatioData accountRatioData = getAccountRatioData(accountId);
         return RatioDataUtils.calculateZeroRatioData(accountRatioData);
     }
