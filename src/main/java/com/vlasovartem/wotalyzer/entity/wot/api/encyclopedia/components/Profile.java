@@ -1,7 +1,7 @@
 package com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia.components;
 
 import com.fasterxml.jackson.annotation.JsonUnwrapped;
-import com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia.VehicleCharacteristic;
+import com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia.VehicleProfile;
 import com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia.components.provision.ammo.Ammo;
 import com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia.components.provision.equipment.*;
 
@@ -12,7 +12,7 @@ import java.util.List;
  */
 public class Profile {
     @JsonUnwrapped
-    private VehicleCharacteristic vehicle;
+    private VehicleProfile vehicle;
     private List<Ammo> ammo;
     private Armor armor;
     private Engine engine;
@@ -22,11 +22,11 @@ public class Profile {
     private Suspension suspension;
     private Turret turret;
 
-    public VehicleCharacteristic getVehicle() {
+    public VehicleProfile getVehicle() {
         return vehicle;
     }
 
-    public void setVehicle(VehicleCharacteristic vehicle) {
+    public void setVehicle(VehicleProfile vehicle) {
         this.vehicle = vehicle;
     }
 

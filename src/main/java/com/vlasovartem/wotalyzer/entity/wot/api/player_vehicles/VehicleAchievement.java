@@ -4,6 +4,7 @@ import java.util.Map;
 
 /**
  * Created by artemvlasov on 13/10/2016.
+ * https://developers.wargaming.net/reference/all/wot/tanks/achievements
  */
 public class VehicleAchievement {
 

@@ -1,0 +1,24 @@
+{
+  "status": "ok",
+  "meta": {
+    "count": 1,
+    "total": 137491
+  },
+  "data": [
+    {
+      "members_count": 1,
+      "name": "L1MBO",
+      "ladder": null,
+      "emblems": {
+        "x32": "http://ru.wargaming.net/media/team/4/32.png",
+        "x24": "http://ru.wargaming.net/media/team/4/24.png",
+        "x256": null,
+        "x64": "http://ru.wargaming.net/media/team/4/64.png",
+        "x195": "http://ru.wargaming.net/media/team/4/195.png"
+      },
+      "team_id": 4,
+      "tag": "L1MBO",
+      "captain_id": 4525010
+    }
+  ]
+}

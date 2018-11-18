@@ -1,0 +1,16 @@
+{
+  "status": "ok",
+  "meta": {
+    "count": 6
+  },
+  "data": {
+    "14881": {
+      "is_premium": false,
+      "tank_id": 14881
+    },
+    "6145": {
+      "is_premium": false,
+      "tank_id": 6145
+    }
+  }
+}

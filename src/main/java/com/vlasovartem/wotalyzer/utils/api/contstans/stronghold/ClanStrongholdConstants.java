@@ -1,19 +1,31 @@
 package com.vlasovartem.wotalyzer.utils.api.contstans.stronghold;
 
 import com.vlasovartem.wotalyzer.utils.api.contstans.BasicAPIConstants;
-import com.vlasovartem.wotalyzer.utils.api.contstans.utils.ConstantUtils;
 
-import java.util.List;
+import java.util.Arrays;
+import java.util.Objects;
 
-import static com.vlasovartem.wotalyzer.utils.api.contstans.WOTAPIConstants.*;
+import static com.vlasovartem.wotalyzer.utils.api.contstans.WOTAPIConstants.ACCESS_TOKEN_PARAM;
+import static com.vlasovartem.wotalyzer.utils.api.contstans.WOTAPIConstants.CLAN_ID_PARAM;
 
 /**
  * Created by artemvlasov on 14/10/2016.
  */
-public interface ClanStrongholdConstants extends BasicAPIConstants {
+public class ClanStrongholdConstants extends BasicAPIConstants {
 
-    String BASIC_URL = "https://api.worldoftanks.ru/wot/stronghold/info";
-    List<String> BASIC_API_CONSTANTS = ConstantUtils.generate(BasicAPIConstants.BASIC_API_CONSTANTS, CLAN_ID_PARAM, ACCESS_TOKEN_PARAM);
-    List<String> REQUIRED_PARAMS = ConstantUtils.generate(BasicAPIConstants.REQUIRED_PARAMS, CLAN_ID_PARAM);
+    private static ClanStrongholdConstants constants;
+
+    public static ClanStrongholdConstants getInstance() {
+        if (Objects.isNull(constants)) {
+            constants = new ClanStrongholdConstants();
+        }
+        return constants;
+    }
+
+    private ClanStrongholdConstants() {
+        super("https://api.worldoftanks.ru/wot/stronghold/info");
+        addBasicApiConstants(Arrays.asList(CLAN_ID_PARAM, ACCESS_TOKEN_PARAM));
+        addRequiredParams(Arrays.asList(CLAN_ID_PARAM));
+    }
 
 }

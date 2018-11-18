@@ -1,0 +1,19 @@
+{
+  "status": "ok",
+  "meta": {
+    "count": 91
+  },
+  "data": {
+    "7161": {
+      "name": "«Мокрая» боеукладка Kласс 2",
+      "price_gold": 0,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/artefact/wetCombatPack.png",
+      "tag": "wetCombatPack_class2",
+      "weight": 0,
+      "provision_id": 7161,
+      "price_credit": 600000,
+      "type": "optionalDevice",
+      "description": "+50% к прочности боеукладки"
+    }
+  }
+}

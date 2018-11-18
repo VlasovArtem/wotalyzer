@@ -4,7 +4,7 @@ import com.vlasovartem.wotalyzer.entity.statistic.VehicleModuleInfo;
 import com.vlasovartem.wotalyzer.service.statistic.VehicleModuleInfoService;
 import com.vlasovartem.wotalyzer.service.wot.encyclopedia.VehiclesService;
 import com.vlasovartem.wotalyzer.utils.TankUtils;
-import com.vlasovartem.wotalyzer.utils.wot.encyclopedia.VehicleCharacteristicUtils;
+import com.vlasovartem.wotalyzer.utils.wot.encyclopedia.VehicleProfileUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,12 +17,12 @@ import org.springframework.stereotype.Service;
 public class VehicleModuleInfoServiceImpl implements VehicleModuleInfoService {
 
     private final static Logger LOGGER = LogManager.getLogger(VehicleModuleInfoServiceImpl.class);
-    private VehicleCharacteristicUtils vehicleCharacteristicUtils;
+    private VehicleProfileUtils vehicleCharacteristicUtils;
     private TankUtils tankUtils;
     private VehiclesService vehiclesService;
 
     @Autowired
-    public VehicleModuleInfoServiceImpl(VehicleCharacteristicUtils vehicleCharacteristicUtils, TankUtils tankUtils, VehiclesService vehiclesService) {
+    public VehicleModuleInfoServiceImpl(VehicleProfileUtils vehicleCharacteristicUtils, TankUtils tankUtils, VehiclesService vehiclesService) {
         this.vehicleCharacteristicUtils = vehicleCharacteristicUtils;
         this.tankUtils = tankUtils;
         this.vehiclesService = vehiclesService;

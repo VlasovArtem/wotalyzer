@@ -1,0 +1,24 @@
+{
+  "status": "ok",
+  "meta": {
+    "count": 1
+  },
+  "data": {
+    "68851": {
+      "seasons": {
+        "fourth_season": [
+          {
+            "elo": 1594,
+            "wins": 0,
+            "rank_delta": 0,
+            "rank": 3,
+            "battles": 0,
+            "victory_points_since_turn": 0,
+            "vehicle_level": 10,
+            "victory_points": 83040
+          }
+        ]
+      }
+    }
+  }
+}

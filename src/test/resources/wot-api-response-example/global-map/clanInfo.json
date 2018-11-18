@@ -1,0 +1,33 @@
+{
+  "status": "ok",
+  "meta": {
+    "count": 1
+  },
+  "data": {
+    "223790": {
+      "ratings": {
+        "elo_10": 1058,
+        "elo_8": 1386,
+        "elo_6": 1356,
+        "updated_at": 1481580903
+      },
+      "statistics": {
+        "battles_10_level": 11,
+        "wins": 83,
+        "losses": 16,
+        "battles": 99,
+        "battles_8_level": 42,
+        "wins_10_level": 7,
+        "captures": 16,
+        "provinces_count": 0,
+        "wins_6_level": 39,
+        "wins_8_level": 37,
+        "battles_6_level": 46
+      },
+      "name": "KOPM2 - построй свой Укреп",
+      "tag": "KOPM2",
+      "private": null,
+      "clan_id": 223790
+    }
+  }
+}

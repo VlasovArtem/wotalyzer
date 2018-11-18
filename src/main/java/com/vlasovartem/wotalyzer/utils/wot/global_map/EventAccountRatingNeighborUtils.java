@@ -2,15 +2,19 @@ package com.vlasovartem.wotalyzer.utils.wot.global_map;
 
 import com.vlasovartem.wotalyzer.entity.wot.api.global_map.EventAccountRatingNeighbor;
 import com.vlasovartem.wotalyzer.entity.wot.api.response.APIResponse;
+import com.vlasovartem.wotalyzer.utils.api.contstans.BasicAPIConstants;
 import com.vlasovartem.wotalyzer.utils.api.contstans.WOTAPIConstants;
 import com.vlasovartem.wotalyzer.utils.api.contstans.global_map.EventAccountRatingNeighborConstants;
+import com.vlasovartem.wotalyzer.utils.query.builder.ClanParamBuilder;
 import com.vlasovartem.wotalyzer.utils.wot.MainUtils;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.Map;
 import java.util.function.Function;
 
 import static com.vlasovartem.wotalyzer.utils.api.contstans.WOTAPIConstants.ACCOUNT_ID_PARAM;
-import static com.vlasovartem.wotalyzer.utils.query.builder.ClanParamBuilder.newBuilder;
 import static com.vlasovartem.wotalyzer.utils.validators.MainValidator.*;
 
 /**
@@ -19,7 +23,7 @@ import static com.vlasovartem.wotalyzer.utils.validators.MainValidator.*;
 public class EventAccountRatingNeighborUtils extends MainUtils<EventAccountRatingNeighbor> {
 
     public List<EventAccountRatingNeighbor> getEventAccountRatingNeighbors(long accountId, String eventId, String frontId) {
-        APIResponse<List<EventAccountRatingNeighbor>> apiResponse = getApiResponseList(newBuilder()
+        APIResponse<List<EventAccountRatingNeighbor>> apiResponse = getApiResponseList(ClanParamBuilder.newBuilder()
                 .withEventId(eventId)
                 .withFrontId(frontId)
                 .customParam(ACCOUNT_ID_PARAM, accountId)
@@ -33,18 +37,8 @@ public class EventAccountRatingNeighborUtils extends MainUtils<EventAccountRatin
     }
 
     @Override
-    public String getAPIBaseUrl() {
-        return EventAccountRatingNeighborConstants.BASIC_URL;
-    }
-
-    @Override
-    public List<String> getAPIConstants() {
-        return EventAccountRatingNeighborConstants.BASIC_API_CONSTANTS;
-    }
-
-    @Override
-    public List<String> getRequiredAPIParams() {
-        return EventAccountRatingNeighborConstants.REQUIRED_PARAMS;
+    protected BasicAPIConstants getAPIConstants() {
+        return EventAccountRatingNeighborConstants.getInstance();
     }
 
     @Override

@@ -1,14 +1,14 @@
 package com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia.components.provision.equipment;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.vlasovartem.wotalyzer.entity.wot.api.MainEntityExt;
+import com.vlasovartem.wotalyzer.entity.wot.api.VehicleMainEntity;
 
 import java.util.List;
 
 /**
  * Created by artemvlasov on 13/01/16.
  */
-public class Gun extends MainEntityExt {
+public class Gun extends VehicleMainEntity {
     private List<Integer> damage;
     private int level;
     private String nation;

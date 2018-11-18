@@ -1,0 +1,27 @@
+{
+  "status": "ok",
+  "meta": {
+    "count": 1
+  },
+  "data": {
+    "68851": {
+      "events": {
+        "steel_corrida_third_step": [
+          {
+            "task_fame_points": 753369,
+            "event_id": "steel_corrida_third_step",
+            "wins": 1276,
+            "rank_delta": 0,
+            "battle_fame_points": 301420,
+            "rank": 2,
+            "url": "https://ru.wargaming.net/globalmap/#cluster/campaign_05_ru_west",
+            "battles": 1503,
+            "fame_points_since_turn": 0,
+            "fame_points": 1054789,
+            "front_id": "campaign_05_ru_west"
+          }
+        ]
+      }
+    }
+  }
+}

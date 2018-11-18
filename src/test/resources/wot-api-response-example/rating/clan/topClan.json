@@ -1,0 +1,92 @@
+{
+  "status": "ok",
+  "meta": {
+    "count": 1
+  },
+  "data": [
+    {
+      "gm_elo_rating_10": {
+        "rank_delta": 0,
+        "rank": 4,
+        "value": 1599
+      },
+      "gm_elo_rating_8": {
+        "rank_delta": 0,
+        "rank": 6,
+        "value": 1544
+      },
+      "fb_elo_rating_8": {
+        "rank_delta": null,
+        "rank": null,
+        "value": 1444
+      },
+      "exclude_reasons": {
+        "fb_elo_rating_8": "inactivity",
+        "gm_elo_rating_6": "inactivity"
+      },
+      "efficiency": {
+        "rank_delta": 1,
+        "rank": 2,
+        "value": 15360
+      },
+      "rating_fort": {
+        "rank_delta": 2,
+        "rank": 1,
+        "value": 4373.29
+      },
+      "fb_elo_rating_10": {
+        "rank_delta": -2,
+        "rank": 17,
+        "value": 1386
+      },
+      "clan_tag": "LNGST",
+      "battles_count_avg_daily": {
+        "rank_delta": -31,
+        "rank": 199,
+        "value": 22.01
+      },
+      "global_rating_weighted_avg": {
+        "rank_delta": 1,
+        "rank": 6,
+        "value": 10024.45
+      },
+      "clan_id": 103556,
+      "fb_elo_rating": {
+        "rank_delta": -2,
+        "rank": 17,
+        "value": 2079.0
+      },
+      "gm_elo_rating_6": {
+        "rank_delta": null,
+        "rank": null,
+        "value": 1477
+      },
+      "wins_ratio_avg": {
+        "rank_delta": -1,
+        "rank": 19,
+        "value": 63.28
+      },
+      "clan_name": "Лангусты",
+      "gm_elo_rating": {
+        "rank_delta": 0,
+        "rank": 6,
+        "value": 1919.49
+      },
+      "battles_count_avg": {
+        "rank_delta": -56,
+        "rank": 264,
+        "value": 34201.23
+      },
+      "v10l_avg": {
+        "rank_delta": 0,
+        "rank": 31,
+        "value": 21.65
+      },
+      "global_rating_avg": {
+        "rank_delta": -2,
+        "rank": 9,
+        "value": 10125.71
+      }
+    }
+  ]
+}

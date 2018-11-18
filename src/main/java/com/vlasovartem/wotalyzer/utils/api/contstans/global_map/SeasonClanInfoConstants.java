@@ -1,19 +1,32 @@
 package com.vlasovartem.wotalyzer.utils.api.contstans.global_map;
 
 import com.vlasovartem.wotalyzer.utils.api.contstans.BasicAPIConstants;
-import com.vlasovartem.wotalyzer.utils.api.contstans.utils.ConstantUtils;
 
+import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 import static com.vlasovartem.wotalyzer.utils.api.contstans.WOTAPIConstants.*;
 
 /**
  * Created by artemvlasov on 15/10/2016.
  */
-public interface SeasonClanInfoConstants extends BasicAPIConstants {
+public class SeasonClanInfoConstants extends BasicAPIConstants {
 
-    String BASIC_URL = "https://api.worldoftanks.ru/wot/globalmap/seasonclaninfo";
-    List<String> BASIC_API_CONSTANTS = ConstantUtils.generate(BasicAPIConstants.BASIC_API_CONSTANTS, CLAN_ID_PARAM, SEASON_ID_PARAM, VEHICLE_LEVEL_PARAM);
-    List<String> REQUIRED_PARAMS = ConstantUtils.generate(BasicAPIConstants.REQUIRED_PARAMS, CLAN_ID_PARAM, SEASON_ID_PARAM, VEHICLE_LEVEL_PARAM);
+    private static SeasonClanInfoConstants constants;
+
+    public static SeasonClanInfoConstants getInstance() {
+        if (Objects.isNull(constants)) {
+            constants = new SeasonClanInfoConstants();
+        }
+        return constants;
+    }
+
+    private SeasonClanInfoConstants() {
+        super("https://api.worldoftanks.ru/wot/globalmap/seasonclaninfo");
+        List<String> params = Arrays.asList(CLAN_ID_PARAM, SEASON_ID_PARAM, VEHICLE_LEVEL_PARAM);
+        addBasicApiConstants(params);
+        addRequiredParams(params);
+    }
 
 }

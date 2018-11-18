@@ -19,7 +19,6 @@ public class EncyclopediaValidator {
 
     private static final Logger LOGGER = LogManager.getLogger(EncyclopediaValidator.class);
     private static List<String> moduleTypes = Arrays.asList("vehicleRadio", "vehicleEngine", "vehicleGun", "vehicleChassis", "vehicleTurret");
-    private static List<String> provisionTypes = Arrays.asList("equipment", "optionalDevice");
     private static List<String> vehiclesTypes = Arrays.asList("heavyTank", "AT-SPG", "mediumTank", "lightTank", "SPG");
 
     public static Function<Map<String, Object>, Boolean> validateModulesTypeParameter() {
@@ -35,10 +34,6 @@ public class EncyclopediaValidator {
             }
             return true;
         };
-    }
-
-    public static Function<Map<String, Object>, Boolean> validateProvisionTypeParameter () {
-        return t -> validateTypeParameter(provisionTypes).apply(t);
     }
 
     public static Function<Map<String, Object>, Boolean> validateExtraParameter () {

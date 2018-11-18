@@ -1,11 +1,16 @@
 package com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.vlasovartem.wotalyzer.deserializers.NationDeserializer;
+import com.vlasovartem.wotalyzer.deserializers.VehicleTypeDeserializer;
 import com.vlasovartem.wotalyzer.entity.wot.api.MainEntity;
 import com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia.components.vehicle.Images;
 import com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia.components.ModulesTree;
 import com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia.components.Profile;
 import com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia.components.crew.Crew;
+import com.vlasovartem.wotalyzer.entity.wot.api.enums.Nation;
+import com.vlasovartem.wotalyzer.entity.wot.api.enums.VehicleType;
 
 import java.util.List;
 import java.util.Map;
@@ -23,7 +28,8 @@ public class Vehicle extends MainEntity {
     private boolean isPremium;
     private boolean isPremiumIgr;
     private String name;
-    private String nation;
+    @JsonDeserialize(using = NationDeserializer.class)
+    private Nation nation;
     private Map<String, Integer> nextTanks;
     private int priceCredit;
     private int priceGold;
@@ -35,7 +41,8 @@ public class Vehicle extends MainEntity {
     private String tag;
     private int tier;
     private List<Integer> turrets;
-    private String type;
+    @JsonDeserialize(using = VehicleTypeDeserializer.class)
+    private VehicleType type;
     private List<Crew> crew;
     private Profile defaultProfile;
     private Images images;
@@ -108,11 +115,11 @@ public class Vehicle extends MainEntity {
         this.name = name;
     }
 
-    public String getNation() {
+    public Nation getNation() {
         return nation;
     }
 
-    public void setNation(String nation) {
+    public void setNation(Nation nation) {
         this.nation = nation;
     }
 
@@ -204,11 +211,11 @@ public class Vehicle extends MainEntity {
         this.turrets = turrets;
     }
 
-    public String getType() {
+    public VehicleType getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(VehicleType type) {
         this.type = type;
     }
 

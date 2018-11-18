@@ -1,0 +1,36 @@
+{
+  "status": "ok",
+  "meta": {
+    "count": 1,
+    "total": 1
+  },
+  "data": [
+    {
+      "members_count": 26,
+      "name": "KOPM2 - построй свой Укреп",
+      "color": "#5053FF",
+      "created_at": 1460664468,
+      "tag": "KOPM2",
+      "game": "wot",
+      "emblems": {
+        "x32": {
+          "portal": "http://ru.wargaming.net/clans/media/clans/emblems/cl_790/223790/emblem_32x32.png"
+        },
+        "x24": {
+          "portal": "http://ru.wargaming.net/clans/media/clans/emblems/cl_790/223790/emblem_24x24.png"
+        },
+        "x256": {
+          "wowp": "http://ru.wargaming.net/clans/media/clans/emblems/cl_790/223790/emblem_256x256.png"
+        },
+        "x64": {
+          "wot": "http://ru.wargaming.net/clans/media/clans/emblems/cl_790/223790/emblem_64x64_tank.png",
+          "portal": "http://ru.wargaming.net/clans/media/clans/emblems/cl_790/223790/emblem_64x64.png"
+        },
+        "x195": {
+          "portal": "http://ru.wargaming.net/clans/media/clans/emblems/cl_790/223790/emblem_195x195.png"
+        }
+      },
+      "clan_id": 223790
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 package com.vlasovartem.wotalyzer.utils.wot.encyclopedia;
 
 import com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia.PersonalMission;
+import com.vlasovartem.wotalyzer.utils.api.contstans.BasicAPIConstants;
 import com.vlasovartem.wotalyzer.utils.api.contstans.encyclopedia.PersonalMissionConstants;
 import com.vlasovartem.wotalyzer.utils.wot.MainUtils;
 import org.springframework.stereotype.Component;
@@ -25,17 +26,7 @@ public class PersonalMissionUtils extends MainUtils<PersonalMission> {
     }
 
     @Override
-    public String getAPIBaseUrl() {
-        return PersonalMissionConstants.BASIC_URL;
-    }
-
-    @Override
-    public List<String> getAPIConstants() {
-        return PersonalMissionConstants.BASIC_API_CONSTANTS;
-    }
-
-    @Override
-    public List<String> getRequiredAPIParams() {
-        return PersonalMissionConstants.REQUIRED_PARAMS;
+    protected BasicAPIConstants getAPIConstants() {
+        return PersonalMissionConstants.getInstance();
     }
 }

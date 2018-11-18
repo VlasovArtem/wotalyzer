@@ -1,0 +1,38 @@
+{
+  "status": "ok",
+  "meta": {
+    "count": 1
+  },
+  "data": {
+    "4": {
+      "members_count": 1,
+      "name": "L1MBO",
+      "wins_count": 71,
+      "ladder": null,
+      "allow_random_battles": false,
+      "emblems": {
+        "x32": "http://ru.wargaming.net/media/team/4/32.png",
+        "x24": "http://ru.wargaming.net/media/team/4/24.png",
+        "x256": null,
+        "x64": "http://ru.wargaming.net/media/team/4/64.png",
+        "x195": "http://ru.wargaming.net/media/team/4/195.png"
+      },
+      "updated_at": 1468857293,
+      "players": [
+        {
+          "role": "owner",
+          "joined_at": 1443983486,
+          "account_id": 4525010
+        }
+      ],
+      "team_id": 4,
+      "tag": "L1MBO",
+      "accepts_join_requests": true,
+      "captain_id": 4525010,
+      "short_description": null,
+      "battles_count": 111,
+      "created_at": 1427267945,
+      "description": "Welcome From Hell"
+    }
+  }
+}

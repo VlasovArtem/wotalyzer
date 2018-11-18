@@ -1,0 +1,15 @@
+{
+  "status": "ok",
+  "meta": {
+    "count": 1
+  },
+  "data": {
+    "4525010": [
+      {
+        "team_id": 4,
+        "role": "owner",
+        "account_id": 4525010
+      }
+    ]
+  }
+}

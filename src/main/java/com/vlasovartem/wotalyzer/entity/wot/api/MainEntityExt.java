@@ -1,13 +1,11 @@
 package com.vlasovartem.wotalyzer.entity.wot.api;
 
 /**
- * Created by artemvlasov on 10/10/16.
+ * Created by artemvlasov on 12/12/2016.
  */
-public abstract class MainEntityExt extends MainEntity {
+public class MainEntityExt extends MainEntity {
 
     private String tag;
-    private int tier;
-    private int weight;
     private String name;
 
     public String getTag() {
@@ -16,22 +14,6 @@ public abstract class MainEntityExt extends MainEntity {
 
     public void setTag(String tag) {
         this.tag = tag;
-    }
-
-    public int getTier() {
-        return tier;
-    }
-
-    public void setTier(int tier) {
-        this.tier = tier;
-    }
-
-    public int getWeight() {
-        return weight;
-    }
-
-    public void setWeight(int weight) {
-        this.weight = weight;
     }
 
     public String getName() {

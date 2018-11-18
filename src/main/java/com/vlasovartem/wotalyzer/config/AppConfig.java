@@ -35,7 +35,7 @@ public class AppConfig extends AbstractMongoConfiguration {
                 .json()
                 .autoDetectFields(true)
                 .failOnUnknownProperties(false)
-                .propertyNamingStrategy(PropertyNamingStrategy.CAMEL_CASE_TO_LOWER_CASE_WITH_UNDERSCORES)
+                .propertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE)
                 .dateFormat(new SimpleDateFormat("yyyy-MM-dd"))
                 .build();
     }

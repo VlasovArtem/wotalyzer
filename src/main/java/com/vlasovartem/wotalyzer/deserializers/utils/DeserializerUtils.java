@@ -9,7 +9,6 @@ import java.io.IOException;
 import java.io.UncheckedIOException;
 import java.util.*;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
 /**
@@ -20,11 +19,16 @@ public class DeserializerUtils {
     public static <F> List<F> getListFromMap(JsonParser p, DeserializationContext ctxt, Class<F> fClass) throws IOException {
         TreeNode treeNode = p.getCodec().readTree(p);
         if (!treeNode.isArray()) {
-            Stream<String> stream = StreamSupport.stream(Spliterators.spliteratorUnknownSize(treeNode.fieldNames(), Spliterator.ORDERED), true);
-            if (stream.anyMatch(DeserializerUtils::isInteger)) {
-                stream = stream.sorted(Comparator.comparingInt(Integer::valueOf));
+            List<String> keys = StreamSupport
+                    .stream(Spliterators.spliteratorUnknownSize(treeNode.fieldNames(), Spliterator.ORDERED), true)
+                    .collect(Collectors.toList());
+
+            if (keys.stream().anyMatch(DeserializerUtils::isInteger)) {
+                keys = keys.stream().sorted(Comparator.comparingInt(Integer::valueOf)).collect(Collectors.toList());
+
             }
-            return stream
+            return keys
+                    .stream()
                     .map(s -> {
                         try {
                             JsonParser traverse = treeNode.get(s).traverse(p.getCodec());

@@ -1,0 +1,83 @@
+{
+  "status": "ok",
+  "meta": {
+    "count": 5,
+    "page_total": 2,
+    "page": 1
+  },
+  "data": [
+    {
+      "status": "ACTIVE",
+      "fronts": [
+        {
+          "url": "https://ru.wargaming.net/globalmap/#cluster/campaign_05_ru_east",
+          "front_name": "campaign_05_ru_east",
+          "front_id": "campaign_05_ru_east"
+        },
+        {
+          "url": "https://ru.wargaming.net/globalmap/#cluster/campaign_05_ru_west",
+          "front_name": "campaign_05_ru_west",
+          "front_id": "campaign_05_ru_west"
+        }
+      ],
+      "end": "2016-12-13T02:00:00",
+      "start": "2016-12-03T02:00:00",
+      "event_id": "steel_corrida_third_step",
+      "event_name": "steel_corrida_third_step"
+    },
+    {
+      "status": "FINISHED",
+      "fronts": [],
+      "end": "2016-12-02T02:00:00",
+      "start": "2016-11-23T02:00:00",
+      "event_id": "steel_corrida_second_step",
+      "event_name": "steel_corrida_second_step"
+    },
+    {
+      "status": "FINISHED",
+      "fronts": [],
+      "end": "2016-11-22T02:00:00",
+      "start": "2016-11-14T02:00:00",
+      "event_id": "steel_corrida_first_step",
+      "event_name": "steel_corrida_first_step"
+    },
+    {
+      "status": "FINISHED",
+      "fronts": [
+        {
+          "url": "https://ru.wargaming.net/globalmap/#cluster/event_03_ru_tier_8_east",
+          "front_name": "Восточный фронт",
+          "front_id": "event_03_ru_tier_8_east"
+        },
+        {
+          "url": "https://ru.wargaming.net/globalmap/#cluster/event_03_ru_tier_8_west",
+          "front_name": "Западный фронт",
+          "front_id": "event_03_ru_tier_8_west"
+        }
+      ],
+      "end": "2016-09-01T03:00:00",
+      "start": "2016-08-18T03:00:00",
+      "event_id": "birth_of_titans",
+      "event_name": "Рождение титанов"
+    },
+    {
+      "status": "FINISHED",
+      "fronts": [
+        {
+          "url": "https://ru.wargaming.net/globalmap/#cluster/1604_ru_event_east",
+          "front_name": "Восточный фронт",
+          "front_id": "1604_ru_event_east"
+        },
+        {
+          "url": "https://ru.wargaming.net/globalmap/#cluster/1604_ru_event_west",
+          "front_name": "Западный фронт",
+          "front_id": "1604_ru_event_west"
+        }
+      ],
+      "end": "2016-04-28T03:00:00",
+      "start": "2016-04-14T03:00:00",
+      "event_id": "asian_typhoon",
+      "event_name": "Азиатский тайфун"
+    }
+  ]
+}

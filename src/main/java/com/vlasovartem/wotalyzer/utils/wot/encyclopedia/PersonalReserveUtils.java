@@ -1,6 +1,7 @@
 package com.vlasovartem.wotalyzer.utils.wot.encyclopedia;
 
 import com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia.PersonalReserve;
+import com.vlasovartem.wotalyzer.utils.api.contstans.BasicAPIConstants;
 import com.vlasovartem.wotalyzer.utils.api.contstans.encyclopedia.PersonalReserveConstants;
 import com.vlasovartem.wotalyzer.utils.response.APIResponseUtils;
 import com.vlasovartem.wotalyzer.utils.wot.MainUtils;
@@ -25,17 +26,8 @@ public class PersonalReserveUtils extends MainUtils<PersonalReserve> {
     }
 
     @Override
-    public String getAPIBaseUrl() {
-        return PersonalReserveConstants.BASIC_URL;
+    protected BasicAPIConstants getAPIConstants() {
+        return PersonalReserveConstants.getInstance();
     }
 
-    @Override
-    public List<String> getAPIConstants() {
-        return PersonalReserveConstants.BASIC_API_CONSTANTS;
-    }
-
-    @Override
-    public List<String> getRequiredAPIParams() {
-        return PersonalReserveConstants.REQUIRED_PARAMS;
-    }
 }

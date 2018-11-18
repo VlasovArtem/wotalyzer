@@ -1,9 +1,9 @@
 package com.vlasovartem.wotalyzer.service.wot.encyclopedia.impl;
 
 import com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia.Vehicle;
+import com.vlasovartem.wotalyzer.entity.wot.api.enums.VehicleType;
 import com.vlasovartem.wotalyzer.service.wot.encyclopedia.VehiclesService;
 import com.vlasovartem.wotalyzer.utils.TankUtils;
-import com.vlasovartem.wotalyzer.utils.enums.VehicleType;
 import com.vlasovartem.wotalyzer.utils.wot.encyclopedia.VehicleUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -29,7 +29,7 @@ public class VehiclesServiceImpl implements VehiclesService {
     }
 
     @Override
-    public String getVehicleType(long tankId) {
+    public VehicleType getVehicleType(long tankId) {
         return getVehicleBaseInfoObject(tankId, Collections.singletonList("type")).getType();
     }
 

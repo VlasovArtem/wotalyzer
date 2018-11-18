@@ -1,18 +1,29 @@
 package com.vlasovartem.wotalyzer.utils.api.contstans.global_map;
 
 import com.vlasovartem.wotalyzer.utils.api.contstans.BasicAPIConstants;
-import com.vlasovartem.wotalyzer.utils.api.contstans.utils.ConstantUtils;
 
-import java.util.List;
+import java.util.Arrays;
+import java.util.Objects;
 
 import static com.vlasovartem.wotalyzer.utils.api.contstans.WOTAPIConstants.*;
 
 /**
  * Created by artemvlasov on 16/10/2016.
  */
-public interface FrontConstants extends BasicAPIConstants {
+public class FrontConstants extends BasicAPIConstants {
 
-    String BASIC_URL = "https://api.worldoftanks.ru/wot/globalmap/fronts";
-    List<String> BASIC_API_CONSTANTS = ConstantUtils.generate(BasicAPIConstants.BASIC_API_CONSTANTS, FRONT_ID_PARAM, LIMIT_PARAM, PAGE_NO_PARAM);
+    private static FrontConstants constants;
+
+    public static FrontConstants getInstance() {
+        if (Objects.isNull(constants)) {
+            constants = new FrontConstants();
+        }
+        return constants;
+    }
+
+    private FrontConstants() {
+        super("https://api.worldoftanks.ru/wot/globalmap/fronts");
+        addBasicApiConstants(Arrays.asList(FRONT_ID_PARAM, LIMIT_PARAM, PAGE_NO_PARAM));
+    }
 
 }

@@ -1,0 +1,278 @@
+{
+  "status": "ok",
+  "meta": {
+    "count": 1
+  },
+  "data": {
+    "2417": {
+      "radios": [
+        2679
+      ],
+      "is_premium": false,
+      "tag": "Cz04_T50_51",
+      "images": {
+        "small_icon": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/vehicle/small/czech-Cz04_T50_51.png",
+        "contour_icon": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/vehicle/contour/czech-Cz04_T50_51.png",
+        "big_icon": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/vehicle/czech-Cz04_T50_51.png"
+      },
+      "tank_id": 2417,
+      "suspensions": [
+        4722
+      ],
+      "provisions": [
+        8699,
+        9211,
+        1275,
+        26107,
+        9979,
+        7419,
+        14331,
+        6139,
+        14843,
+        6651,
+        1019,
+        15355,
+        26363,
+        11771,
+        1531,
+        15867,
+        507,
+        12283,
+        251,
+        763,
+        12795,
+        6649,
+        6905,
+        3065,
+        7417,
+        7929,
+        249,
+        761,
+        1785,
+        1529,
+        1273,
+        4857
+      ],
+      "engines": [
+        5493
+      ],
+      "crew": [
+        {
+          "roles": {
+            "radioman": "радист",
+            "commander": "командир экипажа"
+          },
+          "member_id": "commander"
+        },
+        {
+          "roles": {
+            "gunner": "наводчик"
+          },
+          "member_id": "gunner"
+        },
+        {
+          "roles": {
+            "driver": "механик-водитель"
+          },
+          "member_id": "driver"
+        },
+        {
+          "roles": {
+            "loader": "заряжающий"
+          },
+          "member_id": "loader"
+        }
+      ],
+      "type": "mediumTank",
+      "guns": [
+        5236
+      ],
+      "description": "Совместный проект компаний Škoda и ČKD. 14 января 1950 года началось обсуждение спецификаций будущего танка, однако уже 4 марта 1950 года Министерство обороны Чехословакии объявило о прекращении работы над проектом. Прототип построен не был. Существовал только в чертежах.",
+      "short_name": "TVP T 50/51",
+      "is_premium_igr": false,
+      "next_tanks": null,
+      "modules_tree": {
+        "4722": {
+          "name": "TVP T 50/51",
+          "next_modules": null,
+          "next_tanks": null,
+          "is_default": true,
+          "price_xp": 0,
+          "price_credit": 82500,
+          "module_id": 4722,
+          "type": "vehicleChassis"
+        },
+        "4723": {
+          "name": "TVP T 50/51",
+          "next_modules": null,
+          "next_tanks": null,
+          "is_default": true,
+          "price_xp": 0,
+          "price_credit": 66000,
+          "module_id": 4723,
+          "type": "vehicleTurret"
+        },
+        "5236": {
+          "name": "100 mm AK1",
+          "next_modules": null,
+          "next_tanks": null,
+          "is_default": true,
+          "price_xp": 0,
+          "price_credit": 275000,
+          "module_id": 5236,
+          "type": "vehicleGun"
+        },
+        "5493": {
+          "name": "Praga AXK",
+          "next_modules": null,
+          "next_tanks": null,
+          "is_default": true,
+          "price_xp": 0,
+          "price_credit": 110000,
+          "module_id": 5493,
+          "type": "vehicleEngine"
+        },
+        "2679": {
+          "name": "Radiostanice RM-31T",
+          "next_modules": null,
+          "next_tanks": null,
+          "is_default": true,
+          "price_xp": 0,
+          "price_credit": 57500,
+          "module_id": 2679,
+          "type": "vehicleRadio"
+        }
+      },
+      "nation": "czech",
+      "tier": 10,
+      "prices_xp": {
+        "2161": 208000
+      },
+      "is_gift": false,
+      "name": "TVP T 50/51",
+      "price_gold": 0,
+      "price_credit": 6100000,
+      "default_profile": {
+        "engine": {
+          "name": "Praga AXK",
+          "power": 1000,
+          "weight": 1700,
+          "tag": "Praga_AXK",
+          "fire_chance": 0.1,
+          "tier": 10
+        },
+        "max_ammo": 48,
+        "suspension": {
+          "name": "TVP T 50/51",
+          "weight": 11500,
+          "load_limit": 43000,
+          "tag": "Chassis_Cz04_T50_51",
+          "traverse_speed": 54,
+          "tier": 10
+        },
+        "weight": 40000,
+        "armor": {
+          "turret": {
+            "front": 120,
+            "sides": 80,
+            "rear": 60
+          },
+          "hull": {
+            "front": 65,
+            "sides": 40,
+            "rear": 30
+          }
+        },
+        "hp": 1800,
+        "modules": {
+          "gun_id": 5236,
+          "suspension_id": 4722,
+          "turret_id": 4723,
+          "radio_id": 2679,
+          "engine_id": 5493
+        },
+        "gun": {
+          "move_down_arc": 8,
+          "caliber": 100,
+          "name": "100 mm AK1",
+          "weight": 2600,
+          "move_up_arc": 20,
+          "fire_rate": 8.14,
+          "dispersion": 0.35,
+          "tag": "_100mm_AK1",
+          "traverse_speed": 33,
+          "reload_time": 25.0,
+          "tier": 10,
+          "aim_time": 2.1
+        },
+        "turret": {
+          "name": "TVP T 50/51",
+          "weight": 9000,
+          "view_range": 410,
+          "hp": 360,
+          "tag": "Turret_1_Cz04_T50_51",
+          "traverse_speed": 36,
+          "traverse_right_arc": 180,
+          "tier": 10,
+          "traverse_left_arc": 180
+        },
+        "hull_weight": 14838,
+        "radio": {
+          "tier": 10,
+          "signal_range": 850,
+          "tag": "Radiostanice_RM_31T_A",
+          "name": "Radiostanice RM-31T",
+          "weight": 62
+        },
+        "speed_forward": 60,
+        "hull_hp": 1440,
+        "speed_backward": 20,
+        "ammo": [
+          {
+            "penetration": [
+              186,
+              248,
+              310
+            ],
+            "type": "ARMOR_PIERCING_CR",
+            "damage": [
+              240,
+              320,
+              400
+            ]
+          },
+          {
+            "penetration": [
+              233,
+              310,
+              388
+            ],
+            "type": "HOLLOW_CHARGE",
+            "damage": [
+              240,
+              320,
+              400
+            ]
+          },
+          {
+            "penetration": [
+              38,
+              50,
+              63
+            ],
+            "type": "HIGH_EXPLOSIVE",
+            "damage": [
+              315,
+              420,
+              525
+            ]
+          }
+        ],
+        "max_weight": 43000
+      },
+      "turrets": [
+        4723
+      ]
+    }
+  }
+}

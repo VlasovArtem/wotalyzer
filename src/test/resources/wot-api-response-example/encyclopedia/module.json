@@ -1,0 +1,1265 @@
+{
+  "_comment" : "Nation - USA, Type - vehicleGun",
+  "status": "ok",
+  "meta": {
+    "count": 90
+  },
+  "data": {
+    "1316": {
+      "name": "37 mm Semiautomatic Gun M1924",
+      "weight": 65,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 1900,
+      "tanks": [
+        545
+      ],
+      "tier": 1,
+      "module_id": 1316,
+      "type": "vehicleGun"
+    },
+    "14372": {
+      "name": "90 mm Gun M36",
+      "weight": 2080,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 88500,
+      "tanks": [
+        8993
+      ],
+      "tier": 7,
+      "module_id": 14372,
+      "type": "vehicleGun"
+    },
+    "14884": {
+      "name": "76 mm Gun T94",
+      "weight": 726,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 64000,
+      "tanks": [
+        16673
+      ],
+      "tier": 6,
+      "module_id": 14884,
+      "type": "vehicleGun"
+    },
+    "15140": {
+      "name": "75 mm AT Howitzer M3",
+      "weight": 138,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 5400,
+      "tanks": [
+        10273
+      ],
+      "tier": 3,
+      "module_id": 15140,
+      "type": "vehicleGun"
+    },
+    "15396": {
+      "name": "75 mm AT Gun M3",
+      "weight": 1437,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 30000,
+      "tanks": [
+        10273
+      ],
+      "tier": 4,
+      "module_id": 15396,
+      "type": "vehicleGun"
+    },
+    "9764": {
+      "name": "76 mm AT Gun M1A1",
+      "weight": 1567,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 50330,
+      "tanks": [
+        7713,
+        10529,
+        6945,
+        11553
+      ],
+      "tier": 6,
+      "module_id": 9764,
+      "type": "vehicleGun"
+    },
+    "15652": {
+      "name": "120 mm Gun T53A1",
+      "weight": 2790,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 288000,
+      "tanks": [
+        59425,
+        2849
+      ],
+      "tier": 9,
+      "module_id": 15652,
+      "type": "vehicleGun"
+    },
+    "15908": {
+      "name": "76 mm Gun M1A1",
+      "weight": 1567,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 50330,
+      "tanks": [
+        11809
+      ],
+      "tier": 6,
+      "module_id": 15908,
+      "type": "vehicleGun"
+    },
+    "36": {
+      "name": "75 mm Gun M3",
+      "weight": 1437,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 30000,
+      "tanks": [
+        15137,
+        3105,
+        1313,
+        5409,
+        1057,
+        10017
+      ],
+      "tier": 4,
+      "module_id": 36,
+      "type": "vehicleGun"
+    },
+    "292": {
+      "name": "20 mm Hispano-Suiza Birkigt Gun",
+      "weight": 68,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 2600,
+      "tanks": [
+        5665,
+        1825,
+        289
+      ],
+      "tier": 2,
+      "module_id": 292,
+      "type": "vehicleGun"
+    },
+    "548": {
+      "name": "37 mm Gun M5",
+      "weight": 78,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 2000,
+      "tanks": [
+        5665,
+        1825,
+        4897,
+        289
+      ],
+      "tier": 2,
+      "module_id": 548,
+      "type": "vehicleGun"
+    },
+    "24612": {
+      "name": "76 mm Gun M1A2",
+      "weight": 1590,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 62000,
+      "tanks": [
+        56097
+      ],
+      "tier": 6,
+      "module_id": 24612,
+      "type": "vehicleGun"
+    },
+    "804": {
+      "name": "37 mm Gun M6",
+      "weight": 82,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 8350,
+      "tanks": [
+        289,
+        5153,
+        4897,
+        5409
+      ],
+      "tier": 3,
+      "module_id": 804,
+      "type": "vehicleGun"
+    },
+    "1060": {
+      "name": "37 mm Gun M1916",
+      "weight": 104,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 0,
+      "tanks": [
+        545
+      ],
+      "tier": 1,
+      "module_id": 1060,
+      "type": "vehicleGun"
+    },
+    "18212": {
+      "name": "37 mm Semiautomatic Gun M1924A1",
+      "weight": 65,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 1900,
+      "tanks": [
+        53537
+      ],
+      "tier": 1,
+      "module_id": 18212,
+      "type": "vehicleGun"
+    },
+    "17700": {
+      "name": "90 mm Gun T15E1",
+      "weight": 1551,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 128900,
+      "tanks": [
+        13345
+      ],
+      "tier": 8,
+      "module_id": 17700,
+      "type": "vehicleGun"
+    },
+    "8484": {
+      "name": "75 mm AT Howitzer M1A1",
+      "weight": 138,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 26000,
+      "tanks": [
+        7713,
+        6177
+      ],
+      "tier": 4,
+      "module_id": 8484,
+      "type": "vehicleGun"
+    },
+    "1572": {
+      "name": "37 mm Browning Semiautomatic Gun",
+      "weight": 65,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 2200,
+      "tanks": [
+        5665
+      ],
+      "tier": 2,
+      "module_id": 1572,
+      "type": "vehicleGun"
+    },
+    "1828": {
+      "name": "3-inch Gun M7",
+      "weight": 1450,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 33500,
+      "tanks": [
+        3361,
+        801
+      ],
+      "tier": 5,
+      "module_id": 1828,
+      "type": "vehicleGun"
+    },
+    "2084": {
+      "name": "76 mm Gun M1A1",
+      "weight": 1567,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 50330,
+      "tanks": [
+        15137,
+        1569,
+        1313,
+        1057,
+        801,
+        3361,
+        10017,
+        5921
+      ],
+      "tier": 6,
+      "module_id": 2084,
+      "type": "vehicleGun"
+    },
+    "2340": {
+      "name": "76 mm Gun M1A2",
+      "weight": 1590,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 62000,
+      "tanks": [
+        15137,
+        1569,
+        1313,
+        801,
+        15649,
+        5921,
+        10017,
+        3873
+      ],
+      "tier": 6,
+      "module_id": 2340,
+      "type": "vehicleGun"
+    },
+    "18468": {
+      "name": "90 mm Gun M41",
+      "weight": 2300,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 95500,
+      "tanks": [
+        14113
+      ],
+      "tier": 8,
+      "module_id": 18468,
+      "type": "vehicleGun"
+    },
+    "2596": {
+      "name": "90 mm Gun M3",
+      "weight": 2050,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 81000,
+      "tanks": [
+        1569,
+        8993,
+        5921,
+        3873,
+        801
+      ],
+      "tier": 7,
+      "module_id": 2596,
+      "type": "vehicleGun"
+    },
+    "8740": {
+      "name": "105 mm AT Howitzer M3",
+      "weight": 2100,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 40150,
+      "tanks": [
+        7713
+      ],
+      "tier": 5,
+      "module_id": 8740,
+      "type": "vehicleGun"
+    },
+    "2852": {
+      "name": "105 mm M4",
+      "weight": 2600,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 40300,
+      "tanks": [
+        1569,
+        1057,
+        8993,
+        1313,
+        5921,
+        10017
+      ],
+      "tier": 5,
+      "module_id": 2852,
+      "type": "vehicleGun"
+    },
+    "21796": {
+      "name": "105 mm Gun M68",
+      "weight": 2850,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 325000,
+      "tanks": [
+        15905
+      ],
+      "tier": 10,
+      "module_id": 21796,
+      "type": "vehicleGun"
+    },
+    "3108": {
+      "name": "Browning MG caliber .50 HB, M2",
+      "weight": 70,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 2000,
+      "tanks": [
+        1825
+      ],
+      "tier": 1,
+      "module_id": 3108,
+      "type": "vehicleGun"
+    },
+    "28196": {
+      "name": "75 mm Howitzer M1A1",
+      "weight": 138,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 26000,
+      "tanks": [
+        18465
+      ],
+      "tier": 4,
+      "module_id": 28196,
+      "type": "vehicleGun"
+    },
+    "3620": {
+      "name": "QF 6-pdr Mk. III",
+      "weight": 450,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 30500,
+      "tanks": [
+        5409,
+        15137
+      ],
+      "tier": 4,
+      "module_id": 3620,
+      "type": "vehicleGun"
+    },
+    "18724": {
+      "name": "105 mm Gun M68",
+      "weight": 2850,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 325000,
+      "tanks": [
+        14113
+      ],
+      "tier": 10,
+      "module_id": 18724,
+      "type": "vehicleGun"
+    },
+    "20260": {
+      "name": "90 mm Gun T178",
+      "weight": 1075,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 121000,
+      "tanks": [
+        14625,
+        15393
+      ],
+      "tier": 8,
+      "module_id": 20260,
+      "type": "vehicleGun"
+    },
+    "20516": {
+      "name": "120 mm Gun T179",
+      "weight": 2849,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 310000,
+      "tanks": [
+        14881
+      ],
+      "tier": 10,
+      "module_id": 20516,
+      "type": "vehicleGun"
+    },
+    "4388": {
+      "name": "105 mm Gun T5E1",
+      "weight": 2400,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 118000,
+      "tanks": [
+        4385,
+        3873,
+        9505
+      ],
+      "tier": 8,
+      "module_id": 4388,
+      "type": "vehicleGun"
+    },
+    "25380": {
+      "name": "76 mm Gun M32",
+      "weight": 775,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 72000,
+      "tanks": [
+        17953
+      ],
+      "tier": 7,
+      "module_id": 25380,
+      "type": "vehicleGun"
+    },
+    "4900": {
+      "name": "105 mm Howitzer M3",
+      "weight": 433,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 12850,
+      "tanks": [
+        4641,
+        3617,
+        18721
+      ],
+      "tier": 3,
+      "module_id": 4900,
+      "type": "vehicleGun"
+    },
+    "6180": {
+      "name": "75 mm Howitzer M3",
+      "weight": 138,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 5400,
+      "tanks": [
+        4897
+      ],
+      "tier": 3,
+      "module_id": 6180,
+      "type": "vehicleGun"
+    },
+    "18980": {
+      "name": "90 mm Gun M41E1",
+      "weight": 1075,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 95500,
+      "tanks": [
+        53793
+      ],
+      "tier": 8,
+      "module_id": 18980,
+      "type": "vehicleGun"
+    },
+    "5156": {
+      "name": "105 mm Howitzer M2A1",
+      "weight": 490,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 32200,
+      "tanks": [
+        3617
+      ],
+      "tier": 4,
+      "module_id": 5156,
+      "type": "vehicleGun"
+    },
+    "5412": {
+      "name": "155 mm Howitzer M1",
+      "weight": 1735,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 45000,
+      "tanks": [
+        4129,
+        16417
+      ],
+      "tier": 5,
+      "module_id": 5412,
+      "type": "vehicleGun"
+    },
+    "22308": {
+      "name": "155 mm Gun M46",
+      "weight": 3264,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 125000,
+      "tanks": [
+        16161
+      ],
+      "tier": 8,
+      "module_id": 22308,
+      "type": "vehicleGun"
+    },
+    "5668": {
+      "name": "155 mm Gun M1918M1",
+      "weight": 3953,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 61200,
+      "tanks": [
+        7969
+      ],
+      "tier": 6,
+      "module_id": 5668,
+      "type": "vehicleGun"
+    },
+    "25636": {
+      "name": "76 mm Gun M32 late",
+      "weight": 775,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 76600,
+      "tanks": [
+        17953
+      ],
+      "tier": 7,
+      "module_id": 25636,
+      "type": "vehicleGun"
+    },
+    "5924": {
+      "name": "105 mm Howitzer M4",
+      "weight": 517,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 40500,
+      "tanks": [
+        4641,
+        18721
+      ],
+      "tier": 5,
+      "module_id": 5924,
+      "type": "vehicleGun"
+    },
+    "22564": {
+      "name": "8-inch Howitzer M47",
+      "weight": 2776,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 240000,
+      "tanks": [
+        16161
+      ],
+      "tier": 9,
+      "module_id": 22564,
+      "type": "vehicleGun"
+    },
+    "22820": {
+      "name": "155 mm Howitzer M45",
+      "weight": 1347,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 68000,
+      "tanks": [
+        16417
+      ],
+      "tier": 6,
+      "module_id": 22820,
+      "type": "vehicleGun"
+    },
+    "23076": {
+      "name": "37 mm Gun T16",
+      "weight": 153,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 17700,
+      "tanks": [
+        5153
+      ],
+      "tier": 4,
+      "module_id": 23076,
+      "type": "vehicleGun"
+    },
+    "23332": {
+      "name": "75 mm Gun M17",
+      "weight": 207,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 40350,
+      "tanks": [
+        9761
+      ],
+      "tier": 5,
+      "module_id": 23332,
+      "type": "vehicleGun"
+    },
+    "25892": {
+      "name": "76 mm Gun T91E5",
+      "weight": 1864,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 74500,
+      "tanks": [
+        17953
+      ],
+      "tier": 7,
+      "module_id": 25892,
+      "type": "vehicleGun"
+    },
+    "23588": {
+      "name": "Browning MG caliber .50 HB, M2",
+      "weight": 38,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 2000,
+      "tanks": [
+        55073
+      ],
+      "tier": 1,
+      "module_id": 23588,
+      "type": "vehicleGun"
+    },
+    "14628": {
+      "name": "75 mm Gun M6",
+      "weight": 186,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 33350,
+      "tanks": [
+        9761,
+        16673
+      ],
+      "tier": 5,
+      "module_id": 14628,
+      "type": "vehicleGun"
+    },
+    "7460": {
+      "name": "QF 6-pdr Mk. IIIA",
+      "weight": 450,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 22250,
+      "tanks": [
+        51745
+      ],
+      "tier": 4,
+      "module_id": 7460,
+      "type": "vehicleGun"
+    },
+    "29220": {
+      "name": "75 mm Pack Howitzer M1",
+      "weight": 155,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 2780,
+      "tanks": [
+        2081
+      ],
+      "tier": 2,
+      "module_id": 29220,
+      "type": "vehicleGun"
+    },
+    "24100": {
+      "name": "120 mm Gun T123E6",
+      "weight": 1925,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 310000,
+      "tanks": [
+        55841,
+        56865
+      ],
+      "tier": 10,
+      "module_id": 24100,
+      "type": "vehicleGun"
+    },
+    "7972": {
+      "name": "90 mm Gun T15E2M2",
+      "weight": 2250,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 128900,
+      "tanks": [
+        5921,
+        8993
+      ],
+      "tier": 8,
+      "module_id": 7972,
+      "type": "vehicleGun"
+    },
+    "8228": {
+      "name": "37 mm AT Gun M3",
+      "weight": 82,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 8350,
+      "tanks": [
+        6177
+      ],
+      "tier": 2,
+      "module_id": 8228,
+      "type": "vehicleGun"
+    },
+    "24868": {
+      "name": "76 mm Gun T91",
+      "weight": 775,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 67100,
+      "tanks": [
+        16673,
+        17953
+      ],
+      "tier": 6,
+      "module_id": 24868,
+      "type": "vehicleGun"
+    },
+    "25124": {
+      "name": "76 mm Gun T102",
+      "weight": 1395,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 65400,
+      "tanks": [
+        16673
+      ],
+      "tier": 6,
+      "module_id": 25124,
+      "type": "vehicleGun"
+    },
+    "29476": {
+      "name": "90 mm Gun M3A1",
+      "weight": 1077,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 81000,
+      "tanks": [
+        57121
+      ],
+      "tier": 7,
+      "module_id": 29476,
+      "type": "vehicleGun"
+    },
+    "8996": {
+      "name": "57 mm Gun M1",
+      "weight": 400,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 33000,
+      "tanks": [
+        7713,
+        10529,
+        10273,
+        6433
+      ],
+      "tier": 5,
+      "module_id": 8996,
+      "type": "vehicleGun"
+    },
+    "9252": {
+      "name": "3-inch AT Gun M1918",
+      "weight": 900,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 27300,
+      "tanks": [
+        7713
+      ],
+      "tier": 4,
+      "module_id": 9252,
+      "type": "vehicleGun"
+    },
+    "9508": {
+      "name": "3-inch AT Gun M7",
+      "weight": 1450,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 33500,
+      "tanks": [
+        6945,
+        6433,
+        10529,
+        10273,
+        11553
+      ],
+      "tier": 5,
+      "module_id": 9508,
+      "type": "vehicleGun"
+    },
+    "26404": {
+      "name": "90 mm Gun T132E3",
+      "weight": 653,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 95000,
+      "tanks": [
+        18209
+      ],
+      "tier": 8,
+      "module_id": 26404,
+      "type": "vehicleGun"
+    },
+    "26148": {
+      "name": "152 mm Gun-Launcher XM81 (conventional)",
+      "weight": 510,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 115000,
+      "tanks": [
+        18209
+      ],
+      "tier": 8,
+      "module_id": 26148,
+      "type": "vehicleGun"
+    },
+    "10020": {
+      "name": "76 mm AT Gun M1A2",
+      "weight": 1590,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 62000,
+      "tanks": [
+        11553,
+        6945,
+        7201
+      ],
+      "tier": 6,
+      "module_id": 10020,
+      "type": "vehicleGun"
+    },
+    "6948": {
+      "name": "20 mm Hispano-Suiza Birkigt Gun",
+      "weight": 68,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 2600,
+      "tanks": [
+        51489
+      ],
+      "tier": 2,
+      "module_id": 6948,
+      "type": "vehicleGun"
+    },
+    "20004": {
+      "name": "76 mm Gun T185",
+      "weight": 646,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 73000,
+      "tanks": [
+        14625,
+        15649
+      ],
+      "tier": 7,
+      "module_id": 20004,
+      "type": "vehicleGun"
+    },
+    "10276": {
+      "name": "105 mm Gun T5E1M2",
+      "weight": 2400,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 219000,
+      "tanks": [
+        14113,
+        8993
+      ],
+      "tier": 9,
+      "module_id": 10276,
+      "type": "vehicleGun"
+    },
+    "10532": {
+      "name": "90 mm AT Gun M3",
+      "weight": 2050,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 81000,
+      "tanks": [
+        11553,
+        11041,
+        9249,
+        7201
+      ],
+      "tier": 7,
+      "module_id": 10532,
+      "type": "vehicleGun"
+    },
+    "10788": {
+      "name": "155 mm Gun M1A1",
+      "weight": 4352,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 96500,
+      "tanks": [
+        7457,
+        7969
+      ],
+      "tier": 7,
+      "module_id": 10788,
+      "type": "vehicleGun"
+    },
+    "11044": {
+      "name": "8-inch Howitzer M1",
+      "weight": 4645,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 150000,
+      "tanks": [
+        7457
+      ],
+      "tier": 8,
+      "module_id": 11044,
+      "type": "vehicleGun"
+    },
+    "11300": {
+      "name": "90 mm AT Gun T15E2",
+      "weight": 2050,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 111900,
+      "tanks": [
+        8225,
+        11041,
+        11297,
+        9249
+      ],
+      "tier": 8,
+      "module_id": 11300,
+      "type": "vehicleGun"
+    },
+    "7204": {
+      "name": "75 mm Gun M2",
+      "weight": 1237,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 23000,
+      "tanks": [
+        5409,
+        3105
+      ],
+      "tier": 4,
+      "module_id": 7204,
+      "type": "vehicleGun"
+    },
+    "11556": {
+      "name": "105 mm AT Gun T5E1",
+      "weight": 2400,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 118000,
+      "tanks": [
+        8225,
+        11297,
+        9249,
+        2593,
+        8737
+      ],
+      "tier": 8,
+      "module_id": 11556,
+      "type": "vehicleGun"
+    },
+    "11812": {
+      "name": "120 mm AT Gun T53",
+      "weight": 2790,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 250000,
+      "tanks": [
+        8225,
+        11297,
+        2593,
+        8737
+      ],
+      "tier": 10,
+      "module_id": 11812,
+      "type": "vehicleGun"
+    },
+    "12068": {
+      "name": "240 mm Howitzer M1",
+      "weight": 11385,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 350000,
+      "tanks": [
+        8481
+      ],
+      "tier": 10,
+      "module_id": 12068,
+      "type": "vehicleGun"
+    },
+    "26916": {
+      "name": "90 mm Gun M54",
+      "weight": 1107,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 95500,
+      "tanks": [
+        56353
+      ],
+      "tier": 8,
+      "module_id": 26916,
+      "type": "vehicleGun"
+    },
+    "12324": {
+      "name": "155 mm AT Gun T7",
+      "weight": 3371,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 335000,
+      "tanks": [
+        8737,
+        2593
+      ],
+      "tier": 10,
+      "module_id": 12324,
+      "type": "vehicleGun"
+    },
+    "4132": {
+      "name": "90 mm Gun T15E2",
+      "weight": 2050,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 111900,
+      "tanks": [
+        4385
+      ],
+      "tier": 8,
+      "module_id": 4132,
+      "type": "vehicleGun"
+    },
+    "12580": {
+      "name": "105 mm AT M4",
+      "weight": 2670,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 40300,
+      "tanks": [
+        6945
+      ],
+      "tier": 5,
+      "module_id": 12580,
+      "type": "vehicleGun"
+    },
+    "12836": {
+      "name": "105 mm Gun T5E1E",
+      "weight": 2400,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 118000,
+      "tanks": [
+        52513
+      ],
+      "tier": 8,
+      "module_id": 12836,
+      "type": "vehicleGun"
+    },
+    "13092": {
+      "name": "37 mm Gun M6",
+      "weight": 82,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 8350,
+      "tanks": [
+        52769
+      ],
+      "tier": 3,
+      "module_id": 13092,
+      "type": "vehicleGun"
+    },
+    "13348": {
+      "name": "QF 2-pdr Mk. IX",
+      "weight": 130,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 17200,
+      "tanks": [
+        6177
+      ],
+      "tier": 4,
+      "module_id": 13348,
+      "type": "vehicleGun"
+    },
+    "27172": {
+      "name": "105 mm Gun T5",
+      "weight": 3032,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 70000,
+      "tanks": [
+        56609
+      ],
+      "tier": 7,
+      "module_id": 27172,
+      "type": "vehicleGun"
+    },
+    "29988": {
+      "name": "76 mm Gun T185",
+      "weight": 646,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 73000,
+      "tanks": [
+        57633
+      ],
+      "tier": 7,
+      "module_id": 29988,
+      "type": "vehicleGun"
+    },
+    "19492": {
+      "name": "155 mm AT Gun T7E2",
+      "weight": 3371,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 335000,
+      "tanks": [
+        13857,
+        13089
+      ],
+      "tier": 10,
+      "module_id": 19492,
+      "type": "vehicleGun"
+    },
+    "13860": {
+      "name": "120 mm Gun T122",
+      "weight": 2790,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 230000,
+      "tanks": [
+        9505
+      ],
+      "tier": 9,
+      "module_id": 13860,
+      "type": "vehicleGun"
+    },
+    "7716": {
+      "name": "75 mm Gun M3",
+      "weight": 1437,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 30000,
+      "tanks": [
+        52257,
+        33,
+        12577
+      ],
+      "tier": 4,
+      "module_id": 7716,
+      "type": "vehicleGun"
+    },
+    "14116": {
+      "name": "120 mm Gun M58",
+      "weight": 3100,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 310000,
+      "tanks": [
+        10785,
+        9505
+      ],
+      "tier": 10,
+      "module_id": 14116,
+      "type": "vehicleGun"
+    },
+    "20772": {
+      "name": "105mm Gun T140E2",
+      "weight": 2177,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 170000,
+      "tanks": [
+        15393
+      ],
+      "tier": 9,
+      "module_id": 20772,
+      "type": "vehicleGun"
+    },
+    "30756": {
+      "name": "90 mm Gun T7E1",
+      "weight": 975,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/module/ico-guns.gif",
+      "nation": "usa",
+      "price_credit": 100000,
+      "tanks": [
+        59169,
+        58913
+      ],
+      "tier": 8,
+      "module_id": 30756,
+      "type": "vehicleGun"
+    }
+  }
+}

@@ -2,7 +2,9 @@ package com.vlasovartem.wotalyzer.utils.wot.global_map;
 
 import com.vlasovartem.wotalyzer.entity.wot.api.global_map.EventAccountRating;
 import com.vlasovartem.wotalyzer.entity.wot.api.response.APIResponse;
+import com.vlasovartem.wotalyzer.utils.api.contstans.BasicAPIConstants;
 import com.vlasovartem.wotalyzer.utils.api.contstans.global_map.EventAccountRatingConstants;
+import com.vlasovartem.wotalyzer.utils.query.builder.ClanParamBuilder;
 import com.vlasovartem.wotalyzer.utils.validators.global_map.GlobalMapValidator;
 import com.vlasovartem.wotalyzer.utils.wot.MainUtils;
 
@@ -12,7 +14,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
 
-import static com.vlasovartem.wotalyzer.utils.query.builder.ClanParamBuilder.newBuilder;
 import static com.vlasovartem.wotalyzer.utils.validators.MainValidator.validateLimit;
 import static com.vlasovartem.wotalyzer.utils.validators.MainValidator.validatePageNoParameter;
 
@@ -22,7 +23,7 @@ import static com.vlasovartem.wotalyzer.utils.validators.MainValidator.validateP
 public class EventAccountRatingUtils extends MainUtils<EventAccountRating> {
 
     public List<EventAccountRating> getEventAccountRatings(String eventId, String frontId) {
-        APIResponse<List<EventAccountRating>> apiResponse = getApiResponseList(newBuilder()
+        APIResponse<List<EventAccountRating>> apiResponse = getApiResponseList(ClanParamBuilder.newBuilder()
                 .withEventId(eventId)
                 .withFrontId(frontId)
                 .build());
@@ -35,18 +36,8 @@ public class EventAccountRatingUtils extends MainUtils<EventAccountRating> {
     }
 
     @Override
-    public String getAPIBaseUrl() {
-        return EventAccountRatingConstants.BASIC_URL;
-    }
-
-    @Override
-    public List<String> getAPIConstants() {
-        return EventAccountRatingConstants.BASIC_API_CONSTANTS;
-    }
-
-    @Override
-    public List<String> getRequiredAPIParams() {
-        return EventAccountRatingConstants.REQUIRED_PARAMS;
+    protected BasicAPIConstants getAPIConstants() {
+        return EventAccountRatingConstants.getInstance();
     }
 
     @Override

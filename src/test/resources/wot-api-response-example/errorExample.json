@@ -1,0 +1,9 @@
+{
+  "status": "error",
+  "error": {
+    "field": "fields",
+    "message": "INVALID_FIELDS",
+    "code": 407,
+    "value": "гриша"
+  }
+}

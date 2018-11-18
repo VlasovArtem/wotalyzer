@@ -1,9 +1,12 @@
 package com.vlasovartem.wotalyzer.utils.wot.encyclopedia;
 
 import com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia.Vehicle;
+import com.vlasovartem.wotalyzer.entity.wot.api.enums.Nation;
 import com.vlasovartem.wotalyzer.entity.wot.api.enums.VehicleType;
 import com.vlasovartem.wotalyzer.entity.wot.api.response.APIResponse;
+import com.vlasovartem.wotalyzer.utils.api.contstans.BasicAPIConstants;
 import com.vlasovartem.wotalyzer.utils.api.contstans.encyclopedia.VehicleConstants;
+import com.vlasovartem.wotalyzer.utils.query.builder.VehicleParamBuilder;
 import com.vlasovartem.wotalyzer.utils.validators.encyclopedia.EncyclopediaValidator;
 import com.vlasovartem.wotalyzer.utils.wot.MainUtils;
 import org.springframework.stereotype.Component;
@@ -14,11 +17,8 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.function.Function;
 
-import static com.vlasovartem.wotalyzer.utils.api.contstans.WOTAPIConstants.TANK_ID_PARAM;
-import static com.vlasovartem.wotalyzer.utils.api.contstans.WOTAPIConstants.TIER_PARAM;
-import static com.vlasovartem.wotalyzer.utils.api.contstans.WOTAPIConstants.TYPE_PARAM;
-import static com.vlasovartem.wotalyzer.utils.query.builder.QueryParamBuilder.newBuilder;
 import static com.vlasovartem.wotalyzer.utils.response.APIResponseUtils.convertMapToList;
+import static com.vlasovartem.wotalyzer.utils.response.APIResponseUtils.convertMapToObject;
 
 /**
  * Created by artemvlasov on 07/10/16.
@@ -26,18 +26,34 @@ import static com.vlasovartem.wotalyzer.utils.response.APIResponseUtils.convertM
 @Component
 public class VehicleUtils extends MainUtils<Vehicle> {
 
-    public List<Vehicle> getVehicles(int tier) {
-        return convertMapToList(getApiResponseMap(newBuilder().customParam(TIER_PARAM, tier).build()));
+    public Optional<Vehicle> getVehicle(long tankId) {
+        APIResponse<Map<String, Vehicle>> apiResponse = getApiResponseMap(VehicleParamBuilder.newBuilder().withTankId(tankId).build());
+        return convertMapToObject(apiResponse);
     }
 
-    public Optional<Vehicle> getVehicle(int tankId) {
-        APIResponse<Vehicle> apiResponse = getApiResponse(newBuilder().customParam(TANK_ID_PARAM, tankId).build());
-        return apiResponse.getContent();
+    public List<Vehicle> getVehicles(List<Long> tankIds) {
+        return convertMapToList(getApiResponseMap(VehicleParamBuilder.newBuilder().withTankIds(tankIds).build()));
+    }
+
+    public List<Vehicle> getVehicles(List<Long> tankIds, List<String> fields) {
+        return convertMapToList(getApiResponseMap(VehicleParamBuilder.newBuilder()
+                .withTankIds(tankIds)
+                .withFields(fields)
+                .build()));
     }
 
     public List<Vehicle> getVehicles(VehicleType type) {
-        return convertMapToList(getApiResponseMap(newBuilder().customParam(TYPE_PARAM, type.getValue()).build()));
+        return convertMapToList(getApiResponseMap(VehicleParamBuilder.newBuilder().withVehicleType(type).build()));
     }
+
+    public List<Vehicle> getVehicles(Nation nation) {
+        return convertMapToList(getApiResponseMap(VehicleParamBuilder.newBuilder().withNation(nation).build()));
+    }
+
+    public List<Vehicle> getVehicles(int tier) {
+        return convertMapToList(getApiResponseMap(VehicleParamBuilder.newBuilder().withTier(tier).build()));
+    }
+
 
     @Override
     protected Class<Vehicle> getType() {
@@ -66,19 +82,10 @@ public class VehicleUtils extends MainUtils<Vehicle> {
 //        return getApiResponseList(build);
 //    }
 
-    @Override
-    public String getAPIBaseUrl() {
-        return VehicleConstants.BASIC_URL;
-    }
 
     @Override
-    public List<String> getAPIConstants() {
-        return VehicleConstants.BASIC_API_CONSTANTS;
-    }
-
-    @Override
-    public List<String> getRequiredAPIParams() {
-        return VehicleConstants.REQUIRED_PARAMS;
+    protected BasicAPIConstants getAPIConstants() {
+        return VehicleConstants.getInstance();
     }
 
     @Override

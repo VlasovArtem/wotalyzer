@@ -2,7 +2,9 @@ package com.vlasovartem.wotalyzer.utils.wot.global_map;
 
 import com.vlasovartem.wotalyzer.entity.wot.api.global_map.Front;
 import com.vlasovartem.wotalyzer.entity.wot.api.response.APIResponse;
+import com.vlasovartem.wotalyzer.utils.api.contstans.BasicAPIConstants;
 import com.vlasovartem.wotalyzer.utils.api.contstans.global_map.FrontConstants;
+import com.vlasovartem.wotalyzer.utils.query.builder.QueryParamBuilder;
 import com.vlasovartem.wotalyzer.utils.validators.MainValidator;
 import com.vlasovartem.wotalyzer.utils.wot.MainUtils;
 
@@ -10,7 +12,6 @@ import java.util.*;
 import java.util.function.Function;
 
 import static com.vlasovartem.wotalyzer.utils.api.contstans.WOTAPIConstants.FRONT_ID_PARAM;
-import static com.vlasovartem.wotalyzer.utils.query.builder.QueryParamBuilder.newBuilder;
 
 /**
  * Created by artemvlasov on 16/10/2016.
@@ -27,7 +28,7 @@ public class FrontUtils extends MainUtils<Front> {
     }
 
     public Optional<Front> getnFrond(int frontId) {
-        APIResponse<Front> apiResponse = getApiResponse(newBuilder().customParam(FRONT_ID_PARAM, frontId).build());
+        APIResponse<Front> apiResponse = getApiResponse(QueryParamBuilder.newBuilder().customParam(FRONT_ID_PARAM, frontId).build());
         return apiResponse.getContent();
     }
 
@@ -37,18 +38,8 @@ public class FrontUtils extends MainUtils<Front> {
     }
 
     @Override
-    public String getAPIBaseUrl() {
-        return FrontConstants.BASIC_URL;
-    }
-
-    @Override
-    public List<String> getAPIConstants() {
-        return FrontConstants.BASIC_API_CONSTANTS;
-    }
-
-    @Override
-    public List<String> getRequiredAPIParams() {
-        return FrontConstants.REQUIRED_PARAMS;
+    protected BasicAPIConstants getAPIConstants() {
+        return FrontConstants.getInstance();
     }
 
     @Override

@@ -2,6 +2,7 @@ package com.vlasovartem.wotalyzer.entity.wot.api.teams;
 
 /**
  * Created by artemvlasov on 14/10/2016.
+ * https://developers.wargaming.net/reference/all/wot/regularteams/memberinfo
  */
 public class MemberInfo {
 

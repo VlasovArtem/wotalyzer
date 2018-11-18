@@ -1,14 +1,18 @@
 package com.vlasovartem.wotalyzer.utils.wot.encyclopedia;
 
 import com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia.VehicleConfiguration;
-import com.vlasovartem.wotalyzer.utils.wot.MainUtils;
+import com.vlasovartem.wotalyzer.utils.api.contstans.BasicAPIConstants;
 import com.vlasovartem.wotalyzer.utils.api.contstans.encyclopedia.VehicleConfigurationConstants;
+import com.vlasovartem.wotalyzer.utils.query.builder.VehicleParamBuilder;
+import com.vlasovartem.wotalyzer.utils.response.APIResponseUtils;
 import com.vlasovartem.wotalyzer.utils.validators.encyclopedia.EncyclopediaValidator;
+import com.vlasovartem.wotalyzer.utils.wot.MainUtils;
 import org.springframework.stereotype.Component;
 
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.function.Function;
 
 /**
@@ -17,6 +21,9 @@ import java.util.function.Function;
 @Component
 public class VehicleConfigurationUtils extends MainUtils<VehicleConfiguration> {
 
+    public Optional<VehicleConfiguration> getVehicleConfiguration(long tankId) {
+        return APIResponseUtils.covertMapListToObject(getApiResponseMapList(VehicleParamBuilder.newBuilder().withTankId(tankId).build()));
+    }
 
     @Override
     protected Class<VehicleConfiguration> getType() {
@@ -24,22 +31,12 @@ public class VehicleConfigurationUtils extends MainUtils<VehicleConfiguration> {
     }
 
     @Override
-    public String getAPIBaseUrl() {
-        return VehicleConfigurationConstants.BASIC_URL;
+    protected BasicAPIConstants getAPIConstants() {
+        return VehicleConfigurationConstants.getInstance();
     }
 
     @Override
-    public List<String> getAPIConstants() {
-        return VehicleConfigurationConstants.BASIC_API_CONSTANTS;
-    }
-
-    @Override
-    public List<String> getRequiredAPIParams() {
-        return VehicleConfigurationConstants.REQUIRED_PARAMS;
-    }
-
-    @Override
-    public List<Function<Map<String, Object>, Boolean>> getValidationFunctions() {
+    protected List<Function<Map<String, Object>, Boolean>> getValidationFunctions() {
         return Collections.singletonList(EncyclopediaValidator.validateOrderByParameter());
     }
 }

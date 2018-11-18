@@ -1,0 +1,19 @@
+{
+  "status": "ok",
+  "meta": {
+    "count": 91
+  },
+  "data": {
+    "4859": {
+      "name": "Онигири",
+      "price_gold": 50,
+      "image": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/artefact/ration_japan.png",
+      "tag": "ration_japan",
+      "weight": null,
+      "provision_id": 4859,
+      "price_credit": 0,
+      "type": "equipment",
+      "description": "+10% ко всем навыкам и умениям экипажа."
+    }
+  }
+}

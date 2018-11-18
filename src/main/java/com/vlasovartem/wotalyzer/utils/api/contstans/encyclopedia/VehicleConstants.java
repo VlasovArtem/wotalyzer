@@ -1,17 +1,29 @@
 package com.vlasovartem.wotalyzer.utils.api.contstans.encyclopedia;
 
-import com.vlasovartem.wotalyzer.utils.api.contstans.utils.ConstantUtils;
+import com.vlasovartem.wotalyzer.utils.api.contstans.BasicAPIConstants;
 
-import java.util.List;
+import java.util.Arrays;
+import java.util.Objects;
 
 import static com.vlasovartem.wotalyzer.utils.api.contstans.WOTAPIConstants.*;
 
 /**
  * Created by artemvlasov on 14/01/16.
  */
-public interface VehicleConstants extends VehicleBasicConstants {
+public class VehicleConstants extends BasicAPIConstants {
 
-    String BASIC_URL = "https://api.worldoftanks.ru/wot/encyclopedia/vehicles/";
-    List<String> BASIC_API_CONSTANTS = ConstantUtils.generate(VehicleBasicConstants.BASIC_API_CONSTANTS, NATION_PARAM, TIER_PARAM, TYPE_PARAM);
+    private static VehicleConstants constants;
+
+    public static VehicleConstants getInstance() {
+        if (Objects.isNull(constants)) {
+            constants = new VehicleConstants();
+        }
+        return constants;
+    }
+
+    private VehicleConstants() {
+        super("https://api.worldoftanks.ru/wot/encyclopedia/vehicles/");
+        addBasicApiConstants(Arrays.asList(NATION_PARAM, TIER_PARAM, TYPE_PARAM, TANK_ID_PARAM));
+    }
 
 }

@@ -1,11 +1,11 @@
 package com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia.components.provision.equipment;
 
-import com.vlasovartem.wotalyzer.entity.wot.api.MainEntityExt;
+import com.vlasovartem.wotalyzer.entity.wot.api.VehicleMainEntity;
 
 /**
  * Created by artemvlasov on 13/01/16.
  */
-public class Engine extends MainEntityExt {
+public class Engine extends VehicleMainEntity {
 
     private float fireChance;
     private int power;

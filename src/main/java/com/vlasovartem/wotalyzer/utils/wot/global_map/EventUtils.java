@@ -2,6 +2,7 @@ package com.vlasovartem.wotalyzer.utils.wot.global_map;
 
 import com.vlasovartem.wotalyzer.entity.wot.api.global_map.components.Event;
 import com.vlasovartem.wotalyzer.entity.wot.api.response.APIResponse;
+import com.vlasovartem.wotalyzer.utils.api.contstans.BasicAPIConstants;
 import com.vlasovartem.wotalyzer.utils.api.contstans.global_map.EventConstants;
 import com.vlasovartem.wotalyzer.utils.query.builder.ClanParamBuilder;
 import com.vlasovartem.wotalyzer.utils.validators.MainValidator;
@@ -36,18 +37,8 @@ public class EventUtils extends MainUtils<Event> {
     }
 
     @Override
-    public String getAPIBaseUrl() {
-        return EventConstants.BASIC_URL;
-    }
-
-    @Override
-    public List<String> getAPIConstants() {
-        return EventConstants.BASIC_API_CONSTANTS;
-    }
-
-    @Override
-    public List<String> getRequiredAPIParams() {
-        return EventConstants.REQUIRED_PARAMS;
+    protected BasicAPIConstants getAPIConstants() {
+        return EventConstants.getInstance();
     }
 
     @Override

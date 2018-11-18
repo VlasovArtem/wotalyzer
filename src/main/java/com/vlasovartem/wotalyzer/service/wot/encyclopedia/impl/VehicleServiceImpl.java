@@ -1,10 +1,10 @@
 package com.vlasovartem.wotalyzer.service.wot.encyclopedia.impl;
 
 import com.vlasovartem.wotalyzer.entity.statistic.VehicleModuleInfo;
-import com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia.VehicleCharacteristic;
+import com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia.VehicleProfile;
 import com.vlasovartem.wotalyzer.service.wot.encyclopedia.VehicleService;
 import com.vlasovartem.wotalyzer.utils.TankUtils;
-import com.vlasovartem.wotalyzer.utils.wot.encyclopedia.VehicleCharacteristicUtils;
+import com.vlasovartem.wotalyzer.utils.wot.encyclopedia.VehicleProfileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,37 +19,37 @@ import java.util.stream.Collectors;
 public class VehicleServiceImpl implements VehicleService {
 
     private TankUtils tankUtils;
-    private VehicleCharacteristicUtils wotApiURIUtils;
+    private VehicleProfileUtils wotApiURIUtils;
 
     @Autowired
-    public VehicleServiceImpl(TankUtils tankUtils, VehicleCharacteristicUtils wotApiURIUtils) {
+    public VehicleServiceImpl(TankUtils tankUtils, VehicleProfileUtils wotApiURIUtils) {
         this.tankUtils = tankUtils;
         this.wotApiURIUtils = wotApiURIUtils;
     }
 
     @Override
-    public List<VehicleCharacteristic> getVehicles(List<Long> tankIds) {
+    public List<VehicleProfile> getVehicles(List<Long> tankIds) {
         return tankIds.stream().map(this::getVehicle).collect(Collectors.toList());
     }
 
     @Override
-    public List<VehicleCharacteristic> getVehicles(List<Long> tankIds, List<String> requiredFields) {
+    public List<VehicleProfile> getVehicles(List<Long> tankIds, List<String> requiredFields) {
         return tankIds.stream().map(id -> getVehicle(id, requiredFields)).collect(Collectors.toList());
     }
 
 
     @Override
-    public VehicleCharacteristic getVehicle(long tankId) {
+    public VehicleProfile getVehicle(long tankId) {
         return getVehicleObject(tankId);
     }
 
     @Override
-    public VehicleCharacteristic getVehicle(long tankId, List<String> requiredFields) {
+    public VehicleProfile getVehicle(long tankId, List<String> requiredFields) {
         return getVehicleObject(tankId, requiredFields);
     }
 
     @Override
-    public VehicleCharacteristic getVehicle(VehicleModuleInfo moduleInfo, List<String> fields) {
+    public VehicleProfile getVehicle(VehicleModuleInfo moduleInfo, List<String> fields) {
         //TODO
 //        if(Objects.nonNull(moduleInfo)) {
 //            if (Objects.isNull(fields) || fields.isEmpty()) {
@@ -83,12 +83,12 @@ public class VehicleServiceImpl implements VehicleService {
         return null;
     }
 
-    private VehicleCharacteristic getVehicleObject(long tankId) {
-        Optional<VehicleCharacteristic> vehicleProfile = wotApiURIUtils.getVehicleProfile(tankId);
+    private VehicleProfile getVehicleObject(long tankId) {
+        Optional<VehicleProfile> vehicleProfile = wotApiURIUtils.getVehicleProfile(tankId);
         return vehicleProfile.orElse(null);
     }
 
-    private VehicleCharacteristic getVehicleObject(long tankId, List<String> fields) {
+    private VehicleProfile getVehicleObject(long tankId, List<String> fields) {
         //TODO
 //        WotMap<String, Object> params = new HashMap<>();
 //        params.put(TANK_ID_PARAM, tankId);

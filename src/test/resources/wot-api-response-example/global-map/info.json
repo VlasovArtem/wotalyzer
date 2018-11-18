@@ -1,0 +1,12 @@
+{
+  "status": "ok",
+  "meta": {
+    "count": 4
+  },
+  "data": {
+    "last_turn_created_at": 1482526804,
+    "state": "frozen",
+    "last_turn_calculated_at": 1482526849,
+    "last_turn": 14008
+  }
+}

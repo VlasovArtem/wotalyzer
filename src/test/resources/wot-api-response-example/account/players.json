@@ -1,0 +1,12 @@
+{
+  "status": "ok",
+  "meta": {
+    "count": 1
+  },
+  "data": [
+    {
+      "nickname": "Martens",
+      "account_id": 231588
+    }
+  ]
+}

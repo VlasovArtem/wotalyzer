@@ -1,0 +1,22 @@
+{
+  "status": "ok",
+  "meta": {
+    "count": 1,
+    "page_total": 923,
+    "page": 1
+  },
+  "data": [
+    {
+      "victory_points_to_next_award": -165234,
+      "award_level": null,
+      "name": "Интербригада Psihi_BY",
+      "color": "#ff0006",
+      "rank_delta": 0,
+      "tag": "P_BY",
+      "updated_at": 1481594479,
+      "rank": 1,
+      "clan_id": 10660,
+      "victory_points": 165240
+    }
+  ]
+}

@@ -1,0 +1,798 @@
+{
+  "status": "ok",
+  "meta": {
+    "count": 10
+  },
+  "data": [
+    {
+      "survived_ratio": {
+        "rank_delta": -94,
+        "rank": 349548,
+        "value": 34.26
+      },
+      "capture_points": {
+        "rank_delta": null,
+        "rank": null,
+        "value": null
+      },
+      "wins_ratio": {
+        "rank_delta": -374,
+        "rank": 1167073,
+        "value": 51.23
+      },
+      "spotted_count": {
+        "rank_delta": null,
+        "rank": null,
+        "value": null
+      },
+      "account_id": 2005840,
+      "frags_avg": {
+        "rank_delta": null,
+        "rank": null,
+        "value": 1.02
+      },
+      "hits_ratio": {
+        "rank_delta": -181,
+        "rank": 1355319,
+        "value": 65.59
+      },
+      "xp_amount": {
+        "rank_delta": null,
+        "rank": null,
+        "value": 13935134
+      },
+      "frags_count": {
+        "rank_delta": -601,
+        "rank": 613844,
+        "value": 23614
+      },
+      "spotted_avg": {
+        "rank_delta": null,
+        "rank": null,
+        "value": null
+      },
+      "battles_to_play": 0,
+      "damage_dealt": {
+        "rank_delta": -615,
+        "rank": 684513,
+        "value": 25496823
+      },
+      "global_rating": {
+        "rank_delta": -173,
+        "rank": 535392,
+        "value": 6774
+      },
+      "xp_max": {
+        "rank_delta": 0,
+        "rank": 1,
+        "value": 6997
+      },
+      "damage_avg": {
+        "rank_delta": null,
+        "rank": null,
+        "value": 1102.8
+      },
+      "xp_avg": {
+        "rank_delta": -133,
+        "rank": 431101,
+        "value": 602.73
+      },
+      "battles_count": {
+        "rank_delta": -1000,
+        "rank": 961016,
+        "value": 23120
+      }
+    },
+    {
+      "survived_ratio": {
+        "rank_delta": -980,
+        "rank": 4039464,
+        "value": 22.34
+      },
+      "capture_points": {
+        "rank_delta": null,
+        "rank": null,
+        "value": null
+      },
+      "wins_ratio": {
+        "rank_delta": -628,
+        "rank": 1972971,
+        "value": 50.02
+      },
+      "spotted_count": {
+        "rank_delta": null,
+        "rank": null,
+        "value": null
+      },
+      "account_id": 666773,
+      "frags_avg": {
+        "rank_delta": null,
+        "rank": null,
+        "value": 1.0
+      },
+      "hits_ratio": {
+        "rank_delta": -625,
+        "rank": 3138024,
+        "value": 59.48
+      },
+      "xp_amount": {
+        "rank_delta": null,
+        "rank": null,
+        "value": 8753497
+      },
+      "frags_count": {
+        "rank_delta": -964,
+        "rank": 1415221,
+        "value": 14296
+      },
+      "spotted_avg": {
+        "rank_delta": null,
+        "rank": null,
+        "value": null
+      },
+      "battles_to_play": 0,
+      "damage_dealt": {
+        "rank_delta": -884,
+        "rank": 1281584,
+        "value": 16552926
+      },
+      "global_rating": {
+        "rank_delta": -299,
+        "rank": 911912,
+        "value": 6125
+      },
+      "xp_max": {
+        "rank_delta": 0,
+        "rank": 2,
+        "value": 6991
+      },
+      "damage_avg": {
+        "rank_delta": null,
+        "rank": null,
+        "value": 1161.93
+      },
+      "xp_avg": {
+        "rank_delta": -109,
+        "rank": 372337,
+        "value": 614.45
+      },
+      "battles_count": {
+        "rank_delta": -1361,
+        "rank": 2101071,
+        "value": 14246
+      }
+    },
+    {
+      "survived_ratio": {
+        "rank_delta": -352,
+        "rank": 1216239,
+        "value": 29.17
+      },
+      "capture_points": {
+        "rank_delta": null,
+        "rank": null,
+        "value": null
+      },
+      "wins_ratio": {
+        "rank_delta": -589,
+        "rank": 1696633,
+        "value": 50.38
+      },
+      "spotted_count": {
+        "rank_delta": null,
+        "rank": null,
+        "value": null
+      },
+      "account_id": 8637837,
+      "frags_avg": {
+        "rank_delta": null,
+        "rank": null,
+        "value": 0.9
+      },
+      "hits_ratio": {
+        "rank_delta": -56,
+        "rank": 408143,
+        "value": 70.38
+      },
+      "xp_amount": {
+        "rank_delta": null,
+        "rank": null,
+        "value": 18264419
+      },
+      "frags_count": {
+        "rank_delta": -473,
+        "rank": 407608,
+        "value": 28212
+      },
+      "spotted_avg": {
+        "rank_delta": null,
+        "rank": null,
+        "value": null
+      },
+      "battles_to_play": 0,
+      "damage_dealt": {
+        "rank_delta": -387,
+        "rank": 320615,
+        "value": 36783473
+      },
+      "global_rating": {
+        "rank_delta": -236,
+        "rank": 616329,
+        "value": 6611
+      },
+      "xp_max": {
+        "rank_delta": 0,
+        "rank": 3,
+        "value": 6979
+      },
+      "damage_avg": {
+        "rank_delta": null,
+        "rank": null,
+        "value": 1178.32
+      },
+      "xp_avg": {
+        "rank_delta": -147,
+        "rank": 532359,
+        "value": 585.08
+      },
+      "battles_count": {
+        "rank_delta": -679,
+        "rank": 449763,
+        "value": 31217
+      }
+    },
+    {
+      "survived_ratio": {
+        "rank_delta": -1187,
+        "rank": 4741417,
+        "value": 21.01
+      },
+      "capture_points": {
+        "rank_delta": null,
+        "rank": null,
+        "value": null
+      },
+      "wins_ratio": {
+        "rank_delta": -2193,
+        "rank": 7858906,
+        "value": 44.21
+      },
+      "spotted_count": {
+        "rank_delta": null,
+        "rank": null,
+        "value": null
+      },
+      "account_id": 16755228,
+      "frags_avg": {
+        "rank_delta": null,
+        "rank": null,
+        "value": 0.47
+      },
+      "hits_ratio": {
+        "rank_delta": -158,
+        "rank": 1137582,
+        "value": 66.47
+      },
+      "xp_amount": {
+        "rank_delta": null,
+        "rank": null,
+        "value": 6815244
+      },
+      "frags_count": {
+        "rank_delta": -1228,
+        "rank": 2392162,
+        "value": 8725
+      },
+      "spotted_avg": {
+        "rank_delta": null,
+        "rank": null,
+        "value": null
+      },
+      "battles_to_play": 0,
+      "damage_dealt": {
+        "rank_delta": -1058,
+        "rank": 1880371,
+        "value": 11411690
+      },
+      "global_rating": {
+        "rank_delta": -1228,
+        "rank": 4251562,
+        "value": 3409
+      },
+      "xp_max": {
+        "rank_delta": 0,
+        "rank": 4,
+        "value": 6973
+      },
+      "damage_avg": {
+        "rank_delta": null,
+        "rank": null,
+        "value": 609.01
+      },
+      "xp_avg": {
+        "rank_delta": -1036,
+        "rank": 3274648,
+        "value": 363.71
+      },
+      "battles_count": {
+        "rank_delta": -1188,
+        "rank": 1423507,
+        "value": 18738
+      }
+    },
+    {
+      "survived_ratio": {
+        "rank_delta": -891,
+        "rank": 3253215,
+        "value": 23.88
+      },
+      "capture_points": {
+        "rank_delta": null,
+        "rank": null,
+        "value": null
+      },
+      "wins_ratio": {
+        "rank_delta": -1092,
+        "rank": 3414208,
+        "value": 48.6
+      },
+      "spotted_count": {
+        "rank_delta": null,
+        "rank": null,
+        "value": null
+      },
+      "account_id": 4474885,
+      "frags_avg": {
+        "rank_delta": null,
+        "rank": null,
+        "value": 0.7
+      },
+      "hits_ratio": {
+        "rank_delta": -1342,
+        "rank": 5487627,
+        "value": 50.66
+      },
+      "xp_amount": {
+        "rank_delta": null,
+        "rank": null,
+        "value": 4792997
+      },
+      "frags_count": {
+        "rank_delta": -1239,
+        "rank": 2397965,
+        "value": 8700
+      },
+      "spotted_avg": {
+        "rank_delta": null,
+        "rank": null,
+        "value": null
+      },
+      "battles_to_play": 0,
+      "damage_dealt": {
+        "rank_delta": -1149,
+        "rank": 2426363,
+        "value": 8256444
+      },
+      "global_rating": {
+        "rank_delta": -576,
+        "rank": 2225953,
+        "value": 4792
+      },
+      "xp_max": {
+        "rank_delta": 0,
+        "rank": 5,
+        "value": 6954
+      },
+      "damage_avg": {
+        "rank_delta": null,
+        "rank": null,
+        "value": 662.74
+      },
+      "xp_avg": {
+        "rank_delta": -862,
+        "rank": 2883090,
+        "value": 384.73
+      },
+      "battles_count": {
+        "rank_delta": -1392,
+        "rank": 2447081,
+        "value": 12458
+      }
+    },
+    {
+      "survived_ratio": {
+        "rank_delta": -4496,
+        "rank": 897774,
+        "value": 30.52
+      },
+      "capture_points": {
+        "rank_delta": null,
+        "rank": null,
+        "value": null
+      },
+      "wins_ratio": {
+        "rank_delta": -10196,
+        "rank": 461438,
+        "value": 53.3
+      },
+      "spotted_count": {
+        "rank_delta": null,
+        "rank": null,
+        "value": null
+      },
+      "account_id": 18046922,
+      "frags_avg": {
+        "rank_delta": null,
+        "rank": null,
+        "value": 1.03
+      },
+      "hits_ratio": {
+        "rank_delta": -21506,
+        "rank": 3605435,
+        "value": 57.9
+      },
+      "xp_amount": {
+        "rank_delta": null,
+        "rank": null,
+        "value": 1240427
+      },
+      "frags_count": {
+        "rank_delta": 4618,
+        "rank": 4951905,
+        "value": 2416
+      },
+      "spotted_avg": {
+        "rank_delta": null,
+        "rank": null,
+        "value": null
+      },
+      "battles_to_play": 0,
+      "damage_dealt": {
+        "rank_delta": 1961,
+        "rank": 4729156,
+        "value": 1940218
+      },
+      "global_rating": {
+        "rank_delta": -8454,
+        "rank": 1264199,
+        "value": 5682
+      },
+      "xp_max": {
+        "rank_delta": 0,
+        "rank": 6,
+        "value": 6924
+      },
+      "damage_avg": {
+        "rank_delta": null,
+        "rank": null,
+        "value": 830.57
+      },
+      "xp_avg": {
+        "rank_delta": 176,
+        "rank": 942108,
+        "value": 531.0
+      },
+      "battles_count": {
+        "rank_delta": 5637,
+        "rank": 6387122,
+        "value": 2336
+      }
+    },
+    {
+      "survived_ratio": {
+        "rank_delta": -478,
+        "rank": 1442934,
+        "value": 28.37
+      },
+      "capture_points": {
+        "rank_delta": null,
+        "rank": null,
+        "value": null
+      },
+      "wins_ratio": {
+        "rank_delta": -169,
+        "rank": 572885,
+        "value": 52.81
+      },
+      "spotted_count": {
+        "rank_delta": null,
+        "rank": null,
+        "value": null
+      },
+      "account_id": 1690707,
+      "frags_avg": {
+        "rank_delta": null,
+        "rank": null,
+        "value": 0.91
+      },
+      "hits_ratio": {
+        "rank_delta": -308,
+        "rank": 1959653,
+        "value": 63.41
+      },
+      "xp_amount": {
+        "rank_delta": null,
+        "rank": null,
+        "value": 1143311
+      },
+      "frags_count": {
+        "rank_delta": -1626,
+        "rank": 5529831,
+        "value": 1776
+      },
+      "spotted_avg": {
+        "rank_delta": null,
+        "rank": null,
+        "value": null
+      },
+      "battles_to_play": 0,
+      "damage_dealt": {
+        "rank_delta": -1441,
+        "rank": 4771629,
+        "value": 1885430
+      },
+      "global_rating": {
+        "rank_delta": -959,
+        "rank": 2947076,
+        "value": 4256
+      },
+      "xp_max": {
+        "rank_delta": 0,
+        "rank": 7,
+        "value": 6922
+      },
+      "damage_avg": {
+        "rank_delta": null,
+        "rank": null,
+        "value": 963.92
+      },
+      "xp_avg": {
+        "rank_delta": -146,
+        "rank": 535837,
+        "value": 584.51
+      },
+      "battles_count": {
+        "rank_delta": -1894,
+        "rank": 6761376,
+        "value": 1956
+      }
+    },
+    {
+      "survived_ratio": {
+        "rank_delta": -95,
+        "rank": 323026,
+        "value": 34.55
+      },
+      "capture_points": {
+        "rank_delta": null,
+        "rank": null,
+        "value": null
+      },
+      "wins_ratio": {
+        "rank_delta": -128,
+        "rank": 415851,
+        "value": 53.53
+      },
+      "spotted_count": {
+        "rank_delta": null,
+        "rank": null,
+        "value": null
+      },
+      "account_id": 2865486,
+      "frags_avg": {
+        "rank_delta": null,
+        "rank": null,
+        "value": 1.1
+      },
+      "hits_ratio": {
+        "rank_delta": -2663,
+        "rank": 1273713,
+        "value": 65.91
+      },
+      "xp_amount": {
+        "rank_delta": null,
+        "rank": null,
+        "value": 15185681
+      },
+      "frags_count": {
+        "rank_delta": 150,
+        "rank": 507459,
+        "value": 25748
+      },
+      "spotted_avg": {
+        "rank_delta": null,
+        "rank": null,
+        "value": null
+      },
+      "battles_to_play": 0,
+      "damage_dealt": {
+        "rank_delta": -301,
+        "rank": 462733,
+        "value": 31272796
+      },
+      "global_rating": {
+        "rank_delta": -127,
+        "rank": 220580,
+        "value": 7700
+      },
+      "xp_max": {
+        "rank_delta": 0,
+        "rank": 8,
+        "value": 6922
+      },
+      "damage_avg": {
+        "rank_delta": null,
+        "rank": null,
+        "value": 1333.08
+      },
+      "xp_avg": {
+        "rank_delta": -51,
+        "rank": 241081,
+        "value": 647.33
+      },
+      "battles_count": {
+        "rank_delta": -127,
+        "rank": 931808,
+        "value": 23459
+      }
+    },
+    {
+      "survived_ratio": {
+        "rank_delta": -1168,
+        "rank": 4520148,
+        "value": 21.43
+      },
+      "capture_points": {
+        "rank_delta": null,
+        "rank": null,
+        "value": null
+      },
+      "wins_ratio": {
+        "rank_delta": -1035,
+        "rank": 3369235,
+        "value": 48.64
+      },
+      "spotted_count": {
+        "rank_delta": null,
+        "rank": null,
+        "value": null
+      },
+      "account_id": 11729634,
+      "frags_avg": {
+        "rank_delta": null,
+        "rank": null,
+        "value": 0.72
+      },
+      "hits_ratio": {
+        "rank_delta": -55,
+        "rank": 825934,
+        "value": 67.87
+      },
+      "xp_amount": {
+        "rank_delta": null,
+        "rank": null,
+        "value": 14385846
+      },
+      "frags_count": {
+        "rank_delta": -801,
+        "rank": 871097,
+        "value": 19683
+      },
+      "spotted_avg": {
+        "rank_delta": null,
+        "rank": null,
+        "value": null
+      },
+      "battles_to_play": 0,
+      "damage_dealt": {
+        "rank_delta": -572,
+        "rank": 575031,
+        "value": 28046343
+      },
+      "global_rating": {
+        "rank_delta": -413,
+        "rank": 1564315,
+        "value": 5370
+      },
+      "xp_max": {
+        "rank_delta": 0,
+        "rank": 9,
+        "value": 6915
+      },
+      "damage_avg": {
+        "rank_delta": null,
+        "rank": null,
+        "value": 1021.58
+      },
+      "xp_avg": {
+        "rank_delta": -216,
+        "rank": 1006136,
+        "value": 524.0
+      },
+      "battles_count": {
+        "rank_delta": -794,
+        "rank": 643511,
+        "value": 27454
+      }
+    },
+    {
+      "survived_ratio": {
+        "rank_delta": -10,
+        "rank": 51088,
+        "value": 40.86
+      },
+      "capture_points": {
+        "rank_delta": null,
+        "rank": null,
+        "value": null
+      },
+      "wins_ratio": {
+        "rank_delta": -2208,
+        "rank": 7892933,
+        "value": 44.09
+      },
+      "spotted_count": {
+        "rank_delta": null,
+        "rank": null,
+        "value": null
+      },
+      "account_id": 244180,
+      "frags_avg": {
+        "rank_delta": null,
+        "rank": null,
+        "value": 0.38
+      },
+      "hits_ratio": {
+        "rank_delta": -496,
+        "rank": 2794464,
+        "value": 60.62
+      },
+      "xp_amount": {
+        "rank_delta": null,
+        "rank": null,
+        "value": 2494975
+      },
+      "frags_count": {
+        "rank_delta": -1472,
+        "rank": 4448752,
+        "value": 3140
+      },
+      "spotted_avg": {
+        "rank_delta": null,
+        "rank": null,
+        "value": null
+      },
+      "battles_to_play": 0,
+      "damage_dealt": {
+        "rank_delta": -1354,
+        "rank": 3932605,
+        "value": 3282119
+      },
+      "global_rating": {
+        "rank_delta": -1374,
+        "rank": 4897368,
+        "value": 3027
+      },
+      "xp_max": {
+        "rank_delta": 0,
+        "rank": 10,
+        "value": 6913
+      },
+      "damage_avg": {
+        "rank_delta": null,
+        "rank": null,
+        "value": 397.59
+      },
+      "xp_avg": {
+        "rank_delta": -1490,
+        "rank": 4579884,
+        "value": 302.24
+      },
+      "battles_count": {
+        "rank_delta": -1526,
+        "rank": 3500994,
+        "value": 8255
+      }
+    }
+  ]
+}

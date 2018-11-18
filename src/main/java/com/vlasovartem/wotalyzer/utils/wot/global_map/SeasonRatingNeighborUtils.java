@@ -2,7 +2,9 @@ package com.vlasovartem.wotalyzer.utils.wot.global_map;
 
 import com.vlasovartem.wotalyzer.entity.wot.api.global_map.SeasonRatingNeighbor;
 import com.vlasovartem.wotalyzer.entity.wot.api.response.APIResponse;
+import com.vlasovartem.wotalyzer.utils.api.contstans.BasicAPIConstants;
 import com.vlasovartem.wotalyzer.utils.api.contstans.global_map.SeasonRatingNeighborConstants;
+import com.vlasovartem.wotalyzer.utils.query.builder.ClanParamBuilder;
 import com.vlasovartem.wotalyzer.utils.validators.MainValidator;
 import com.vlasovartem.wotalyzer.utils.wot.MainUtils;
 
@@ -12,7 +14,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
 
-import static com.vlasovartem.wotalyzer.utils.query.builder.ClanParamBuilder.newBuilder;
 import static com.vlasovartem.wotalyzer.utils.validators.global_map.GlobalMapValidator.validateVehicleLevelParameter;
 
 /**
@@ -21,7 +22,7 @@ import static com.vlasovartem.wotalyzer.utils.validators.global_map.GlobalMapVal
 public class SeasonRatingNeighborUtils extends MainUtils<SeasonRatingNeighbor> {
 
     public List<SeasonRatingNeighbor> seasonRatingNeighbors(int clanId, String seasonId, int vehicleLevel) {
-        APIResponse<List<SeasonRatingNeighbor>> apiResponse = getApiResponseList(newBuilder()
+        APIResponse<List<SeasonRatingNeighbor>> apiResponse = getApiResponseList(ClanParamBuilder.newBuilder()
                 .withClanId(clanId)
                 .withSeasonId(seasonId)
                 .withVehicleLevel(vehicleLevel)
@@ -35,18 +36,8 @@ public class SeasonRatingNeighborUtils extends MainUtils<SeasonRatingNeighbor> {
     }
 
     @Override
-    public String getAPIBaseUrl() {
-        return SeasonRatingNeighborConstants.BASIC_URL;
-    }
-
-    @Override
-    public List<String> getAPIConstants() {
-        return SeasonRatingNeighborConstants.BASIC_API_CONSTANTS;
-    }
-
-    @Override
-    public List<String> getRequiredAPIParams() {
-        return SeasonRatingNeighborConstants.REQUIRED_PARAMS;
+    protected BasicAPIConstants getAPIConstants() {
+        return SeasonRatingNeighborConstants.getInstance();
     }
 
     @Override

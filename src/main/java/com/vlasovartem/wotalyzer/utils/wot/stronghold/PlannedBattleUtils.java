@@ -1,10 +1,9 @@
 package com.vlasovartem.wotalyzer.utils.wot.stronghold;
 
 import com.vlasovartem.wotalyzer.entity.wot.api.stronghold.PlannedBattle;
-import com.vlasovartem.wotalyzer.utils.wot.MainUtils;
+import com.vlasovartem.wotalyzer.utils.api.contstans.BasicAPIConstants;
 import com.vlasovartem.wotalyzer.utils.api.contstans.stronghold.PlannedBattleConstants;
-
-import java.util.List;
+import com.vlasovartem.wotalyzer.utils.wot.MainUtils;
 
 /**
  * Created by artemvlasov on 14/10/2016.
@@ -12,22 +11,13 @@ import java.util.List;
 public class PlannedBattleUtils extends MainUtils<PlannedBattle> {
 
     @Override
-    protected Class getType() {
+    protected Class<PlannedBattle> getType() {
         return PlannedBattle.class;
     }
 
     @Override
-    public String getAPIBaseUrl() {
-        return PlannedBattleConstants.BASIC_URL;
+    protected BasicAPIConstants getAPIConstants() {
+        return PlannedBattleConstants.getInstance();
     }
 
-    @Override
-    public List<String> getAPIConstants() {
-        return PlannedBattleConstants.BASIC_API_CONSTANTS;
-    }
-
-    @Override
-    public List<String> getRequiredAPIParams() {
-        return PlannedBattleConstants.REQUIRED_PARAMS;
-    }
 }

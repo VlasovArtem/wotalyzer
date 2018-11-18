@@ -2,8 +2,6 @@ package com.vlasovartem.wotalyzer.utils.query.builder;
 
 import com.vlasovartem.wotalyzer.entity.wot.api.enums.ClanRankField;
 
-import java.util.Objects;
-
 import static com.vlasovartem.wotalyzer.utils.api.contstans.WOTAPIConstants.*;
 
 /**
@@ -12,10 +10,7 @@ import static com.vlasovartem.wotalyzer.utils.api.contstans.WOTAPIConstants.*;
 public class ClanParamBuilder extends QueryParamBuilder {
 
     public static ClanParamBuilder newBuilder() {
-        if (Objects.isNull(builder)) {
-            builder = new ClanParamBuilder();
-        }
-        return (ClanParamBuilder) builder;
+        return new ClanParamBuilder();
     }
 
     private ClanParamBuilder() {
@@ -44,5 +39,9 @@ public class ClanParamBuilder extends QueryParamBuilder {
 
     public ClanParamBuilder withRankField(ClanRankField field) {
         return (ClanParamBuilder) customParam(RANK_FIELD_PARAM, field.getValue());
+    }
+
+    public ClanParamBuilder withName(String name) {
+        return (ClanParamBuilder) customParam(SEARCH_PARAM, name);
     }
 }

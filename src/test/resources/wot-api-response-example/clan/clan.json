@@ -1,0 +1,226 @@
+{
+  "status": "ok",
+  "meta": {
+    "count": 1
+  },
+  "data": {
+    "223790": {
+      "leader_id": 486353,
+      "color": "#5053FF",
+      "updated_at": 1481759789,
+      "private": null,
+      "tag": "KOPM2",
+      "members_count": 25,
+      "description_html": "",
+      "accepts_join_requests": false,
+      "leader_name": "LeBwa",
+      "emblems": {
+        "x32": {
+          "portal": "http://ru.wargaming.net/clans/media/clans/emblems/cl_790/223790/emblem_32x32.png"
+        },
+        "x24": {
+          "portal": "http://ru.wargaming.net/clans/media/clans/emblems/cl_790/223790/emblem_24x24.png"
+        },
+        "x256": {
+          "wowp": "http://ru.wargaming.net/clans/media/clans/emblems/cl_790/223790/emblem_256x256.png"
+        },
+        "x64": {
+          "wot": "http://ru.wargaming.net/clans/media/clans/emblems/cl_790/223790/emblem_64x64_tank.png",
+          "portal": "http://ru.wargaming.net/clans/media/clans/emblems/cl_790/223790/emblem_64x64.png"
+        },
+        "x195": {
+          "portal": "http://ru.wargaming.net/clans/media/clans/emblems/cl_790/223790/emblem_195x195.png"
+        }
+      },
+      "clan_id": 223790,
+      "renamed_at": 1463056828,
+      "old_tag": "",
+      "description": "",
+      "game": "wot",
+      "members": [
+        {
+          "role": "recruit",
+          "role_i18n": "Новобранец",
+          "joined_at": 1466701032,
+          "account_id": 176901,
+          "account_name": "RhinoII"
+        },
+        {
+          "role": "private",
+          "role_i18n": "Боец",
+          "joined_at": 1462392386,
+          "account_id": 1170696,
+          "account_name": "Extreme_arm"
+        },
+        {
+          "role": "recruit",
+          "role_i18n": "Новобранец",
+          "joined_at": 1480442628,
+          "account_id": 28231058,
+          "account_name": "SlayerPro"
+        },
+        {
+          "role": "quartermaster",
+          "role_i18n": "Офицер снабжения",
+          "joined_at": 1467831455,
+          "account_id": 1003670,
+          "account_name": "Kapp1"
+        },
+        {
+          "role": "recruit",
+          "role_i18n": "Новобранец",
+          "joined_at": 1477579367,
+          "account_id": 7559322,
+          "account_name": "MeanMachins"
+        },
+        {
+          "role": "private",
+          "role_i18n": "Боец",
+          "joined_at": 1466701098,
+          "account_id": 18876188,
+          "account_name": "MeeGo"
+        },
+        {
+          "role": "junior_officer",
+          "role_i18n": "Младший офицер",
+          "joined_at": 1464493031,
+          "account_id": 2418977,
+          "account_name": "SHaNiSH"
+        },
+        {
+          "role": "recruit",
+          "role_i18n": "Новобранец",
+          "joined_at": 1477668659,
+          "account_id": 32017692,
+          "account_name": "Desalmado_"
+        },
+        {
+          "role": "intelligence_officer",
+          "role_i18n": "Офицер разведки",
+          "joined_at": 1463226752,
+          "account_id": 108078,
+          "account_name": "Coca_Cola"
+        },
+        {
+          "role": "executive_officer",
+          "role_i18n": "Заместитель командующего",
+          "joined_at": 1463236168,
+          "account_id": 1633853,
+          "account_name": "i_n_i"
+        },
+        {
+          "role": "junior_officer",
+          "role_i18n": "Младший офицер",
+          "joined_at": 1463318605,
+          "account_id": 28094,
+          "account_name": "Inspirer"
+        },
+        {
+          "role": "junior_officer",
+          "role_i18n": "Младший офицер",
+          "joined_at": 1463319329,
+          "account_id": 6073797,
+          "account_name": "StoleYourBike"
+        },
+        {
+          "role": "executive_officer",
+          "role_i18n": "Заместитель командующего",
+          "joined_at": 1463263372,
+          "account_id": 301514,
+          "account_name": "Insight"
+        },
+        {
+          "role": "recruit",
+          "role_i18n": "Новобранец",
+          "joined_at": 1470083975,
+          "account_id": 11741131,
+          "account_name": "TheMontiablo"
+        },
+        {
+          "role": "intelligence_officer",
+          "role_i18n": "Офицер разведки",
+          "joined_at": 1462743871,
+          "account_id": 11286221,
+          "account_name": "EviL_GrannY"
+        },
+        {
+          "role": "quartermaster",
+          "role_i18n": "Офицер снабжения",
+          "joined_at": 1467828494,
+          "account_id": 5330893,
+          "account_name": "Break_neck"
+        },
+        {
+          "role": "commander",
+          "role_i18n": "Командующий",
+          "joined_at": 1460664468,
+          "account_id": 486353,
+          "account_name": "LeBwa"
+        },
+        {
+          "role": "executive_officer",
+          "role_i18n": "Заместитель командующего",
+          "joined_at": 1463330404,
+          "account_id": 2783570,
+          "account_name": "_lnquisitor"
+        },
+        {
+          "role": "recruit",
+          "role_i18n": "Новобранец",
+          "joined_at": 1477493813,
+          "account_id": 1041747,
+          "account_name": "applewOw"
+        },
+        {
+          "role": "quartermaster",
+          "role_i18n": "Офицер снабжения",
+          "joined_at": 1463040081,
+          "account_id": 2952660,
+          "account_name": "Alliluy"
+        },
+        {
+          "role": "recruitment_officer",
+          "role_i18n": "Офицер по кадрам",
+          "joined_at": 1462084531,
+          "account_id": 10214,
+          "account_name": "Bullkin"
+        },
+        {
+          "role": "private",
+          "role_i18n": "Боец",
+          "joined_at": 1465111127,
+          "account_id": 1378749,
+          "account_name": "BEOWULF422"
+        },
+        {
+          "role": "private",
+          "role_i18n": "Боец",
+          "joined_at": 1465080210,
+          "account_id": 18415218,
+          "account_name": "TheZoux"
+        },
+        {
+          "role": "executive_officer",
+          "role_i18n": "Заместитель командующего",
+          "joined_at": 1463096414,
+          "account_id": 1371635,
+          "account_name": "rulez1k"
+        },
+        {
+          "role": "recruit",
+          "role_i18n": "Новобранец",
+          "joined_at": 1470157589,
+          "account_id": 401147,
+          "account_name": "FC_DYNAMO"
+        }
+      ],
+      "old_name": "KOPM2 Построй свой Укрепрайон",
+      "is_clan_disbanded": false,
+      "motto": "Построй свой Укреп",
+      "name": "KOPM2 - построй свой Укреп",
+      "creator_name": "LeBwa",
+      "created_at": 1460664468,
+      "creator_id": 486353
+    }
+  }
+}

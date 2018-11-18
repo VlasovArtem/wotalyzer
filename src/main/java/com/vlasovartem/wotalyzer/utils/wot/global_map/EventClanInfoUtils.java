@@ -2,10 +2,11 @@ package com.vlasovartem.wotalyzer.utils.wot.global_map;
 
 import com.vlasovartem.wotalyzer.entity.wot.api.global_map.EventClanInfo;
 import com.vlasovartem.wotalyzer.entity.wot.api.response.APIResponse;
-import com.vlasovartem.wotalyzer.utils.query.builder.ClanParamBuilder;
-import com.vlasovartem.wotalyzer.utils.wot.MainUtils;
+import com.vlasovartem.wotalyzer.utils.api.contstans.BasicAPIConstants;
 import com.vlasovartem.wotalyzer.utils.api.contstans.global_map.EventClanInfoConstants;
+import com.vlasovartem.wotalyzer.utils.query.builder.ClanParamBuilder;
 import com.vlasovartem.wotalyzer.utils.validators.global_map.GlobalMapValidator;
+import com.vlasovartem.wotalyzer.utils.wot.MainUtils;
 
 import java.util.Collections;
 import java.util.List;
@@ -19,8 +20,7 @@ import java.util.function.Function;
 public class EventClanInfoUtils extends MainUtils<EventClanInfo> {
 
     public Optional<EventClanInfo> getEventClanInfo(int clanId, String eventId, String frontId) {
-        APIResponse<Map<String, EventClanInfo>> apiResponse = getApiResponseMap(ClanParamBuilder
-                .newBuilder()
+        APIResponse<Map<String, EventClanInfo>> apiResponse = getApiResponseMap(ClanParamBuilder.newBuilder()
                 .withClanId(clanId)
                 .withFrontId(frontId)
                 .withEventId(eventId)
@@ -38,18 +38,8 @@ public class EventClanInfoUtils extends MainUtils<EventClanInfo> {
     }
 
     @Override
-    public String getAPIBaseUrl() {
-        return EventClanInfoConstants.BASIC_URL;
-    }
-
-    @Override
-    public List<String> getAPIConstants() {
-        return EventClanInfoConstants.BASIC_API_CONSTANTS;
-    }
-
-    @Override
-    public List<String> getRequiredAPIParams() {
-        return EventClanInfoConstants.REQUIRED_PARAMS;
+    protected BasicAPIConstants getAPIConstants() {
+        return EventClanInfoConstants.getInstance();
     }
 
     @Override

@@ -1,0 +1,140 @@
+{
+  "status": "ok",
+  "meta": {
+    "count": 11
+  },
+  "data": [
+    {
+      "victory_points_to_next_award": -165234,
+      "award_level": null,
+      "name": "Интербригада Psihi_BY",
+      "color": "#ff0006",
+      "rank_delta": 0,
+      "tag": "P_BY",
+      "updated_at": 1481594479,
+      "rank": 1,
+      "clan_id": 10660,
+      "victory_points": 165240
+    },
+    {
+      "victory_points_to_next_award": -148394,
+      "award_level": null,
+      "name": "ОБП «Багратион»",
+      "color": "#800500",
+      "rank_delta": 0,
+      "tag": "SARB",
+      "updated_at": 1481594479,
+      "rank": 2,
+      "clan_id": 3662,
+      "victory_points": 148400
+    },
+    {
+      "victory_points_to_next_award": -83034,
+      "award_level": null,
+      "name": "Legione straniera",
+      "color": "#cc0404",
+      "rank_delta": 0,
+      "tag": "LSTR",
+      "updated_at": 1481594479,
+      "rank": 3,
+      "clan_id": 68851,
+      "victory_points": 83040
+    },
+    {
+      "victory_points_to_next_award": -73552,
+      "award_level": null,
+      "name": "Лангусты",
+      "color": "#3067c7",
+      "rank_delta": 0,
+      "tag": "LNGST",
+      "updated_at": 1481594479,
+      "rank": 4,
+      "clan_id": 103556,
+      "victory_points": 73558
+    },
+    {
+      "victory_points_to_next_award": -54348,
+      "award_level": null,
+      "name": "88-Тяжёлый танковый полк",
+      "color": "#3067c7",
+      "rank_delta": 0,
+      "tag": "TT_88",
+      "updated_at": 1481594479,
+      "rank": 5,
+      "clan_id": 71954,
+      "victory_points": 54354
+    },
+    {
+      "victory_points_to_next_award": -50354,
+      "award_level": null,
+      "name": "L0MAY-RELOAD",
+      "color": "#fa0303",
+      "rank_delta": 0,
+      "tag": "L0MAY",
+      "updated_at": 1481594479,
+      "rank": 6,
+      "clan_id": 208185,
+      "victory_points": 50360
+    },
+    {
+      "victory_points_to_next_award": -48369,
+      "award_level": null,
+      "name": "G0LOD™",
+      "color": "#ff8800",
+      "rank_delta": 0,
+      "tag": "G0LOD",
+      "updated_at": 1481594479,
+      "rank": 7,
+      "clan_id": 168127,
+      "victory_points": 48375
+    },
+    {
+      "victory_points_to_next_award": -45114,
+      "award_level": null,
+      "name": "Алабаи",
+      "color": "#fad105",
+      "rank_delta": 0,
+      "tag": "ALABY",
+      "updated_at": 1481594479,
+      "rank": 8,
+      "clan_id": 98653,
+      "victory_points": 45120
+    },
+    {
+      "victory_points_to_next_award": -43654,
+      "award_level": null,
+      "name": "ЭТРУСКИ",
+      "color": "#7ce9b2",
+      "rank_delta": 0,
+      "tag": "ETRUS",
+      "updated_at": 1481594479,
+      "rank": 9,
+      "clan_id": 217355,
+      "victory_points": 43660
+    },
+    {
+      "victory_points_to_next_award": -43414,
+      "award_level": null,
+      "name": "-=Way to rave=-",
+      "color": "#cc0404",
+      "rank_delta": 0,
+      "tag": "_WTR",
+      "updated_at": 1481594479,
+      "rank": 10,
+      "clan_id": 172938,
+      "victory_points": 43420
+    },
+    {
+      "victory_points_to_next_award": -43394,
+      "award_level": null,
+      "name": "YETT1",
+      "color": "#3067c7",
+      "rank_delta": 0,
+      "tag": "YETT1",
+      "updated_at": 1481594479,
+      "rank": 11,
+      "clan_id": 199672,
+      "victory_points": 43400
+    }
+  ]
+}

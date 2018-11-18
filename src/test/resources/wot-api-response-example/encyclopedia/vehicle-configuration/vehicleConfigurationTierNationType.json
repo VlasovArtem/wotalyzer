@@ -1,0 +1,553 @@
+{
+  "status": "ok",
+  "meta": {
+    "count": 2
+  },
+  "data": {
+    "10785": {
+      "radios": [
+        2855
+      ],
+      "is_premium": false,
+      "tag": "A69_T110E5",
+      "images": {
+        "small_icon": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/vehicle/small/usa-A69_T110E5.png",
+        "contour_icon": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/vehicle/contour/usa-A69_T110E5.png",
+        "big_icon": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/vehicle/usa-A69_T110E5.png"
+      },
+      "tank_id": 10785,
+      "suspensions": [
+        22562
+      ],
+      "provisions": [
+        8699,
+        763,
+        1019,
+        25851,
+        1531,
+        9979,
+        7419,
+        14331,
+        26107,
+        6139,
+        2299,
+        14843,
+        6651,
+        15355,
+        26363,
+        11771,
+        9211,
+        12283,
+        1275,
+        251,
+        2043,
+        507,
+        12795,
+        6649,
+        7161,
+        3321,
+        5881,
+        8185,
+        249,
+        7417,
+        5113,
+        1273,
+        1785,
+        1529,
+        1017
+      ],
+      "engines": [
+        13093
+      ],
+      "crew": [
+        {
+          "roles": {
+            "radioman": "радист",
+            "commander": "командир экипажа"
+          },
+          "member_id": "commander"
+        },
+        {
+          "roles": {
+            "gunner": "наводчик"
+          },
+          "member_id": "gunner"
+        },
+        {
+          "roles": {
+            "driver": "механик-водитель"
+          },
+          "member_id": "driver"
+        },
+        {
+          "roles": {
+            "loader": "заряжающий"
+          },
+          "member_id": "loader"
+        }
+      ],
+      "type": "heavyTank",
+      "guns": [
+        14116
+      ],
+      "description": "Разрабатывался с 1952 года как тяжёлый танк с более мощным, чем у Т-43 (М103), вооружением. На танк накладывались существенные ограничения по габаритам, так как машина должна была проходить через туннели Бернских Альп. После проработки различных компоновочных решений работы над машиной были свёрнуты. Не было построено ни одного экземпляра.",
+      "short_name": "T110E5",
+      "is_premium_igr": false,
+      "next_tanks": null,
+      "modules_tree": {
+        "22562": {
+          "name": "T110E27",
+          "next_modules": null,
+          "next_tanks": null,
+          "is_default": true,
+          "price_xp": 0,
+          "price_credit": 82500,
+          "module_id": 22562,
+          "type": "vehicleChassis"
+        },
+        "19235": {
+          "name": "T53",
+          "next_modules": null,
+          "next_tanks": null,
+          "is_default": true,
+          "price_xp": 0,
+          "price_credit": 66000,
+          "module_id": 19235,
+          "type": "vehicleTurret"
+        },
+        "14116": {
+          "name": "120 mm Gun M58",
+          "next_modules": null,
+          "next_tanks": null,
+          "is_default": true,
+          "price_xp": 0,
+          "price_credit": 310000,
+          "module_id": 14116,
+          "type": "vehicleGun"
+        },
+        "13093": {
+          "name": "Continental AOI-1490",
+          "next_modules": null,
+          "next_tanks": null,
+          "is_default": true,
+          "price_xp": 0,
+          "price_credit": 100000,
+          "module_id": 13093,
+          "type": "vehicleEngine"
+        },
+        "2855": {
+          "name": "AN/VRC-3",
+          "next_modules": null,
+          "next_tanks": null,
+          "is_default": true,
+          "price_xp": 0,
+          "price_credit": 51600,
+          "module_id": 2855,
+          "type": "vehicleRadio"
+        }
+      },
+      "nation": "usa",
+      "tier": 10,
+      "prices_xp": {
+        "9505": 185000
+      },
+      "is_gift": false,
+      "name": "T110E5",
+      "price_gold": 0,
+      "price_credit": 6100000,
+      "default_profile": {
+        "engine": {
+          "name": "Continental AOI-1490",
+          "power": 875,
+          "weight": 1200,
+          "tag": "AOI-1490",
+          "fire_chance": 0.2,
+          "tier": 10
+        },
+        "max_ammo": 42,
+        "suspension": {
+          "name": "T110E27",
+          "weight": 8000,
+          "load_limit": 60050,
+          "tag": "Chassis_T110",
+          "traverse_speed": 30,
+          "tier": 10
+        },
+        "weight": 53760,
+        "armor": {
+          "turret": {
+            "front": 203,
+            "sides": 127,
+            "rear": 76
+          },
+          "hull": {
+            "front": 254,
+            "sides": 76,
+            "rear": 38
+          }
+        },
+        "hp": 2200,
+        "modules": {
+          "gun_id": 14116,
+          "suspension_id": 22562,
+          "turret_id": 19235,
+          "radio_id": 2855,
+          "engine_id": 13093
+        },
+        "gun": {
+          "move_down_arc": 8,
+          "caliber": 120,
+          "name": "120 mm Gun M58",
+          "weight": 3100,
+          "move_up_arc": 15,
+          "fire_rate": 6.0,
+          "dispersion": 0.35,
+          "tag": "_120mm_Gun_M58",
+          "traverse_speed": 26,
+          "reload_time": 10.0,
+          "tier": 10,
+          "aim_time": 2.0
+        },
+        "turret": {
+          "name": "T53",
+          "weight": 11000,
+          "view_range": 400,
+          "hp": 440,
+          "tag": "Turret_2_T110",
+          "traverse_speed": 32,
+          "traverse_right_arc": 180,
+          "tier": 10,
+          "traverse_left_arc": 180
+        },
+        "hull_weight": 30000,
+        "radio": {
+          "tier": 10,
+          "signal_range": 745,
+          "tag": "AN_VRC-3",
+          "name": "AN/VRC-3",
+          "weight": 160
+        },
+        "speed_forward": 37,
+        "hull_hp": 1760,
+        "speed_backward": 12,
+        "ammo": [
+          {
+            "penetration": [
+              194,
+              258,
+              323
+            ],
+            "type": "ARMOR_PIERCING",
+            "damage": [
+              300,
+              400,
+              500
+            ]
+          },
+          {
+            "penetration": [
+              255,
+              340,
+              425
+            ],
+            "type": "HOLLOW_CHARGE",
+            "damage": [
+              300,
+              400,
+              500
+            ]
+          },
+          {
+            "penetration": [
+              45,
+              60,
+              75
+            ],
+            "type": "HIGH_EXPLOSIVE",
+            "damage": [
+              386,
+              515,
+              644
+            ]
+          }
+        ],
+        "max_weight": 60050
+      },
+      "turrets": [
+        19235
+      ]
+    },
+    "14881": {
+      "radios": [
+        2855
+      ],
+      "is_premium": false,
+      "tag": "A67_T57_58",
+      "images": {
+        "small_icon": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/vehicle/small/usa-A67_T57_58.png",
+        "contour_icon": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/vehicle/contour/usa-A67_T57_58.png",
+        "big_icon": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/vehicle/usa-A67_T57_58.png"
+      },
+      "tank_id": 14881,
+      "suspensions": [
+        28962
+      ],
+      "provisions": [
+        8699,
+        763,
+        1019,
+        25851,
+        1531,
+        9979,
+        7419,
+        14331,
+        26107,
+        6139,
+        2299,
+        14843,
+        6651,
+        15355,
+        26363,
+        11771,
+        9211,
+        12283,
+        1275,
+        251,
+        2043,
+        507,
+        12795,
+        6649,
+        7161,
+        3321,
+        8185,
+        249,
+        7417,
+        5113,
+        1273,
+        1785,
+        1529,
+        1017
+      ],
+      "engines": [
+        17189
+      ],
+      "crew": [
+        {
+          "roles": {
+            "radioman": "радист",
+            "commander": "командир экипажа"
+          },
+          "member_id": "commander"
+        },
+        {
+          "roles": {
+            "gunner": "наводчик"
+          },
+          "member_id": "gunner"
+        },
+        {
+          "roles": {
+            "driver": "механик-водитель"
+          },
+          "member_id": "driver"
+        },
+        {
+          "roles": {
+            "loader": "заряжающий"
+          },
+          "member_id": "loader"
+        }
+      ],
+      "type": "heavyTank",
+      "guns": [
+        20516
+      ],
+      "description": "Проект тяжёлого танка с качающейся башней и автоматом заряжания. Разрабатывался с 1951 года. К 1957 году были изготовлены опытные башни под 120-мм и 155-мм орудия, однако программа создания таких машин была признана бесперспективной, и все работы были свёрнуты.",
+      "short_name": "T57 Heavy",
+      "is_premium_igr": false,
+      "next_tanks": null,
+      "modules_tree": {
+        "28962": {
+          "name": "T97",
+          "next_modules": null,
+          "next_tanks": null,
+          "is_default": true,
+          "price_xp": 0,
+          "price_credit": 82500,
+          "module_id": 28962,
+          "type": "vehicleChassis"
+        },
+        "24867": {
+          "name": "T169",
+          "next_modules": null,
+          "next_tanks": null,
+          "is_default": true,
+          "price_xp": 0,
+          "price_credit": 66000,
+          "module_id": 24867,
+          "type": "vehicleTurret"
+        },
+        "20516": {
+          "name": "120 mm Gun T179",
+          "next_modules": null,
+          "next_tanks": null,
+          "is_default": true,
+          "price_xp": 0,
+          "price_credit": 310000,
+          "module_id": 20516,
+          "type": "vehicleGun"
+        },
+        "17189": {
+          "name": "Continental AV-1790-5C",
+          "next_modules": null,
+          "next_tanks": null,
+          "is_default": true,
+          "price_xp": 0,
+          "price_credit": 99000,
+          "module_id": 17189,
+          "type": "vehicleEngine"
+        },
+        "2855": {
+          "name": "AN/VRC-3",
+          "next_modules": null,
+          "next_tanks": null,
+          "is_default": true,
+          "price_xp": 0,
+          "price_credit": 51600,
+          "module_id": 2855,
+          "type": "vehicleRadio"
+        }
+      },
+      "nation": "usa",
+      "tier": 10,
+      "prices_xp": {
+        "15393": 250000
+      },
+      "is_gift": false,
+      "name": "T57 Heavy Tank",
+      "price_gold": 0,
+      "price_credit": 6100000,
+      "default_profile": {
+        "engine": {
+          "name": "Continental AV-1790-5C",
+          "power": 810,
+          "weight": 1159,
+          "tag": "Continental_AV_1790_5C",
+          "fire_chance": 0.2,
+          "tier": 10
+        },
+        "max_ammo": 36,
+        "suspension": {
+          "name": "T97",
+          "weight": 11000,
+          "load_limit": 58000,
+          "tag": "Chassis_T57_58",
+          "traverse_speed": 30,
+          "tier": 10
+        },
+        "weight": 54431,
+        "armor": {
+          "turret": {
+            "front": 152,
+            "sides": 127,
+            "rear": 51
+          },
+          "hull": {
+            "front": 229,
+            "sides": 45,
+            "rear": 45
+          }
+        },
+        "hp": 2250,
+        "modules": {
+          "gun_id": 20516,
+          "suspension_id": 28962,
+          "turret_id": 24867,
+          "radio_id": 2855,
+          "engine_id": 17189
+        },
+        "gun": {
+          "move_down_arc": 8,
+          "caliber": 120,
+          "name": "120 mm Gun T179",
+          "weight": 2849,
+          "move_up_arc": 12,
+          "fire_rate": 7.74,
+          "dispersion": 0.35,
+          "tag": "_120mm_Gun_T179",
+          "traverse_speed": 26,
+          "reload_time": 25.0,
+          "tier": 10,
+          "aim_time": 2.9
+        },
+        "turret": {
+          "name": "T169",
+          "weight": 14500,
+          "view_range": 400,
+          "hp": 450,
+          "tag": "Turret_1_T57_58",
+          "traverse_speed": 36,
+          "traverse_right_arc": 180,
+          "tier": 10,
+          "traverse_left_arc": 180
+        },
+        "hull_weight": 24463,
+        "radio": {
+          "tier": 10,
+          "signal_range": 745,
+          "tag": "AN_VRC-3",
+          "name": "AN/VRC-3",
+          "weight": 160
+        },
+        "speed_forward": 35,
+        "hull_hp": 1800,
+        "speed_backward": 12,
+        "ammo": [
+          {
+            "penetration": [
+              194,
+              258,
+              323
+            ],
+            "type": "ARMOR_PIERCING",
+            "damage": [
+              300,
+              400,
+              500
+            ]
+          },
+          {
+            "penetration": [
+              255,
+              340,
+              425
+            ],
+            "type": "HOLLOW_CHARGE",
+            "damage": [
+              300,
+              400,
+              500
+            ]
+          },
+          {
+            "penetration": [
+              45,
+              60,
+              75
+            ],
+            "type": "HIGH_EXPLOSIVE",
+            "damage": [
+              386,
+              515,
+              644
+            ]
+          }
+        ],
+        "max_weight": 58000
+      },
+      "turrets": [
+        24867
+      ]
+    }
+  }
+}

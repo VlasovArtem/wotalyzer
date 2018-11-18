@@ -1,0 +1,9 @@
+{
+  "status": "error",
+  "error": {
+    "field": "search",
+    "message": "SEARCH_NOT_SPECIFIED",
+    "code": 402,
+    "value": null
+  }
+}

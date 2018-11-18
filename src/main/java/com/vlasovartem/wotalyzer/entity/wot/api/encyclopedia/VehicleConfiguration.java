@@ -2,7 +2,6 @@ package com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.vlasovartem.wotalyzer.entity.wot.api.MainEntity;
-import com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia.components.personal_reserve.Images;
 
 /**
  * Created by artemvlasov on 10/10/16.
@@ -16,7 +15,7 @@ public class VehicleConfiguration extends MainEntity {
     private int priceCredit;
     /* Идентификатор комплектации техники */
     private String profileId;
-    private Images images;
+//    private Images images;
 
     @Override
     @JsonProperty("tank_id")

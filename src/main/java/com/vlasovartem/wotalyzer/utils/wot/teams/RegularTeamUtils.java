@@ -1,6 +1,7 @@
 package com.vlasovartem.wotalyzer.utils.wot.teams;
 
 import com.vlasovartem.wotalyzer.entity.wot.api.teams.RegularTeam;
+import com.vlasovartem.wotalyzer.utils.api.contstans.BasicAPIConstants;
 import com.vlasovartem.wotalyzer.utils.api.contstans.teams.RegularTeamConstants;
 import com.vlasovartem.wotalyzer.utils.validators.MainValidator;
 import com.vlasovartem.wotalyzer.utils.validators.teams.TeamsParametersValidator;
@@ -27,18 +28,8 @@ public class RegularTeamUtils extends MainUtils<RegularTeam> {
     }
 
     @Override
-    public String getAPIBaseUrl() {
-        return RegularTeamConstants.BASIC_URL;
-    }
-
-    @Override
-    public List<String> getAPIConstants() {
-        return RegularTeamConstants.BASIC_API_CONSTANTS;
-    }
-
-    @Override
-    public List<String> getRequiredAPIParams() {
-        return RegularTeamConstants.REQUIRED_PARAMS;
+    protected BasicAPIConstants getAPIConstants() {
+        return RegularTeamConstants.getInstance();
     }
 
     @Override

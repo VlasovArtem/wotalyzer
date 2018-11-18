@@ -29,7 +29,7 @@ public class TankWN8IncreaseIndicatorBuilder {
      *
      * @param tankDamage Tank caused damage in all battles
      * @param expectedDamage Expected caused damage by the tank
-     * @return builder
+     * @return newBuilder
      */
     public TankWN8IncreaseIndicatorBuilder checkDamage(long tankDamage, float expectedDamage) {
         if ((expectedDamage * 3) > (tankDamage / battles)) {
@@ -48,7 +48,7 @@ public class TankWN8IncreaseIndicatorBuilder {
      *
      * @param frags Tank caused frags in all battles
      * @param expectedFrags Expected caused damage by the tank
-     * @return builder
+     * @return newBuilder
      */
     public TankWN8IncreaseIndicatorBuilder checkFrags(long frags, float expectedFrags) {
         if (Float.compare((float) frags / battles, expectedFrags * 2) == 1) {
@@ -65,7 +65,7 @@ public class TankWN8IncreaseIndicatorBuilder {
      *
      * @param spotted Spotted tanks in all battles
      * @param expectedSpotted Expected spotted tanks by the tank
-     * @return builder
+     * @return newBuilder
      */
     public TankWN8IncreaseIndicatorBuilder checkSpotted(long spotted, float expectedSpotted) {
         if (Float.compare((float) spotted / battles, (float) (expectedSpotted + (expectedSpotted * 0.1))) == 1) {
@@ -82,7 +82,7 @@ public class TankWN8IncreaseIndicatorBuilder {
      *
      * @param defence Dropped capture points in all battles
      * @param expectedDefence Expected dropped capture point by the tank
-     * @return builder
+     * @return newBuilder
      */
     public TankWN8IncreaseIndicatorBuilder checkDefence(long defence, float expectedDefence) {
         if (Float.compare((float) defence / battles, (float) (expectedDefence + (expectedDefence * 0.1))) == 1) {
@@ -99,7 +99,7 @@ public class TankWN8IncreaseIndicatorBuilder {
      *
      * @param wins Tank wins in all battles
      * @param expectedWinRate Expected win rate by the tank
-     * @return builder
+     * @return newBuilder
      */
     public TankWN8IncreaseIndicatorBuilder checkWinRate(long wins, float expectedWinRate) {
         if (Float.compare(((float) (wins / battles) * 100), (float) (expectedWinRate + (expectedWinRate * 0.12))) == 1) {

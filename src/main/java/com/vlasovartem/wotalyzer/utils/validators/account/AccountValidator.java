@@ -1,5 +1,8 @@
 package com.vlasovartem.wotalyzer.utils.validators.account;
 
+import com.vlasovartem.wotalyzer.entity.wot.api.WotApiError;
+import com.vlasovartem.wotalyzer.exception.wot.api.WotAPIValidationException;
+import com.vlasovartem.wotalyzer.utils.api.contstans.enums.NameTypeParameter;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -25,50 +28,46 @@ public class AccountValidator {
      */
     public static Function<Map<String, Object>, Boolean> validateSearchParameter() {
         return t -> {
-            Object value = t.get(SEARCH_PARAM);
-            if (Objects.nonNull(value)) {
-                int searchValueLength = ((String) value).length();
-                if (searchValueLength > 24) {
-                    LOGGER.warn("Search parameter length could not be greater, than 24 symbols");
-                    return false;
-                }
+            String searchParam = (String) t.get(SEARCH_PARAM);
+            String typeParam = (String) t.get(TYPE_PARAM);
+            String errorMessage = "";
+            int errorCode = 0;
+            if (Objects.isNull(searchParam) || searchParam.isEmpty()) {
+                errorMessage = "Search parameter could not be empty";
+                errorCode = 402;
+            } else if (((Objects.isNull(typeParam) || typeParam.isEmpty() || NameTypeParameter.START_WITH.getValue().equals(typeParam)) && searchParam.length() < 3)) {
+                errorMessage = "Search parameter minimal length with type 'start_with' should be 3 symbols";
+                errorCode = 407;
+            } else if (NameTypeParameter.EXACT.getValue().equals(typeParam) && searchParam.isEmpty()) {
+                errorMessage = "Search parameter minimal length with type 'exact' should be 1 symbol";
+                errorCode = 407;
+            } else if (searchParam.length() > 24) {
+                errorMessage = "Search parameter length could not be greater, than 24 symbols";
+                errorCode = 407;
+            }
+            if (!errorMessage.isEmpty()) {
+                WotApiError error = new WotApiError();
+                error.getError().setMessage(errorMessage);
+                error.getError().setCode(errorCode);
+                LOGGER.warn(errorMessage);
+                throw new WotAPIValidationException(error);
             }
             return true;
         };
     }
 
-    public static Function<Map<String, Object>, Boolean> validateTypeParameter() {
-        return t -> {
-            boolean isValid = false;
-            List<String> possibleTypeValues = Arrays.asList("exact", "startswith");
-            String typeValue = (String) t.get(TYPE_PARAM);
-            String searchValue = (String) t.get(SEARCH_PARAM);
-            if (Objects.nonNull(typeValue) && possibleTypeValues.contains(typeValue) && Objects.nonNull(searchValue)) {
-                switch (typeValue) {
-                    case "exact":
-                        isValid = searchValue.length() > 0;
-                        break;
-                    case "startwith":
-                        isValid = searchValue.length() > 2;
-                        break;
-                }
-            }
-            if (!isValid && Objects.nonNull(searchValue) && searchValue.length() > 2) {
-                t.replace(TYPE_PARAM, "startwith");
-                return true;
-            }
-            return isValid;
-        };
-    }
-
     public static Function<Map<String, Object>, Boolean> validateExtraParameter() {
         return t -> {
-            Object value = t.get(EXTRA_PARAM);
+            String value = (String) t.get(EXTRA_PARAM);
             if (Objects.nonNull(value)) {
                 List<String> possibleExtraValues = Arrays.asList("private.boosters", "private.garage", "private.grouped_contacts", "private.personal_missions", "private.rented", "statistics.fallout", "statistics.globalmap_absolute", "statistics.globalmap_champion", "statistics.globalmap_middle", "statistics.random");
                 if (!possibleExtraValues.contains(value)) {
-                    LOGGER.warn("Parameter '{}' have invalid value '{}'. Possible values: {}", EXTRA_PARAM, value, possibleExtraValues.stream().collect(Collectors.joining(", ")));
-                    return false;
+                    String errorMessage = String.format("Parameter '%s' have invalid value '%s' Possible values are: %s",
+                            EXTRA_PARAM,
+                            value,
+                            possibleExtraValues.stream().collect(Collectors.joining(", ")));
+                    LOGGER.warn(errorMessage);
+                    throw new WotAPIValidationException(errorMessage);
                 }
             }
             return true;

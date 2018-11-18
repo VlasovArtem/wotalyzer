@@ -1,19 +1,31 @@
 package com.vlasovartem.wotalyzer.utils.api.contstans.account;
 
 import com.vlasovartem.wotalyzer.utils.api.contstans.BasicAPIConstants;
-import com.vlasovartem.wotalyzer.utils.api.contstans.utils.ConstantUtils;
 
-import java.util.List;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Objects;
 
 import static com.vlasovartem.wotalyzer.utils.api.contstans.WOTAPIConstants.*;
 
 /**
  * Created by artemvlasov on 14/10/2016.
  */
-public interface PlayerVehiclesConstants extends BasicAPIConstants{
+public class PlayerVehiclesConstants extends BasicAPIConstants{
 
-    String BASIC_URL = "https://api.worldoftanks.ru/wot/account/tanks/";
-    List<String> BASIC_API_CONSTANTS = ConstantUtils.generate(BasicAPIConstants.BASIC_API_CONSTANTS, ACCOUNT_ID_PARAM, ACCESS_TOKEN_PARAM, TANK_ID_PARAM);
-    List<String> REQUIRED_PARAMS = ConstantUtils.generate(BasicAPIConstants.REQUIRED_PARAMS, ACCOUNT_ID_PARAM);
+    private static PlayerVehiclesConstants constants;
+
+    public static PlayerVehiclesConstants getInstance() {
+        if (Objects.isNull(constants)) {
+            constants = new PlayerVehiclesConstants();
+        }
+        return constants;
+    }
+
+    private PlayerVehiclesConstants() {
+        super("https://api.worldoftanks.ru/wot/account/tanks/");
+        addBasicApiConstants(Arrays.asList(ACCOUNT_ID_PARAM, ACCESS_TOKEN_PARAM, TANK_ID_PARAM));
+        addRequiredParams(Collections.singletonList(ACCOUNT_ID_PARAM));
+    }
 
 }

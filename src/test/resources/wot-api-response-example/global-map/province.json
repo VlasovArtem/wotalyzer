@@ -1,0 +1,40 @@
+{
+  "status": "ok",
+  "meta": {
+    "count": 1
+  },
+  "data": [
+    {
+      "active_battles": [],
+      "is_borders_disabled": false,
+      "front_name": "campaign_05_ru_west",
+      "max_bets": 32,
+      "arena_name": "Эль-Халлуф",
+      "attackers": [],
+      "neighbours": [
+        "herning",
+        "odense",
+        "uddevalla"
+      ],
+      "last_won_bet": 0,
+      "province_name": "Орхус",
+      "status": "FINISHED",
+      "arena_id": "29_el_hallouf",
+      "prime_time": "20:15",
+      "current_min_bet": 0,
+      "battles_start_at": "2016-12-24T20:15:00",
+      "pillage_end_at": null,
+      "world_redivision": false,
+      "province_id": "aarhus",
+      "landing_type": "tournament",
+      "owner_clan_id": 29951,
+      "revenue_level": 0,
+      "daily_revenue": 0,
+      "uri": "\/#province\/aarhus",
+      "server": "RU6",
+      "competitors": [],
+      "round_number": 7,
+      "front_id": "campaign_05_ru_west"
+    }
+  ]
+}

@@ -1,10 +1,10 @@
 package com.vlasovartem.wotalyzer.utils.wot.global_map;
 
 import com.vlasovartem.wotalyzer.entity.wot.api.global_map.Info;
+import com.vlasovartem.wotalyzer.utils.api.contstans.BasicAPIConstants;
 import com.vlasovartem.wotalyzer.utils.api.contstans.global_map.InfoConstants;
 import com.vlasovartem.wotalyzer.utils.wot.MainUtils;
 
-import java.util.List;
 import java.util.Optional;
 
 /**
@@ -22,17 +22,7 @@ public class InfoUtils extends MainUtils<Info> {
     }
 
     @Override
-    public String getAPIBaseUrl() {
-        return InfoConstants.BASIC_URL;
-    }
-
-    @Override
-    public List<String> getAPIConstants() {
-        return InfoConstants.BASIC_API_CONSTANTS;
-    }
-
-    @Override
-    public List<String> getRequiredAPIParams() {
-        return InfoConstants.REQUIRED_PARAMS;
+    protected BasicAPIConstants getAPIConstants() {
+        return InfoConstants.getInstance();
     }
 }

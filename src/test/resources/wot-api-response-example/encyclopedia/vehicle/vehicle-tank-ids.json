@@ -1,0 +1,567 @@
+{
+  "status": "ok",
+  "meta": {
+    "count": 6
+  },
+  "data": {
+    "14881": {
+      "radios": [
+        2855
+      ],
+      "is_premium": false,
+      "tag": "A67_T57_58",
+      "images": {
+        "small_icon": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/vehicle/small/usa-A67_T57_58.png",
+        "contour_icon": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/vehicle/contour/usa-A67_T57_58.png",
+        "big_icon": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/vehicle/usa-A67_T57_58.png"
+      },
+      "tank_id": 14881,
+      "suspensions": [
+        28962
+      ],
+      "provisions": [
+        8699,
+        9211,
+        25851,
+        1531,
+        9979,
+        7419,
+        14331,
+        26107,
+        6139,
+        2299,
+        14843,
+        6651,
+        1019,
+        15355,
+        26363,
+        11771,
+        2043,
+        12283,
+        1275,
+        251,
+        763,
+        507,
+        12795,
+        6649,
+        7161,
+        3321,
+        5113,
+        8185,
+        249,
+        1017,
+        1785,
+        1529,
+        1273,
+        7417
+      ],
+      "engines": [
+        17189
+      ],
+      "crew": [
+        {
+          "roles": {
+            "radioman": "радист",
+            "commander": "командир экипажа"
+          },
+          "member_id": "commander"
+        },
+        {
+          "roles": {
+            "gunner": "наводчик"
+          },
+          "member_id": "gunner"
+        },
+        {
+          "roles": {
+            "driver": "механик-водитель"
+          },
+          "member_id": "driver"
+        },
+        {
+          "roles": {
+            "loader": "заряжающий"
+          },
+          "member_id": "loader"
+        }
+      ],
+      "type": "heavyTank",
+      "guns": [
+        20516
+      ],
+      "description": "Проект тяжёлого танка с качающейся башней и автоматом заряжания. Разрабатывался с 1951 года. К 1957 году были изготовлены опытные башни под 120-мм и 155-мм орудия, однако программа создания таких машин была признана бесперспективной, и все работы были свёрнуты.",
+      "short_name": "T57 Heavy",
+      "is_premium_igr": false,
+      "next_tanks": null,
+      "modules_tree": {
+        "28962": {
+          "name": "T97",
+          "next_modules": null,
+          "next_tanks": null,
+          "is_default": true,
+          "price_xp": 0,
+          "price_credit": 82500,
+          "module_id": 28962,
+          "type": "vehicleChassis"
+        },
+        "24867": {
+          "name": "T169",
+          "next_modules": null,
+          "next_tanks": null,
+          "is_default": true,
+          "price_xp": 0,
+          "price_credit": 66000,
+          "module_id": 24867,
+          "type": "vehicleTurret"
+        },
+        "20516": {
+          "name": "120 mm Gun T179",
+          "next_modules": null,
+          "next_tanks": null,
+          "is_default": true,
+          "price_xp": 0,
+          "price_credit": 310000,
+          "module_id": 20516,
+          "type": "vehicleGun"
+        },
+        "17189": {
+          "name": "Continental AV-1790-5C",
+          "next_modules": null,
+          "next_tanks": null,
+          "is_default": true,
+          "price_xp": 0,
+          "price_credit": 99000,
+          "module_id": 17189,
+          "type": "vehicleEngine"
+        },
+        "2855": {
+          "name": "AN/VRC-3",
+          "next_modules": null,
+          "next_tanks": null,
+          "is_default": true,
+          "price_xp": 0,
+          "price_credit": 51600,
+          "module_id": 2855,
+          "type": "vehicleRadio"
+        }
+      },
+      "nation": "usa",
+      "tier": 10,
+      "prices_xp": {
+        "15393": 250000
+      },
+      "is_gift": false,
+      "name": "T57 Heavy Tank",
+      "price_gold": 0,
+      "price_credit": 6100000,
+      "default_profile": {
+        "engine": {
+          "name": "Continental AV-1790-5C",
+          "power": 810,
+          "weight": 1159,
+          "tag": "Continental_AV_1790_5C",
+          "fire_chance": 0.2,
+          "tier": 10
+        },
+        "max_ammo": 36,
+        "suspension": {
+          "name": "T97",
+          "weight": 11000,
+          "load_limit": 58000,
+          "tag": "Chassis_T57_58",
+          "traverse_speed": 30,
+          "tier": 10
+        },
+        "weight": 54431,
+        "armor": {
+          "turret": {
+            "front": 152,
+            "sides": 127,
+            "rear": 51
+          },
+          "hull": {
+            "front": 229,
+            "sides": 45,
+            "rear": 45
+          }
+        },
+        "hp": 2250,
+        "modules": {
+          "gun_id": 20516,
+          "suspension_id": 28962,
+          "turret_id": 24867,
+          "radio_id": 2855,
+          "engine_id": 17189
+        },
+        "gun": {
+          "move_down_arc": 8,
+          "caliber": 120,
+          "name": "120 mm Gun T179",
+          "weight": 2849,
+          "move_up_arc": 12,
+          "fire_rate": 7.74,
+          "dispersion": 0.35,
+          "tag": "_120mm_Gun_T179",
+          "traverse_speed": 26,
+          "reload_time": 25.0,
+          "tier": 10,
+          "aim_time": 2.9
+        },
+        "turret": {
+          "name": "T169",
+          "weight": 14500,
+          "view_range": 400,
+          "hp": 450,
+          "tag": "Turret_1_T57_58",
+          "traverse_speed": 36,
+          "traverse_right_arc": 180,
+          "tier": 10,
+          "traverse_left_arc": 180
+        },
+        "hull_weight": 24463,
+        "radio": {
+          "tier": 10,
+          "signal_range": 745,
+          "tag": "AN_VRC-3",
+          "name": "AN/VRC-3",
+          "weight": 160
+        },
+        "speed_forward": 35,
+        "hull_hp": 1800,
+        "speed_backward": 12,
+        "ammo": [
+          {
+            "penetration": [
+              194,
+              258,
+              323
+            ],
+            "type": "ARMOR_PIERCING",
+            "damage": [
+              300,
+              400,
+              500
+            ]
+          },
+          {
+            "penetration": [
+              255,
+              340,
+              425
+            ],
+            "type": "HOLLOW_CHARGE",
+            "damage": [
+              300,
+              400,
+              500
+            ]
+          },
+          {
+            "penetration": [
+              45,
+              60,
+              75
+            ],
+            "type": "HIGH_EXPLOSIVE",
+            "damage": [
+              386,
+              515,
+              644
+            ]
+          }
+        ],
+        "max_weight": 58000
+      },
+      "turrets": [
+        24867
+      ]
+    },
+    "6145": {
+      "radios": [
+        2823
+      ],
+      "is_premium": false,
+      "tag": "R90_IS_4M",
+      "images": {
+        "small_icon": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/vehicle/small/ussr-R90_IS_4M.png",
+        "contour_icon": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/vehicle/contour/ussr-R90_IS_4M.png",
+        "big_icon": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/vehicle/ussr-R90_IS_4M.png"
+      },
+      "tank_id": 6145,
+      "suspensions": [
+        12290
+      ],
+      "provisions": [
+        12795,
+        1019,
+        1275,
+        15355,
+        1531,
+        9979,
+        7419,
+        14331,
+        26107,
+        6139,
+        3323,
+        14843,
+        6651,
+        1787,
+        3067,
+        26363,
+        11771,
+        9211,
+        12283,
+        251,
+        763,
+        507,
+        8699,
+        6649,
+        7161,
+        3321,
+        7673,
+        5113,
+        8185,
+        249,
+        7417,
+        1017,
+        1785,
+        5881,
+        1529,
+        1273
+      ],
+      "engines": [
+        5893
+      ],
+      "crew": [
+        {
+          "roles": {
+            "radioman": "радист",
+            "commander": "командир экипажа"
+          },
+          "member_id": "commander"
+        },
+        {
+          "roles": {
+            "gunner": "наводчик"
+          },
+          "member_id": "gunner"
+        },
+        {
+          "roles": {
+            "driver": "механик-водитель"
+          },
+          "member_id": "driver"
+        },
+        {
+          "roles": {
+            "loader": "заряжающий"
+          },
+          "member_id": "loader"
+        }
+      ],
+      "type": "heavyTank",
+      "guns": [
+        3844,
+        23812
+      ],
+      "description": "Проект разрабатывался в КБ Кировского завода с декабря 1943 г. В апреле 1944 г. начались работы по производству двух прототипов танка «Объект 701». После испытаний проект был доработан, и осенью 1944 – зимой 1945 гг. были испытаны ещё два прототипа. Танк «Объект 701» №5 был рекомендован к принятию на вооружение, но из-за начавшегося производства ИС-3 серийный выпуск танка начат не был. После приостановки производства ИС-3 в 1946 г. танк ИС-4 был принят на вооружение. В 1949 г. производство ИС-4 было прекращено. В 1951 году было выпущено 25 танков ИС-4М. В дальнейшем все выпущенные ранее танки были модернизированы до уровня ИС-4М. По разным сведениям всего было построено от 235 до 258 машин, которые использовались на Дальнем Востоке.",
+      "short_name": "ИС-4",
+      "is_premium_igr": false,
+      "next_tanks": null,
+      "modules_tree": {
+        "12290": {
+          "name": "ИС-4М",
+          "next_modules": null,
+          "next_tanks": null,
+          "is_default": true,
+          "price_xp": 0,
+          "price_credit": 61350,
+          "module_id": 12290,
+          "type": "vehicleChassis"
+        },
+        "10243": {
+          "name": "ИС-4М",
+          "next_modules": [
+            23812
+          ],
+          "next_tanks": null,
+          "is_default": true,
+          "price_xp": 0,
+          "price_credit": 61100,
+          "module_id": 10243,
+          "type": "vehicleTurret"
+        },
+        "23812": {
+          "name": "122 мм M62-T2",
+          "next_modules": null,
+          "next_tanks": null,
+          "is_default": false,
+          "price_xp": 59300,
+          "price_credit": 335000,
+          "module_id": 23812,
+          "type": "vehicleGun"
+        },
+        "5893": {
+          "name": "В-12",
+          "next_modules": null,
+          "next_tanks": null,
+          "is_default": true,
+          "price_xp": 0,
+          "price_credit": 128000,
+          "module_id": 5893,
+          "type": "vehicleEngine"
+        },
+        "2823": {
+          "name": "10РК-26",
+          "next_modules": null,
+          "next_tanks": null,
+          "is_default": true,
+          "price_xp": 0,
+          "price_credit": 51600,
+          "module_id": 2823,
+          "type": "vehicleRadio"
+        },
+        "3844": {
+          "name": "122 мм Д-25Т",
+          "next_modules": null,
+          "next_tanks": null,
+          "is_default": true,
+          "price_xp": 0,
+          "price_credit": 125140,
+          "module_id": 3844,
+          "type": "vehicleGun"
+        }
+      },
+      "nation": "ussr",
+      "tier": 10,
+      "prices_xp": {
+        "10753": 189000
+      },
+      "is_gift": false,
+      "name": "ИС-4",
+      "price_gold": 0,
+      "price_credit": 6100000,
+      "default_profile": {
+        "engine": {
+          "name": "В-12",
+          "power": 750,
+          "weight": 1024,
+          "tag": "V-12",
+          "fire_chance": 0.15,
+          "tier": 10
+        },
+        "max_ammo": 30,
+        "suspension": {
+          "name": "ИС-4М",
+          "weight": 11000,
+          "load_limit": 66300,
+          "tag": "IS-4",
+          "traverse_speed": 26,
+          "tier": 10
+        },
+        "weight": 60024,
+        "armor": {
+          "turret": {
+            "front": 250,
+            "sides": 200,
+            "rear": 170
+          },
+          "hull": {
+            "front": 140,
+            "sides": 160,
+            "rear": 100
+          }
+        },
+        "hp": 2500,
+        "modules": {
+          "gun_id": 3844,
+          "suspension_id": 12290,
+          "turret_id": 10243,
+          "radio_id": 2823,
+          "engine_id": 5893
+        },
+        "gun": {
+          "move_down_arc": 6,
+          "caliber": 122,
+          "name": "122 мм Д-25Т",
+          "weight": 2590,
+          "move_up_arc": 16,
+          "fire_rate": 5.45,
+          "dispersion": 0.46,
+          "tag": "_122-mm_D-25T_with_wedges_shutter",
+          "traverse_speed": 26,
+          "reload_time": 11.0,
+          "tier": 8,
+          "aim_time": 2.9
+        },
+        "turret": {
+          "name": "ИС-4М",
+          "weight": 14200,
+          "view_range": 400,
+          "hp": 500,
+          "tag": "Turret_710_mod_5",
+          "traverse_speed": 22,
+          "traverse_right_arc": 180,
+          "tier": 10,
+          "traverse_left_arc": 180
+        },
+        "hull_weight": 30750,
+        "radio": {
+          "tier": 10,
+          "signal_range": 720,
+          "tag": "_10RK-26",
+          "name": "10РК-26",
+          "weight": 160
+        },
+        "speed_forward": 43,
+        "hull_hp": 2000,
+        "speed_backward": 14,
+        "ammo": [
+          {
+            "penetration": [
+              131,
+              175,
+              219
+            ],
+            "type": "ARMOR_PIERCING",
+            "damage": [
+              293,
+              390,
+              488
+            ]
+          },
+          {
+            "penetration": [
+              163,
+              217,
+              271
+            ],
+            "type": "ARMOR_PIERCING_CR",
+            "damage": [
+              293,
+              390,
+              488
+            ]
+          },
+          {
+            "penetration": [
+              46,
+              61,
+              76
+            ],
+            "type": "HIGH_EXPLOSIVE",
+            "damage": [
+              398,
+              530,
+              663
+            ]
+          }
+        ],
+        "max_weight": 66300
+      },
+      "turrets": [
+        10243
+      ]
+    }
+  }
+}

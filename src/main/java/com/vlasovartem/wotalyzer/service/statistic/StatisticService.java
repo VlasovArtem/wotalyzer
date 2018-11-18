@@ -2,7 +2,7 @@ package com.vlasovartem.wotalyzer.service.statistic;
 
 import com.vlasovartem.wotalyzer.entity.statistic.Statistic;
 import com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia.components.provision.ammo.Ammo;
-import com.vlasovartem.wotalyzer.utils.enums.VehicleType;
+import com.vlasovartem.wotalyzer.entity.wot.api.enums.VehicleType;
 
 /**
  * Created by artemvlasov on 14/01/16.

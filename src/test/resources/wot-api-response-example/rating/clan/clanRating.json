@@ -1,0 +1,94 @@
+{
+  "status": "ok",
+  "meta": {
+    "count": 1
+  },
+  "data": {
+    "223790": {
+      "gm_elo_rating_10": {
+        "rank_delta": 1,
+        "rank": 736,
+        "value": 1058
+      },
+      "gm_elo_rating_8": {
+        "rank_delta": 0,
+        "rank": 61,
+        "value": 1386
+      },
+      "fb_elo_rating_8": {
+        "rank_delta": null,
+        "rank": null,
+        "value": 1333
+      },
+      "exclude_reasons": {
+        "fb_elo_rating_8": "inactivity",
+        "fb_elo_rating": "limits",
+        "gm_elo_rating_6": "inactivity",
+        "fb_elo_rating_10": "inactivity"
+      },
+      "efficiency": {
+        "rank_delta": 32,
+        "rank": 669,
+        "value": 10825
+      },
+      "rating_fort": {
+        "rank_delta": -17,
+        "rank": 789,
+        "value": 2429.82
+      },
+      "fb_elo_rating_10": {
+        "rank_delta": null,
+        "rank": null,
+        "value": 1195
+      },
+      "clan_tag": "KOPM2",
+      "battles_count_avg_daily": {
+        "rank_delta": 362,
+        "rank": 976,
+        "value": 19.29
+      },
+      "global_rating_weighted_avg": {
+        "rank_delta": 426,
+        "rank": 4428,
+        "value": 2876.39
+      },
+      "clan_id": 223790,
+      "fb_elo_rating": {
+        "rank_delta": null,
+        "rank": null,
+        "value": 0.0
+      },
+      "gm_elo_rating_6": {
+        "rank_delta": null,
+        "rank": null,
+        "value": 1356
+      },
+      "wins_ratio_avg": {
+        "rank_delta": 0,
+        "rank": 2,
+        "value": 68.46
+      },
+      "clan_name": "KOPM2 - построй свой Укреп",
+      "gm_elo_rating": {
+        "rank_delta": 0,
+        "rank": 268,
+        "value": 1427.72
+      },
+      "battles_count_avg": {
+        "rank_delta": 170,
+        "rank": 103,
+        "value": 36617.52
+      },
+      "v10l_avg": {
+        "rank_delta": 10,
+        "rank": 8,
+        "value": 24.76
+      },
+      "global_rating_avg": {
+        "rank_delta": 0,
+        "rank": 1,
+        "value": 11505.56
+      }
+    }
+  }
+}

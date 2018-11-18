@@ -1,0 +1,282 @@
+{
+  "status": "ok",
+  "meta": {
+    "count": 1
+  },
+  "data": {
+    "6209": {
+      "radios": [
+        2887
+      ],
+      "is_premium": false,
+      "tag": "F10_AMX_50B",
+      "images": {
+        "small_icon": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/vehicle/small/france-F10_AMX_50B.png",
+        "contour_icon": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/vehicle/contour/france-F10_AMX_50B.png",
+        "big_icon": "http://api.worldoftanks.ru/static/2.50.0/wot/encyclopedia/vehicle/france-F10_AMX_50B.png"
+      },
+      "tank_id": 6209,
+      "suspensions": [
+        11330
+      ],
+      "provisions": [
+        8699,
+        9211,
+        1275,
+        1531,
+        9979,
+        7419,
+        2043,
+        26107,
+        6139,
+        2299,
+        14843,
+        6651,
+        1019,
+        15355,
+        26363,
+        14331,
+        11771,
+        3579,
+        12283,
+        251,
+        763,
+        507,
+        12795,
+        6649,
+        7161,
+        3321,
+        5113,
+        8185,
+        249,
+        1017,
+        1785,
+        1529,
+        1273,
+        7417
+      ],
+      "engines": [
+        8773
+      ],
+      "crew": [
+        {
+          "roles": {
+            "loader": "заряжающий",
+            "commander": "командир экипажа"
+          },
+          "member_id": "commander"
+        },
+        {
+          "roles": {
+            "loader": "заряжающий",
+            "gunner": "наводчик"
+          },
+          "member_id": "gunner"
+        },
+        {
+          "roles": {
+            "driver": "механик-водитель"
+          },
+          "member_id": "driver"
+        },
+        {
+          "roles": {
+            "loader": "заряжающий",
+            "radioman": "радист"
+          },
+          "member_id": "radioman"
+        }
+      ],
+      "type": "heavyTank",
+      "guns": [
+        5700
+      ],
+      "description": "Разработка была начата в 1951 году компанией DEFA. К 1958 году танк AMX 50 B получил ряд улучшений: более низкий, частично литой корпус и торсионную подвеску. На него также была установлена новая башня качающегося типа со 120-мм орудием. Несмотря на то, что предельная мощность двигателя Maybach составляла 1000 л.с., специалисты из немецкой компании Gruppe M пытались разработать решение, которое позволило бы танку развивать скорость до 65 км/ч. Был построен всего один завершённый прототип данной модификации.",
+      "short_name": "AMX 50 B",
+      "is_premium_igr": false,
+      "next_tanks": null,
+      "modules_tree": {
+        "11330": {
+          "name": "AMX 50 B",
+          "next_modules": null,
+          "next_tanks": null,
+          "is_default": true,
+          "price_xp": 0,
+          "price_credit": 82500,
+          "module_id": 11330,
+          "type": "vehicleChassis"
+        },
+        "9283": {
+          "name": "AMX 50 B",
+          "next_modules": null,
+          "next_tanks": null,
+          "is_default": true,
+          "price_xp": 0,
+          "price_credit": 66000,
+          "module_id": 9283,
+          "type": "vehicleTurret"
+        },
+        "5700": {
+          "name": "120 mm SA46",
+          "next_modules": null,
+          "next_tanks": null,
+          "is_default": true,
+          "price_xp": 0,
+          "price_credit": 339000,
+          "module_id": 5700,
+          "type": "vehicleGun"
+        },
+        "8773": {
+          "name": "Maybach HL 295 F",
+          "next_modules": null,
+          "next_tanks": null,
+          "is_default": true,
+          "price_xp": 0,
+          "price_credit": 123000,
+          "module_id": 8773,
+          "type": "vehicleEngine"
+        },
+        "2887": {
+          "name": "SCR 619",
+          "next_modules": null,
+          "next_tanks": null,
+          "is_default": true,
+          "price_xp": 0,
+          "price_credit": 54000,
+          "module_id": 2887,
+          "type": "vehicleRadio"
+        }
+      },
+      "nation": "france",
+      "tier": 10,
+      "prices_xp": {
+        "3905": 212100
+      },
+      "is_gift": false,
+      "name": "AMX 50 B",
+      "price_gold": 0,
+      "price_credit": 6100000,
+      "default_profile": {
+        "engine": {
+          "name": "Maybach HL 295 F",
+          "power": 1200,
+          "weight": 750,
+          "tag": "Maybach_HL_295_F",
+          "fire_chance": 0.15,
+          "tier": 10
+        },
+        "max_ammo": 56,
+        "suspension": {
+          "name": "AMX 50 B",
+          "weight": 11000,
+          "load_limit": 68000,
+          "tag": "Chassis_AMX_50_68t",
+          "traverse_speed": 36,
+          "tier": 10
+        },
+        "weight": 62210,
+        "armor": {
+          "turret": {
+            "front": 100,
+            "sides": 50,
+            "rear": 30
+          },
+          "hull": {
+            "front": 170,
+            "sides": 30,
+            "rear": 30
+          }
+        },
+        "hp": 2100,
+        "modules": {
+          "gun_id": 5700,
+          "suspension_id": 11330,
+          "turret_id": 9283,
+          "radio_id": 2887,
+          "engine_id": 8773
+        },
+        "gun": {
+          "move_down_arc": 10,
+          "caliber": 120,
+          "name": "120 mm SA46",
+          "weight": 3580,
+          "move_up_arc": 12,
+          "fire_rate": 6.4,
+          "dispersion": 0.35,
+          "tag": "_120mm_SA_46",
+          "traverse_speed": 26,
+          "reload_time": 30.0,
+          "tier": 10,
+          "aim_time": 2.5
+        },
+        "turret": {
+          "name": "AMX 50 B",
+          "weight": 17500,
+          "view_range": 400,
+          "hp": 420,
+          "tag": "Turret_1_AMX_50_68t",
+          "traverse_speed": 36,
+          "traverse_right_arc": 180,
+          "tier": 10,
+          "traverse_left_arc": 180
+        },
+        "hull_weight": 29000,
+        "radio": {
+          "tier": 10,
+          "signal_range": 750,
+          "tag": "SCR_619",
+          "name": "SCR 619",
+          "weight": 80
+        },
+        "speed_forward": 65,
+        "hull_hp": 1680,
+        "speed_backward": 20,
+        "ammo": [
+          {
+            "penetration": [
+              193,
+              257,
+              321
+            ],
+            "type": "ARMOR_PIERCING",
+            "damage": [
+              300,
+              400,
+              500
+            ]
+          },
+          {
+            "penetration": [
+              244,
+              325,
+              406
+            ],
+            "type": "ARMOR_PIERCING_CR",
+            "damage": [
+              300,
+              400,
+              500
+            ]
+          },
+          {
+            "penetration": [
+              49,
+              65,
+              81
+            ],
+            "type": "HIGH_EXPLOSIVE",
+            "damage": [
+              386,
+              515,
+              644
+            ]
+          }
+        ],
+        "max_weight": 68000
+      },
+      "turrets": [
+        9283
+      ]
+    }
+  }
+}

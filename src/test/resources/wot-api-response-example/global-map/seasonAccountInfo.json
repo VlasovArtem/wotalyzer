@@ -1,0 +1,25 @@
+{
+  "status": "ok",
+  "meta": {
+    "count": 1
+  },
+  "data": {
+    "5626": {
+      "seasons": {
+        "steel_corrida": [
+          {
+            "award_level": null,
+            "account_id": 5626,
+            "clan_rank": null,
+            "updated_at": null,
+            "battles": null,
+            "season_id": "steel_corrida",
+            "clan_id": 206546,
+            "battles_to_award": 0,
+            "vehicle_level": 10
+          }
+        ]
+      }
+    }
+  }
+}

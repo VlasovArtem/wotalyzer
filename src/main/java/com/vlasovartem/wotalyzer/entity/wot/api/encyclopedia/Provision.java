@@ -1,13 +1,13 @@
 package com.vlasovartem.wotalyzer.entity.wot.api.encyclopedia;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.vlasovartem.wotalyzer.entity.wot.api.MainEntityExt;
+import com.vlasovartem.wotalyzer.entity.wot.api.VehicleMainEntity;
 
 /**
  * Created by artemvlasov on 10/10/16.
  * https://developers.wargaming.net/reference/all/wot/encyclopedia/provisions/
  */
-public class Provision extends MainEntityExt {
+public class Provision extends VehicleMainEntity {
 
     /* Описание достижения */
     private String description;

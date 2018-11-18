@@ -1,19 +1,30 @@
 package com.vlasovartem.wotalyzer.utils.api.contstans.global_map;
 
 import com.vlasovartem.wotalyzer.utils.api.contstans.BasicAPIConstants;
-import com.vlasovartem.wotalyzer.utils.api.contstans.utils.ConstantUtils;
 
-import java.util.List;
+import java.util.Arrays;
+import java.util.Objects;
 
 import static com.vlasovartem.wotalyzer.utils.api.contstans.WOTAPIConstants.*;
 
 /**
  * Created by artemvlasov on 15/10/2016.
  */
-public interface SeasonRatingNeighborConstants extends BasicAPIConstants {
+public class SeasonRatingNeighborConstants extends BasicAPIConstants {
 
-    String BASIC_URL = "https://api.worldoftanks.ru/wot/globalmap/seasonratingneighbors";
-    List<String> BASIC_API_CONSTANTS = ConstantUtils.generate(BasicAPIConstants.BASIC_API_CONSTANTS, CLAN_ID_PARAM, SEASON_ID_PARAM, VEHICLE_LEVEL_PARAM, LIMIT_PARAM);
-    List<String> REQUIRED_PARAMS = ConstantUtils.generate(BasicAPIConstants.REQUIRED_PARAMS, CLAN_ID_PARAM, SEASON_ID_PARAM, VEHICLE_LEVEL_PARAM);
+    private static SeasonRatingNeighborConstants constants;
+
+    public static SeasonRatingNeighborConstants getInstance() {
+        if (Objects.isNull(constants)) {
+            constants = new SeasonRatingNeighborConstants();
+        }
+        return constants;
+    }
+
+    private SeasonRatingNeighborConstants() {
+        super("https://api.worldoftanks.ru/wot/globalmap/seasonratingneighbors");
+        addBasicApiConstants(Arrays.asList(CLAN_ID_PARAM, SEASON_ID_PARAM, VEHICLE_LEVEL_PARAM, LIMIT_PARAM));
+        addRequiredParams(Arrays.asList(CLAN_ID_PARAM, SEASON_ID_PARAM, VEHICLE_LEVEL_PARAM));
+    }
 
 }

@@ -23,4 +23,18 @@ public class APIResponseUtils {
         return convertMapToList(apiResponse).stream().findFirst();
     }
 
+    public static <F> Optional<F> covertMapListToObject(APIResponse<Map<String, List<F>>> apiResponse) {
+        if (Objects.nonNull(apiResponse)) {
+            return apiResponse.getContent()
+                    .orElse(Collections.emptyMap())
+                    .values()
+                    .stream()
+                    .findFirst()
+                    .orElse(Collections.emptyList())
+                    .stream()
+                    .findFirst();
+        }
+        return Optional.empty();
+    }
+
 }

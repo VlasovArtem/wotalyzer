@@ -1,0 +1,264 @@
+{
+  "status": "ok",
+  "meta": {
+    "count": 3
+  },
+  "data": [
+    {
+      "gm_elo_rating_10": {
+        "rank_delta": 0,
+        "rank": 450,
+        "value": 1127
+      },
+      "gm_elo_rating_8": {
+        "rank_delta": 3,
+        "rank": 1010,
+        "value": 1111
+      },
+      "fb_elo_rating_8": {
+        "rank_delta": null,
+        "rank": null,
+        "value": 1000
+      },
+      "exclude_reasons": {
+        "fb_elo_rating_8": "limits",
+        "fb_elo_rating": "limits",
+        "gm_elo_rating_6": "inactivity",
+        "fb_elo_rating_10": "limits"
+      },
+      "efficiency": {
+        "rank_delta": 11,
+        "rank": 997,
+        "value": 10051
+      },
+      "rating_fort": {
+        "rank_delta": -24,
+        "rank": 2218,
+        "value": 1253.63
+      },
+      "fb_elo_rating_10": {
+        "rank_delta": null,
+        "rank": null,
+        "value": 1000
+      },
+      "clan_tag": "LYR",
+      "battles_count_avg_daily": {
+        "rank_delta": -38,
+        "rank": 640,
+        "value": 20.1
+      },
+      "global_rating_weighted_avg": {
+        "rank_delta": 150,
+        "rank": 1636,
+        "value": 4375.36
+      },
+      "clan_id": 410834,
+      "fb_elo_rating": {
+        "rank_delta": null,
+        "rank": null,
+        "value": 0.0
+      },
+      "gm_elo_rating_6": {
+        "rank_delta": null,
+        "rank": null,
+        "value": 1022
+      },
+      "wins_ratio_avg": {
+        "rank_delta": -53,
+        "rank": 3098,
+        "value": 52.19
+      },
+      "clan_name": "Lyra",
+      "gm_elo_rating": {
+        "rank_delta": 0,
+        "rank": 267,
+        "value": 1429.16
+      },
+      "battles_count_avg": {
+        "rank_delta": 9,
+        "rank": 314,
+        "value": 33538.2
+      },
+      "v10l_avg": {
+        "rank_delta": -1,
+        "rank": 774,
+        "value": 12.59
+      },
+      "global_rating_avg": {
+        "rank_delta": 177,
+        "rank": 1295,
+        "value": 7172.72
+      }
+    },
+    {
+      "gm_elo_rating_10": {
+        "rank_delta": 1,
+        "rank": 736,
+        "value": 1058
+      },
+      "gm_elo_rating_8": {
+        "rank_delta": 0,
+        "rank": 61,
+        "value": 1386
+      },
+      "fb_elo_rating_8": {
+        "rank_delta": null,
+        "rank": null,
+        "value": 1333
+      },
+      "exclude_reasons": {
+        "fb_elo_rating_8": "inactivity",
+        "fb_elo_rating": "limits",
+        "gm_elo_rating_6": "inactivity",
+        "fb_elo_rating_10": "inactivity"
+      },
+      "efficiency": {
+        "rank_delta": 32,
+        "rank": 669,
+        "value": 10825
+      },
+      "rating_fort": {
+        "rank_delta": -17,
+        "rank": 789,
+        "value": 2429.82
+      },
+      "fb_elo_rating_10": {
+        "rank_delta": null,
+        "rank": null,
+        "value": 1195
+      },
+      "clan_tag": "KOPM2",
+      "battles_count_avg_daily": {
+        "rank_delta": 362,
+        "rank": 976,
+        "value": 19.29
+      },
+      "global_rating_weighted_avg": {
+        "rank_delta": 426,
+        "rank": 4428,
+        "value": 2876.39
+      },
+      "clan_id": 223790,
+      "fb_elo_rating": {
+        "rank_delta": null,
+        "rank": null,
+        "value": 0.0
+      },
+      "gm_elo_rating_6": {
+        "rank_delta": null,
+        "rank": null,
+        "value": 1356
+      },
+      "wins_ratio_avg": {
+        "rank_delta": 0,
+        "rank": 2,
+        "value": 68.46
+      },
+      "clan_name": "KOPM2 - построй свой Укреп",
+      "gm_elo_rating": {
+        "rank_delta": 0,
+        "rank": 268,
+        "value": 1427.72
+      },
+      "battles_count_avg": {
+        "rank_delta": 170,
+        "rank": 103,
+        "value": 36617.52
+      },
+      "v10l_avg": {
+        "rank_delta": 10,
+        "rank": 8,
+        "value": 24.76
+      },
+      "global_rating_avg": {
+        "rank_delta": 0,
+        "rank": 1,
+        "value": 11505.56
+      }
+    },
+    {
+      "gm_elo_rating_10": {
+        "rank_delta": 1,
+        "rank": 937,
+        "value": 1015
+      },
+      "gm_elo_rating_8": {
+        "rank_delta": 18,
+        "rank": 1771,
+        "value": 1008
+      },
+      "fb_elo_rating_8": {
+        "rank_delta": -51,
+        "rank": 650,
+        "value": 993
+      },
+      "exclude_reasons": {
+        "gm_elo_rating_6": "limits",
+        "fb_elo_rating_10": "limits"
+      },
+      "efficiency": {
+        "rank_delta": -22,
+        "rank": 548,
+        "value": 11198
+      },
+      "rating_fort": {
+        "rank_delta": -30,
+        "rank": 601,
+        "value": 2588.46
+      },
+      "fb_elo_rating_10": {
+        "rank_delta": null,
+        "rank": null,
+        "value": 1000
+      },
+      "clan_tag": "IMPS-",
+      "battles_count_avg_daily": {
+        "rank_delta": 11,
+        "rank": 435,
+        "value": 20.82
+      },
+      "global_rating_weighted_avg": {
+        "rank_delta": -81,
+        "rank": 1881,
+        "value": 4154.58
+      },
+      "clan_id": 160668,
+      "fb_elo_rating": {
+        "rank_delta": -54,
+        "rank": 1019,
+        "value": 993.0
+      },
+      "gm_elo_rating_6": {
+        "rank_delta": null,
+        "rank": null,
+        "value": 1000
+      },
+      "wins_ratio_avg": {
+        "rank_delta": -109,
+        "rank": 4529,
+        "value": 51.52
+      },
+      "clan_name": "Стальные Бесы",
+      "gm_elo_rating": {
+        "rank_delta": 0,
+        "rank": 269,
+        "value": 1427.59
+      },
+      "battles_count_avg": {
+        "rank_delta": 24,
+        "rank": 422,
+        "value": 32543.95
+      },
+      "v10l_avg": {
+        "rank_delta": -42,
+        "rank": 1371,
+        "value": 10.66
+      },
+      "global_rating_avg": {
+        "rank_delta": -14,
+        "rank": 2169,
+        "value": 6700.94
+      }
+    }
+  ]
+}
